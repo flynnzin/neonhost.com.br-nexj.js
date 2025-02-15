@@ -276,13 +276,13 @@ export const NavbarComponent = () => {
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
-						offset={20}
+						offset={40}
 						showArrow
 						isOpen={activePopover === "termos"}
 					>
 						<PopoverTrigger>
 							<Button
-								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300"
+								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-600"
 								radius="sm"
 								variant="light"
 								endContent={
