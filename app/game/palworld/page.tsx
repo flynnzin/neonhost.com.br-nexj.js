@@ -15,12 +15,12 @@ export default function VpsGamer() {
 				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center max-w-7xl gap-8">
 					<div>
 						<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-							VPS Trader de Alta Performance para seus Servidores
+						Palworld
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-							Servidores otimizados para jogos com processadores de última
-							geração, baixa latência e proteção anti-DDoS. Ideal para
-							Minecraft, CS:GO, ARK e muito mais!
+						Palworld é um jogo de aventura onde você pode capturar, treinar e lutar ao lado de criaturas chamadas 'Pals', enquanto explora um mundo vasto e dinâmico.
+
+
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
@@ -55,7 +55,7 @@ export default function VpsGamer() {
 						Escolha o Plano Perfeito para seu Servidor
 					</h2>
 					<p className="text-pink-500 mx-auto text-lg max-w-2xl">
-						Nossos planos VPS Trader são otimizados para oferecer a melhor
+						Nossos planos Palworld são otimizados para oferecer a melhor
 						experiência, com recursos dedicados e proteção contra
 						ataques.
 					</p>
