@@ -273,7 +273,7 @@ export const NavbarComponent = () => {
 					</Popover>
 				</NavbarItem>
 
-				{/* <NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
 						offset={40}
@@ -282,7 +282,7 @@ export const NavbarComponent = () => {
 					>
 						<PopoverTrigger>
 							<Button
-								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-600"
+								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300"
 								radius="sm"
 								variant="light"
 								endContent={
@@ -298,7 +298,7 @@ export const NavbarComponent = () => {
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
-							className="w-[570px] p-0"
+							className="w-[620px] p-0"
 							onMouseEnter={() => clearTimeout(popoverTimeout!)}
 							onMouseLeave={closePopoverWithDelay}
 						>
@@ -332,7 +332,7 @@ export const NavbarComponent = () => {
 							</div>
 						</PopoverContent>
 					</Popover>
-				</NavbarItem> */}
+				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent>
 				<NavbarMenuToggle
