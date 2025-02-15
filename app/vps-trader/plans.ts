@@ -19,7 +19,7 @@ export const plans: Plan[] = [
 			ram: "2GB",
 			ssd: "40GB",
 			cores: "2 vCores",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache Externo Fivem"],
 		},
 	},
 	{
