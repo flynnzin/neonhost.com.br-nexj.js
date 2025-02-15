@@ -41,13 +41,13 @@ export const NavbarComponent = () => {
 			name: "Palworld",
 			img: "/games/palworld.webp",
 			link: "/game/palworld",
-			discountPrice: "R$ 39,90",
+			discountPrice: "R$ 79,90",
 		},
 		{
 			name: "Minecraft",
 			img: "/games/minecraft.webp",
 			link: "/game/minecraft",
-			discountPrice: "R$ 19,90",
+			discountPrice: "R$ 13,90",
 		},
 		{
 			name: "Rust",
