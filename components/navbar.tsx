@@ -276,7 +276,7 @@ export const NavbarComponent = () => {
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
-						offset={40}
+						offset={6}
 						showArrow
 						isOpen={activePopover === "termos"}
 					>
@@ -298,7 +298,7 @@ export const NavbarComponent = () => {
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
-							className="w-[620px] p-0"
+							className="w-[900px] p-0"
 							onMouseEnter={() => clearTimeout(popoverTimeout!)}
 							onMouseLeave={closePopoverWithDelay}
 						>
@@ -311,8 +311,8 @@ export const NavbarComponent = () => {
 													<Image
 														src={item.img}
 														alt={item.name}
-														width={68}
-														height={68}
+														width={48}
+														height={48}
 														className="w-12 h-12 object-cover rounded-lg hover:animate-pulse"
 													/>
 													<div className="flex flex-col">
