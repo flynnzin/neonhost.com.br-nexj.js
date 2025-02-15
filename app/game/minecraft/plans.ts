@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "Plano Simples - 1",
-		price: "69,90",
+		price: "13,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-1",
 		description: {
 			ram: "1GB",
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Basic - 2",
-		price: "89,90",
+		price: "33,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
 		description: {
 			ram: "3GB",
@@ -35,7 +35,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Advanced - 3",
-		price: "119,90",
+		price: "49,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-3",
 		description: {
 			ram: "6GB",
@@ -46,7 +46,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Pro - 4",
-		price: "169,90",
+		price: "73,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-4",
 		description: {
 			ram: "10GB",
@@ -57,7 +57,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Ultra - 5",
-		price: "259,90",
+		price: "94,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-5",
 		description: {
 			ram: "16GB",
@@ -68,10 +68,10 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Enterprise - 6",
-		price: "359,90",
+		price: "129,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-6",
 		description: {
-			ram: "24GB",
+			ram: "20GB",
 			ssd: "20GB",
 			cores: "10 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Jogadores ilimitados","FTP WEB/Filezilla"],
@@ -79,11 +79,22 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Dedicated - 7",
-		price: "450,00",
+		price: "169,00",
+		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-7",
+		description: {
+			ram: "24GB",
+			ssd: "50GB",
+			cores: "12 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Jogadores ilimitados","FTP WEB/Filezilla"],
+		},
+	},
+	{
+		name: "Plano Dedicated - 8",
+		price: "259,00",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-7",
 		description: {
 			ram: "32GB",
-			ssd: "50GB",
+			ssd: "75GB",
 			cores: "12 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Jogadores ilimitados","FTP WEB/Filezilla"],
 		},
