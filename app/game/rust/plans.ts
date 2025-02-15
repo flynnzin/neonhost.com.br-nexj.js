@@ -18,7 +18,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "8GB",
 			ssd: "25GB",
-			// cores: "2 núcleos",
+			cores: "2 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","FTP WEB/Filezilla","Mods e Plugins"],
 		},
 	},
@@ -29,7 +29,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "12GB",
 			ssd: "25GB",
-			// cores: "2 núcleos",
+			cores: "2 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","FTP WEB/Filezilla","Mods e Plugins"],
 		},
 	},
@@ -40,7 +40,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "16GB",
 			ssd: "30GB",
-			// cores: "3 núcleos",
+			cores: "5 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","FTP WEB/Filezilla","Mods e Plugins"],
 		},
 	},
@@ -51,7 +51,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "24GB",
 			ssd: "35GB",
-			// cores: "4 núcleos",
+			cores: "5 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","FTP Web/Filezilla","Mods e Plugins"],
 		},
 	},
