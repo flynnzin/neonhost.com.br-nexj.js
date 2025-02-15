@@ -88,4 +88,15 @@ export const plans: Plan[] = [
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
 		},
 	},
+	{
+		name: "VPS Neon - 8",
+		price: "602,90",
+		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-trader/ryzen-amd-8",
+		description: {
+			ram: "20GB",
+			ssd: "150GB",
+			cores: "12 vCores",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+		},
+	},
 ] as const;
