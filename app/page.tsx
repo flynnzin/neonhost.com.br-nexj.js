@@ -26,7 +26,7 @@ const plans = [
 		icon: <Gamepad2 className="w-8 h-8 text-pink-500" />,
 		title: "VPS Gamer",
 		description: "VPS de alta performance no Brasil com Anti-DDoS PRO",
-		price: "109.90",
+		price: "69.90",
 		link: "/vps-gamer",
 	},
 	{
@@ -40,14 +40,14 @@ const plans = [
 		icon: <Server className="w-8 h-8 text-pink-500" />,
 		title: "Semi-Dedicados",
 		description: "Servidores robustos Windows e Linux no Brasil",
-		price: "299.90",
+		price: "305.96",
 		link: "/semi-dedicado",
 	},
 	{
 		icon: <Cpu className="w-8 h-8 text-pink-500" />,
 		title: "Servidores Dedicados",
 		description: "Servidores físicos de alta performance no Brasil",
-		price: "459.00",
+		price: "1550.00",
 		link: "/dedicado",
 	},
 ];
