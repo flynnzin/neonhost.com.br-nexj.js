@@ -20,7 +20,7 @@ const plans = [
 	{
 		nome: "AMD Ryzen 5 5600X",
 		frequencia: "3.7GHz até 4.6GHz",
-		disponibilidade: true,
+		disponibilidade: false,
 		preco: 800.0,
 		nucleos: 6,
 		threads: 12,
