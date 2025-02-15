@@ -303,7 +303,7 @@ export const NavbarComponent = () => {
 							onMouseLeave={closePopoverWithDelay}
 						>
 							<div className="w-full p-5">
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-3 gap-4">
 									{termos.slice(0, 3).map((item, index) => (
 										<Link href={item.link} key={index}>
 											<div className="p-2 rounded-lg flex items-center h-18 h-full hover:bg-[#303030]">
@@ -311,8 +311,8 @@ export const NavbarComponent = () => {
 													<Image
 														src={item.img}
 														alt={item.name}
-														width={48}
-														height={48}
+														width={68}
+														height={68}
 														className="w-12 h-12 object-cover rounded-lg hover:animate-pulse"
 													/>
 													<div className="flex flex-col">
