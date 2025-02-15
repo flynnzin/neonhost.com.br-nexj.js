@@ -60,7 +60,7 @@ export default function Home() {
 					<div className="max-w-7xl mx-auto">
 						<div className="mb-6 flex flex-col">
 							<h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-								Melhores de hospedagem do Brasil
+							Servidores VPS no Brasil
 							</h1>
 							<p className="text-base leading-8 font-medium">
 								Na Neon Host, oferecemos servidores de hospedagem para todas as
