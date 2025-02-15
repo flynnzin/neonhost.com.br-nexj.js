@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 		template: "%s | NeonHost",
 	},
 	description:
-		"VPS Gamer com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"Minecraft com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
 	keywords: [
 		"vps gamer",
 		"servidor minecraft",
