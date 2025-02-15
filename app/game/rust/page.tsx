@@ -96,7 +96,7 @@ export default function VpsGamer() {
 						<div className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
 					</h1>
 					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
-						Tire suas dúvidas sobre nossos serviços de VPS Trader e comece a
+						Tire suas dúvidas sobre nossos serviços de Rust e comece a
 						hospedar seu servidor agora mesmo.
 					</p>
 				</div>
