@@ -2,11 +2,11 @@
 
 import { Button, Card, Divider } from "@nextui-org/react";
 import { plans } from "./plans";
-import { AccordionItems } from "../_components/accordion";
+import { AccordionItems } from "../../_components/accordion";
 import { Info } from "lucide-react";
 import Link from "next/link";
-import ComparisonTable from "../_components/comparison-table";
-import { CardProduts } from "../_components/card-products";
+import ComparisonTable from "../../_components/comparison-table";
+import { CardProduts } from "../../_components/card-products";
 
 export default function VpsGamer() {
 	return (
