@@ -273,7 +273,7 @@ export const NavbarComponent = () => {
 					</Popover>
 				</NavbarItem>
 
-				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+				{/* <NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
 						offset={40}
@@ -332,7 +332,7 @@ export const NavbarComponent = () => {
 							</div>
 						</PopoverContent>
 					</Popover>
-				</NavbarItem>
+				</NavbarItem> */}
 			</NavbarContent>
 			<NavbarContent>
 				<NavbarMenuToggle
