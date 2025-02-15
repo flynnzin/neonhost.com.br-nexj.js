@@ -31,7 +31,7 @@ const plans = [
 	},
 	{
 		icon: <CircleCheckBig className="w-8 h-8 text-pink-500" />,
-		title: "VPS Trazer",
+		title: "VPS Trader",
 		description: "Servidores para trader com tráfego mensal ilimitado",
 		price: "59.90",
 		link: "/vps-trader",
