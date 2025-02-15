@@ -55,8 +55,8 @@ export default function VpsGamer() {
 						Escolha o Plano Perfeito para seu Servidor
 					</h2>
 					<p className="text-pink-500 mx-auto text-lg max-w-2xl">
-						Nossos planos VPS Gamer são otimizados para oferecer a melhor
-						experiência em jogos, com recursos dedicados e proteção contra
+						Nossos planos VPS Trader são otimizados para oferecer a melhor
+						experiência, com recursos dedicados e proteção contra
 						ataques.
 					</p>
 				</div>
@@ -98,7 +98,7 @@ export default function VpsGamer() {
 						<div className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
 					</h1>
 					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
-						Tire suas dúvidas sobre nossos serviços de VPS Gamer e comece a
+						Tire suas dúvidas sobre nossos serviços de VPS Trader e comece a
 						hospedar seu servidor agora mesmo.
 					</p>
 				</div>
