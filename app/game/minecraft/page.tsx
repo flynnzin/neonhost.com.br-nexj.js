@@ -15,12 +15,10 @@ export default function VpsGamer() {
 				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center max-w-7xl gap-8">
 					<div>
 						<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-							VPS Trader de Alta Performance para seus Servidores
+						Minecraft
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-							Servidores otimizados para jogos com processadores de última
-							geração, baixa latência e proteção anti-DDoS. Ideal para
-							Minecraft, CS:GO, ARK e muito mais!
+						Na NeonHost, oferecemos servidores populares como Vanilla, Forge, Mohist, Paper e Bedrock Edition, além de modpacks como Pixelmon, SkyFactory e RLCraft.
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
