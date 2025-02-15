@@ -350,7 +350,8 @@ export default function Dedicados() {
 											<span className="text-sm text-gray-400">/mês</span>
 										</h4>
 										<a
-											href="https://wa.me/5511968927685?text=Gostaria%20de%20saber%20sobre%20dedicados"
+											href="https://discord.gg/rGP7prMqF3"
+											// href="https://wa.me/5511968927685?text=Gostaria%20de%20saber%20sobre%20dedicados"
 											target="_blank"
 											rel="noopener noreferrer"
 											className="w-full mt-3 relative"
