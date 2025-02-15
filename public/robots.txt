@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://neonhost.com.br.app/
+
+# Sitemaps
+Sitemap: https://neonhost.com.br.app/sitemap.xml

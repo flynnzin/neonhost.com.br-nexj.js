@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Trocar cor scroll */
+::selection {
+	color: #ec4899;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0b0e13;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ec4899;
+	border-radius: 4px;
+}
