@@ -153,7 +153,7 @@ export default function Home() {
 								CPUs de última geração
 							</h3>
 							<p className="text-sm text-accent-primary">
-								AMD EPYC & Intel Xeon
+								AMD Ryzen & Intel Xeon
 							</p>
 						</div>
 						<div className="text-center">

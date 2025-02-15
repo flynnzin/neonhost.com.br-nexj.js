@@ -167,7 +167,7 @@ export const NavbarComponent = () => {
 								<div className="mt-5">
 									<Link href="/dedicado">
 										<div className="bg-[#151515] hover:bg-[#303030] p-5 rounded-lg">
-											<h3 className="text-base font-bold">VPS Dedicado</h3>
+											<h3 className="text-base font-bold">Dedicado</h3>
 											<p className="text-sm text-gray-400">
 												Configurações superiores, para aplicação grandes.
 											</p>
@@ -349,7 +349,7 @@ export const NavbarComponent = () => {
 									</Link>
 									<Link href="/dedicado" className="w-full">
 										<div className="p-2 hover:bg-[#303030] rounded-lg">
-											<p className="text-base font-semibold">VPS Dedicado</p>
+											<p className="text-base font-semibold">Dedicado</p>
 											<p className="text-sm text-gray-500">
 												Configurações superiores, para aplicações grandes
 											</p>
