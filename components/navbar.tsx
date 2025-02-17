@@ -10,7 +10,13 @@ import {
 	NavbarMenuToggle,
 } from "@nextui-org/navbar";
 import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
-import { LayoutGrid } from "lucide-react";
+import {
+	Gamepad2,
+	GlobeLock,
+	Handshake,
+	LayoutGrid,
+	ShieldCheck,
+} from "lucide-react";
 import Image from "next/image";
 import { default as Link, default as NextLink } from "next/link";
 import { useState } from "react";
@@ -57,21 +63,6 @@ export const NavbarComponent = () => {
 		},
 	];
 
-	const termos = [
-		{
-			name: "Tutorial",
-			img: "/games/palworld.webp",
-			link: "/game/palworld",
-			discountPrice: "R$ 39,90",
-		},
-		{
-			name: "Termos",
-			img: "/games/minecraft.webp",
-			link: "/game/minecraft",
-			discountPrice: "R$ 19,90",
-		},
-	];
-
 	return (
 		<Navbar
 			className="bg-background-dark/30 backdrop-blur-md fixed"
@@ -83,19 +74,18 @@ export const NavbarComponent = () => {
 				className="hidden sm:flex gap-4 items-center justify-start"
 				justify="start"
 			>
-				<NavbarItem>
-					<NextLink
-						className="flex justify-start items-center text-center mt-3"
-						href="/"
-					>
+				<NavbarItem key="01" className="mt-4">
+					<NextLink className="flex justify-start items-center gap-1" href="/">
 						<Image
 							src="/logo-branca.webp"
 							alt="logo"
-							height="256"
-							width="256"
+							height="150"
+							width="150"
+							className="h-full min-w-28 lg:min-w-48"
 						/>
 					</NextLink>
 				</NavbarItem>
+
 				<NavbarItem key="01" className="mt-4">
 					<NextLink href="/" className="p-0">
 						<p className="p-0 m-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300">
@@ -272,6 +262,110 @@ export const NavbarComponent = () => {
 						</PopoverContent>
 					</Popover>
 				</NavbarItem>
+				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+					<Popover
+						placement="bottom"
+						offset={20}
+						showArrow
+						isOpen={activePopover === "empresa"}
+					>
+						<PopoverTrigger>
+							<Button
+								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300"
+								radius="sm"
+								variant="light"
+								endContent={
+									activePopover === "empresa" ? (
+										<BiChevronUp />
+									) : (
+										<BiChevronDown />
+									)
+								}
+								onMouseEnter={() => handlePopover("empresa")}
+							>
+								Empresa
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent
+							className="w-[700px] p-0"
+							onMouseEnter={() => clearTimeout(popoverTimeout!)}
+							onMouseLeave={closePopoverWithDelay}
+						>
+							<div className="w-full p-5">
+								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+									{[
+										{
+											href: "/anti-ddos",
+											title: "Defesa Contra Ataques",
+											description: "Mantenha seus servidores sempre seguros.",
+											icon: (
+												<ShieldCheck
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://app.neonhost.com.br/login",
+											title: "Área do Cliente",
+											description: "Acesse sua conta e gerencie seus serviços.",
+											icon: (
+												<GlobeLock
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "/painel",
+											title: "Painel Administrativo",
+											description:
+												"Controle total dos seus servidores e jogos.",
+											icon: (
+												<Gamepad2
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://drive.google.com/file/d/1u89J-ACHVAsE8nTUwe9zWOaw06Eaqo16/view",
+											title: "Regras e Diretrizes",
+											description:
+												"Conheça nossas políticas e evite problemas.",
+											icon: (
+												<Handshake
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+									].map((item, index) => (
+										<Link href={item.href} key={index}>
+											<div className="bg-[#151515] hover:bg-[#303030] p-5 rounded-lg flex items-center h-18 h-full">
+												<div className="mr-3">{item.icon}</div>
+												<div>
+													<h3 className="text-sm font-bold">{item.title}</h3>
+													<p className="text-sm text-gray-400">
+														{item.description}
+													</p>
+												</div>
+											</div>
+										</Link>
+									))}
+								</div>
+							</div>
+						</PopoverContent>
+					</Popover>
+				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent>
 				<NavbarMenuToggle
@@ -364,7 +458,7 @@ export const NavbarComponent = () => {
 									</Link>
 									<Link href="/dedicado" className="w-full">
 										<div className="p-2 hover:bg-[#303030] rounded-lg">
-											<p className="text-base font-semibold">Dedicado</p>
+											<p className="text-base font-semibold">VPS Dedicado</p>
 											<p className="text-sm text-gray-500">
 												Configurações superiores, para aplicações grandes
 											</p>
@@ -437,6 +531,97 @@ export const NavbarComponent = () => {
 										</Link>
 									</li>
 								</ul>
+							)}
+						</div>
+					</NavbarItem>
+					<NavbarItem>
+						<div className="flex flex-col gap-2 w-full">
+							<Button
+								className="w-full justify-between bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300"
+								radius="sm"
+								variant="light"
+								endContent={
+									activePopover === "empresa-mobile" ? (
+										<BiChevronUp />
+									) : (
+										<BiChevronDown />
+									)
+								}
+								onClick={() => handlePopover("empresa-mobile")}
+							>
+								Empresa
+							</Button>
+							{activePopover === "empresa-mobile" && (
+								<div className="flex flex-col gap-2 pl-4">
+									{[
+										{
+											href: "/anti-ddos",
+											title: "Defesa Contra Ataques",
+											description: "Mantenha seus servidores sempre seguros.",
+											icon: (
+												<ShieldCheck
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://app.neonhost.com.br/login",
+											title: "Área do Cliente",
+											description: "Acesse sua conta e gerencie seus serviços.",
+											icon: (
+												<GlobeLock
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "/painel",
+											title: "Painel Administrativo",
+											description:
+												"Controle total dos seus servidores e jogos.",
+											icon: (
+												<Gamepad2
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://drive.google.com/file/d/1u89J-ACHVAsE8nTUwe9zWOaw06Eaqo16/view",
+											title: "Regras e Diretrizes",
+											description:
+												"Conheça nossas políticas e evite problemas.",
+											icon: (
+												<Handshake
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+									].map((item, index) => (
+										<Link href={item.href} key={index}>
+											<div className="p-2 hover:bg-[#303030] rounded-lg flex items-center">
+												<div className="mr-3">{item.icon}</div>
+												<div>
+													<h3 className="text-sm font-bold">{item.title}</h3>
+													<p className="text-sm text-gray-400 flex-wrap">
+														{item.description}
+													</p>
+												</div>
+											</div>
+										</Link>
+									))}
+								</div>
 							)}
 						</div>
 					</NavbarItem>
