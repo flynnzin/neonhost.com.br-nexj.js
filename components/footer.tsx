@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
+import OpenWidget from "@/components/OpenWidget"; // Caminho do componente
 import Link from "next/link";
 import Script from "next/script";
 
