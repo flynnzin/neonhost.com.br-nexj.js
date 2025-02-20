@@ -322,7 +322,7 @@ export const NavbarComponent = () => {
 											),
 										},
 										{
-											href: "/painel",
+											href: "https://game.neonhost.com.br",
 											title: "Painel Administrativo",
 											description:
 												"Controle total dos seus servidores e jogos.",
