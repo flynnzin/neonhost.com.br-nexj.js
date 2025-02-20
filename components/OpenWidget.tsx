@@ -2,17 +2,15 @@ import { useEffect } from "react";
 
 const OpenWidget: React.FC = () => {
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || document.getElementById("openwidget-script")) return;
 
-    if (!(window as any).__ow) {
-      (window as any).__ow = {
-        organizationId: "25ce0692-2b59-4d7d-b682-3d0e74cc5269",
-        integration_name: "manual_settings",
-        product_name: "openwidget",
-      };
-    }
+    const ow = (window as any).__ow ??= {
+      organizationId: "25ce0692-2b59-4d7d-b682-3d0e74cc5269",
+      integration_name: "manual_settings",
+      product_name: "openwidget",
+    };
 
-    if ((window as any).__ow.asyncInit || document.getElementById("openwidget-script")) return;
+    if (ow.asyncInit) return;
 
     const script = document.createElement("script");
     script.id = "openwidget-script";
@@ -20,7 +18,7 @@ const OpenWidget: React.FC = () => {
     script.defer = true;
     script.src = "https://cdn.openwidget.com/openwidget.js";
     script.onload = () => {
-      (window as any).OpenWidget = (window as any).OpenWidget || {
+      (window as any).OpenWidget ??= {
         _q: [],
         _h: null,
         _v: "2.0",
