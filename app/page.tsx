@@ -63,9 +63,7 @@ export default function Home() {
 							Servidores VPS no Brasil
 							</h1>
 							<p className="text-base leading-8 font-medium">
-								Na Neon Host, oferecemos servidores de hospedagem para todas as
-								demandas, desde pequenos projetos até infraestruturas de grande
-								escala. Adquira já seu servidor VPS conosco!
+							Na Neon Host, fornecemos servidores de hospedagem sob medida para qualquer necessidade, desde pequenos projetos até grandes infraestruturas. Garanta já o seu VPS com a melhor performance e confiabilidade! 🚀
 							</p>
 						</div>
 						<div className="flex items-center gap-4">
