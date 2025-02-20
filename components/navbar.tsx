@@ -295,9 +295,10 @@ export const NavbarComponent = () => {
 								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
 									{[
 										{
-											href: "/anti-ddos",
-											title: "Defesa Contra Ataques",
-											description: "Mantenha seus servidores sempre seguros.",
+											href: "https://status.neonhost.com.br/",
+											// href: "/anti-ddos",
+											title: "Status Rede",
+											description: "Mantenha informado do nosso status de rede.",
 											icon: (
 												<ShieldCheck
 													width={40}
