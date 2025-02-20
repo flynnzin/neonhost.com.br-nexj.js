@@ -4,36 +4,37 @@ const OpenWidget: React.FC = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const ow = (window as any).__ow || {};
-    ow.organizationId = "25ce0692-2b59-4d7d-b682-3d0e74cc5269";
-    ow.integration_name = "manual_settings";
-    ow.product_name = "openwidget";
-    (window as any).__ow = ow;
+    if (!(window as any).__ow) {
+      (window as any).__ow = {
+        organizationId: "25ce0692-2b59-4d7d-b682-3d0e74cc5269",
+        integration_name: "manual_settings",
+        product_name: "openwidget",
+      };
+    }
 
-    if ((window as any).__ow.asyncInit) return;
+    if ((window as any).__ow.asyncInit || document.getElementById("openwidget-script")) return;
 
-    const OpenWidget = (window as any).OpenWidget || {
-      _q: [],
-      _h: null,
-      _v: "2.0",
-      on: (...args: any) => OpenWidget._q.push(["on", args]),
-      once: (...args: any) => OpenWidget._q.push(["once", args]),
-      off: (...args: any) => OpenWidget._q.push(["off", args]),
-      get: (...args: any) => {
-        if (!OpenWidget._h) throw new Error("[OpenWidget] You can't use getters before load.");
-        return OpenWidget._q.push(["get", args]);
-      },
-      call: (...args: any) => OpenWidget._q.push(["call", args]),
-      init: () => {
-        const script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = "https://cdn.openwidget.com/openwidget.js";
-        document.head.appendChild(script);
-      },
+    const script = document.createElement("script");
+    script.id = "openwidget-script";
+    script.async = true;
+    script.defer = true;
+    script.src = "https://cdn.openwidget.com/openwidget.js";
+    script.onload = () => {
+      (window as any).OpenWidget = (window as any).OpenWidget || {
+        _q: [],
+        _h: null,
+        _v: "2.0",
+        on: (...args: any) => (window as any).OpenWidget._q.push(["on", args]),
+        once: (...args: any) => (window as any).OpenWidget._q.push(["once", args]),
+        off: (...args: any) => (window as any).OpenWidget._q.push(["off", args]),
+        get: (...args: any) => {
+          if (!(window as any).OpenWidget._h) throw new Error("[OpenWidget] You can't use getters before load.");
+          return (window as any).OpenWidget._q.push(["get", args]);
+        },
+        call: (...args: any) => (window as any).OpenWidget._q.push(["call", args]),
+      };
     };
-    OpenWidget.init();
-    (window as any).OpenWidget = OpenWidget;
+    document.head.appendChild(script);
   }, []);
 
   return null;
