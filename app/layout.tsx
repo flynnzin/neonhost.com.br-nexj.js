@@ -148,14 +148,14 @@ export const metadata: Metadata = {
 		title: "Hospedagem de Jogos no Brasil | NeonHost",
 		description:
 			"Desempenho superior e segurança com infraestrutura no Brasil. Hospede seus servidores de Minecraft, FiveM e outros jogos com proteção Anti DDoS.",
-		// images: [
-		//     {
-		//         url: "/og-image.jpg",
-		//         width: 1200,
-		//         height: 630,
-		//         alt: "NeonHost - Servidores Dedicados",
-		//     },
-		// ],
+		images: [
+		    {
+		        url: "/og-image.jpg",
+		        width: 1200,
+		        height: 630,
+		        alt: "NeonHost - Servidores Dedicados",
+		    },
+		],
 	},
 	icons: {
 		icon: "/favicon.ico",
