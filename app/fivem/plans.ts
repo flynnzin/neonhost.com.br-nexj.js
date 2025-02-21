@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "VPS Neon - 1",
-		price: "74,90",
+		price: "84,90",
 		link: null,
 		description: {
 			ram: "2GB",
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 2",
-		price: "139,90",
+		price: "126,90",
 		link: null,
 		description: {
 			ram: "4GB",
@@ -35,7 +35,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 3",
-		price: "209,90",
+		price: "198,90",
 		link: null,
 		description: {
 			ram: "6GB",
@@ -46,7 +46,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 4",
-		price: "249,90",
+		price: "246,90",
 		link: null,
 		description: {
 			ram: "8GB",
@@ -57,7 +57,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 5",
-		price: "309,90",
+		price: "289,90",
 		link: null,
 		description: {
 			ram: "10GB",
@@ -68,7 +68,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 6",
-		price: "369,90",
+		price: "362,90",
 		link: null,
 		description: {
 			ram: "12GB",
@@ -79,7 +79,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 7",
-		price: "419,00",
+		price: "429,00",
 		link: null,
 		description: {
 			ram: "16GB",
@@ -90,7 +90,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 8",
-		price: "602,90",
+		price: "557,90",
 		link: null,
 		description: {
 			ram: "20GB",
