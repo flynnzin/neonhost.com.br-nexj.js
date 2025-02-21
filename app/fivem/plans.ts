@@ -17,8 +17,8 @@ export const plans: Plan[] = [
 		link: null,
 		description: {
 			ram: "2GB",
-			ssd: "40GB",
-			cores: "2 vCores",
+			ssd: "45GB",
+			cores: "3 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -29,7 +29,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "4GB",
 			ssd: "50GB",
-			cores: "3 vCores",
+			cores: "5 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -40,7 +40,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "6GB",
 			ssd: "60GB",
-			cores: "4 vCores",
+			cores: "6 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -51,7 +51,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "8GB",
 			ssd: "70GB",
-			cores: "5 vCores",
+			cores: "7 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -62,7 +62,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "10GB",
 			ssd: "80GB",
-			cores: "6 vCores",
+			cores: "8 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -73,7 +73,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "12GB",
 			ssd: "90GB",
-			cores: "7 vCores",
+			cores: "9 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -84,7 +84,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "16GB",
 			ssd: "100GB",
-			cores: "8 vCores",
+			cores: "12 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
@@ -95,7 +95,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "20GB",
 			ssd: "150GB",
-			cores: "12 vCores",
+			cores: "14 vCores",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Cache-Externo","Hospedagem Imagem"],
 		},
 	},
