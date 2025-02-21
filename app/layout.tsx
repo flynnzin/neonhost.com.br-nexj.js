@@ -134,28 +134,28 @@ export const metadata: Metadata = {
 			"Hospedagem de alto desempenho, com baixa latência, infraestrutura no Brasil, armazenamento NVMe e proteção anti-DDoS para jogos como Minecraft, FiveM e muito mais.",
 		url: "https://neonhost.com.br/",
 		siteName: "NeonHost",
-		// images: [
-		//     {
-		//         url: "/og-image.jpg",
-		//         width: 1200,
-		//         height: 630,
-		//         alt: "NeonHost - Servidores Dedicados",
-		//     },
-		// ],
+		images: [
+		    {
+		        url: "/favicon.ico",
+		        width: 1200,
+		        height: 630,
+		        alt: "NeonHost - Servidores Dedicados",
+		    },
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: "Hospedagem de Jogos no Brasil | NeonHost",
 		description:
 			"Desempenho superior e segurança com infraestrutura no Brasil. Hospede seus servidores de Minecraft, FiveM e outros jogos com proteção Anti DDoS.",
-		// images: [
-		//     {
-		//         url: "/og-image.jpg",
-		//         width: 1200,
-		//         height: 630,
-		//         alt: "NeonHost - Servidores Dedicados",
-		//     },
-		// ],
+		images: [
+		    {
+		        url: "/favicon.ico",
+		        width: 1200,
+		        height: 630,
+		        alt: "NeonHost - Servidores Dedicados",
+		    },
+		],
 	},
 	icons: {
 		icon: "/favicon.ico",
