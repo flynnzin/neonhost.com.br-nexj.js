@@ -151,14 +151,14 @@ export const NavbarComponent = () => {
 												description: "Servidor veloz para traders.",
 											},
 											{
-												href: "/protecaoddos",
-												title: "Proteção DDoS",
-												description: "Proteja seu servidor de ataque DDoS.",
-											},
-											{
 												href: "/fivem",
 												title: "VPS Fivem",
 												description: "Hospedagem de FiveM.",
+											},
+											{
+												href: "/protecaoddos",
+												title: "Proteção DDoS",
+												description: "Proteja seu servidor de ataque DDoS.",
 											},
 										].map((item, index) => (
 											<Link href={item.href} key={index}>
