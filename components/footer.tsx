@@ -141,7 +141,7 @@ export const Footer = () => {
 									rel="noopener noreferrer"
 									className="text-pink-500 hover:text-pink-400 transition-colors"
 								>
-									<span className="font-bold">Loctor</span>
+									<span className="font-bold">Loctor/NeonHost</span>
 								</a>
 							</p>
 						</div>
