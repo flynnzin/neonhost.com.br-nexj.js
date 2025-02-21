@@ -20,7 +20,7 @@ export default function VpsGamer() {
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
 							Servidores otimizados para jogos com processadores de última
 							geração, baixa latência e proteção anti-DDoS. Ideal para
-							Minecraft, CS:GO, ARK e muito mais!
+							FiveM, DayZ, Mu Online e muito mais!
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
