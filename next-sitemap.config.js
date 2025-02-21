@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-	siteUrl: "https://neonhost.com.br.app/",
+	siteUrl: "https://neonhost.com.br/",
 	generateRobotsTxt: true,
 };
