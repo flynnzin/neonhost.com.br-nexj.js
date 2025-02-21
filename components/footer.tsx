@@ -11,7 +11,8 @@ export const Footer = () => {
 			title: "Servidores",
 			links: [
 				{ name: "VPS Gamer", url: "/vps-gamer" },
-				// { name: "VPS Trader", url: "/vps-trader" },
+				{ name: "VPS Trader", url: "/vps-trader" },
+				{ name: "VPS Trader", url: "/fivem" },
 				{ name: "Semi-Dedicado", url: "/semi-dedicado" },
 				{ name: "Dedicado", url: "/dedicado" },
 			],
@@ -32,7 +33,7 @@ export const Footer = () => {
 					url: "https://app.neonhost.com.br/submitticket.php?step=2&deptid=1",
 				},
 				{ name: "Discord", url: "https://discord.gg/rGP7prMqF3" },
-				{ name: "Status", url: "/status" },
+				{ name: "Status", url: "https://status.neonhost.com.br/" },
 				{ name: "FAQ", url: "/faq" },
 			],
 		},
