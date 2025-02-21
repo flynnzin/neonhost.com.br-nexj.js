@@ -60,7 +60,7 @@ const plans = [
 	{
 		nome: "AMD Ryzen 7 7700X",
 		frequencia: "4.5GHz até 5.4GHz",
-		disponibilidade: true,
+		disponibilidade: false,
 		preco: 1550.0,
 		nucleos: 8,
 		threads: 16,
@@ -100,7 +100,7 @@ const plans = [
 	{
 		nome: "AMD Ryzen 9 7900X",
 		frequencia: "4.7GHz até 5.6GHz",
-		disponibilidade: true,
+		disponibilidade: false,
 		preco: 1650.0,
 		nucleos: 12,
 		threads: 24,
@@ -140,7 +140,7 @@ const plans = [
 	{
 		nome: "AMD Ryzen 9 5900X",
 		frequencia: "3.7GHz até 4.8GHz",
-		disponibilidade: true,
+		disponibilidade: false,
 		preco: 1200.0,
 		nucleos: 12,
 		threads: 24,
@@ -180,7 +180,7 @@ const plans = [
 	{
 		nome: "AMD Ryzen 7 5800X",
 		frequencia: "3.8GHz até 4.7GHz",
-		disponibilidade: true,
+		disponibilidade: false,
 		preco: 1100.0,
 		nucleos: 8,
 		threads: 16,
