@@ -80,7 +80,7 @@ export default function Home() {
 					</div>
 					<img
 						src="/svgs/Server-rafiki.svg"
-						alt=""
+						alt="Server-rafiki"
 						className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
 						id="features"
 					/>
