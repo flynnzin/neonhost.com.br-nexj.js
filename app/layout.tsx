@@ -137,8 +137,8 @@ export const metadata: Metadata = {
 		images: [
 		    {
 		        url: "/favicon.ico",
-		        width: 1200,
-		        height: 630,
+		        // width: 1200,
+		        // height: 630,
 		        alt: "NeonHost - Servidores Dedicados",
 		    },
 		],
@@ -151,8 +151,8 @@ export const metadata: Metadata = {
 		images: [
 		    {
 		        url: "/favicon.ico",
-		        width: 1200,
-		        height: 630,
+		        // width: 1200,
+		        // height: 630,
 		        alt: "NeonHost - Servidores Dedicados",
 		    },
 		],
