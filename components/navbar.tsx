@@ -125,7 +125,7 @@ export const NavbarComponent = () => {
 							<div className="w-full p-5">
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 									<Link href="/vps-gamer">
-										<div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-64 rounded-lg">
+										<div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-69 rounded-lg">
 											<div className="absolute bottom-0 left-0 right-0 p-4">
 												<Image
 													src="/android-chrome-512x512.webp"
