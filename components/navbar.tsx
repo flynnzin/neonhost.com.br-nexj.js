@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
+import { Analytics } from "@vercel/analytics/react"
 import {
 	Navbar,
 	NavbarBrand,
