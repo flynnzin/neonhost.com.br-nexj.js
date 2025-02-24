@@ -135,14 +135,14 @@ export const Footer = () => {
 								reservados.
 							</p>
 							<p className="text-sm text-gray-400 mt-4 md:mt-0">
-								Desenvolvido por{" "}
-								<a
+								CNPJ:
+								{/* <a
 									href="https://loctor.dev"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="text-pink-500 hover:text-pink-400 transition-colors"
-								>
-									<span className="font-bold">Loctor/NeonHost</span>
+								> */}
+									<span className="font-bold">59.630.804/0001-17</span>
 								</a>
 							</p>
 						</div>
