@@ -774,10 +774,10 @@ const PromoBanner = () => {
 	};
 
 	return (
-		<div className="bg-primary-purple text-white py-1 sm:py-1 w-full fixed top-0 left-0 z-[62]">
+		<div className="bg-primary-purple text-white py-1 sm:py-1 w-full fixed top-0 left-0 z-[62]" style={{ marginTop: '20px' }}>
 			<div className="container max-w-screen-2xl mx-auto px-4">
 				<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
-					<span className="flex gap-2 items-center text-center" style={{ lineHeight: 'calc(1.2em - 10px)' }}>
+					<span className="flex gap-2 items-center text-center">
 						<motion.svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="25"
