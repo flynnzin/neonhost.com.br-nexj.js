@@ -197,19 +197,3 @@ export default async function RootLayout({
 		</html>
 	);
 }
-
-import { useEffect } from "react";
-import type { AppProps } from "next/app";
-
-function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/chatwoot.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
-  return <Component {...pageProps} />;
-}
-
-export default MyApp;
