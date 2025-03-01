@@ -373,6 +373,111 @@ export const NavbarComponent = () => {
 						</PopoverContent>
 					</Popover>
 				</NavbarItem>
+				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+					<Popover
+						placement="bottom"
+						offset={20}
+						showArrow
+						isOpen={activePopover === "empresa"}
+					>
+						<PopoverTrigger>
+							<Button
+								className="p-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300"
+								radius="sm"
+								variant="light"
+								endContent={
+									activePopover === "empresa" ? (
+										<BiChevronUp />
+									) : (
+										<BiChevronDown />
+									)
+								}
+								onMouseEnter={() => handlePopover("empresa")}
+							>
+								Empresa
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent
+							className="w-[700px] p-0"
+							onMouseEnter={() => clearTimeout(popoverTimeout!)}
+							onMouseLeave={closePopoverWithDelay}
+						>
+							<div className="w-full p-5">
+								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+									{[
+										{
+											href: "https://status.neonhost.com.br/",
+											// href: "/anti-ddos",
+											title: "Status Rede",
+											description: "Mantenha informado do nosso status de rede.",
+											icon: (
+												<ShieldCheck
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://app.neonhost.com.br/login",
+											title: "Área do Cliente",
+											description: "Acesse sua conta e gerencie seus serviços.",
+											icon: (
+												<GlobeLock
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://game.neonhost.com.br",
+											title: "Painel Administrativo",
+											description:
+												"Controle total dos seus servidores e jogos.",
+											icon: (
+												<Gamepad2
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+										{
+											href: "https://drive.google.com/file/d/1u89J-ACHVAsE8nTUwe9zWOaw06Eaqo16/view",
+											title: "Regras e Diretrizes",
+											description:
+												"Conheça nossas políticas e evite problemas.",
+											icon: (
+												<Handshake
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
+									].map((item, index) => (
+										<Link href={item.href} key={index}>
+											<div className="bg-[#151515] hover:bg-[#303030] p-5 rounded-lg flex items-center h-18 h-full">
+												<div className="mr-3">{item.icon}</div>
+												<div>
+													<h3 className="text-sm font-bold">{item.title}</h3>
+													<p className="text-sm text-gray-400">
+														{item.description}
+													</p>
+												</div>
+											</div>
+										</Link>
+									))}
+								</div>
+							</div>
+						</PopoverContent>
+					</Popover>
+				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent>
 				<NavbarMenuToggle

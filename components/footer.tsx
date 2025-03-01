@@ -45,14 +45,7 @@ export const Footer = () => {
 				{ name: "Política de Privacidade", url: "/privacidade" },
 			],
 		},
-		{
-			title: "Outros",
-			links: [
-				{ name: "Sobre Nós", url: "/sobre" },
-				{ name: "Termos de Serviço", url: "/termos" },
-				{ name: "Política de Privacidade", url: "/privacidade" },
-			],
-		},
+		
 	];
 	return (
 		<>
