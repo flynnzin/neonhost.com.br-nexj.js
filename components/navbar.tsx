@@ -780,8 +780,8 @@ const PromoBanner = () => {
 					<span className="flex gap-2 items-center text-center">
 						<motion.svg
 							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
+							width="25"
+							height="25"
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
