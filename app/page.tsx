@@ -58,17 +58,23 @@ export default function Home() {
 			{/* <LoadingScreen /> */}
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
 			<motion.div
-				initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
-				whileInView={{ opacity: 1, y: 0 }} // Aparece suavemente
-				transition={{ duration: 1.2, ease: "easeOut" }} // Tempo da animação
-				viewport={{ once: true }} // Apenas uma vez quando aparecer na tela
+				initial={{ opacity: 0, y: 100 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1.2, ease: "easeOut" }}
+				viewport={{ once: true }}
 				className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center"
 			>
 				<div className="max-w-7xl mx-auto">
 					<div className="mb-6 flex flex-col">
-						<h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+						<motion.h1
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 1.5, ease: "easeOut" }}
+							viewport={{ once: true }}
+							className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r animate-rgb"
+						>
 							Servidores VPS no Brasil
-						</h1>
+						</motion.h1>
 						<p className="text-base leading-8 font-medium">
 							Na Neon Host, fornecemos servidores de hospedagem sob medida para qualquer necessidade, desde pequenos projetos até grandes infraestruturas. Garanta já o seu VPS com a melhor performance e confiabilidade! 🚀
 						</p>
