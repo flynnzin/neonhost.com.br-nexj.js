@@ -132,15 +132,7 @@ export const NavbarComponent = () => {
 			onMenuOpenChange={setIsMenuOpen}
 			
 		>
-							<div className="h-[40px] sm:h-[50px]" /> {/* Espaço para o banner */}
-
-<Navbar className="bg-background-dark/30 backdrop-blur-md fixed w-full top-0 z-[61]" maxWidth="2xl">
-	<NavbarContent justify="start">
-		<NavbarItem>
-			<p className="text-white">Navbar Aqui</p>
-		</NavbarItem>
-	</NavbarContent>
-</Navbar>
+			
 			<NavbarContent
 				className="hidden sm:flex gap-4 items-center justify-start"
 				justify="start"
