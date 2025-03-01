@@ -2,7 +2,6 @@
 
 import { Button } from "@nextui-org/button";
 import { Analytics } from "@vercel/analytics/react"
-import { Box } from 'lucide-react';
 import {
 	Navbar,
 	NavbarBrand,
@@ -16,8 +15,10 @@ import {
 	Gamepad2,
 	GlobeLock,
 	Handshake,
+	Cloud,
 	LayoutGrid,
 	ShieldCheck,
+	Box,
 } from "lucide-react";
 import Image from "next/image";
 import { default as Link, default as NextLink } from "next/link";
@@ -118,7 +119,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("servers")}
 							>
-								Servidores
+							<Box />	Servidores
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
@@ -215,7 +216,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("games")}
 							>
-								Jogos
+							<Gamepad2 />	Jogos
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
@@ -296,7 +297,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("hospedagem")}
 							>
-							<Box />	Hospedagem
+						<Cloud />	Hospedagem
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
