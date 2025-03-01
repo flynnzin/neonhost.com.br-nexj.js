@@ -17,6 +17,7 @@ import {
 	Handshake,
 	Cloud,
 	Globe,
+	Copy,
 	LayoutGrid,
 	ShieldCheck,
 	ChartNetwork,
