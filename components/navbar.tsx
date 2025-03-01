@@ -94,7 +94,7 @@ export const NavbarComponent = () => {
 						</p>
 					</NextLink>
 				</NavbarItem>
-				
+
 				{/* Servidores */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
@@ -274,7 +274,7 @@ export const NavbarComponent = () => {
 				</NavbarItem>
 
 				{/* Hospedagem */}
-				{/* <NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
 						offset={20}
@@ -307,7 +307,7 @@ export const NavbarComponent = () => {
 								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
 									{[
 										{
-											href: "/NodeJS",
+											href: "/games/NodeJS",
 											// href: "/anti-ddos",
 											title: "Hospedagem NodeJS",
 											description: "Mantenha informado do nosso status de rede.",
@@ -350,7 +350,7 @@ export const NavbarComponent = () => {
 							</div>
 						</PopoverContent>
 					</Popover>
-				</NavbarItem> */}
+				</NavbarItem>
 
 				{/* Empresa */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
