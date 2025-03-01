@@ -154,7 +154,16 @@ export const NavbarComponent = () => {
 						</p>
 					</NextLink>
 				</NavbarItem>
+				<PromoBanner />
+	<div className="h-[40px] sm:h-[50px]" /> {/* Espaço para o banner */}
 
+	<Navbar className="bg-background-dark/30 backdrop-blur-md fixed w-full top-0 z-[61]" maxWidth="2xl">
+		<NavbarContent justify="start">
+			<NavbarItem>
+				<p className="text-white">Navbar Aqui</p>
+			</NavbarItem>
+		</NavbarContent>
+	</Navbar>
 				{/* Servidores */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
