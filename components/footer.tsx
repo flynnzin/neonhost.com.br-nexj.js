@@ -40,6 +40,8 @@ export const Footer = () => {
 		{
 			title: "Empresa",
 			links: [
+				{ name: "Área do Cliente", url: "https://app.neonhost.com.br/login" },
+				{ name: "Status Rede", url: "https://status.neonhost.com.br/" },
 				{ name: "Sobre Nós", url: "/sobre" },
 				{ name: "Termos de Serviço", url: "/termos" },
 				{ name: "Política de Privacidade", url: "/privacidade" },
