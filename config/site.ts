@@ -9,9 +9,5 @@ export const siteConfig = {
 			label: "Inicio",
 			href: "/",
 		},
-		{
-			label: "Teste",
-			href: "/",
-		},
 	],
 };
