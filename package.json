@@ -2,12 +2,12 @@
 	"name": "loctor-neonhost",
 	"version": "1.0.0",
 	"author": {
-		"name": "Lucas Germano",
-		"email": "danielucas@gmail.com",
-		"url": "https://github.com/lucasgermanx"
+		"name": "Flynnzito",
+		"email": "contato@neonhost.com.br",
+		"url": "https://github.com/flynnzin"
 	},
 	"repository": {
-		"url": "https://github.com/lucasgermanx/neonhost"
+		"url": "https://github.com/flynnzin/neonhost.com.br-nexj.js"
 	},
 	"private": true,
 	"scripts": {
