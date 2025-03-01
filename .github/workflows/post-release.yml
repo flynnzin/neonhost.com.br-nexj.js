@@ -1,0 +1,31 @@
+name: Post release
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          check-latest: true
+
+      - name: Install Dependency
+        run: npm i -g semantic-release @semantic-release/changelog @semantic-release/git @saithodev/semantic-release-backmerge @semantic-release/github @semantic-release/commit-analyzer @semantic-release/exec
+
+      - name: Version and Github Release
+        id: semantic_release_info
+        run: npx semantic-release --debug --verbose
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
