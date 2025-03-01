@@ -36,7 +36,7 @@ export const plans: Plan[] = [
 	{
 		name: "AMD Ryzen 3",
 		price: "593,90",
-		link: null,
+		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicada-3",
 		description: {
 			ram: "32GB",
 			ssd: "250GB",
@@ -47,7 +47,7 @@ export const plans: Plan[] = [
 	{
 		name: "AMD Ryzen 4",
 		price: "669,90",
-		link: null,
+		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicada-4",
 		description: {
 			ram: "64GB",
 			ssd: "350GB",
