@@ -327,7 +327,7 @@ export const NavbarComponent = () => {
 										{
 											href: "/Sites",
 											title: "Hospedagem de Sites",
-											description: "Acesse sua conta e gerencie seus serviços.",
+											description: "Hospede seus Sites com CyberPanel.",
 											icon: (
 												<GlobeLock
 													width={40}
