@@ -307,10 +307,10 @@ export const NavbarComponent = () => {
 								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
 									{[
 										{
-											href: "/games/NodeJS",
+											href: "/hospedagem/NodeJS",
 											// href: "/anti-ddos",
 											title: "Hospedagem NodeJS",
-											description: "Mantenha informado do nosso status de rede.",
+											description: "Hospede seus aplicativos.",
 											icon: (
 												<ShieldCheck
 													width={40}
