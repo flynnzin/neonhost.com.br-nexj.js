@@ -324,19 +324,19 @@ export const NavbarComponent = () => {
 												/>
 											),
 										},
-										// {
-										// 	href: "/Sites",
-										// 	title: "Hospedagem de Sites",
-										// 	description: "Acesse sua conta e gerencie seus serviços.",
-										// 	icon: (
-										// 		<GlobeLock
-										// 			width={40}
-										// 			height={40}
-										// 			color="#fff"
-										// 			className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
-										// 		/>
-										// 	),
-										// },
+										{
+											href: "/Sites",
+											title: "Hospedagem de Sites",
+											description: "Acesse sua conta e gerencie seus serviços.",
+											icon: (
+												<GlobeLock
+													width={40}
+													height={40}
+													color="#fff"
+													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+												/>
+											),
+										},
 									].map((item, index) => (
 										<Link href={item.href} key={index}>
 											<div className="bg-[#151515] hover:bg-[#303030] p-5 rounded-lg flex items-center h-18 h-full">
