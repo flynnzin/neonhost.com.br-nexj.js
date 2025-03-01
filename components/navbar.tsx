@@ -16,6 +16,7 @@ import {
 	GlobeLock,
 	Handshake,
 	Cloud,
+	Globe,
 	LayoutGrid,
 	ShieldCheck,
 	Box,
@@ -376,7 +377,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("empresa")}
 							>
-								Empresa
+							<Globe /> Empresa
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
