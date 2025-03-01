@@ -2,6 +2,7 @@
 
 import { Button } from "@nextui-org/button";
 import { Analytics } from "@vercel/analytics/react"
+import { Box } from 'lucide-react';
 import {
 	Navbar,
 	NavbarBrand,
@@ -295,7 +296,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("hospedagem")}
 							>
-								Hospedagem
+							<Box />	Hospedagem
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
