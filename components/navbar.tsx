@@ -774,7 +774,7 @@ const PromoBanner = () => {
 	};
 
 	return (
-		<div className="bg-primary-purple text-white py-1.5 sm:py-2 w-full fixed top-0 left-0 z-[62]">
+		<div className="bg-primary-purple text-white py-[8px] sm:py-[8px] w-full fixed top-0 left-0 z-[62]">
 			<div className="container max-w-screen-2xl mx-auto px-4">
 				<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
 					<span className="flex gap-2 items-center text-center">
