@@ -378,7 +378,7 @@ export const NavbarComponent = () => {
 						placement="bottom"
 						offset={20}
 						showArrow
-						isOpen={activePopover === "empresa"}
+						isOpen={activePopover === "outros"}
 					>
 						<PopoverTrigger>
 							<Button
@@ -386,15 +386,15 @@ export const NavbarComponent = () => {
 								radius="sm"
 								variant="light"
 								endContent={
-									activePopover === "empresa" ? (
+									activePopover === "outros" ? (
 										<BiChevronUp />
 									) : (
 										<BiChevronDown />
 									)
 								}
-								onMouseEnter={() => handlePopover("empresa")}
+								onMouseEnter={() => handlePopover("outros")}
 							>
-								Empresa
+								Outros
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
