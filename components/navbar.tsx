@@ -130,11 +130,22 @@ export const NavbarComponent = () => {
 			maxWidth={"2xl"}
 			position="static"
 			onMenuOpenChange={setIsMenuOpen}
+			
 		>
+							<div className="h-[40px] sm:h-[50px]" /> {/* Espaço para o banner */}
+
+<Navbar className="bg-background-dark/30 backdrop-blur-md fixed w-full top-0 z-[61]" maxWidth="2xl">
+	<NavbarContent justify="start">
+		<NavbarItem>
+			<p className="text-white">Navbar Aqui</p>
+		</NavbarItem>
+	</NavbarContent>
+</Navbar>
 			<NavbarContent
 				className="hidden sm:flex gap-4 items-center justify-start"
 				justify="start"
 			>
+				
 				<NavbarItem key="01" className="mt-4">
 					<NextLink className="flex justify-start items-center gap-1" href="/">
 						<Image
@@ -146,15 +157,7 @@ export const NavbarComponent = () => {
 						/>
 					</NextLink>
 				</NavbarItem>
-				<div className="h-[40px] sm:h-[50px]" /> {/* Espaço para o banner */}
 
-<Navbar className="bg-background-dark/30 backdrop-blur-md fixed w-full top-0 z-[61]" maxWidth="2xl">
-	<NavbarContent justify="start">
-		<NavbarItem>
-			<p className="text-white">Navbar Aqui</p>
-		</NavbarItem>
-	</NavbarContent>
-</Navbar>
 				<NavbarItem key="01" className="mt-4">
 					<NextLink href="/" className="p-0">
 						<p className="p-0 m-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300">
