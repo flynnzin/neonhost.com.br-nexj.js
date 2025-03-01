@@ -32,55 +32,55 @@ import { motion } from "framer-motion";
 const PromoBanner = () => {
 	const [copied, setCopied] = useState(false);
 	const promoCode = "05OFF2025";
-  
+
 	const handleCopy = () => {
-	  navigator.clipboard.writeText(promoCode);
-	  setCopied(true);
-	  setTimeout(() => setCopied(false), 2000);
+		navigator.clipboard.writeText(promoCode);
+		setCopied(true);
+		setTimeout(() => setCopied(false), 2000);
 	};
-  
+
 	return (
-	  <div className="bg-primary-purple text-white py-1.5 sm:py-2 w-full z-[61]">
-		<div className="container max-w-screen-2xl mx-auto px-4">
-		  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
-			<span className="flex gap-2 items-center text-center">
-			  <motion.svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="2"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				className="lucide lucide-cloud hidden md:block"
-				animate={{ opacity: [0.4, 1, 0.4] }}
-				transition={{ repeat: Infinity, duration: 1.5 }}
-			  >
-				<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-			  </motion.svg>
-			  Oferta por tempo limitado: 5% de desconto em todos os novos planos VPS!
-			</span>
-			<div className="flex items-center gap-1 sm:gap-2">
-			  <code className="bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">
-				{promoCode}
-			  </code>
-			  <button
-				className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-all duration-200 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm"
-				onClick={handleCopy}
-			  >
-				<Copy className="sm:w-3.5 sm:h-3.5" />
-				<span>{copied ? "Copiado!" : "Copiar"}</span>
-			  </button>
+		<div className="bg-primary-purple text-white py-1.5 sm:py-2 w-full fixed top-0 left-0 z-[62]">
+			<div className="container max-w-screen-2xl mx-auto px-4">
+				<div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
+					<span className="flex gap-2 items-center text-center">
+						<motion.svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							className="lucide lucide-cloud hidden md:block"
+							animate={{ opacity: [0.4, 1, 0.4] }}
+							transition={{ repeat: Infinity, duration: 1.5 }}
+						>
+							<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+						</motion.svg>
+						Oferta por tempo limitado: 5% de desconto em todos os novos planos VPS!
+					</span>
+					<div className="flex items-center gap-1 sm:gap-2">
+						<code className="bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">
+							{promoCode}
+						</code>
+						<button
+							className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-all duration-200 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm"
+							onClick={handleCopy}
+						>
+							<Copy className="sm:w-3.5 sm:h-3.5" />
+							<span>{copied ? "Copiado!" : "Copiar"}</span>
+						</button>
+					</div>
+				</div>
 			</div>
-		  </div>
 		</div>
-	  </div>
 	);
-  };
-  
-  export default PromoBanner;
+};
+
+export default PromoBanner;
 
 export const NavbarComponent = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
