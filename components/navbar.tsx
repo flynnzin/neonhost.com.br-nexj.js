@@ -94,6 +94,7 @@ export const NavbarComponent = () => {
 						</p>
 					</NextLink>
 				</NavbarItem>
+				{/* Servidores */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
@@ -189,6 +190,7 @@ export const NavbarComponent = () => {
 						</PopoverContent>
 					</Popover>
 				</NavbarItem>
+				{/* Jogos */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
@@ -268,6 +270,7 @@ export const NavbarComponent = () => {
 						</PopoverContent>
 					</Popover>
 				</NavbarItem>
+				{/* Empresa */}
 				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
@@ -373,7 +376,8 @@ export const NavbarComponent = () => {
 						</PopoverContent>
 					</Popover>
 				</NavbarItem>
-				<NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
+				{/* Menu Outros */}
+				{/* <NavbarItem className="mt-4" onMouseLeave={closePopoverWithDelay}>
 					<Popover
 						placement="bottom"
 						offset={20}
@@ -477,7 +481,7 @@ export const NavbarComponent = () => {
 							</div>
 						</PopoverContent>
 					</Popover>
-				</NavbarItem>
+				</NavbarItem> */}
 			</NavbarContent>
 			<NavbarContent>
 				<NavbarMenuToggle
