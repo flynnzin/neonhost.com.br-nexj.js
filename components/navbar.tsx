@@ -21,6 +21,7 @@ import {
 	LayoutGrid,
 	ShieldCheck,
 	ChartNetwork,
+	TicketPercent,
 	Box,
 } from "lucide-react";
 import Image from "next/image";
@@ -812,7 +813,7 @@ const PromoBanner = () => {
 				strokeWidth="2"
 				strokeLinecap="round"
 				strokeLinejoin="round"
-				className="lucide lucide-cloud hidden md:block"
+				className="lucide lucide-ticket-percent hidden md:block"
 				animate={{ opacity: [0.4, 1, 0.4] }}
 				transition={{ repeat: Infinity, duration: 1.5 }}
 			  >
