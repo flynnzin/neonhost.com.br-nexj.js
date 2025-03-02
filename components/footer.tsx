@@ -43,7 +43,7 @@ export const Footer = () => {
 				{ name: "Área do Cliente", url: "https://app.neonhost.com.br/login" },
 				{ name: "Status Rede", url: "https://status.neonhost.com.br/" },
 				{ name: "Sobre Nós", url: "/sobre" },
-				{ name: "Termos de Serviço", url: "/termos" },
+				{ name: "Termos de Serviço", url: "/termos/Termos-NeonHost.pdf" },
 				{ name: "Política de Privacidade", url: "/privacidade" },
 			],
 		},
