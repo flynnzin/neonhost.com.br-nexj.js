@@ -44,7 +44,6 @@ export const Footer = () => {
 				{ name: "Status Rede", url: "https://status.neonhost.com.br/" },
 				{ name: "Sobre Nós", url: "/sobre" },
 				{ name: "Termos de Serviço", url: "https://cdn.neonhost.com.br/neonhostinger/Termos-NeonHost.pdf" },
-				{ name: "Política de Privacidade", url: "/privacidade" },
 			],
 		},
 		
