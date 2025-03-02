@@ -300,9 +300,12 @@ export default function Home() {
 							Junte-se a milhares de clientes satisfeitos e experimente o poder
 							da Anfitrião de Neon Host
 						</p>
-						<Button className="bg-white text-gray-950 hover:bg-white/90 font-bold px-10">
-							Implante seu servidor agora
-						</Button>
+						<Button
+								className="bg-white text-gray-950 hover:bg-white/90 font-bold px-10"
+								onClick={() => window.location.href = "https://app.neonhost.com.br/"}
+							>
+								Implante seu servidor agora
+							</Button>
 					</div>
 				</div>
 			</section>
