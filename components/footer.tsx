@@ -12,7 +12,7 @@ export const Footer = () => {
 			links: [
 				{ name: "VPS Gamer", url: "/vps-gamer" },
 				{ name: "VPS Trader", url: "/vps-trader" },
-				{ name: "VPS Trader", url: "/fivem" },
+				{ name: "VPS FiveM", url: "/fivem" },
 				{ name: "Semi-Dedicado", url: "/semi-dedicado" },
 				{ name: "Dedicado", url: "/dedicado" },
 			],
