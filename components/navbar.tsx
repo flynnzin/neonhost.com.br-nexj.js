@@ -698,7 +698,7 @@ export const NavbarComponent = () => {
 											),
 										},
 										{
-											href: "https://drive.google.com/file/d/1u89J-ACHVAsE8nTUwe9zWOaw06Eaqo16/view",
+											href: "https://cdn.neonhost.com.br/neonhostinger/Termos-NeonHost.pdf",
 											title: "Regras e Diretrizes",
 											description:
 												"Conheça nossas políticas e evite problemas.",
