@@ -57,47 +57,91 @@ export default function Home() {
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
 			{/* <LoadingScreen /> */}
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
-			<motion.div
-				initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
-				whileInView={{ opacity: 1, y: 0 }} // Aparece suavemente
-				transition={{ duration: 1.2, ease: "easeOut" }} // Tempo da animação
-				viewport={{ once: true }} // Apenas uma vez quando aparecer na tela
-				className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center"
-			>
-				<div className="max-w-7xl mx-auto">
-					<div className="mb-6 flex flex-col">
-						<h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-							Servidores VPS no Brasil
-						</h1>
-						<p className="text-base leading-8 font-medium">
-							Na Neon Host, fornecemos servidores de hospedagem sob medida para qualquer necessidade, desde pequenos projetos até grandes infraestruturas. Garanta já o seu VPS com a melhor performance e confiabilidade! 🚀
-						</p>
+				<motion.div
+					initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
+					whileInView={{ opacity: 1, y: 0 }} // Aparece suavemente
+					transition={{ duration: 1.2, ease: "easeOut" }} // Tempo da animação
+					viewport={{ once: true }} // Apenas uma vez quando aparecer na tela
+					className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center"
+				>
+					<div className="max-w-7xl mx-auto">
+						<div className="mb-6 flex flex-col">
+							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
+								Servidores VPS no Brasil
+							</h1>
+							<p className="text-base leading-8 font-medium">
+								Na Neon Host, fornecemos servidores de hospedagem sob medida para qualquer necessidade, desde pequenos projetos até grandes infraestruturas. Garanta já o seu VPS com a melhor performance e confiabilidade! 🚀
+							</p>
+						</div>
+						<div className="flex items-center gap-4">
+							<a href="#plans">
+								<Button
+									variant="solid"
+									size="lg"
+									className="text-sm font-normal bg-accent-primary/70 hover:bg-accent-primary border-0 text-white rounded-md px-8"
+								>
+									Saber Mais
+								</Button>
+							</a>
+						</div>
 					</div>
-					<div className="flex items-center gap-4">
-						<a href="#plans">
-							<Button
-								variant="solid"
-								size="lg"
-								className="text-sm font-normal bg-accent-primary/70 hover:bg-accent-primary border-0 text-white rounded-md px-8"
-							>
-								Saber Mais
-							</Button>
-						</a>
-					</div>
-				</div>
 
-				<motion.img
-					initial={{ opacity: 0, scale: 0.8 }}
-					whileInView={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 1.2, delay: 0.4 }}
-					viewport={{ once: true }}
-					src="/svgs/Server-rafiki.svg"
-					alt="Server-rafiki"
-					className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
-					id="features"
-				/>
-			</motion.div>
-		</section>
+					<motion.img
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 1.2, delay: 0.4 }}
+						viewport={{ once: true }}
+						src="/svgs/Server-rafiki.svg"
+						alt="Server-rafiki"
+						className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
+						id="features"
+					/>
+				</motion.div>
+			</section>
+
+			<style jsx>{`
+  @keyframes animate-gradient {
+    to {
+      background-position: 200%;
+    }
+  }
+
+  .animate-gradient-text {
+    background: linear-gradient(
+      to right,
+      #b3429a,
+      #8619f5,
+      #b3429a
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 3.5s linear infinite;
+  }
+`}</style>
+
+						{/* <style jsx>{`
+				@keyframes gradientText {
+					0% {
+						background-position: 100% 0;
+					}
+					50% {
+						background-position: 0 100%;
+					}
+					100% {
+						background-position: 100% 0;
+					}
+				}
+
+				.animate-gradient-text {
+					background: linear-gradient(45deg, #b3429a, #8619f5, #fe8601);
+					background-size: 300% 300%;
+					-webkit-background-clip: text;
+					color: transparent;
+					animation: gradientText 3s ease infinite;
+				}
+			`}</style> */}
 
 
 			<section className="pt-[15%]">
