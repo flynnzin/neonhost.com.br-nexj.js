@@ -93,7 +93,7 @@ export const NavbarComponent = () => {
 							alt="logo"
 							height="150"
 							width="150"
-							className="h-full min-w-28 lg:min-w-48"
+							className="h-full min-w-55 lg:min-w-55"
 						/>
 					</NextLink>
 				</NavbarItem>
