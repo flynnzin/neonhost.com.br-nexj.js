@@ -821,7 +821,7 @@ const PromoBanner = () => {
 							<path d="m15 9-6 6" />
 							<path d="M15 15h.01" />
 						</svg>
-						Oferta por tempo limitado: 5% de desconto em todos os novos planos VPS!
+						Oferta por tempo limitado: 15% de desconto em todos os novos planos VPS!
 					</span>
 					<div className="flex items-center gap-1 sm:gap-2">
 						<code className="bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">
