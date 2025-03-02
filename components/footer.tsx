@@ -34,7 +34,7 @@ export const Footer = () => {
 				},
 				{ name: "Discord", url: "https://discord.gg/rGP7prMqF3" },
 				{ name: "Status", url: "https://status.neonhost.com.br/" },
-				{ name: "FAQ", url: "/faq" },
+				{ name: "FAQ", url: "https://help.neonhost.com.br/" },
 			],
 		},
 		{
