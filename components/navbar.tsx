@@ -765,7 +765,7 @@ export const NavbarComponent = () => {
 const PromoBanner = () => {
 	const [copied, setCopied] = useState(false);
 	const [showBanner, setShowBanner] = useState(true); // Estado para controlar a visibilidade
-	const promoCode = "05OFF2025";
+	const promoCode = "15OFF2025";
   
 	const handleCopy = () => {
 	  navigator.clipboard.writeText(promoCode);
