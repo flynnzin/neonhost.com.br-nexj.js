@@ -383,7 +383,7 @@ export default function Home() {
 								size="md"
 								variant="ghost"
 							>
-								Iniciar chat
+								Iniciar Suporte
 							</Button>
 						</Link>
 					</Card>
