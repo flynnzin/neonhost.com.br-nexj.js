@@ -30,13 +30,13 @@ const plans = [
 		price: "69.90",
 		link: "/vps-gamer",
 	},
-	{
-		icon: <CircleCheckBig className="w-8 h-8 text-pink-500" />,
-		title: "VPS Trader",
-		description: "Servidores para trader com tráfego mensal ilimitado",
-		price: "74.90",
-		link: "/vps-trader",
-	},
+	// {
+	// 	icon: <CircleCheckBig className="w-8 h-8 text-pink-500" />,
+	// 	title: "VPS Trader",
+	// 	description: "Servidores para trader com tráfego mensal ilimitado",
+	// 	price: "74.90",
+	// 	link: "/vps-trader",
+	// },
 	{
 		icon: <Server className="w-8 h-8 text-pink-500" />,
 		title: "Semi-Dedicados",

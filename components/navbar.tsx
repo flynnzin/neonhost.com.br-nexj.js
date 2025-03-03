@@ -159,11 +159,11 @@ export const NavbarComponent = () => {
 												title: "Semi Dedicado",
 												description: "Servidores custo-benefício único.",
 											},
-											{
-												href: "/vps-trader",
-												title: "VPS Trader",
-												description: "Servidor veloz para traders.",
-											},
+											// {
+											// 	href: "/vps-trader",
+											// 	title: "VPS Trader",
+											// 	description: "Servidor veloz para traders.",
+											// },
 											{
 												href: "/fivem",
 												title: "VPS Fivem",
