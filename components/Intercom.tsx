@@ -16,8 +16,8 @@ const Intercom: React.FC<IntercomProps> = ({ user }) => {
       window.Intercom('boot', {
         app_id: 'wo0haiuj', // Substitua com seu app_id do Intercom
         user_id: user.id,
-        name: user.name,
-        email: user.email,
+        name: "Leonardo",
+        email: "leonardofts593@gmail.com",
         created_at: user.createdAt, // Unix timestamp
       });
     }
