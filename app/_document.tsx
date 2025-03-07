@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          {/* Google Tag Manager (GTM) no Head */}
+          {/* Google Tag Manager (GTM) no <head> */}
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -21,13 +21,13 @@ class MyDocument extends Document {
                   j.async = true;
                   j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                   f.parentNode.insertBefore(j, f);
-                })(window, document, 'script', 'dataLayer', 'GTM-NLK4RWTG');
+                })(window,document,'script','dataLayer','GTM-NLK4RWTG');
               `,
             }}
           />
         </Head>
         <body>
-          {/* Google Tag Manager (noscript) - Fallback para quando o JavaScript está desabilitado */}
+          {/* Google Tag Manager (noscript) no <body> */}
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-NLK4RWTG"
@@ -37,7 +37,6 @@ class MyDocument extends Document {
             ></iframe>
           </noscript>
 
-          {/* Renderização principal da página */}
           <Main />
           <NextScript />
         </body>
