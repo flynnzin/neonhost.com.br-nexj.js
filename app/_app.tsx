@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import ReactGtm from 'react-gtm-module';
+const ReactGtm = require('react-gtm-module');
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
