@@ -409,7 +409,7 @@ export default function Home() {
 							mais detalhado. Nossa equipe está pronta para te ajudar a resolver
 							qualquer desafio técnico.
 						</p>
-						<Intercom user={user} />
+						<Intercom/>
 						<Link
 							href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
 							target="_blank"
