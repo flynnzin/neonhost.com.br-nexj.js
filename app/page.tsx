@@ -25,27 +25,12 @@ import Link from "next/link";
 import React from 'react';
 
 
-// Exemplo de como utilizar o componente Intercom com dados do usuário
-import Intercom from '../components/Intercom';
 
-const HomePage: React.FC = () => {
-  const user = {
-    id: '12345', // ID do usuário
-    name: 'Leonardo', // Nome do usuário
-    email: 'leonardofts593@gmail.com', // Email do usuário
-    createdAt: 1617753600, // Unix timestamp do momento de criação (exemplo)
-  };
+import Intercom from '@intercom/messenger-js-sdk';
 
-  return (
-    <div>
-      <h1>Bem-vindo à Home Page</h1>
-      <Intercom user={user} />
-    </div>
-  );
-};
-
-export default HomePage;
-
+Intercom({
+  app_id: 'wo0haiuj',
+});
 
 
 
@@ -430,6 +415,9 @@ export default function Home() {
 							qualquer desafio técnico.
 						</p>
 						
+
+						
+
 						<Link
 							href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
 							target="_blank"
