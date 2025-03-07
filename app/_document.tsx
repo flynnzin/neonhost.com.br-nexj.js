@@ -1,4 +1,3 @@
-// pages/_document.tsx
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
@@ -6,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          {/* Google Tag Manager (GTM) no Head - Carregamento assíncrono */}
+          {/* Google Tag Manager (GTM) no Head */}
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -28,7 +27,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          {/* Google Tag Manager no Body - Fallback para quando o JavaScript está desabilitado */}
+          {/* Google Tag Manager (noscript) - Fallback para quando o JavaScript está desabilitado */}
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-NLK4RWTG"
@@ -38,6 +37,7 @@ class MyDocument extends Document {
             ></iframe>
           </noscript>
 
+          {/* Renderização principal da página */}
           <Main />
           <NextScript />
         </body>
