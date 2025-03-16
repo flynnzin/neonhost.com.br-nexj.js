@@ -52,12 +52,12 @@ export default function ComparisonTable() {
 const specifications = [
 	{
 		label: "RAM",
-		gamer: "DDR4 3200 Mhz",
-		intel: "DDR5/DDR4 5000/3200 Mhz",
+		gamer: "DDR5/DDR4 5000/3200 Mhz",
+		intel: "DDR3 2200 Mhz",
 	},
 	{
 		label: "CPU",
-		gamer: "Ryzen 9 50xx",
+		gamer: "Ryzen 9 50xx / Ryzen 7 7700X",
 		intel: "CORE/EPYC",
 	},
 	{
