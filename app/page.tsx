@@ -220,7 +220,7 @@ export default function Home() {
 								CPUs de última geração
 							</h3>
 							<p className="text-sm text-accent-primary">
-								AMD Ryzen & Intel Xeon
+								AMD Ryzen & Intel Core
 							</p>
 						</div>
 						<div className="text-center">
