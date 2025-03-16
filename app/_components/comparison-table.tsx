@@ -53,12 +53,12 @@ const specifications = [
 	{
 		label: "RAM",
 		gamer: "DDR4 3200 Mhz",
-		intel: "DDR4/DDR3 2400/1600 Mhz",
+		intel: "DDR5/DDR4 5000/3200 Mhz",
 	},
 	{
 		label: "CPU",
 		gamer: "Ryzen 9 50xx",
-		intel: "XEON/EPYC",
+		intel: "CORE/EPYC",
 	},
 	{
 		label: "SSD",
