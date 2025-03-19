@@ -80,9 +80,11 @@ export default function Home() {
 							<h2 className="text-xl font-semibold mb-2">
   Servidores VPS com Alta Performance na Neon Host
 </h2>
-<p className="text-base leading-8 font-medium">
-  Hospede seu projeto na <strong>Neon Host</strong> com nossos <strong>servidores VPS de alta performance</strong>. Soluções sob medida para <strong>sites, aplicativos e infraestruturas robustas</strong>. Aproveite <strong>99,9% de uptime</strong> e a melhor confiabilidade do mercado. 🚀
+<p className="text-sm leading-7 font-medium">
+  Tenha desempenho e estabilidade com os <span className="font-semibold">VPS da Neon Host</span>. Soluções sob medida e <span className="font-semibold">99,9% de uptime garantido</span>.
 </p>
+
+
 
 						</div>
 						<div className="flex items-center gap-4">
