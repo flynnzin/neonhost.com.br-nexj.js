@@ -4,6 +4,9 @@ import { Button } from "@nextui-org/button";
 import { motion } from "framer-motion";
 import { Card, Divider } from "@nextui-org/react";
 import { AccordionItems } from "./_components/accordion";
+import HeroBackground from './_components/HeroBackground';
+
+
 import {
 	HeartPulseIcon,
 	ServerIcon,
@@ -87,7 +90,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex items-center gap-4">
-							<a href="#plans">
+							<a href="#plans" >
 								<Button
 									variant="solid"
 									size="lg"
@@ -165,9 +168,9 @@ export default function Home() {
 						<p className="text-sm text-accent-primary">
 							Experimente a diferença com nossas soluções de hospedagem premium
 						</p>
-					</div>
-					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-						<Card className="p-6 border-none transition-transform hover:scale-105 bg-cards-dark">
+					</div> 
+					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 ">
+						<Card className="p-6 border-none transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<ZapIcon className="h-12 w-12 text-pink-500" />
 							<h3 className="mt-4 text-lg font-semibold">
 								Rápido como um raio
@@ -177,7 +180,7 @@ export default function Home() {
 								infraestrutura otimizada
 							</p>
 						</Card>
-						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark">
+						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<ShieldCheckIcon className="h-12 w-12 text-pink-500" />
 							<h3 className="mt-4 text-lg font-semibold">Proteção DDoS</h3>
 							<p className="mt-2 text-muted-foreground">
@@ -185,14 +188,14 @@ export default function Home() {
 								empresarial
 							</p>
 						</Card>
-						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark">
+						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<HeartPulseIcon className="h-12 w-12 text-pink-500" />
 							<h3 className="mt-4 text-lg font-semibold">99.9% Uptime</h3>
 							<p className="mt-2 text-muted-foreground">
 								Confie em nossa infraestrutura altamente disponível
 							</p>
 						</Card>
-						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark">
+						<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<ServerIcon className="h-12 w-12 text-pink-500" />
 							<h3 className="mt-4 text-lg font-semibold">Hardware Premium</h3>
 							<p className="mt-2 text-muted-foreground">
@@ -201,11 +204,11 @@ export default function Home() {
 						</Card>
 					</div>
 				</div>
-			</section>
+			</section> 
 
 			<section className="pt-[10%]">
-				<div className="container">
-					<div className="text-center">
+				<div className="container ">
+					<div className="text-center ">
 						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
 							Tecnologia de ponta
 						</h2>
@@ -213,7 +216,7 @@ export default function Home() {
 							Alimentado pelo hardware e software mais recentes
 						</p>
 					</div>
-					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 						<div className="text-center">
 							<CpuIcon className="h-12 w-12 mx-auto text-pink-500" />
 							<h3 className="mt-4 text-lg font-semibold">
@@ -262,10 +265,12 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-16">
+				{/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-16 bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group"> */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-16 ">
 					{plans.map((plan, index) => (
 						<div
-							className="bg-cards-dark/60 rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform group"
+							// className="bg-cards-dark/60 rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform group "
+							className="bg-cards-dark/60 rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group"
 							key={index}
 						>
 							<div className="w-16 h-16 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:-translate-y-1 transition-transform">
@@ -349,7 +354,7 @@ export default function Home() {
 					</p>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 mt-5 mb-20">
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
+					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 						<p className="">
 							<Info
 								size={64}
@@ -374,7 +379,7 @@ export default function Home() {
 							</Button>
 						</Link>
 					</Card>
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
+					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 						<p className="">
 							<Info
 								size={64}
@@ -399,7 +404,7 @@ export default function Home() {
 							</Button>
 						</Link>
 					</Card>
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
+					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 						<p className="">
 							<Info
 								size={64}
