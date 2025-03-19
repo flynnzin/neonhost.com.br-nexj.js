@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import { motion } from "framer-motion";
 import { Card, Divider } from "@nextui-org/react";
 import { AccordionItems } from "./_components/accordion";
-import HeroBackground from './_components/HeroBackground';
+// import HeroBackground from './_components/HeroBackground';
 
 
 import {
