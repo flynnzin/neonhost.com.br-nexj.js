@@ -4,16 +4,16 @@ export default function ComparisonTable() {
 	return (
 		<div className="hidden md:block pt-[5%] text-white">
 			<div className="max-w-5xl mx-auto">
-				<h1 className="text-2xl font-bold text-center mb-6">Gamer vs Intel</h1>
+				<h1 className="text-2xl font-bold text-center mb-6">NeonHost vs Outros</h1>
 
 				<div className="grid grid-cols-1 md:grid-cols-[1fr,1.2fr,1fr] gap-0">
 					{/* Headers */}
 					<div className="hidden md:block" />
 					<div className="bg-pink-700 rounded-t-lg p-4">
-						<h2 className="text-2xl font-bold text-center">Gamer</h2>
+						<h2 className="text-2xl font-bold text-center">NeonHost</h2>
 					</div>
 					<div className="p-4">
-						<h2 className="text-2xl font-bold text-center">Intel</h2>
+						<h2 className="text-2xl font-bold text-center">Outros</h2>
 					</div>
 
 					{specifications.map((spec) => (
@@ -80,6 +80,11 @@ const specifications = [
 		gamer: "São Paulo",
 		intel: "São Paulo",
 	},
+	{
+		label: "Prooxy Reverso",
+		gamer: "Temos prooxy Reverso para fivem",
+		intel: "Não tem",
+	},
 ];
 
-const features = ["Rede Premium", "Opcionais", "Mais Opções", "Proteção DDoS"];
+const features = ["Rede Premium", "Opcionais", "Proteção DDoS"];
