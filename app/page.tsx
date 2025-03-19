@@ -77,7 +77,10 @@ export default function Home() {
 							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
 								Servidores VPS no Brasil
 							</h1>
-							<p className="text-base leading-8 font-medium">
+							<h2 className="text-xl font-semibold mb-2">
+  Servidores VPS com Alta Performance na Neon Host
+</h2>
+<p className="text-base leading-8 font-medium">
   Hospede seu projeto na <strong>Neon Host</strong> com nossos <strong>servidores VPS de alta performance</strong>. Soluções sob medida para <strong>sites, aplicativos e infraestruturas robustas</strong>. Aproveite <strong>99,9% de uptime</strong> e a melhor confiabilidade do mercado. 🚀
 </p>
 
