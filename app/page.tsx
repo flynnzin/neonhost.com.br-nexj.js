@@ -29,14 +29,6 @@ import React from 'react';
 
 
 
-import Intercom from '@intercom/messenger-js-sdk';
-
-Intercom({
-  app_id: 'wo0haiuj',
-});
-
-
-
 const plans = [
 	{
 		icon: <Gamepad2 className="w-8 h-8 text-pink-500" />,
