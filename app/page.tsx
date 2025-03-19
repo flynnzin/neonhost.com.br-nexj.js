@@ -61,7 +61,7 @@ const plans = [
 ];
 export default function Home() {
 	return (
-		
+
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
 			{/* <LoadingScreen /> */}
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
@@ -78,14 +78,11 @@ export default function Home() {
 								Servidores VPS no Brasil
 							</h1>
 							<h2 className="text-xl font-semibold mb-2">
-  Servidores VPS com Alta Performance na Neon Host
-</h2>
-<p className="text-sm leading-7 font-medium">
-  Tenha desempenho e estabilidade com os <span className="font-semibold">VPS da Neon Host</span>. Soluções sob medida e <span className="font-semibold">99,9% de uptime garantido</span>.
-</p>
-
-
-
+								Servidores VPS com Alta Performance na Neon Host
+							</h2>
+							<p className="text-sm leading-7 font-medium">
+								Tenha desempenho e estabilidade com os <span className="font-semibold">VPS da Neon Host</span>. Soluções sob medida e <span className="font-semibold">99,9% de uptime garantido</span>.
+							</p>
 						</div>
 						<div className="flex items-center gap-4">
 							<a href="#plans" >
@@ -135,7 +132,7 @@ export default function Home() {
   }
 `}</style>
 
-						{/* <style jsx>{`
+			{/* <style jsx>{`
 				@keyframes gradientText {
 					0% {
 						background-position: 100% 0;
@@ -166,7 +163,7 @@ export default function Home() {
 						<p className="text-sm text-accent-primary">
 							Experimente a diferença com nossas soluções de hospedagem premium
 						</p>
-					</div> 
+					</div>
 					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 ">
 						<Card className="p-6 border-none transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<ZapIcon className="h-12 w-12 text-pink-500" />
@@ -202,7 +199,7 @@ export default function Home() {
 						</Card>
 					</div>
 				</div>
-			</section> 
+			</section>
 
 			<section className="pt-[10%]">
 				<div className="container ">
@@ -316,11 +313,11 @@ export default function Home() {
 							da Anfitrião de Neon Host
 						</p>
 						<Button
-								className="bg-white text-gray-950 hover:bg-white/90 font-bold px-10"
-								onClick={() => window.location.href = "https://app.neonhost.com.br/"}
-							>
-								Implante seu servidor agora
-							</Button>
+							className="bg-white text-gray-950 hover:bg-white/90 font-bold px-10"
+							onClick={() => window.location.href = "https://app.neonhost.com.br/"}
+						>
+							Implante seu servidor agora
+						</Button>
 					</div>
 				</div>
 			</section>
@@ -417,9 +414,9 @@ export default function Home() {
 							mais detalhado. Nossa equipe está pronta para te ajudar a resolver
 							qualquer desafio técnico.
 						</p>
-						
 
-						
+
+
 
 						<Link
 							href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
@@ -437,6 +434,6 @@ export default function Home() {
 				</div>
 			</section>
 		</section>
-		
+
 	);
 }
