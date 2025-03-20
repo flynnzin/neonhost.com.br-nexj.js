@@ -14,7 +14,7 @@ export const plans: Plan[] = [
 	{
 		name: "Plano Simples - 1",
 		price: "12,90",
-		link: null,
+		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord1',
 		description: {
 			ram: "2GB",
 			ssd: "15GB",
@@ -25,7 +25,7 @@ export const plans: Plan[] = [
 	{
 		name: "Plano Basic - 2",
 		price: "22,75",
-		link: null,
+		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord2',
 		description: {
 			ram: "4GB",
 			ssd: "20GB",
@@ -36,10 +36,21 @@ export const plans: Plan[] = [
 	{
 		name: "Plano Advanced - 3",
 		price: "33,55",
-		link: null,
+		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord3',
 		description: {
 			ram: "8GB",
 			ssd: "50GB",
+			cores: "8 núcleos",
+			attrs: ["NodeJS", "Acesso Web/FTP","Banco de Dados MySQL","Servidor brasileiro"],
+		},
+	},
+	{
+		name: "Plano Advanced - 4",
+		price: "33,55",
+		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord4',
+		description: {
+			ram: "12GB",
+			ssd: "60GB",
 			cores: "8 núcleos",
 			attrs: ["NodeJS", "Acesso Web/FTP","Banco de Dados MySQL","Servidor brasileiro"],
 		},
