@@ -200,9 +200,9 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex mx-auto justify-center items-center max-w-max">
+			{/* <section className="flex mx-auto justify-center items-center max-w-max">
 		  <Map/>
-		  </section>
+		  </section> */}
 			<section className="pt-[10%]">
 				<div className="container ">
 					<div className="text-center ">
