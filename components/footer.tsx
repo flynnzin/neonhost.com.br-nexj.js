@@ -1,9 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-// import OpenWidget from "@/components/OpenWidget"; // Caminho do componente
 import Link from "next/link";
-import Script from "next/script";
 
 export const Footer = () => {
 	const sections = [
@@ -136,6 +134,17 @@ export const Footer = () => {
 								reservados.
 							</p>
 							<p className="text-sm text-gray-400 mt-4 md:mt-0">
+							Desenvolvido por {" "}
+								<a
+									href="https://www.loctor.dev"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-pink-500 hover:text-pink-400 transition-colors"
+								>
+									<span className="font-bold">Loctor</span>
+								</a>
+							</p>
+							<p className="text-sm text-gray-400 mt-4 md:mt-0">
 								CNPJ: {" "}
 								<a
 									href="https://www.neonhost.com.br"
@@ -153,5 +162,3 @@ export const Footer = () => {
 		</>
 	);
 };
-
-

@@ -27,7 +27,7 @@ import Link from "next/link";
 
 import React from 'react';
 
-
+import Map from "./_components/map";
 
 const plans = [
 	{
@@ -200,7 +200,9 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-
+			<section className="flex mx-auto justify-center items-center max-w-max">
+		  <Map/>
+		  </section>
 			<section className="pt-[10%]">
 				<div className="container ">
 					<div className="text-center ">

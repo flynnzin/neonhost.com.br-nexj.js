@@ -31,21 +31,51 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { motion } from "framer-motion";
 
 
+// export const NavbarComponent = () => {
+// 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+// 	const [activePopover, setActivePopover] = useState<string | null>(null);
+// 	const [popoverTimeout, setPopoverTimeout] = useState<NodeJS.Timeout | null>(
+// 		null,
+// 	);
+
+// 	const handlePopover = (popoverKey: string) => {
+// 		clearTimeout(popoverTimeout!); // Cancela o fechamento se o mouse voltar
+// 		setActivePopover((prev) => (prev === popoverKey ? null : popoverKey));
+// 	};
+
+// 	const closePopoverWithDelay = () => {
+// 		const timeout = setTimeout(() => {
+// 			setActivePopover(null);
+// 		}, 400);
+
+// 		setPopoverTimeout(timeout);
+// 	};
+
+
+
 export const NavbarComponent = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [activePopover, setActivePopover] = useState<string | null>(null);
-	const [popoverTimeout, setPopoverTimeout] = useState<NodeJS.Timeout | null>(
-		null,
-	);
+	const [popoverTimeout, setPopoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
 	const handlePopover = (popoverKey: string) => {
-		clearTimeout(popoverTimeout!); // Cancela o fechamento se o mouse voltar
+		if (popoverTimeout) {
+			clearTimeout(popoverTimeout);
+			setPopoverTimeout(null);
+		}
+
 		setActivePopover((prev) => (prev === popoverKey ? null : popoverKey));
 	};
 
 	const closePopoverWithDelay = () => {
+		if (popoverTimeout) {
+			clearTimeout(popoverTimeout);
+			setPopoverTimeout(null);
+		}
+
 		const timeout = setTimeout(() => {
 			setActivePopover(null);
+			setPopoverTimeout(null);
 		}, 400);
 
 		setPopoverTimeout(timeout);
@@ -112,7 +142,7 @@ export const NavbarComponent = () => {
 						placement="bottom"
 						offset={20}
 						showArrow
-						isOpen={activePopover === "servers"}
+						isOpen={activePopover === "new"}
 					>
 						<PopoverTrigger>
 							<Button
@@ -120,83 +150,150 @@ export const NavbarComponent = () => {
 								radius="sm"
 								variant="light"
 								endContent={
-									activePopover === "servers" ? (
+									activePopover === "new" ? (
 										<BiChevronUp />
 									) : (
 										<BiChevronDown />
 									)
 								}
-								onMouseEnter={() => handlePopover("servers")}
+								onMouseEnter={() => handlePopover("new")}
 							>
-							<Box />	Servidores
+								<Box />	Servidores
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
-							className="w-[480px] p-0"
+							className="w-[560px] p-0"
 							onMouseEnter={() => clearTimeout(popoverTimeout!)}
 							onMouseLeave={closePopoverWithDelay}
 						>
 							<div className="w-full p-5">
-								<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+								<div className="grid grid-cols-2 sm:grid-cols-2 gap-8">
+									<div>
+										<p className="pl-2 opacity-80 text-[11px] pb-2">VPS
+											<div className="relative w-[25px] h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
+										</p>
+										{[
+											{
+												href: "/semi-dedicado",
+												icon: Box,
+												title: "Semi Dedicado",
+												description: "Servidores custo-benefício único.",
+											},
+											{
+												href: "/vps-trader",
+												icon: Box,
+												title: "VPS Trader",
+												description: "Servidor veloz para traders.",
+											},
+											{
+												href: "/fivem",
+												icon: Box,
+												title: "VPS Fivem",
+												description: "Hospedagem de FiveM.",
+											}
+										].map((item, index) => (
+											<Link href={item.href} key={`1${index}${item.href}`}>
+												<div className="p-2 hover:bg-[#303030] rounded-lg flex gap-2">
+													<div className="">
+														<item.icon size={32} className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg" />
+													</div>
+													<div>
+														<p className="text-[13px] text-gray-300 font-semibold">
+															{item.title}
+														</p>
+														<p className="text-[11px] text-gray-500">
+															{item.description}
+														</p>
+													</div>
+												</div>	
+											</Link>
+										))}
+									</div>
 									<Link href="/vps-gamer">
-										<div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-64 rounded-lg">
-											<div className="absolute bottom-0 left-0 right-0 p-4">
+										<div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-52 rounded-lg">
+											<div className="absolute bottom-0 p-4">
 												<Image
 													src="/android-chrome-512x512.webp"
 													alt="logo"
 													height="256"
-													width="50"
+													width="72"
 												/>
 												<p className="text-lg font-bold">VPS Gamer</p>
 												<p>Servidores localizados no Brasil.</p>
 											</div>
 										</div>
 									</Link>
-									<div>
+									<div className="">
+										<p className="pl-2 opacity-80 text-[11px] pb-2">Baremetal
+											<div className="relative w-[90px] h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
+										</p>
 										{[
 											{
-												href: "/semi-dedicado",
-												title: "Semi Dedicado",
-												description: "Servidores custo-benefício único.",
+												href: "/dedicado",
+												icon: Box,
+												title: "Baremetal",
+												description: "Seu próprio dedicado, nao compartilhe recursos com ninguém.",
 											},
 											{
-												href: "/vps-trader",
-												title: "VPS Trader",
-												description: "Servidor veloz para traders.",
-											},
-											{
-												href: "/fivem",
-												title: "VPS Fivem",
-												description: "Hospedagem de FiveM.",
-											},
-											{
-												href: "/protecaoddos",
-												title: "Proteção DDoS",
-												description: "Proteja seu servidor de ataque DDoS.",
-											},
+												href: "/colocation",
+												icon: Box,
+												title: "Colocation",
+												description: "Hospeda seu servidor em nossa infraestrutura.",
+											}
 										].map((item, index) => (
-											<Link href={item.href} key={index}>
-												<div className="p-2 hover:bg-[#303030] rounded-lg">
-													<p className="text-base font-semibold">
-														{item.title}
-													</p>
-													<p className="text-sm text-gray-500">
-														{item.description}
-													</p>
+											<Link href={item.href} key={`2${index}${item.href}`}>
+												<div className="p-2 hover:bg-[#303030] rounded-lg flex gap-2">
+													<div className="">
+														<item.icon size={32} className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg" />
+													</div>
+													<div>
+														<p className="text-[13px] text-gray-300 font-semibold">
+															{item.title}
+														</p>
+														<p className="text-[11px] text-gray-500">
+															{item.description}
+														</p>
+													</div>
 												</div>
 											</Link>
 										))}
 									</div>
-								</div>
-								<div className="mt-0">
-									<Link href="/dedicado">
-										<div className="bg-[#151515] hover:bg-[#303030] p-5 rounded-lg">
-											<h3 className="text-base font-bold">Dedicado</h3>
-											<p className="text-sm text-gray-400">
-												Configurações superiores, para aplicação grandes.
-											</p>
-										</div>
-									</Link>
+									<div className="">
+										<p className="pl-2 opacity-80 text-[11px] pb-2">FAQ
+											<div className="relative w-[90px] h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
+										</p>
+										{[
+											{
+												href: "https://status.neonhost.com.br/",
+												icon: Box,
+												title: "Status da Rede",
+												description: "Mantenha informado do nosso status de rede.",
+											},
+											
+											{
+												href: "https://app.neonhost.com.br/clientarea.php",
+												icon: Box,
+												title: "Área do Cliente",
+												description: "Acesse sua conta e gerencie seus serviços.",
+											}
+										].map((item, index) => (
+											<Link href={item.href} key={`3${index}${item.href}`}>
+												<div className="p-2 hover:bg-[#303030] rounded-lg flex gap-2">
+													<div className="">
+														<item.icon size={32} className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg" />
+													</div>
+													<div>
+														<p className="text-[13px] text-gray-300 font-semibold">
+															{item.title}
+														</p>
+														<p className="text-[11px] text-gray-500">
+															{item.description}
+														</p>
+													</div>
+												</div>
+											</Link>
+										))}
+									</div>
 								</div>
 							</div>
 						</PopoverContent>
@@ -396,33 +493,6 @@ export const NavbarComponent = () => {
 							<div className="w-full p-5">
 								<div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
 									{[
-										{
-											href: "https://status.neonhost.com.br/",
-											// href: "/anti-ddos",
-											title: "Status Rede",
-											description: "Mantenha informado do nosso status de rede.",
-											icon: (
-												<ShieldCheck
-													width={40}
-													height={40}
-													color="#fff"
-													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
-												/>
-											),
-										},
-										{
-											href: "https://app.neonhost.com.br/login",
-											title: "Área do Cliente",
-											description: "Acesse sua conta e gerencie seus serviços.",
-											icon: (
-												<GlobeLock
-													width={40}
-													height={40}
-													color="#fff"
-													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
-												/>
-											),
-										},
 										{
 											href: "https://game.neonhost.com.br",
 											title: "Painel Administrativo",
