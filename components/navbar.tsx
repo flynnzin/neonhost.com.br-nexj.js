@@ -222,7 +222,7 @@ export const NavbarComponent = () => {
 											</Link>
 										))}
 									</div>
-									<Link href="/vps-gamer">
+									<Link href="/vps-neon">
 										<div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-52 rounded-lg">
 											<div className="absolute bottom-0 p-4">
 												<Image
@@ -619,7 +619,7 @@ export const NavbarComponent = () => {
 							</Button>
 							{activePopover === "servers-mobile" && (
 								<div className="flex flex-col gap-2 pl-4">
-									<Link href="/vps-gamer" className="w-full">
+									<Link href="/vps-neon" className="w-full">
 										<div className="p-2 hover:bg-[#303030] rounded-lg">
 											<p className="text-base font-semibold">VPS Neon</p>
 											<p className="text-sm text-gray-500">

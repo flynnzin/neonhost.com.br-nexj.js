@@ -137,7 +137,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
-		url: "https://neonhost.com.br/vps-neon",
+		url: "https://neonhost.com.br/vps-gamer",
 		title: "VPS Neon | Servidores para Jogos | NeonHost",
 		description:
 			"VPS Neon com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
@@ -170,7 +170,7 @@ export const metadata: Metadata = {
 		images: ["/og-image.jpg"],
 	},
 	alternates: {
-		canonical: "https://neonhost.com.br/vps-neon",
+		canonical: "https://neonhost.com.br/vps-gamer",
 	},
 };
 

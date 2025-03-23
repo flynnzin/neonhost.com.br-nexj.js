@@ -8,7 +8,7 @@ export const Footer = () => {
 		{
 			title: "Servidores",
 			links: [
-				{ name: "VPS Neon", url: "/vps-gamer" },
+				{ name: "VPS Neon", url: "/vps-neon" },
 				{ name: "VPS Trader", url: "/vps-trader" },
 				{ name: "VPS FiveM", url: "/fivem" },
 				{ name: "Semi-Dedicado", url: "/semi-dedicado" },
