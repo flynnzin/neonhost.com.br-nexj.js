@@ -35,7 +35,7 @@ const plans = [
 		title: "VPS Neon",
 		description: "VPS de alta performance no Brasil com Anti-DDoS PRO",
 		price: "69.90",
-		link: "/vps-gamer",
+		link: "/vps-neon",
 	},
 	{
 		icon: <CircleCheckBig className="w-8 h-8 text-pink-500" />,
