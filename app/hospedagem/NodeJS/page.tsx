@@ -46,7 +46,7 @@ export default function VpsGamer() {
 					<div className="relative mt-8 lg:mt-0">
 						<img
 							src="/svgs/Cloud hosting-pana.svg"
-							alt="VPS Gamer Servers"
+							alt="VPS Neon Servers"
 							className="mx-auto w-full max-w-[480px] lg:max-w-none h-auto sm:h-[480px] lg:h-[720px]"
 						/>
 					</div>

@@ -10,7 +10,7 @@ export function AccordionItems() {
 		{
 			title: "Qual é a latência média dos servidores?",
 			content:
-				"Nossos servidores VPS Gamer possuem latência média inferior a 30ms para as principais regiões do Brasil. Utilizamos infraestrutura de alta performance e rotas otimizadas para garantir a melhor experiência em jogos.",
+				"Nossos servidores VPS Neon possuem latência média inferior a 30ms para as principais regiões do Brasil. Utilizamos infraestrutura de alta performance e rotas otimizadas para garantir a melhor experiência em jogos.",
 		},
 		{
 			title: "Como funciona a proteção anti-DDoS?",

@@ -8,11 +8,11 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "VPS Gamer | Servidores para Jogos | NeonHost",
+		default: "VPS Neon | Servidores para Jogos | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
-		"VPS Gamer com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"VPS Neon com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
 	keywords: [
 		"NeonHost",
 		"WyzeHost",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 		"RazeHost",
 		"Loding Hosting",
 		"Nice Hosting",
-		"VPS Gamer",
+		"VPS Neon",
 		"VPS Brasil",
 		"Proteção Anti DDoS",
 		"servidor de Minecraft",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 		"RazeHost",
 		"Loding Hosting",
 		"Nice Hosting",
-		"VPS Gamer",
+		"VPS Neon",
 		"VPS Brasil",
 		"Proteção Anti DDoS",
 		"servidor de Minecraft",
@@ -131,16 +131,16 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "pt_BR",
 		url: "https://neonhost.com.br/vps-gamer",
-		title: "VPS Gamer | Servidores para Jogos | NeonHost",
+		title: "VPS Neon | Servidores para Jogos | NeonHost",
 		description:
-			"VPS Gamer com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"VPS Neon com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		siteName: "NeonHost",
 		images: [
 			{
 				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
-				alt: "NeonHost - VPS Gamer",
+				alt: "NeonHost - VPS Neon",
 			},
 		],
 	},
@@ -156,10 +156,10 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "VPS Gamer | NeonHost",
+		title: "VPS Neon | NeonHost",
 		card: "summary_large_image",
 		description:
-			"VPS Gamer com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"VPS Neon com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		images: ["/og-image.jpg"],
 	},
 	alternates: {

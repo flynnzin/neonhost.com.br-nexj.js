@@ -32,7 +32,7 @@ import Map from "./_components/map";
 const plans = [
 	{
 		icon: <Gamepad2 className="w-8 h-8 text-pink-500" />,
-		title: "VPS Gamer",
+		title: "VPS Neon",
 		description: "VPS de alta performance no Brasil com Anti-DDoS PRO",
 		price: "69.90",
 		link: "/vps-gamer",

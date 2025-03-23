@@ -218,7 +218,7 @@ export const NavbarComponent = () => {
 													height="256"
 													width="72"
 												/>
-												<p className="text-lg font-bold">VPS Gamer</p>
+												<p className="text-lg font-bold">VPS Neon</p>
 												<p>Servidores localizados no Brasil.</p>
 											</div>
 										</div>
@@ -608,7 +608,7 @@ export const NavbarComponent = () => {
 								<div className="flex flex-col gap-2 pl-4">
 									<Link href="/vps-gamer" className="w-full">
 										<div className="p-2 hover:bg-[#303030] rounded-lg">
-											<p className="text-base font-semibold">VPS Gamer</p>
+											<p className="text-base font-semibold">VPS Neon</p>
 											<p className="text-sm text-gray-500">
 												Servidores localizados no Brasil
 											</p>
