@@ -15,10 +15,10 @@ export default function VpsGamer() {
 				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center max-w-7xl gap-8">
 					<div>
 						<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-							VPS Fivem de Alta Performance para seus Servidores
+							VPS RedM de Alta Performance para seus Servidores
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-						Servidores otimizados para FiveM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
+						Servidores otimizados para RedM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
@@ -58,7 +58,7 @@ export default function VpsGamer() {
 						Escolha o Plano Perfeito para seu Servidor
 					</h2>
 					<p className="text-pink-500 mx-auto text-lg max-w-2xl">
-						Nossos planos VPS Fivem são otimizados para oferecer a melhor
+						Nossos planos VPS RedM são otimizados para oferecer a melhor
 						experiência, com recursos dedicados e proteção contra
 						ataques.
 					</p>
@@ -101,7 +101,7 @@ export default function VpsGamer() {
 						<div className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
 					</h1>
 					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
-						Tire suas dúvidas sobre nossos serviços de VPS Fivem e comece a
+						Tire suas dúvidas sobre nossos serviços de VPS RedM e comece a
 						hospedar seu servidor agora mesmo.
 					</p>
 				</div>

@@ -20,6 +20,13 @@ import {
 	Copy,
 	LayoutGrid,
 	ShieldCheck,
+	Router,
+	Swords,
+	Snail,
+	Network,
+	ServerCrash,
+	Waypoints,
+	Server,
 	ChartNetwork,
 	TicketPercent,
 	Box,
@@ -187,9 +194,15 @@ export const NavbarComponent = () => {
 											},
 											{
 												href: "/fivem",
-												icon: Box,
+												icon: Snail,
 												title: "VPS Fivem",
 												description: "Hospedagem de FiveM.",
+											},
+											{
+												href: "/redm",
+												icon: Cloud,
+												title: "VPS RedM",
+												description: "Hospedagem de RedM.",
 											}
 										].map((item, index) => (
 											<Link href={item.href} key={`1${index}${item.href}`}>
@@ -219,7 +232,7 @@ export const NavbarComponent = () => {
 													width="72"
 												/>
 												<p className="text-lg font-bold">VPS Neon</p>
-												<p>Servidores localizados no Brasil.</p>
+												<p>Servidores localizados em São Paulo.</p>
 											</div>
 										</div>
 									</Link>
@@ -230,7 +243,7 @@ export const NavbarComponent = () => {
 										{[
 											{
 												href: "/dedicado",
-												icon: Box,
+												icon: ServerCrash,
 												title: "Baremetal",
 												description: "Seu próprio dedicado, nao compartilhe recursos com ninguém.",
 											},
@@ -265,7 +278,7 @@ export const NavbarComponent = () => {
 										{[
 											{
 												href: "https://status.neonhost.com.br/",
-												icon: Box,
+												icon: Network,
 												title: "Status da Rede",
 												description: "Mantenha informado do nosso status de rede.",
 											},
