@@ -126,6 +126,12 @@ export const metadata: Metadata = {
 		"cache-externo vps gamer",
 		"cache externo vps",
 		"cache externo vps gamer",
+		"cache externo redm",
+		"cache externo rd2",
+		"host de redm",
+		"vps redm",
+		"vps rd2",
+		"Vps Redm",
 	],
 
 	openGraph: {
