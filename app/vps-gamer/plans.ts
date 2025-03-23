@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "VPS Neon - 1",
-		price: "69,90",
+		price: "72,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-1",
 		description: {
 			ram: "2GB",
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "VPS Neon - 2",
-		price: "89,90",
+		price: "92,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
 		description: {
 			ram: "4GB",
