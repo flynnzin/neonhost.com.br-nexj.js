@@ -24,7 +24,7 @@ function App() {
         id: 1,
         city: 'São Paulo',
         country: 'Brazil',
-        details: ['Datacenter Cotia', 'POP, MSR, IX/PTT', `Ping: ${ping}`],
+        details: ['Datacenter Cotia', 'POP, MSR, IX/PTT', 'Ping Medio: 20ms'],
         position: { left: '32%', top: '54.7%' }
       }
     ];
