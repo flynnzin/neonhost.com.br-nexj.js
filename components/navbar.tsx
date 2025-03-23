@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { default as Link, default as NextLink } from "next/link";
-import { useState, useEffect  } from "react";
+import { useState, useEffect } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { motion } from "framer-motion";
 
@@ -110,15 +110,15 @@ export const NavbarComponent = () => {
 	];
 
 	return (
-		
+
 		<Navbar
 			className="bg-background-dark/30 backdrop-blur-md fixed"
 			maxWidth={"2xl"}
 			position="static"
 			onMenuOpenChange={setIsMenuOpen}
-			
+
 		>
-			
+
 			<NavbarContent
 				className="hidden sm:flex gap-4 items-center justify-start"
 				justify="start"
@@ -218,7 +218,7 @@ export const NavbarComponent = () => {
 															{item.description}
 														</p>
 													</div>
-												</div>	
+												</div>
 											</Link>
 										))}
 									</div>
@@ -282,7 +282,7 @@ export const NavbarComponent = () => {
 												title: "Status da Rede",
 												description: "Mantenha informado do nosso status de rede.",
 											},
-											
+
 											{
 												href: "https://app.neonhost.com.br/clientarea.php",
 												icon: Box,
@@ -335,7 +335,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("games")}
 							>
-							<Gamepad2 />	Jogos
+								<Gamepad2 />	Jogos
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
@@ -416,7 +416,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("hospedagem")}
 							>
-						<Cloud />	Hospedagem
+								<Cloud />	Hospedagem
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
@@ -495,7 +495,7 @@ export const NavbarComponent = () => {
 								}
 								onMouseEnter={() => handlePopover("empresa")}
 							>
-							<Globe /> Empresa
+								<Globe /> Empresa
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent
@@ -876,11 +876,10 @@ const PromoBanner = () => {
 
 	return (
 		<div
-			className={`bg-primary-purple text-white py-1 sm:py-1 w-full fixed left-0 z-[62] transition-all duration-500 ease-in-out ${
-				showBanner
+			className={`bg-primary-purple text-white py-1 sm:py-1 w-full fixed left-0 z-[62] transition-all duration-500 ease-in-out ${showBanner
 					? "opacity-100 transform translate-y-0"
 					: "opacity-0 transform -translate-y-[100px]"
-			}`}
+				}`}
 			style={{ top: "60px" }}
 		>
 			<div className="container max-w-screen-2xl mx-auto px-4">

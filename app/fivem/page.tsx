@@ -19,7 +19,7 @@ export default function VpsGamer() {
 							VPS Fivem de Alta Performance para seus Servidores
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-						Servidores otimizados para FiveM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
+							Servidores otimizados para FiveM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
@@ -81,10 +81,10 @@ export default function VpsGamer() {
 			<Divider className="mt-24" />
 
 			<section className="flex mx-auto justify-center items-center max-w-max">
-				<Map/>
-		  </section>
-		  
-		  <Divider className="mt-24" />
+				<Map />
+			</section>
+
+			<Divider className="mt-24" />
 			<section className="pt-[5%] px-4 lg:px-6">
 				<div className="container mx-auto">
 					<div className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 p-4 sm:p-6 md:p-12 text-center">

@@ -7,6 +7,7 @@ import { Info } from "lucide-react";
 import Link from "next/link";
 import ComparisonTable from "../_components/comparison-table";
 import { CardProduts } from "../_components/card-products";
+import Map from "../_components/map";
 
 export default function VpsGamer() {
 	return (
@@ -72,6 +73,11 @@ export default function VpsGamer() {
 						/>
 					))}
 				</div>
+			</section>
+			<Divider className="mt-24" />
+
+			<section className="flex mx-auto justify-center items-center max-w-max">
+				<Map />
 			</section>
 
 			<Divider className="mt-24" />

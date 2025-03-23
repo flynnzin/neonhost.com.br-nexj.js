@@ -7,6 +7,7 @@ import { Info } from "lucide-react";
 import Link from "next/link";
 import ComparisonTable from "../_components/comparison-table";
 import { CardProduts } from "../_components/card-products";
+import Map from "../_components/map";
 
 export default function VpsGamer() {
 	return (
@@ -18,7 +19,7 @@ export default function VpsGamer() {
 							VPS RedM de Alta Performance para seus Servidores
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-						Servidores otimizados para RedM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
+							Servidores otimizados para RedM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
@@ -75,6 +76,12 @@ export default function VpsGamer() {
 						/>
 					))}
 				</div>
+			</section>
+
+			<Divider className="mt-24" />
+
+			<section className="flex mx-auto justify-center items-center max-w-max">
+				<Map />
 			</section>
 
 			<Divider className="mt-24" />
