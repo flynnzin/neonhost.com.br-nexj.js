@@ -16,7 +16,7 @@ export function CardProduts(vpsItem: {
 		ram: string;
 		ssd: string;
 		cores: string;
-		jogadores: string;
+		jogadores?: string;
 		attrs: string[];
 	};
 }) {
@@ -47,7 +47,6 @@ export function CardProduts(vpsItem: {
 								{vpsItem.description.jogadores} jogadores
 							</span>
 						)}
-
 					</p>
 				</div>
 
