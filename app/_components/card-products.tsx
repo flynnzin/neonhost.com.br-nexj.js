@@ -40,14 +40,12 @@ export function CardProduts(vpsItem: {
 						<span className="text-gray-400 text-sm font-normal ml-1">/mês</span>
 					</h1>
 					<p className="text-sm text-gray-400 flex items-center gap-1">
-						{/* <p className="text-sm text-gray-400 flex items-center gap-1"> */}
 						Recomendado para
-						{vpsItem.description.jogadores && (
-							<span className="rounded bg-gradient-to-r from-pink-400 to-purple-400 px-1 py-0.5 font-semibold text-white">
-								{vpsItem.description.jogadores} jogadores
-							</span>
-						)}
+						<span className="rounded bg-gradient-to-r from-pink-400 to-purple-400 px-1 py-0.5 font-semibold text-white">
+							{vpsItem.description.jogadores ?? "Hospedado em São Paulo"}
+						</span>
 					</p>
+
 				</div>
 
 				{/* Especificações Principais */}
