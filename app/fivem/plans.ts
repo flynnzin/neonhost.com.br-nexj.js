@@ -6,6 +6,7 @@ export interface Plan {
 		ram: string;
 		ssd: string;
 		cores: string;
+		jogadores: string;
 		attrs: string[];
 	};
 }
@@ -19,6 +20,7 @@ export const plans: Plan[] = [
 			ram: "2GB",
 			ssd: "45GB",
 			cores: "3 vCores",
+			jogadores: "20",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -30,6 +32,7 @@ export const plans: Plan[] = [
 			ram: "4GB",
 			ssd: "50GB",
 			cores: "5 vCores",
+			jogadores: "50",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -41,6 +44,7 @@ export const plans: Plan[] = [
 			ram: "6GB",
 			ssd: "60GB",
 			cores: "6 vCores",
+			jogadores: "75",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -52,6 +56,7 @@ export const plans: Plan[] = [
 			ram: "8GB",
 			ssd: "70GB",
 			cores: "7 vCores",
+			jogadores: "115",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -63,6 +68,7 @@ export const plans: Plan[] = [
 			ram: "10GB",
 			ssd: "80GB",
 			cores: "8 vCores",
+			jogadores: "150",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -74,6 +80,7 @@ export const plans: Plan[] = [
 			ram: "12GB",
 			ssd: "90GB",
 			cores: "9 vCores",
+			jogadores: "185",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -85,6 +92,7 @@ export const plans: Plan[] = [
 			ram: "16GB",
 			ssd: "100GB",
 			cores: "12 vCores",
+			jogadores: "210",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},
@@ -96,6 +104,7 @@ export const plans: Plan[] = [
 			ram: "20GB",
 			ssd: "150GB",
 			cores: "14 vCores",
+			jogadores: "300",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen","Hospedagem Imagem"],
 		},
 	},

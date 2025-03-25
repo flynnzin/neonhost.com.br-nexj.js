@@ -16,6 +16,7 @@ export function CardProduts(vpsItem: {
 		ram: string;
 		ssd: string;
 		cores: string;
+		jogadores: string;
 		attrs: string[];
 	};
 }) {
@@ -39,9 +40,10 @@ export function CardProduts(vpsItem: {
 						<span className="text-gray-400 text-sm font-normal ml-1">/mês</span>
 					</h1>
 					<p className="text-sm text-gray-400 flex items-center gap-1">
-						Hospedado no Brasil
-						<span className="inline-block w-5 h-5 rounded-full overflow-hidden">
-							🇧🇷
+						{/* <p className="text-sm text-gray-400 flex items-center gap-1"> */}
+						Recomendado para
+						<span className="rounded bg-gradient-to-r from-pink-400 to-purple-400 px-1 py-0.5 font-semibold text-white">
+							{vpsItem.description.jogadores} jogadores
 						</span>
 					</p>
 				</div>
