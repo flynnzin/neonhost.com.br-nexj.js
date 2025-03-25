@@ -48,7 +48,7 @@ export function CardProduts(vpsItem: {
 								</span>
 							</>
 						) : (
-							"Hospedado em 🇧🇷"
+							"Hospedado em Brasil 🇧🇷"
 						)}
 					</p>
 
