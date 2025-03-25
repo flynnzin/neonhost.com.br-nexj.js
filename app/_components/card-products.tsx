@@ -42,9 +42,12 @@ export function CardProduts(vpsItem: {
 					<p className="text-sm text-gray-400 flex items-center gap-1">
 						{/* <p className="text-sm text-gray-400 flex items-center gap-1"> */}
 						Recomendado para
-						<span className="rounded bg-gradient-to-r from-pink-400 to-purple-400 px-1 py-0.5 font-semibold text-white">
-							{vpsItem.description.jogadores} jogadores
-						</span>
+						{vpsItem.description.jogadores && (
+							<span className="rounded bg-gradient-to-r from-pink-400 to-purple-400 px-1 py-0.5 font-semibold text-white">
+								{vpsItem.description.jogadores} jogadores
+							</span>
+						)}
+
 					</p>
 				</div>
 
