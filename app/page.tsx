@@ -63,7 +63,10 @@ export default function Home() {
 	return (
 
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
+
 			{/* <LoadingScreen /> */}
+			
+
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
 				<motion.div
 					initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
@@ -72,7 +75,7 @@ export default function Home() {
 					viewport={{ once: true }} // Apenas uma vez quando aparecer na tela
 					className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center"
 				>
-					<div className="max-w-7xl mx-auto">
+					<div className="max-w-7xl mx-auto" >
 						<div className="mb-6 flex flex-col">
 							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
 								Servidores VPS no Brasil
@@ -153,7 +156,7 @@ export default function Home() {
 					animation: gradientText 3s ease infinite;
 				}
 			`}</style> */}
-
+			
 			<section className="pt-[15%]">
 				<div className="container">
 					<div className="text-center">
@@ -164,6 +167,7 @@ export default function Home() {
 							Experimente a diferença com nossas soluções de hospedagem premium
 						</p>
 					</div>
+
 					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 ">
 						<Card className="p-6 border-none transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
 							<ZapIcon className="h-12 w-12 text-pink-500" />
@@ -199,7 +203,9 @@ export default function Home() {
 						</Card>
 					</div>
 				</div>
+
 			</section>
+
 			<section className="pt-[10%]">
 				<div className="container ">
 					<div className="text-center ">

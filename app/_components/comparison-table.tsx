@@ -82,7 +82,7 @@ const specifications = [
 	},
 	{
 		label: "Prooxy Reverso",
-		gamer: "Temos prooxy Reverso para fivem",
+		gamer: "Temos sistema de cache-externo",
 		intel: "Não tem",
 	},
 ];

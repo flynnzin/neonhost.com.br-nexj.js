@@ -51,7 +51,6 @@ export function CardProduts(vpsItem: {
 							"Hospedado em Brasil 🇧🇷"
 						)}
 					</p>
-
 				</div>
 
 				{/* Especificações Principais */}
