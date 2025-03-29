@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "Plano Simples - 1",
-		price: "80,90",
+		price: "69,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/palworld/palworld-6gb",
 		description: {
 			ram: "6GB",
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Basic - 2",
-		price: "69.90",
+		price: "109,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/palworld/palworld-10gb",
 		description: {
 			ram: "10GB",
@@ -35,7 +35,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Advanced - 3",
-		price: "89.90",
+		price: "149.90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/palworld/palworld-14gb",
 		description: {
 			ram: "14GB",
