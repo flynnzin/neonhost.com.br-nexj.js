@@ -105,7 +105,7 @@ export const NavbarComponent = () => {
 			name: "Rust",
 			img: "/games/rust.webp",
 			link: "/game/rust",
-			discountPrice: "R$ 49,90",
+			discountPrice: "R$ 80,90",
 		},
 	];
 
