@@ -129,6 +129,17 @@ export const Footer = () => {
 							</div>
 						))}
 					</div>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67e87d87770dd3190c11c213/1ini2kmam';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 					<div className="mt-12 pt-8 border-t -mb-4 border-gray-800">
 						<div className="flex flex-col md:flex-row justify-between items-center">
