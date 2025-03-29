@@ -20,8 +20,8 @@ export const Footer = () => {
 			links: [
 				{ name: "Palworld", url: "/game/palworld" },
 				{ name: "Minecraft", url: "/game/minecraft" },
-				{ name: "Valheim", url: "/game/minecraft" },
-				{ name: "Project Zomboid", url: "/game/minecraft" },
+				{ name: "Valheim", url: "/game/valheim" },
+				{ name: "Project Zomboid", url: "/game/project-zomboid" },
 				{ name: "Rust", url: "/game/rust" },
 			],
 		},
