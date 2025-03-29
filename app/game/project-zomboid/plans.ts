@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "Plano Simples - 1",
-		price: "80,90",
+		price: "49,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/project-zomboid/zomboid-4gb",
 		description: {
 			ram: "4GB",

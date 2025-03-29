@@ -93,13 +93,25 @@ export const NavbarComponent = () => {
 			name: "Palworld",
 			img: "/games/palworld.webp",
 			link: "/game/palworld",
-			discountPrice: "R$ 79,90",
+			discountPrice: "R$ 69,90",
 		},
 		{
 			name: "Minecraft",
 			img: "/games/minecraft.webp",
 			link: "/game/minecraft",
 			discountPrice: "R$ 13,90",
+		},
+		{
+			name: "Valheim",
+			img: "/games/valheim.webp",
+			link: "/game/valheim",
+			discountPrice: "R$ 49,90",
+		},
+		{
+			name: "Project Zomboid",
+			img: "/games/zomboid.webp",
+			link: "/game/project-zomboid",
+			discountPrice: "R$ 49,90",
 		},
 		{
 			name: "Rust",
