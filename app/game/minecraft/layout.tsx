@@ -8,7 +8,7 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Minecraft | Servidores para Jogos | NeonHost",
+		default: "Host de Minecraft no Brasil | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
@@ -137,10 +137,10 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
-		url: "https://neonhost.com.br/vps-gamer",
-		title: "Minecraft | Servidores para Jogos | NeonHost",
+		url: "https://neonhost.com.br/minecraft",
+		title: "Host de Minecraft no Brasil | NeonHost",
 		description:
-			"Minecraft com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"Hospedagem de Minecraft com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		siteName: "NeonHost",
 		images: [
 			{

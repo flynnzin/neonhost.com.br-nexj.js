@@ -8,11 +8,11 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Rust | Servidores para Jogos | NeonHost",
+		default: "Host de Rust no Brasil | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
-		"Rust com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"Hospedagme de Rust com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
 		keywords: [
 			"NeonHost",
 			"WyzeHost",
@@ -138,9 +138,9 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "pt_BR",
 		url: "https://neonhost.com.br/game/rust",
-		title: "Rust | Servidores para Jogos | NeonHost",
+		title: "Host de Rust no Brasil | NeonHost",
 		description:
-			"Rust com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"Hospedagem de Rust com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		siteName: "NeonHost",
 		images: [
 			{

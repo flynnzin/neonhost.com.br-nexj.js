@@ -8,11 +8,11 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Palworld | Servidores para Jogos | NeonHost",
+		default: "Host de Palworld no Brasil | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
-		"Palworld com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"Hospedagem de Palworld com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
 		keywords: [
 			"NeonHost",
 			"WyzeHost",
@@ -137,10 +137,10 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
-		url: "https://neonhost.com.br/vps-gamer",
-		title: "Palworld | Servidores para Jogos | NeonHost",
+		url: "https://neonhost.com.br/game/palworld",
+		title: "Host de Palworld no Brasil | NeonHost",
 		description:
-			"Palworld com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"Hospedagem de Palworld com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		siteName: "NeonHost",
 		images: [
 			{
