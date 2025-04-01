@@ -13,7 +13,7 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "Plano Simples - 1",
-		price: "12,90",
+		price: "2,00",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord1',
 		description: {
 			ram: "2GB",
@@ -24,7 +24,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Basic - 2",
-		price: "22,75",
+		price: "4,00",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord2',
 		description: {
 			ram: "4GB",
@@ -35,7 +35,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Advanced - 3",
-		price: "33,55",
+		price: "8,00",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord3',
 		description: {
 			ram: "8GB",
@@ -46,7 +46,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "Plano Advanced - 4",
-		price: "33,55",
+		price: "16,00",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord4',
 		description: {
 			ram: "12GB",
