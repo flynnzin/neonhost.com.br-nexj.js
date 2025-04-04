@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Globe2 } from 'lucide-react';
 
 
+// porra
+
 function App() {
   const [activePoint, setActivePoint] = useState<number | null>(null);
   const [ping, setPing] = useState<number | string | null>(null);
