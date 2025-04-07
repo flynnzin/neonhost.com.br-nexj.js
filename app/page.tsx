@@ -58,17 +58,49 @@ const containerVariants = {
 	hidden: { opacity: 0 },
 	visible: {
 		opacity: 1,
-		transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+		transition: {
+			staggerChildren: 0.2,
+			delayChildren: 0.3
+		}
 	},
 };
 
 const itemVariants = {
 	hidden: { opacity: 0, y: 50 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			type: "spring",
+			stiffness: 100,
+			damping: 10
+		}
+	},
 };
 
+const hoverVariants = {
+	hover: {
+		scale: 1.05,
+		boxShadow: "0 0 30px rgba(236, 72, 153, 0.3)",
+		transition: {
+			type: "spring",
+			stiffness: 300,
+			damping: 10
+		}
+	}
+};
 
-
+const iconVariants = {
+	hover: {
+		scale: 1.2,
+		rotate: 10,
+		transition: {
+			type: "spring",
+			stiffness: 400,
+			damping: 10
+		}
+	}
+};
 
 function useTypingEffect(text2: string, typingSpeed = 150, deletingSpeed = 100, pauseTime = 1000) {
 	const [displayedText, setDisplayedText] = useState("");
@@ -494,100 +526,207 @@ export default function Home() {
 
 
 			<section className="mt-[5%]">
-				<div className="flex flex-col justify-center items-center">
-					<h1 className="text-xl md:text-4xl font-bold text-center pb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+				<motion.div 
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+					viewport={{ once: true }}
+					className="flex flex-col justify-center items-center"
+				>
+					<motion.h1 
+						initial={{ opacity: 0, y: -20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, delay: 0.2 }}
+						viewport={{ once: true }}
+						className="text-xl md:text-4xl font-bold text-center pb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+					>
 						Fale conosco
-						<div className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
-					</h1>
-					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
+						<motion.div 
+							initial={{ width: 0 }}
+							whileInView={{ width: "100%" }}
+							transition={{ duration: 1, delay: 0.3 }}
+							viewport={{ once: true }}
+							className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" 
+						/>
+					</motion.h1>
+					<motion.p 
+						initial={{ opacity: 0, y: 10 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, delay: 0.2 }}
+						viewport={{ once: true }}
+						className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto"
+					>
 						Estamos aqui para ajudar com qualquer dúvida ou problema que você
 						possa ter. Não hesite em nos contatar se precisar de assistência.
-					</p>
-				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 mt-5 mb-20">
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Consultoria Especializada
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Nossa equipe de consultores está pronta para ajudar você a
-							escolher a melhor solução para seu projeto. Atendimento
-							personalizado de segunda a sexta, das 9h às 21h.
-						</p>
-						<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Falar com um consultor
-							</Button>
-						</Link>
-					</Card>
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Suporte 24/7
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Suporte técnico especializado disponível 24 horas por dia, todos
-							os dias do ano. Resolva suas dúvidas e problemas com rapidez
-							através do nosso chat online.
-						</p>
-						<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Iniciar Suporte
-							</Button>
-						</Link>
-					</Card>
-					<Card className="py-10 px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Central de Ajuda
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Acesse nossa base de conhecimento ou abra um ticket para suporte
-							mais detalhado. Nossa equipe está pronta para te ajudar a resolver
-							qualquer desafio técnico.
-						</p>
-
-
-
-
-						<Link
-							href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
-							target="_blank"
+					</motion.p>
+				</motion.div>
+				<motion.div 
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 mt-5 mb-20"
+				>
+					<motion.div variants={itemVariants}>
+						<motion.div
+							variants={hoverVariants}
+							whileHover="hover"
 						>
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Acessar central
-							</Button>
-						</Link>
-					</Card>
-				</div>
+							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
+								<motion.p 
+									variants={iconVariants}
+									whileHover="hover"
+								>
+									<Info
+										size={64}
+										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
+									/>
+								</motion.p>
+								<motion.h1 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.4 }}
+									viewport={{ once: true }}
+									className="font-bold text-gray-100 text-xl text-center mb-4"
+								>
+									Consultoria Especializada
+								</motion.h1>
+								<motion.p 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.5 }}
+									viewport={{ once: true }}
+									className="mb-10 text-center text-gray-400"
+								>
+									Nossa equipe de consultores está pronta para ajudar você a
+									escolher a melhor solução para seu projeto. Atendimento
+									personalizado de segunda a sexta, das 9h às 21h.
+								</motion.p>
+								<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
+									<motion.div
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+									>
+										<Button
+											className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
+											size="md"
+											variant="ghost"
+										>
+											Falar com um consultor
+										</Button>
+									</motion.div>
+								</Link>
+							</Card>
+						</motion.div>
+					</motion.div>
+					<motion.div variants={itemVariants}>
+						<motion.div
+							variants={hoverVariants}
+							whileHover="hover"
+						>
+							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
+								<motion.p 
+									variants={iconVariants}
+									whileHover="hover"
+								>
+									<Info
+										size={64}
+										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
+									/>
+								</motion.p>
+								<motion.h1 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.4 }}
+									viewport={{ once: true }}
+									className="font-bold text-gray-100 text-xl text-center mb-4"
+								>
+									Suporte 24/7
+								</motion.h1>
+								<motion.p 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.5 }}
+									viewport={{ once: true }}
+									className="mb-10 text-center text-gray-400"
+								>
+									Suporte técnico especializado disponível 24 horas por dia, todos
+									os dias do ano. Resolva suas dúvidas e problemas com rapidez
+									através do nosso chat online.
+								</motion.p>
+								<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
+									<motion.div
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+									>
+										<Button
+											className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
+											size="md"
+											variant="ghost"
+										>
+											Iniciar Suporte
+										</Button>
+									</motion.div>
+								</Link>
+							</Card>
+						</motion.div>
+					</motion.div>
+					<motion.div variants={itemVariants}>
+						<motion.div
+							variants={hoverVariants}
+							whileHover="hover"
+						>
+							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
+								<motion.p 
+									variants={iconVariants}
+									whileHover="hover"
+								>
+									<Info
+										size={64}
+										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
+									/>
+								</motion.p>
+								<motion.h1 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.4 }}
+									viewport={{ once: true }}
+									className="font-bold text-gray-100 text-xl text-center mb-4"
+								>
+									Central de Ajuda
+								</motion.h1>
+								<motion.p 
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.5 }}
+									viewport={{ once: true }}
+									className="mb-10 text-center text-gray-400"
+								>
+									Acesse nossa base de conhecimento ou abra um ticket para suporte
+									mais detalhado. Nossa equipe está pronta para te ajudar a resolver
+									qualquer desafio técnico.
+								</motion.p>
+								<Link
+									href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
+									target="_blank"
+								>
+									<motion.div
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+									>
+										<Button
+											className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
+											size="md"
+											variant="ghost"
+										>
+											Acessar central
+										</Button>
+									</motion.div>
+								</Link>
+							</Card>
+						</motion.div>
+					</motion.div>
+				</motion.div>
 			</section>
 		</section>
 
