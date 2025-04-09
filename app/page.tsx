@@ -194,15 +194,9 @@ export default function Home() {
 			{/* <LoadingScreen /> */}
 
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
-			
-				<motion.div
-					initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
-					whileInView={{ opacity: 1, y: 0 }} // Aparece suavemente
-					transition={{ duration: 1.2, ease: "easeOut" }} // Tempo da animação
-					viewport={{ once: true }} // Apenas uma vez quando aparecer na tela
-					className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center"
-				>
-					<div className="max-w-7xl mx-auto" >
+
+				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center">
+					<div className="max-w-7xl mx-auto">
 						<div className="mb-6 flex flex-col">
 							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
 								Servidores VPS no Brasil
@@ -215,7 +209,7 @@ export default function Home() {
 							</p>
 						</div>
 						<div className="flex items-center gap-4">
-							<a href="#plans" >
+							<a href="#plans">
 								<Button
 									variant="solid"
 									size="lg"
@@ -226,18 +220,21 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
+
 					<CookieConsent />
+
 					<motion.img
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 1.2, delay: 0.4 }}
+						transition={{ duration: 1, delay: 0.2 }}
 						viewport={{ once: true }}
 						src="/svgs/Server-rafiki.svg"
-						alt="Server-rafiki"
-						className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
-						id="features"
+						alt="Ilustração de servidor"
+						className="mx-auto w-full h-[620px] hidden sm:flex"
+						loading="lazy"
+						decoding="async"
 					/>
-				</motion.div>
+				</div>
 			</section>
 
 			<style jsx>{`
@@ -262,14 +259,14 @@ export default function Home() {
   }
 			`}</style>
 
-		<Divider className="mt-5" />
+			<Divider className="mt-5" />
 			<GameServersSection />
-		<Divider className="mt-5" />
+			<Divider className="mt-5" />
 
-		<ProtectionDashboard />
-		
-		<Divider className="mt-5" />
-		<section className="pt-[5%]" id="plans">
+			<ProtectionDashboard />
+
+			<Divider className="mt-5" />
+			<section className="pt-[5%]" id="plans">
 				<div className="container">
 					<motion.div
 						className="text-center"
@@ -335,7 +332,7 @@ export default function Home() {
 
 			<Divider className="mt-10" />
 
-			
+
 			<motion.section
 				className="pt-[15%]"
 				initial={{ opacity: 0, y: 50 }}
