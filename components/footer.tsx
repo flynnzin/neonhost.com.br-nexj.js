@@ -46,21 +46,19 @@ export const Footer = () => {
 				{ name: "Termos de Serviço", url: "https://cdn.neonhost.com.br/neonhostinger/Termos-NeonHost.pdf" },
 			],
 		},
-		
+
 	];
 	return (
 		<>
-		{/* <OpenWidget /> */}
+			{/* <OpenWidget /> */}
 			<footer className="bg-background-dark border-t border-t-gray-800">
 				<div className="mx-auto max-w-7xl px-6 py-12">
 					<div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-12">
 						<div className="col-span-2 md:col-span-4">
 							<div className="flex items-center space-x-2 mb-6">
-								<img
-									src="/logo-branca.webp"
-									alt="NeonHost"
-									className="h-full w-52"
-								/>
+								<h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+									Sobre nós 💖
+								</h1>
 							</div>
 							<p className="text-sm text-gray-400 mb-6">
 								Hospedagem de alta performance com suporte 24/7. Servidores
@@ -137,7 +135,7 @@ export const Footer = () => {
 								reservados.
 							</p>
 							<p className="text-sm text-gray-400 mt-4 md:mt-0">
-							Desenvolvido por {" "}
+								Desenvolvido por {" "}
 								<a
 									href="https://www.loctor.dev"
 									target="_blank"

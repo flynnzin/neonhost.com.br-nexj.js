@@ -194,78 +194,13 @@ export default function Home() {
 			{/* <LoadingScreen /> */}
 
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
-
-				{/* <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center">
-					<div className="max-w-7xl mx-auto">
-						<div className="mb-6 flex flex-col">
-							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
-								Servidores VPS no Brasil
-							</h1>
-							<h2 className="text-xl font-semibold mb-2">
-								Servidores com Alta Performance na Neon Host
-							</h2>
-							<p className="text-sm leading-7 font-medium">
-								Tenha desempenho e estabilidade com os <span className="font-semibold">VPS da Neon Host</span>. Soluções sob medida e <span className="font-semibold">99,9% de uptime garantido</span>.
-							</p>
-						</div>
-						<div className="flex items-center gap-4">
-							<a href="#plans">
-								<Button
-									variant="solid"
-									size="lg"
-									className="text-sm font-normal bg-accent-primary/70 hover:bg-accent-primary border-0 text-white rounded-md px-8"
-								>
-									Saber Mais
-								</Button>
-							</a>
-						</div>
-					</div>
-
-					<CookieConsent />
-
-					<motion.img
-						initial={{ opacity: 0, scale: 0.8 }}
-						whileInView={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 1, delay: 0.2 }}
-						viewport={{ once: true }}
-						src="/svgs/Server-rafiki.svg"
-						alt="Ilustração de servidor"
-						className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
-						loading="lazy"
-						decoding="async"
-					/>
-				</div> */}
-			</section>
-
-			<style jsx>{`
-  @keyframes animate-gradient {
-    to {
-      background-position: 200%;
-    }
-  }
-
-  .animate-gradient-text {
-    background: linear-gradient(
-      to right,
-      #b3429a,
-      #8619f5,
-      #b3429a
-    );
-    background-size: 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: animate-gradient 3.5s linear infinite;
-  }
-			`}</style>
-
-			<Divider className="mt-5" />
+				
 			<GameServersSection />
-			<Divider className="mt-5" />
+			</section>
 
 			<ProtectionDashboard />
 
-			<Divider className="mt-5" />
+			<Divider className="mt-15" />
 			<section className="pt-[5%]" id="plans">
 				<div className="container">
 					<motion.div
