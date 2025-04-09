@@ -195,7 +195,7 @@ export default function Home() {
 
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center">
+				{/* <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center">
 					<div className="max-w-7xl mx-auto">
 						<div className="mb-6 flex flex-col">
 							<h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text animate-gradient-text">
@@ -230,11 +230,11 @@ export default function Home() {
 						viewport={{ once: true }}
 						src="/svgs/Server-rafiki.svg"
 						alt="Ilustração de servidor"
-						className="mx-auto w-full h-[620px] hidden sm:flex"
+						className="animate-bounce-y mx-auto w-full h-[620px] hidden sm:flex"
 						loading="lazy"
 						decoding="async"
 					/>
-				</div>
+				</div> */}
 			</section>
 
 			<style jsx>{`
