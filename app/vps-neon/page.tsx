@@ -9,7 +9,7 @@ import ComparisonTable from "../_components/comparison-table";
 import { CardProduts } from "../_components/card-products";
 import Map from "../_components/map";
 
-export default function VpsGamer() {
+export default function VpsNeon() {
 	return (
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%]">
