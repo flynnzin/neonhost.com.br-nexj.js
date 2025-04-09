@@ -16,17 +16,17 @@ export default function GameServersSection() {
   }, [])
 
   const games = [
-    { id: "minecraft", name: "Minecraft", logo: "/games/mine.webp", url: "/jogos/minecraft" },
-    { id: "palworld", name: "Palworld", logo: "/games/pal.webp", url: "/jogos/palworld" },
-    { id: "gtav", name: "GTA V", logo: "/games/gtavF.webp", url: "/jogos/gtav" },
-    { id: "rust", name: "Rust", logo: "/games/rustF.webp", url: "/jogos/rust" },
-    { id: "7days", name: "7 Days to Die", logo: "/games/7dtd.webp", url: "/jogos/7days" },
-    { id: "dayz", name: "DayZ", logo: "/games/dayzF.webp", url: "/jogos/dayz" },
-    { id: "zomboid", name: "Project Zomboid", logo: "/games/zomboid.webp", url: "/jogos/zomboid" },
-    { id: "terraria", name: "Terraria", logo: "/games/terrariaF.webp", url: "/jogos/terraria" },
-    { id: "arma3", name: "Arma 3", logo: "/games/armareforgerF.webp", url: "/jogos/arma3" },
-    { id: "aloft", name: "Aloft", logo: "/games/aloftF.webp", url: "/jogos/aloft" },
-    { id: "enshrouded", name: "Enshrouded", logo: "/games/enshrouded.webp", url: "/jogos/enshrouded" },
+    { id: "minecraft", name: "Minecraft", logo: "/games/mine.webp", url: "/game/minecraft" },
+    { id: "palworld", name: "Palworld", logo: "/games/pal.webp", url: "/game/palworld" },
+    { id: "gtav", name: "GTA V", logo: "/games/gtavF.webp", url: "/game/gtav" },
+    { id: "rust", name: "Rust", logo: "/games/rustF.webp", url: "/game/rust" },
+    { id: "7days", name: "7 Days to Die", logo: "/games/7dtd.webp", url: "/game/7days" },
+    { id: "dayz", name: "DayZ", logo: "/games/dayzF.webp", url: "/game/dayz" },
+    { id: "zomboid", name: "Project Zomboid", logo: "/games/zomboid.webp", url: "/game/zomboid" },
+    { id: "terraria", name: "Terraria", logo: "/games/terrariaF.webp", url: "/game/terraria" },
+    { id: "arma3", name: "Arma 3", logo: "/games/armareforgerF.webp", url: "/game/arma3" },
+    { id: "aloft", name: "Aloft", logo: "/games/aloftF.webp", url: "/game/aloft" },
+    { id: "enshrouded", name: "Enshrouded", logo: "/games/enshrouded.webp", url: "/game/enshrouded" },
   ]
 
   const plans = {
