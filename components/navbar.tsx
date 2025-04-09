@@ -111,7 +111,6 @@ export const NavbarComponent = () => {
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="hidden sm:flex gap-4 items-center justify-start" justify="start">
-        <PromoBanner />
         <NavbarItem key="01" className="mt-0">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
@@ -729,78 +728,3 @@ export const NavbarComponent = () => {
   )
 }
 
-const PromoBanner = () => {
-  const [copied, setCopied] = useState(false)
-  const [showBanner, setShowBanner] = useState(true)
-  const promoCode = "15OFF2025"
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(promoCode)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY > 0) {
-        setShowBanner(false)
-      } else {
-        setShowBanner(true)
-      }
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
-  return (
-    <div
-      className={`bg-primary-purple text-white py-1 sm:py-1 w-full fixed left-0 z-[62] transition-all duration-500 ease-in-out ${
-        showBanner ? "opacity-100 transform translate-y-0" : "opacity-0 transform -translate-y-[100px]"
-      }`}
-      style={{ top: "60px" }}
-    >
-      <div className="container max-w-screen-2xl mx-auto px-4">
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
-          <span className="flex gap-2 items-center text-center">
-            {/* Adicionando a animação ao SVG */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-ticket-percent animate-pulse"
-            >
-              <path d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-              <path d="M9 9h.01" />
-              <path d="m15 9-6 6" />
-              <path d="M15 15h.01" />
-            </svg>
-            Oferta por tempo limitado: 15% de desconto em todos os novos planos VPS!
-          </span>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <code className="bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm">{promoCode}</code>
-            <button
-              className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-all duration-200 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs sm:text-sm"
-              onClick={handleCopy}
-            >
-              <Copy className="sm:w-3.5 sm:h-3.5" />
-              <span>{copied ? "Copiado!" : "Copiar"}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default PromoBanner
