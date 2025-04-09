@@ -216,7 +216,7 @@ export default function GameServersSection() {
   const getPlansForGame = (gameId: string) => {
     return plans[gameId as keyof typeof plans] || plans.default
   }
-  
+
   const handleGameClick = (gameId: string) => {
     setSelectedGame(gameId)
   }
@@ -345,32 +345,31 @@ export default function GameServersSection() {
             >
               {games.map((game, index) => (
                 <motion.button
-                key={game.id}
-                onClick={() => handleGameClick(game.id)}
-                aria-label={`Selecionar jogo`}
-                className={`bg-gray-800/50 border ${
-                  selectedGame === game.id ? "border-pink-500" : "border-gray-700"
-                } rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors relative overflow-hidden`}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {selectedGame === game.id && (
-                  <motion.div
-                    className="absolute inset-0 bg-pink-500/10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    layoutId="selectedGameBackground"
+                  key={game.id}
+                  onClick={() => handleGameClick(game.id)}
+                  aria-label={`Selecionar jogo`}
+                  className={`bg-gray-800/50 border ${selectedGame === game.id ? "border-pink-500" : "border-gray-700"
+                    } rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors relative overflow-hidden`}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {selectedGame === game.id && (
+                    <motion.div
+                      className="absolute inset-0 bg-pink-500/10"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      layoutId="selectedGameBackground"
+                    />
+                  )}
+                  <Image
+                    src={game.logo || "/placeholder.svg"}
+                    alt={game.name}
+                    width={120}
+                    height={60}
+                    className="max-h-12 w-auto object-contain relative z-10"
                   />
-                )}
-                <Image
-                  src={game.logo || "/placeholder.svg"}
-                  alt={game.name}
-                  width={120}
-                  height={60}
-                  className="max-h-12 w-auto object-contain relative z-10"
-                />
-              </motion.button>
+                </motion.button>
               ))}
               <motion.button
                 className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors"
@@ -456,44 +455,21 @@ export default function GameServersSection() {
                       damping: 24,
                     }}
                   >
-                    <Link
-                      href={plan.contractUrl}
-                      className="block bg-gray-800/70 hover:bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 transition-colors hover:border-pink-500/50 relative overflow-hidden"
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-500/5 to-pink-500/0"
-                        initial={{ x: "-100%" }}
-                        whileHover={{ x: "100%" }}
-                        transition={{ duration: 1 }}
-                      />
-                      <div className="flex items-center justify-between relative z-10">
-                        <div className="flex items-center">
-                          <div>
-                            <h4 className="font-bold">{plan.name}</h4>
-                            <p className="text-sm text-gray-400">{plan.features.join(", ")}</p>
-                          </div>
+                    <Link href={plan.contractUrl} className="block p-4 rounded-md border hover:border-pink-500 bg-gray-800/70">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <strong className="block">{plan.name}</strong>
+                          <small className="text-gray-400 text-sm">{plan.features.join(", ")}</small>
                         </div>
                         <div className="text-right">
-                          <motion.div
-                            className="text-pink-500 font-bold"
-                            initial={{ opacity: 0.8 }}
-                            whileHover={{ opacity: 1 }}
-                          >
-                           
-                            <motion.span
-                              className="text-xl"
-                              whileHover={{
-                                color: "#f472b6",
-                                textShadow: "0 0 8px rgba(244, 114, 182, 0.5)",
-                              }}
-                            >
-                              {plan.price ? `R$ ${plan.price}` : "Sob Consulta"}
-                            </motion.span>
-                          </motion.div>
-                          <div className="text-xs text-gray-400"> {plan.price ? `/Por mês` : ""}</div>
+                          <span className="text-pink-500 font-bold text-lg">
+                            {plan.price ? `R$ ${plan.price}` : "Sob Consulta"}
+                          </span>
+                          {plan.price && <div className="text-xs text-gray-400">/Por mês</div>}
                         </div>
                       </div>
                     </Link>
+
                   </motion.div>
                 ))}
               </motion.div>
