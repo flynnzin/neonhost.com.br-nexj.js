@@ -56,7 +56,6 @@ export default function TestimonialsSection() {
     },
   ]
 
-  // Variantes de animação
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -157,44 +156,13 @@ export default function TestimonialsSection() {
                   {testimonial.initials}
                 </motion.div>
                 <div>
-                  <h4 className="font-bold">{testimonial.name}</h4>
+                  <p className="font-bold text-white">{testimonial.name}</p>
                   <p className="text-sm text-gray-400">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
-        {/* <motion.div
-          className="flex items-center justify-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          <div className="flex items-center">
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mr-2"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-            >
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                fill="#00B67A"
-              />
-            </motion.svg>
-            <span className="font-bold mr-2">Trustpilot</span>
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-              ))}
-            </div>
-            <span className="ml-2 text-sm text-gray-400">1+ avaliações</span>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   )
