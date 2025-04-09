@@ -67,10 +67,10 @@ export default function ProtectionDashboard() {
 
   // Adicionar um efeito para sincronizar dados entre abas/janelas
   useEffect(() => {
-    const handleStorageChange = (e) => {
+    const handleStorageChange = (e: StorageEvent) => {
       if (e.key === "globalTrafficData") {
         try {
-          const newData = JSON.parse(e.newValue)
+          const newData = JSON.parse(e.newValue || "null")
           if (newData) {
             setTrafficData(newData)
             // Atualizar o trafficLevel com o último valor do gráfico
@@ -83,15 +83,14 @@ export default function ProtectionDashboard() {
         }
       }
     }
-
-    // Adicionar listener para mudanças no localStorage
+  
     window.addEventListener("storage", handleStorageChange)
-
-    // Limpar listener quando o componente for desmontado
+  
     return () => {
       window.removeEventListener("storage", handleStorageChange)
     }
   }, [])
+  
 
   // Referência para o canvas do gráfico
   const canvasRef = useRef<HTMLCanvasElement>(null)
