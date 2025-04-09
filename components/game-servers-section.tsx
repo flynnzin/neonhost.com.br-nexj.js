@@ -347,7 +347,7 @@ export default function GameServersSection() {
                 <motion.button
                 key={game.id}
                 onClick={() => handleGameClick(game.id)}
-                aria-label={`Selecionar jogo ${game.name}`}
+                aria-label={`Selecionar jogo`}
                 className={`bg-gray-800/50 border ${
                   selectedGame === game.id ? "border-pink-500" : "border-gray-700"
                 } rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors relative overflow-hidden`}
