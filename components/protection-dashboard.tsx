@@ -377,7 +377,7 @@ export default function ProtectionDashboard() {
         }
 
         // Desenhar pontos
-        trafficData.forEach((point: { time: number; value: number }, index) => {
+        trafficData.forEach((point: { time: number; value: number }, index: number) => {
             const x = padding.left + (index / (trafficData.length - 1)) * chartWidth
             const y = padding.top + chartHeight - (point.value / 100) * chartHeight
 
