@@ -128,7 +128,7 @@ export default function ProtectionDashboard() {
       })
 
       // Atualizar dados do gráfico
-      setTrafficData((prevData) => {
+      setTrafficData((prevData: { time: number; value: number }[]) => {
         const newData = [...prevData]
         // Remover o primeiro ponto e adicionar um novo no final
         newData.shift()
