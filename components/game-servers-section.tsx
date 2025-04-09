@@ -284,12 +284,9 @@ export default function GameServersSection() {
       >
         {/* Header otimizado */}
         <div className="mb-12">
-          <motion.h2
-            className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
-            variants={itemVariants}
-          >
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
             Sua plataforma de servidores de jogos
-          </motion.h2>
+          </h2>
           <p className="text-gray-400 text-lg max-w-3xl">
             Com nossa plataforma, você cria servidores de jogo online com facilidade.
           </p>
