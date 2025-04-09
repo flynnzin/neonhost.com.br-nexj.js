@@ -278,20 +278,23 @@ export default function GameServersSection() {
       <motion.div
         className="container mx-auto px-4"
         initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={containerVariants}
       >
-        <motion.div className="mb-12" variants={itemVariants}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}>
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Sua plataforma de servidores de jogos</h2>
+        {/* Header otimizado */}
+        <div className="mb-12">
+          <motion.h2
+            className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+            variants={itemVariants}
+          >
+            Sua plataforma de servidores de jogos
+          </motion.h2>
           <p className="text-gray-400 text-lg max-w-3xl">
             Com nossa plataforma, você cria servidores de jogo online com facilidade. Oferecemos VPS de alto desempenho
             para garantir a melhor experiência.
           </p>
-        </motion.div>
+        </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Game Grid */}
