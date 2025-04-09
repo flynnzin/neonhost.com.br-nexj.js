@@ -74,11 +74,7 @@ export default function VpsGamer() {
 					))}
 				</div>
 			</section>
-			<Divider className="mt-24" />
 
-			<section className="flex mx-auto justify-center items-center max-w-max">
-				<Map />
-			</section>
 
 			<Divider className="mt-24" />
 			<section className="pt-[5%] px-4 lg:px-6">
