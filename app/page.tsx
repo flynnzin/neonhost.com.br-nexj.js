@@ -4,6 +4,10 @@ import { Button } from "@nextui-org/button";
 import { motion } from "framer-motion";
 import { Card, Divider } from "@nextui-org/react";
 import { AccordionItems } from "./_components/accordion";
+import GameServersSection from "@/components/game-servers-section"
+import TestimonialsSection from "@/components/testimonials-section"
+import ProtectionDashboard from "@/components/protection-dashboard"
+import CookieConsent from "@/components/cookie-consent"
 // import HeroBackground from './_components/HeroBackground';
 
 const textTypingVariant = {
@@ -189,8 +193,8 @@ export default function Home() {
 
 			{/* <LoadingScreen /> */}
 
-
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
+			
 				<motion.div
 					initial={{ opacity: 0, y: 100 }} // Começa invisível e deslocado para baixo
 					whileInView={{ opacity: 1, y: 0 }} // Aparece suavemente
@@ -222,7 +226,7 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-
+					<CookieConsent />
 					<motion.img
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
@@ -256,146 +260,16 @@ export default function Home() {
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 3.5s linear infinite;
   }
-`}</style>
+			`}</style>
 
-			{/* <style jsx>{`
-				@keyframes gradientText {
-					0% {
-						background-position: 100% 0;
-					}
-					50% {
-						background-position: 0 100%;
-					}
-					100% {
-						background-position: 100% 0;
-					}
-				}
+		<Divider className="mt-5" />
+			<GameServersSection />
+		<Divider className="mt-5" />
 
-				.animate-gradient-text {
-					background: linear-gradient(45deg, #b3429a, #8619f5, #fe8601);
-					background-size: 300% 300%;
-					-webkit-background-clip: text;
-					color: transparent;
-					animation: gradientText 3s ease infinite;
-				}
-			`}</style> */}
-
-
-
-			<motion.section
-				className="pt-[15%]"
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1, ease: "easeOut" }}
-				viewport={{ once: true, amount: 0.2 }}
-			>
-				<div className="container">
-					<div className="text-center">
-						<motion.h2
-							className="text-3xl font-bold tracking-tight sm:text-4xl"
-							variants={textTypingVariant}
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true }}
-						>
-							{"Por que escolher a Neon Host?".split("").map((char, i) => (
-								<motion.span key={i} variants={letterVariant}>{char}</motion.span>
-							))}
-						</motion.h2>
-						<motion.p
-							className="text-sm text-accent-primary"
-							initial={{ opacity: 0 }}
-							whileInView={{ opacity: 1 }}
-							transition={{ duration: 1.5, ease: "easeOut" }}
-							viewport={{ once: true }}
-						>
-							Experimente a diferença com nossas soluções de hospedagem premium
-						</motion.p>
-					</div>
-
-					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-						{[{
-							icon: <ZapIcon className="h-12 w-12 text-pink-500" />,
-							title: "Rápido como um raio",
-							description: "Experimente velocidades extremamente rápidas com nossa infraestrutura otimizada"
-						}, {
-							icon: <ShieldCheckIcon className="h-12 w-12 text-pink-500" />,
-							title: "Proteção DDoS",
-							description: "Fique protegido com nossas soluções de segurança de nível empresarial"
-						}, {
-							icon: <HeartPulseIcon className="h-12 w-12 text-pink-500" />,
-							title: "99.9% Uptime",
-							description: "Confie em nossa infraestrutura altamente disponível"
-						}, {
-							icon: <ServerIcon className="h-12 w-12 text-pink-500" />,
-							title: "Hardware Premium",
-							description: "Processadores de última geração e SSDs NVMe"
-						}].map((item, index) => (
-							<motion.div
-								key={index}
-								initial={{ opacity: 0, y: 50 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
-								viewport={{ once: true }}
-							>
-								<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-									{item.icon}
-									<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-									<p className="mt-2 text-muted-foreground">{item.description}</p>
-								</Card>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</motion.section>
-
-			<section className="pt-[10%]">
-				<div className="container">
-					<div className="text-center">
-						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-							Tecnologia de ponta
-						</h2>
-						<p className="text-sm text-accent-primary">
-							Alimentado pelo hardware e software mais recentes
-						</p>
-					</div>
-					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-						{[{
-							icon: <CpuIcon className="h-12 w-12 mx-auto text-pink-500" />,
-							title: "CPUs de última geração",
-							description: "AMD Ryzen & Intel Core"
-						}, {
-							icon: <GaugeIcon className="h-12 w-12 mx-auto text-pink-500" />,
-							title: "Armazenamento NVMe",
-							description: "Velocidade de até 7.000 MB/s"
-						}, {
-							icon: <NetworkIcon className="h-12 w-12 mx-auto text-pink-500" />,
-							title: "Network",
-							description: "Portas de 1 Gbps - 10 Gbps"
-						}, {
-							icon: <ShieldIcon className="h-12 w-12 mx-auto text-pink-500" />,
-							title: "Segurança",
-							description: "Proteção empresarial contra DDoS"
-						}].map((item, index) => (
-							<motion.div
-								key={index}
-								className="text-center"
-								variants={fadeInVariant}
-								initial="hidden"
-								whileInView="visible"
-								viewport={{ once: true, amount: 0.2 }}
-								transition={{ duration: 1, ease: "easeOut", delay: index * 0.3 }}
-							>
-								{item.icon}
-								<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-								<p className="text-sm text-accent-primary">{item.description}</p>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			<section className="pt-[10%]" id="plans">
+		<ProtectionDashboard />
+		
+		<Divider className="mt-5" />
+		<section className="pt-[5%]" id="plans">
 				<div className="container">
 					<motion.div
 						className="text-center"
@@ -459,8 +333,100 @@ export default function Home() {
 				</div>
 			</section>
 
-			<Divider className="mt-20" />
-			<section className="pt-[5%] relative overflow-hidden">
+			<Divider className="mt-10" />
+
+			
+			<motion.section
+				className="pt-[15%]"
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1, ease: "easeOut" }}
+				viewport={{ once: true, amount: 0.2 }}
+			>
+				<div className="container">
+					<div className="text-center">
+						<motion.h2
+							className="text-3xl font-bold tracking-tight sm:text-4xl"
+							variants={textTypingVariant}
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true }}
+						>
+							{"Por que escolher a Neon Host?".split("").map((char, i) => (
+								<motion.span key={i} variants={letterVariant}>{char}</motion.span>
+							))}
+						</motion.h2>
+						<motion.p
+							className="text-sm text-accent-primary"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							transition={{ duration: 1.5, ease: "easeOut" }}
+							viewport={{ once: true }}
+						>
+							Experimente a diferença com nossas soluções de hospedagem premium
+						</motion.p>
+					</div>
+
+					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+						{[{
+							icon: <ZapIcon className="h-12 w-12 text-pink-500" />,
+							title: "Rápido como um raio",
+							description: "Experimente velocidades extremamente rápidas com nossa infraestrutura otimizada"
+						}, {
+							icon: <ShieldCheckIcon className="h-12 w-12 text-pink-500" />,
+							title: "Proteção DDoS",
+							description: "Fique protegido com nossas soluções de segurança de nível empresarial"
+						}, {
+							icon: <HeartPulseIcon className="h-12 w-12 text-pink-500" />,
+							title: "99.9% Uptime",
+							description: "Confie em nossa infraestrutura altamente disponível"
+						},
+						{
+							icon: <CpuIcon className="h-12 w-12 text-pink-500" />,
+							title: "CPUs de última gerações",
+							description: "Processadores como AMD Ryzen 9 5900x / AMD Ryzen 7 7700x"
+						},
+						{
+							icon: <ServerIcon className="h-12 w-12 text-pink-500" />,
+							title: "Hardware Premium",
+							description: "Processadores de última geração e SSDs NVMe"
+						},
+						{
+							icon: <GaugeIcon className="h-12 w-12 text-pink-500" />,
+							title: "Armazenamento NVMe",
+							description: "Velocidade de até 7.000 MB/s"
+						},
+						{
+							icon: <NetworkIcon className="h-12 w-12 text-pink-500" />,
+							title: "Network",
+							description: "Portas de 1 Gbps - 10 Gbps"
+						}, {
+							icon: <ShieldIcon className="h-12 w-12 text-pink-500" />,
+							title: "Segurança",
+							description: "Proteção empresarial contra DDoS"
+						}].map((item, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
+								viewport={{ once: true }}
+							>
+								<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
+									{item.icon}
+									<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+									<p className="mt-2 text-muted-foreground">{item.description}</p>
+								</Card>
+							</motion.div>
+						))}
+					</div>
+				</div>
+			</motion.section>
+
+			<Divider className="mt-12" />
+			<TestimonialsSection />
+
+			<section className="pt-[8%] relative overflow-hidden">
 				<div className="container relative z-10">
 					<motion.div
 						initial="hidden"
@@ -526,14 +492,14 @@ export default function Home() {
 
 
 			<section className="mt-[5%]">
-				<motion.div 
+				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 					viewport={{ once: true }}
 					className="flex flex-col justify-center items-center"
 				>
-					<motion.h1 
+					<motion.h1
 						initial={{ opacity: 0, y: -20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
@@ -541,15 +507,15 @@ export default function Home() {
 						className="text-xl md:text-4xl font-bold text-center pb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
 					>
 						Fale conosco
-						<motion.div 
+						<motion.div
 							initial={{ width: 0 }}
 							whileInView={{ width: "100%" }}
 							transition={{ duration: 1, delay: 0.3 }}
 							viewport={{ once: true }}
-							className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" 
+							className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500"
 						/>
 					</motion.h1>
-					<motion.p 
+					<motion.p
 						initial={{ opacity: 0, y: 10 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
@@ -560,7 +526,7 @@ export default function Home() {
 						possa ter. Não hesite em nos contatar se precisar de assistência.
 					</motion.p>
 				</motion.div>
-				<motion.div 
+				<motion.div
 					variants={containerVariants}
 					initial="hidden"
 					whileInView="visible"
@@ -573,7 +539,7 @@ export default function Home() {
 							whileHover="hover"
 						>
 							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-								<motion.p 
+								<motion.p
 									variants={iconVariants}
 									whileHover="hover"
 								>
@@ -582,7 +548,7 @@ export default function Home() {
 										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
 									/>
 								</motion.p>
-								<motion.h1 
+								<motion.h1
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.4 }}
@@ -591,7 +557,7 @@ export default function Home() {
 								>
 									Consultoria Especializada
 								</motion.h1>
-								<motion.p 
+								<motion.p
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.5 }}
@@ -625,7 +591,7 @@ export default function Home() {
 							whileHover="hover"
 						>
 							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-								<motion.p 
+								<motion.p
 									variants={iconVariants}
 									whileHover="hover"
 								>
@@ -634,7 +600,7 @@ export default function Home() {
 										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
 									/>
 								</motion.p>
-								<motion.h1 
+								<motion.h1
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.4 }}
@@ -643,7 +609,7 @@ export default function Home() {
 								>
 									Suporte 24/7
 								</motion.h1>
-								<motion.p 
+								<motion.p
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.5 }}
@@ -677,7 +643,7 @@ export default function Home() {
 							whileHover="hover"
 						>
 							<Card className="py-10 px-5 border-none transition-transform bg-cards-dark/60 w-full group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-								<motion.p 
+								<motion.p
 									variants={iconVariants}
 									whileHover="hover"
 								>
@@ -686,7 +652,7 @@ export default function Home() {
 										className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
 									/>
 								</motion.p>
-								<motion.h1 
+								<motion.h1
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.4 }}
@@ -695,7 +661,7 @@ export default function Home() {
 								>
 									Central de Ajuda
 								</motion.h1>
-								<motion.p 
+								<motion.p
 									initial={{ opacity: 0 }}
 									whileInView={{ opacity: 1 }}
 									transition={{ duration: 0.5, delay: 0.5 }}
