@@ -183,7 +183,7 @@ export const viewport: Viewport = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function VpsGamerLayout({
+export default function VpsNeonLayout({
 	children,
 }: {
 	children: React.ReactNode;
