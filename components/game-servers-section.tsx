@@ -345,35 +345,32 @@ export default function GameServersSection() {
             >
               {games.map((game, index) => (
                 <motion.button
-                  key={game.id}
-                  onClick={() => handleGameClick(game.id)}
-                  className={`bg-gray-800/50 border ${
-                    selectedGame === game.id ? "border-pink-500" : "border-gray-700"
-                  } rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors relative overflow-hidden`}
-                  variants={itemVariants}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  custom={index}
-                >
-                  {selectedGame === game.id && (
-                    <motion.div
-                      className="absolute inset-0 bg-pink-500/10"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      layoutId="selectedGameBackground"
-                    />
-                  )}
-                  <Image
-                    src={game.logo || "/placeholder.svg"}
-                    alt={game.name}
-                    width={120}
-                    height={60}
-                    className="max-h-12 w-auto object-contain relative z-10"
+                key={game.id}
+                onClick={() => handleGameClick(game.id)}
+                aria-label={`Selecionar jogo ${game.name}`}
+                className={`bg-gray-800/50 border ${
+                  selectedGame === game.id ? "border-pink-500" : "border-gray-700"
+                } rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors relative overflow-hidden`}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {selectedGame === game.id && (
+                  <motion.div
+                    className="absolute inset-0 bg-pink-500/10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    layoutId="selectedGameBackground"
                   />
-                </motion.button>
+                )}
+                <Image
+                  src={game.logo || "/placeholder.svg"}
+                  alt={game.name}
+                  width={120}
+                  height={60}
+                  className="max-h-12 w-auto object-contain relative z-10"
+                />
+              </motion.button>
               ))}
               <motion.button
                 className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 h-24 flex items-center justify-center hover:border-pink-500/70 transition-colors"
