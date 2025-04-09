@@ -291,8 +291,7 @@ export default function GameServersSection() {
             Sua plataforma de servidores de jogos
           </motion.h2>
           <p className="text-gray-400 text-lg max-w-3xl">
-            Com nossa plataforma, você cria servidores de jogo online com facilidade. Oferecemos VPS de alto desempenho
-            para garantir a melhor experiência.
+            Com nossa plataforma, você cria servidores de jogo online com facilidade.
           </p>
         </div>
 
