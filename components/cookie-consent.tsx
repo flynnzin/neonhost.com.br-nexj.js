@@ -15,14 +15,13 @@ export default function CookieConsent() {
   })
 
   useEffect(() => {
-    // Check if user has already made a choice
     const consent = localStorage.getItem("cookie-consent")
     if (!consent) {
-      // Wait a bit before showing the popup for better UX
-      const timer = setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => setShowConsent(true))
+      } else {
         setShowConsent(true)
-      }, 1500)
-      return () => clearTimeout(timer)
+      }
     }
   }, [])
 
@@ -44,8 +43,6 @@ export default function CookieConsent() {
   const saveConsent = (preferences: typeof cookiePreferences) => {
     localStorage.setItem("cookie-consent", JSON.stringify(preferences))
     setShowConsent(false)
-
-    // Aqui você implementaria a lógica real para definir os cookies
     console.log("Preferências de cookies salvas:", preferences)
   }
 
@@ -54,8 +51,7 @@ export default function CookieConsent() {
   }
 
   const handlePreferenceChange = (key: keyof typeof cookiePreferences) => {
-    if (key === "necessary") return // Não pode desativar cookies necessários
-
+    if (key === "necessary") return
     setCookiePreferences((prev) => ({
       ...prev,
       [key]: !prev[key],
@@ -65,14 +61,19 @@ export default function CookieConsent() {
   return (
     <AnimatePresence>
       {showConsent && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-50"
-        >
-          <div className="bg-[#121212] border border-purple-700/30 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden">
+        <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-50">
+          {/* Conteúdo principal fora da animação para melhorar o LCP */}
+          <p className="sr-only">
+            Usamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você interage com nossos serviços de hospedagem VPS e servidores de jogos.
+          </p>
+
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="bg-[#121212] border border-purple-700/30 rounded-xl shadow-md overflow-hidden"
+          >
             <div className="p-4 md:p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
@@ -88,8 +89,7 @@ export default function CookieConsent() {
               </div>
 
               <p className="text-gray-300 mb-4">
-                Usamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você
-                interage com nossos serviços de hospedagem VPS e servidores de jogos.
+                Usamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você interage com nossos serviços de hospedagem VPS e servidores de jogos.
               </p>
 
               <div className="mb-4">
@@ -161,12 +161,11 @@ export default function CookieConsent() {
 
             <div className="px-4 py-2 bg-purple-900/20 border-t border-purple-700/30">
               <p className="text-xs text-gray-400 text-center">
-                Ao clicar em "Aceitar todos", você concorda com o uso de cookies para melhorar a navegação, analisar o
-                uso do site e auxiliar em nossos esforços de marketing.
+                Ao clicar em "Aceitar todos", você concorda com o uso de cookies para melhorar a navegação, analisar o uso do site e auxiliar em nossos esforços de marketing.
               </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       )}
     </AnimatePresence>
   )

@@ -679,18 +679,7 @@ export default function ProtectionDashboard() {
                                 12 <span className="text-3xl">ms</span>
                             </motion.div>
 
-                            <div className="w-full h-2 bg-gray-800 light-theme:bg-gray-200 rounded-full mb-4 relative">
-                                <motion.div
-                                    className="absolute left-0 top-0 h-2 bg-emerald-400 light-theme:bg-emerald-500 rounded-full"
-                                    initial={{ width: 0 }}
-                                    animate={{ width: "1%" }}
-                                    transition={{ duration: 1, delay: 0.7 }}
-                                />
-                                <div className="flex justify-between text-xs text-gray-500 mt-5">
-                                    <span>12ms</span>
-                                    <span>100ms</span>
-                                </div>
-                            </div>
+                            
 
                             <div className="bg-pink-900/30 light-theme:bg-pink-100 text-pink-400 light-theme:text-pink-600 px-4 py-2 rounded-full flex items-center text-sm">
                                 <ArrowDown className="h-4 w-4 mr-1" />
