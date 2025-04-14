@@ -7,6 +7,7 @@ import { AccordionItems } from "./_components/accordion";
 import GameServersSection from "@/components/game-servers-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import ProtectionDashboard from "@/components/protection-dashboard"
+import ProcessorComparison from "@/components/processor-comparison"
 import CookieConsent from "@/components/cookie-consent"
 // import HeroBackground from './_components/HeroBackground';
 
@@ -201,7 +202,7 @@ export default function Home() {
 			<ProtectionDashboard />
 
 			<Divider className="mt-15" />
-			<section className="pt-[5%]" id="plans">
+			{/* <section className="pt-[5%]" id="plans">
 				<div className="container">
 					<motion.div
 						className="text-center"
@@ -263,8 +264,8 @@ export default function Home() {
 						</motion.div>
 					))}
 				</div>
-			</section>
-
+			</section> */}
+<ProcessorComparison />
 			<Divider className="mt-10" />
 
 
