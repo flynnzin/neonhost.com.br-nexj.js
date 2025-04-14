@@ -202,70 +202,7 @@ export default function Home() {
 			<ProtectionDashboard />
 
 			<Divider className="mt-15" />
-			{/* <section className="pt-[5%]" id="plans">
-				<div className="container">
-					<motion.div
-						className="text-center"
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true }}
-						variants={slideIn}
-					>
-						<h2 className="text-3xl font-bold tracking-tight sm:text-4xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-							Desbloqueie o potencial do seu projeto
-						</h2>
-						<p className="mt-1 text-lg leading-8 text-gray-400 max-w-2xl mx-auto">
-							Nossa infraestrutura avançada e suporte técnico especializado
-							oferecem desempenho, segurança e escalabilidade para impulsionar
-							seu sucesso.
-						</p>
-					</motion.div>
-				</div>
-
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-16">
-					{plans.map((plan, index) => (
-						<motion.div
-							key={index}
-							className="relative overflow-hidden bg-cards-dark/60 rounded-xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform group bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 shadow-xl hover:shadow-pink-500/10 transition-all duration-300"
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true, amount: 0.2 }}
-							variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: index * 0.2 } } }}
-						>
-							<motion.div
-								className="w-16 h-16 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:-translate-y-1 transition-transform"
-								whileHover={{ scale: 1.1 }}
-							>
-								{plan.icon}
-							</motion.div>
-							<h3 className="text-xl font-bold mb-2">{plan.title}</h3>
-							<p className="text-sm text-gray-400 mb-2">{plan.description}</p>
-
-							<div className="mt-auto">
-								<p className="text-sm text-gray-400 mt-3 mb-1">Planos a partir de</p>
-								<div className="flex items-baseline justify-center gap-1">
-									<span className="text-sm text-pink-500">R$</span>
-									<span className="text-4xl font-bold">{plan.price.split(".")[0]}</span>
-									<span className="text-sm">.{plan.price.split(".")[1]}</span>
-									<span className="text-sm text-gray-400">/mensal</span>
-								</div>
-								<Link href={plan.link}>
-									<motion.div whileHover={{ scale: 1.05 }}>
-										<Button
-											className="mt-6 w-full bg-gradient-to-r from-purple-500 to-pink-500 font-bold"
-											variant="flat"
-											size="lg"
-										>
-											Ver todos os planos
-										</Button>
-									</motion.div>
-								</Link>
-							</div>
-						</motion.div>
-					))}
-				</div>
-			</section> */}
-<ProcessorComparison />
+			<ProcessorComparison />
 			<Divider className="mt-10" />
 
 
