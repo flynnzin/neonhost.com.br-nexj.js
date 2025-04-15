@@ -1,7 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { Cpu, Server, Zap, ChevronRight, Check, Shield, Wifi, Globe, HardDrive, Award, Sparkles } from "lucide-react"
+import {
+  Cpu,
+  Server,
+  Zap,
+  ChevronRight,
+  Check,
+  Shield,
+  Wifi,
+  Globe,
+  HardDrive,
+  Award,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react"
 
 export default function ProcessorComparison() {
   const [selectedProcessor, setSelectedProcessor] = useState<"intel" | "ryzen">("ryzen")
@@ -156,50 +169,41 @@ export default function ProcessorComparison() {
   }
 
   return (
-    <div className="bg-[#0e1117] text-white min-h-screen">
-      {/* Hero section */}
-      <div className="relative overflow-hidden bg-[#0a0a14] py-16">
-        <div className="absolute inset-0 opacity-20">
-        </div>
-        <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#ff3e9d] to-[#9553ff]">
-            Servidores de Alto Desempenho
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-10">
-            Escolha a infraestrutura ideal para seu projeto com nossos servidores otimizados para máxima performance
-          </p>
-
-          {/* Processor selector */}
-          <div className="inline-flex bg-[#161625] p-1 rounded-full">
-            <button
-              onClick={() => setSelectedProcessor("intel")}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedProcessor === "intel" ? "bg-[#2a1a3a] text-white" : "text-gray-400 hover:text-white"
-              }`}
-            >
-              Intel Core
-            </button>
-            <button
-              onClick={() => setSelectedProcessor("ryzen")}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedProcessor === "ryzen" ? "bg-[#7e22ce] text-white" : "text-gray-400 hover:text-white"
-              }`}
-            >
-              AMD Ryzen
-            </button>
-          </div>
+    <div className="text-white">
+      {/* Header section */}
+      <div className="max-w-6xl mx-auto px-6 text-center mb-12">
+        {/* Processor selector */}
+        <div className="inline-flex bg-[#161625]/60 p-1 rounded-full backdrop-blur-sm">
+          <button
+            onClick={() => setSelectedProcessor("intel")}
+            className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+              selectedProcessor === "intel" ? "bg-[#2a1a3a] text-white" : "text-gray-400 hover:text-white"
+            }`}
+          >
+            Intel Core
+          </button>
+          <button
+            onClick={() => setSelectedProcessor("ryzen")}
+            className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+              selectedProcessor === "ryzen" ? "bg-[#7e22ce] text-white" : "text-gray-400 hover:text-white"
+            }`}
+          >
+            AMD Ryzen
+          </button>
         </div>
       </div>
 
       {/* Main content */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Processor overview */}
         <div className="flex flex-col md:flex-row gap-8 mb-16">
           {/* Processor image/icon */}
           <div className="w-full md:w-1/3">
             <div
-              className={`h-full rounded-2xl p-8 flex flex-col items-center justify-center text-center ${
-                selectedProcessor === "intel" ? "bg-[#2a1a3a]/20" : "bg-[#7e22ce]/20"
+              className={`h-full rounded-2xl p-8 flex flex-col items-center justify-center text-center border ${
+                selectedProcessor === "intel"
+                  ? "bg-[#2a1a3a]/10 border-[#2a1a3a]/30"
+                  : "bg-[#7e22ce]/10 border-[#7e22ce]/30"
               }`}
             >
               <div
@@ -256,7 +260,7 @@ export default function ProcessorComparison() {
                 max="4"
                 value={selectedPlan}
                 onChange={(e) => setSelectedPlan(Number.parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-gray-700/50 rounded-lg appearance-none cursor-pointer"
                 style={{
                   background: `linear-gradient(to right, ${selectedProcessor === "intel" ? "#2a1a3a" : "#7e22ce"} 0%, ${
                     selectedProcessor === "intel" ? "#2a1a3a" : "#7e22ce"
@@ -273,7 +277,7 @@ export default function ProcessorComparison() {
                         ? selectedProcessor === "intel"
                           ? "bg-[#2a1a3a] ring-2 ring-[#2a1a3a]/50"
                           : "bg-[#7e22ce] ring-2 ring-[#7e22ce]/50"
-                        : "bg-gray-600"
+                        : "bg-gray-600/50"
                     }`}
                     onClick={() => setSelectedPlan(index)}
                   />
@@ -282,7 +286,7 @@ export default function ProcessorComparison() {
             </div>
 
             {/* Selected plan details */}
-            <div className="bg-[#151922] rounded-2xl overflow-hidden border border-gray-800">
+            <div className="rounded-2xl overflow-hidden border border-gray-800/60 backdrop-blur-sm">
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -310,7 +314,7 @@ export default function ProcessorComparison() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="bg-[#1a1f2a] rounded-lg p-4">
+                  <div className="bg-[#1a1f2a]/40 rounded-lg p-4 border border-gray-800/30">
                     <div className="flex items-center gap-2 mb-2">
                       <Cpu size={16} className={selectedProcessor === "intel" ? "text-[#2a1a3a]" : "text-[#7e22ce]"} />
                       <span className="text-xs text-gray-400">Processador</span>
@@ -318,7 +322,7 @@ export default function ProcessorComparison() {
                     <p className="font-medium">{processorPlans[selectedProcessor][selectedPlan].core}</p>
                   </div>
 
-                  <div className="bg-[#1a1f2a] rounded-lg p-4">
+                  <div className="bg-[#1a1f2a]/40 rounded-lg p-4 border border-gray-800/30">
                     <div className="flex items-center gap-2 mb-2">
                       <Server
                         size={16}
@@ -329,7 +333,7 @@ export default function ProcessorComparison() {
                     <p className="font-medium">{processorPlans[selectedProcessor][selectedPlan].storage}GB NVMe</p>
                   </div>
 
-                  <div className="bg-[#1a1f2a] rounded-lg p-4">
+                  <div className="bg-[#1a1f2a]/40 rounded-lg p-4 border border-gray-800/30">
                     <div className="flex items-center gap-2 mb-2">
                       <Wifi size={16} className="text-green-500" />
                       <span className="text-xs text-gray-400">Internet</span>
@@ -337,7 +341,7 @@ export default function ProcessorComparison() {
                     <p className="font-medium">1Gbps</p>
                   </div>
 
-                  <div className="bg-[#1a1f2a] rounded-lg p-4">
+                  <div className="bg-[#1a1f2a]/40 rounded-lg p-4 border border-gray-800/30">
                     <div className="flex items-center gap-2 mb-2">
                       <Globe size={16} className="text-green-500" />
                       <span className="text-xs text-gray-400">Localização</span>
@@ -346,7 +350,7 @@ export default function ProcessorComparison() {
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-800">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-800/50">
                   <div>
                     <div className="flex items-end gap-1">
                       <span className="text-xs text-gray-400 mb-1">R$</span>
@@ -386,7 +390,9 @@ export default function ProcessorComparison() {
         {/* Features section */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
-            <Shield className="text-[#ff3e9d]" size={24} />
+            <div className="w-10 h-10 rounded-full bg-[#2a1a3a]/30 flex items-center justify-center">
+              <Shield className="text-[#ff3e9d]" size={20} />
+            </div>
             <h2 className="text-2xl font-bold">Recursos inclusos em todos os planos</h2>
           </div>
 
@@ -425,10 +431,10 @@ export default function ProcessorComparison() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#151922] to-[#1a1f2a] rounded-xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300"
+                className="rounded-xl p-6 border border-gray-800/40 hover:border-gray-700/60 transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#2a1a3a] w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                  <div className="bg-[#2a1a3a]/30 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
                     <feature.icon className="text-[#ff3e9d]" size={20} />
                   </div>
                   <div>
@@ -444,7 +450,9 @@ export default function ProcessorComparison() {
         {/* Other services */}
         <div>
           <div className="flex items-center gap-3 mb-8">
-            <Server className="text-[#ff3e9d]" size={24} />
+            <div className="w-10 h-10 rounded-full bg-[#2a1a3a]/30 flex items-center justify-center">
+              <Server className="text-[#ff3e9d]" size={20} />
+            </div>
             <h2 className="text-2xl font-bold">Outros serviços</h2>
           </div>
 
@@ -452,11 +460,11 @@ export default function ProcessorComparison() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-[#151922] rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-gray-700"
+                className="group rounded-xl overflow-hidden border border-gray-800/40 hover:border-gray-700/60 transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="p-6">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="bg-[#2a1a3a] w-12 h-12 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110">
+                    <div className="bg-[#2a1a3a]/30 w-12 h-12 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110">
                       {service.icon === "gamepad" && <Cpu className="text-[#ff3e9d]" size={24} />}
                       {service.icon === "target" && <Server className="text-[#ff3e9d]" size={24} />}
                       {service.icon === "server" && <Server className="text-[#ff3e9d]" size={24} />}
@@ -480,7 +488,7 @@ export default function ProcessorComparison() {
                       className="bg-[#7e22ce]/20 text-[#ff3e9d] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[#7e22ce]/30 flex items-center gap-1"
                     >
                       Ver planos
-                      <ChevronRight size={16} />
+                      <ArrowRight size={16} />
                     </a>
                   </div>
                 </div>
