@@ -153,7 +153,6 @@ import Link from "next/link";
 
 import React from 'react';
 import { useEffect, useState } from "react";
-import Map from "./_components/map";
 
 const plans = [
 	{
@@ -195,7 +194,8 @@ export default function Home() {
 
 			{/* <LoadingScreen /> */}
 			<section className="relative py-20 overflow-hidden">
-				<div className="container relative mx-auto px-4 text-center">
+			<div className="container relative mx-auto px-6 md:px-8 lg:px-12 text-center">
+				{/* <div className="container relative mx-auto px-4 text-center"> */}
 					<div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-purple-900/30">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
