@@ -201,8 +201,8 @@ export default function Home() {
 
 			<ProtectionDashboard />
 
-			<Divider className="mt-15" />
-			<ProcessorComparison />
+			{/* <Divider className="mt-15" /> */}
+			{/* <ProcessorComparison /> */}
 			<Divider className="mt-10" />
 
 
