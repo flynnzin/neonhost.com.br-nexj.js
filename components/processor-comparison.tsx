@@ -214,7 +214,7 @@ export default function ProcessorComparison() {
                 <Cpu size={40} className="text-white" />
               </div>
               <h2 className="text-2xl font-bold mb-2">
-                {selectedProcessor === "intel" ? "Intel Core i7" : "AMD Ryzen 9"}
+                {selectedProcessor === "intel" ? "Intel Core I9" : "AMD Ryzen 9"}
               </h2>
               <p className="text-gray-400 mb-6">
                 {selectedProcessor === "intel"
