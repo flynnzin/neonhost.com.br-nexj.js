@@ -8,6 +8,7 @@ import GameServersSection from "@/components/game-servers-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import ProtectionDashboard from "@/components/protection-dashboard"
 import ProcessorComparison from "@/components/processor-comparison"
+import WhyChooseUs from "@/components/why-choose-us"
 import CookieConsent from "@/components/cookie-consent"
 // import HeroBackground from './_components/HeroBackground';
 
@@ -245,92 +246,10 @@ export default function Home() {
 
 			<TestimonialsSection />
 
-			<motion.section
-				className="pt-[15%]"
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 1, ease: "easeOut" }}
-				viewport={{ once: true, amount: 0.2 }}
-			>
-				<div className="container">
-					<div className="text-center">
-						<motion.h2
-							className="text-3xl font-bold tracking-tight sm:text-4xl"
-							variants={textTypingVariant}
-							initial="hidden"
-							whileInView="visible"
-							viewport={{ once: true }}
-						>
-							{"Por que escolher a Neon Host?".split("").map((char, i) => (
-								<motion.span key={i} variants={letterVariant}>{char}</motion.span>
-							))}
-						</motion.h2>
-						<motion.p
-							className="text-sm text-accent-primary"
-							initial={{ opacity: 0 }}
-							whileInView={{ opacity: 1 }}
-							transition={{ duration: 1.5, ease: "easeOut" }}
-							viewport={{ once: true }}
-						>
-							Experimente a diferença com nossas soluções de hospedagem premium
-						</motion.p>
-					</div>
+			<Divider className="mt-10" />
 
-					<div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-						{[{
-							icon: <ZapIcon className="h-12 w-12 text-pink-500" />,
-							title: "Rápido como um raio",
-							description: "Experimente velocidades extremamente rápidas com nossa infraestrutura otimizada"
-						}, {
-							icon: <ShieldCheckIcon className="h-12 w-12 text-pink-500" />,
-							title: "Proteção DDoS",
-							description: "Fique protegido com nossas soluções de segurança de nível empresarial"
-						}, {
-							icon: <HeartPulseIcon className="h-12 w-12 text-pink-500" />,
-							title: "99.9% Uptime",
-							description: "Confie em nossa infraestrutura altamente disponível"
-						},
-						{
-							icon: <CpuIcon className="h-12 w-12 text-pink-500" />,
-							title: "CPUs de última gerações",
-							description: "Processadores como AMD Ryzen 9 5900x / AMD Ryzen 7 7700x"
-						},
-						{
-							icon: <ServerIcon className="h-12 w-12 text-pink-500" />,
-							title: "Hardware Premium",
-							description: "Processadores de última geração e SSDs NVMe"
-						},
-						{
-							icon: <GaugeIcon className="h-12 w-12 text-pink-500" />,
-							title: "Armazenamento NVMe",
-							description: "Velocidade de até 7.000 MB/s"
-						},
-						{
-							icon: <NetworkIcon className="h-12 w-12 text-pink-500" />,
-							title: "Network",
-							description: "Portas de 1 Gbps - 10 Gbps"
-						}, {
-							icon: <ShieldIcon className="h-12 w-12 text-pink-500" />,
-							title: "Segurança",
-							description: "Proteção empresarial contra DDoS"
-						}].map((item, index) => (
-							<motion.div
-								key={index}
-								initial={{ opacity: 0, y: 50 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
-								viewport={{ once: true }}
-							>
-								<Card className="p-6 transition-transform hover:scale-105 bg-cards-dark bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
-									{item.icon}
-									<h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-									<p className="mt-2 text-muted-foreground">{item.description}</p>
-								</Card>
-							</motion.div>
-						))}
-					</div>
-				</div>
-			</motion.section>
+			<WhyChooseUs />
+
 
 			<Divider className="mt-10" />
 
