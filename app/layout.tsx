@@ -1,12 +1,7 @@
 import type React from "react"
-import { Footer } from "@/components/footer"
-import { NavbarComponent } from "@/components/navbar"
-import { siteConfig } from "@/config/site"
-import "@/styles/globals.css"
-import clsx from "clsx"
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
-import AnimatedBackground from "@/components/animated-background"
+import { siteConfig } from "@/config/site"
+import ClientLayout from "./ClientLayout"
 
 export const metadata: Metadata = {
   title: {
@@ -177,27 +172,10 @@ export const viewport: Viewport = {
   ],
 }
 
-const inter = Inter({ subsets: ["latin"] })
-
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <meta name="google-site-verification" content="hsbqhlsa_EF36270POQ4hf418PvGn0QT3CcCRkw1fRE" />
-      <head />
-      <body className={clsx("min-h-screen dark text-gray-100 relative", inter.className)}>
-        <AnimatedBackground />
-        <div className="relative flex flex-col">
-          <div className="border-b border-b-gray-700">
-            <NavbarComponent />
-          </div>
-          <main className="bg-[#0a0a0e]">{children}</main>
-          <Footer />
-        </div>
-      </body>
-    </html>
-  )
+  return <ClientLayout>{children}</ClientLayout>
 }
