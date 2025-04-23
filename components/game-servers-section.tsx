@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence, useInView } from "framer-motion"
-import { ChevronRight, Gamepad2, Server, Shield, Cpu, HardDrive, Users, Plus, ArrowRight, Sparkles } from "lucide-react"
+import { ChevronRight, Gamepad2, Server, Shield, Cpu, HardDrive, Users, ArrowRight, Sparkles } from "lucide-react"
 
 export default function GameServersSection() {
   const [selectedGame, setSelectedGame] = useState("minecraft")
@@ -29,7 +29,13 @@ export default function GameServersSection() {
     { id: "terraria", name: "Terraria", logo: "/games/terrariaF.webp", url: "/games/terraria", color: "#9553FF" },
     { id: "arma3", name: "Arma 3", logo: "/games/armareforgerF.webp", url: "/games/arma3", color: "#8C4A4A" },
     { id: "aloft", name: "Aloft", logo: "/games/aloftF.webp", url: "/games/aloft", color: "#4F7FAF" },
-    { id: "enshrouded", name: "Enshrouded", logo: "/games/enshrouded.webp", url: "/games/enshrouded", color: "#7F4F6F" },
+    {
+      id: "enshrouded",
+      name: "Enshrouded",
+      logo: "/games/enshrouded.webp",
+      url: "/games/enshrouded",
+      color: "#7F4F6F",
+    },
   ]
 
   const plans = {
@@ -184,7 +190,7 @@ export default function GameServersSection() {
         features: ["4GB RAM", "40 GB NVMe", "Anti-DDoS", "Painel de controle"],
         icon: <Cpu className="h-5 w-5" />,
         contractUrl: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
-        recommended: true,
+        recommended: false,
       },
       {
         name: "Plano Elite",
@@ -192,7 +198,7 @@ export default function GameServersSection() {
         features: ["6GB RAM", "60 GB NVMe", "Anti-DDoS", "Painel de controle"],
         icon: <Shield className="h-5 w-5" />,
         contractUrl: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-3",
-        recommended: false,
+        recommended: true,
       },
       {
         name: "Plano Personalizado",
@@ -283,7 +289,7 @@ export default function GameServersSection() {
   }
 
   return (
-    <section className="py-20 overflow-hidden relative" ref={sectionRef}>
+    <section className="w-full py-20 overflow-hidden relative" ref={sectionRef}>
       {/* Background elements */}
       <div className="absolute inset-0 bg-[#0a0a0e] -z-10"></div>
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
@@ -293,12 +299,12 @@ export default function GameServersSection() {
         <div className="absolute -bottom-[400px] -right-[400px] w-[800px] h-[800px] rounded-full bg-[#ff3e9d]/5 blur-[120px]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="w-full px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 max-w-4xl mx-auto"
         >
           <motion.div
             className="inline-flex items-center justify-center mb-4 bg-gradient-to-br from-[#9553ff]/20 to-[#ff3e9d]/20 p-3 rounded-full"
@@ -316,7 +322,7 @@ export default function GameServersSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Game Selection - Left Side */}
           <motion.div
             className="lg:col-span-4 space-y-6"
@@ -400,6 +406,7 @@ export default function GameServersSection() {
                     }`}
                     style={{
                       background: selectedGame === game.id ? `${game.color}15` : "rgba(17, 17, 23, 0.5)",
+                      // ringColor: selectedGame === game.id ? game.color : "transparent",
                     }}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -422,16 +429,6 @@ export default function GameServersSection() {
                     )}
                   </motion.button>
                 ))}
-
-                {/* More games button */}
-                <motion.button
-                  className="rounded-lg p-2 h-16 flex flex-col items-center justify-center bg-[#111117] hover:bg-gray-800/50 border border-gray-800/50 hover:border-[#9553ff]/50 transition-colors"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <Plus className="h-5 w-5 text-[#9553ff] mb-1" />
-                  <span className="text-xs text-gray-400">Mais</span>
-                </motion.button>
               </div>
             </div>
 
@@ -615,7 +612,7 @@ export default function GameServersSection() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <Users className="h-5 w-5 text-[#ff3e9d] mr-2" />
-                    <span className="text-sm text-gray-400">Mais de 5.000 jogadores confiam na NeonHost</span>
+                    <span className="text-sm text-gray-400">Milhares de jogadores confiam na NeonHost</span>
                   </div>
 
                   <div className="hidden md:flex items-center space-x-1">

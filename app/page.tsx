@@ -192,57 +192,9 @@ export default function Home() {
 
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
 
-			{/* <LoadingScreen /> */}
-			<section className="relative py-20 overflow-hidden">
-			<div className="container relative mx-auto px-6 md:px-8 lg:px-12 text-center">
-				{/* <div className="container relative mx-auto px-4 text-center"> */}
-					<div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-purple-900/30">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="32"
-							height="32"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="text-pink-500"
-						>
-							<path d="M17 12h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2Z" />
-							<path d="M10 6H7a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Z" />
-							<path d="M17 6h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Z" />
-							<path d="M10 12H7a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2Z" />
-						</svg>
-					</div>
-					<h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-						Sua plataforma de{" "}
-						<span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-							servidores de jogos
-						</span>
-					</h1>
-					<p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-400">
-						Com nossa plataforma, você cria servidores de jogo online com facilidade e desempenho superior.
-					</p>
-					<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-						<Button className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-lg py-6 px-8">
-							Começar agora
-						</Button>
-						<Button
-							// variant="outline"
-							className="w-full sm:w-auto border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white text-lg py-6 px-8"
-						>
-							Ver planos
-						</Button>
-					</div>
-				</div>
-			</section>
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] flex flex-col">
-				<ProcessorComparison />
+				<GameServersSection />
 			</section>
-
-			{/* <ProtectionDashboard /> */}
-
 
 			<TestimonialsSection />
 

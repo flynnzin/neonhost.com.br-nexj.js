@@ -171,27 +171,6 @@ export default function ProcessorComparison() {
   return (
     <div className="text-white">
       {/* Header section */}
-      <div className="max-w-6xl mx-auto px-6 text-center mb-12">
-        {/* Processor selector */}
-        <div className="inline-flex bg-[#161625]/60 p-1 rounded-full backdrop-blur-sm">
-          <button
-            onClick={() => setSelectedProcessor("intel")}
-            className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-              selectedProcessor === "intel" ? "bg-[#2a1a3a] text-white" : "text-gray-400 hover:text-white"
-            }`}
-          >
-            Intel Core
-          </button>
-          <button
-            onClick={() => setSelectedProcessor("ryzen")}
-            className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-              selectedProcessor === "ryzen" ? "bg-[#7e22ce] text-white" : "text-gray-400 hover:text-white"
-            }`}
-          >
-            AMD Ryzen
-          </button>
-        </div>
-      </div>
 
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-6">
@@ -243,7 +222,7 @@ export default function ProcessorComparison() {
               {selectedProcessor === "ryzen" && (
                 <span className="bg-[#7e22ce] text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1">
                   <Zap size={12} />
-                  Recomendado para jogos
+                  Recomendado para games
                 </span>
               )}
             </div>

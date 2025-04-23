@@ -310,8 +310,8 @@ export default function TestimonialsSection() {
           {[
             { value: "99.9%", label: "Uptime garantido" },
             { value: "24/7", label: "Suporte técnico" },
-            { value: "5000+", label: "Clientes satisfeitos" },
-            { value: "3ms", label: "Latência média" },
+            { value: "500+", label: "Clientes satisfeitos" },
+            { value: "15ms", label: "Latência média" },
           ].map((stat, index) => (
             <motion.div
               key={index}

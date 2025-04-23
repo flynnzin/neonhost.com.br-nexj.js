@@ -325,7 +325,7 @@ export const NavbarComponent = () => {
                       </div>
                     </Link>
                   ))}
-                  <Link href="/games">
+                  {/* <Link href="/games">
                     <div className="p-2 rounded-lg flex items-center h-18 h-full hover:bg-[#303030]">
                       <div className="flex items-center space-x-2">
                         <LayoutGrid
@@ -340,7 +340,7 @@ export const NavbarComponent = () => {
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </PopoverContent>
@@ -509,7 +509,7 @@ export const NavbarComponent = () => {
       </NavbarContent>
       <NavbarContent className="hidden mt-0 sm:flex" justify="end">
         {/* Botão de alternância de tema */}
-        <NavbarItem>
+        {/* <NavbarItem>
           <Button
             isIconOnly
             className="bg-transparent"
@@ -519,7 +519,7 @@ export const NavbarComponent = () => {
           >
             {theme === "dark" ? <Sun className="h-5 w-5 text-gray-300" /> : <Moon className="h-5 w-5 text-gray-700" />}
           </Button>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
           <NextLink href="https://app.neonhost.com.br/login">
             <Button variant="flat" size="md" className="text-sm font-bold bg-pink-500 border-0 text-white rounded-full">
