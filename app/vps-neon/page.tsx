@@ -7,7 +7,6 @@ import { Info } from "lucide-react";
 import Link from "next/link";
 import ComparisonTable from "../_components/comparison-table";
 import { CardProduts } from "../_components/card-products";
-import Map from "../_components/map";
 
 export default function VpsNeon() {
 	return (
