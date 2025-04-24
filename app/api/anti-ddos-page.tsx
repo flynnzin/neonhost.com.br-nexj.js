@@ -71,11 +71,11 @@ export default function AntiDDosPage() {
     if (isCountVisible) {
       const interval = setInterval(() => {
         setCount((prev) => {
-          if (prev < 296) {
+          if (prev < 348) {
             return prev + 1
           }
           clearInterval(interval)
-          return 296
+          return 348
         })
       }, 15)
 
@@ -279,9 +279,9 @@ export default function AntiDDosPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Proteção Anti DDoS com capacidade total de até 296TB/s. Mitigação a tempo real, sempre ativa, garantindo o
+            Proteção Anti DDoS com capacidade total de até 348TB/s. Mitigação a tempo real, sempre ativa, garantindo o
             tempo de resposta mais rápido contra qualquer ameaças/ataques. Todos nossos servidores são em São Paulo, e
-            também contamos com o modelo de proteção Cloudflare. Com 296TB/s. de capacidade de rede, 23x vezes maior que
+            também contamos com o modelo de proteção Cloudflare. Com 348TB/s. de capacidade de rede, 23x vezes maior que
             os maiores ataques DDoS já registrados, a Cloudflare pode mitigar ataques de qualquer tamanho.
           </motion.p>
           <motion.div
