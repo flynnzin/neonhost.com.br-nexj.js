@@ -314,8 +314,8 @@ export default function GameServersSection() {
           >
             <Gamepad2 className="h-8 w-8 text-[#ff3e9d]" />
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#9553ff] to-[#ff3e9d]">
-            Sua plataforma de servidores de jogos
+          <h2 className="text-5xl md:text-5xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-[#9553ff] to-[#ff3e9d]">
+            Sua plataforma de servidores dedicados
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Com nossa plataforma, você cria servidores de jogo online com facilidade e desempenho superior.
