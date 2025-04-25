@@ -7,7 +7,6 @@ import TestimonialsSection from "@/components/testimonials-section"
 import Link from "next/link"
 import { ZapIcon, ShieldIcon, Clock, Headset, Sparkles, Server } from "lucide-react"
 import { useRef, useEffect } from "react"
-
 // Animation variants
 const fadeInVariant = {
 	hidden: { opacity: 0, y: -20 },
