@@ -201,7 +201,7 @@ export const Footer = () => {
 								</Link>
 
 								<Link
-									href="https://instagram.com/neonhost"
+									href="https://instagram.com/neonhostinger"
 									target="_blank"
 									className="text-gray-400 hover:text-pink-500 transition-colors"
 									aria-label="Instagram"
@@ -218,7 +218,7 @@ export const Footer = () => {
 								</Link>
 
 								<Link
-									href="https://twitter.com/neonhost"
+									href="https://x.com/neonhost_"
 									target="_blank"
 									className="text-gray-400 hover:text-pink-500 transition-colors"
 									aria-label="Twitter"
