@@ -13,7 +13,7 @@ export default function NotFoundPage() {
 						type="button"
 						className="mt-6 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-center px-6 py-3 text-lg font-semibold text-white transition-all hover:scale-105"
 					>
-						Voltar para a página inicial
+						Voltar para a página inicial 
 					</button>
 				</Link>
 			</div>
