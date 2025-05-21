@@ -192,6 +192,16 @@ export const metadata: Metadata = {
     "vps redm",
     "vps rd2",
     "Vps Redm",
+    "Vps Gamer",
+    "Vps gamer",
+    "Servidor VPS Gamer",
+    "Servidor Vps Gamer",
+    "Servidor Gamer",
+    "Steam",
+    "Steam Games",
+    "Steam VPS",
+    "VPS Azure",
+    "Google Cloud",
   ],
 
   openGraph: {
