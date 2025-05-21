@@ -8,7 +8,7 @@ import Link from "next/link";
 import ComparisonTable from "../_components/comparison-table";
 import { CardProduts } from "../_components/card-products";
 
-export default function VpsNeon() {
+export default function VpsGamer() {
 	return (
 		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
 			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%]">
