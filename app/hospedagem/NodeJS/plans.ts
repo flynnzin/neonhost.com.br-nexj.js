@@ -12,7 +12,7 @@ export interface Plan {
 
 export const plans: Plan[] = [
 	{
-		name: "Plano Node.JS - Iniciante",
+		name: "Node.JS - Iniciante",
 		price: "2,00",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/nodejs/service-nodejs-iniciante',
 		description: {
@@ -23,7 +23,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Node.JS - Shine",
+		name: "Node.JS - Shine",
 		price: "5,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord1',
 		description: {
@@ -34,7 +34,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Node.JS - Vortex",
+		name: "Node.JS - Vortex",
 		price: "10,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord2',
 		description: {
@@ -45,7 +45,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Node.JS - Echo",
+		name: "Node.JS - Echo",
 		price: "24,95",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord3',
 		description: {
@@ -56,7 +56,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Node.JS - Drift",
+		name: "Node.JS - Drift",
 		price: "32,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord4',
 		description: {
