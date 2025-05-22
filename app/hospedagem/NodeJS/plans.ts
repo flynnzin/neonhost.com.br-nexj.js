@@ -12,7 +12,18 @@ export interface Plan {
 
 export const plans: Plan[] = [
 	{
-		name: "Plano Simples - 1",
+		name: "Plano Node.JS - Iniciante",
+		price: "2,00",
+		link: 'https://app.neonhost.com.br/index.php?rp=/store/nodejs/service-nodejs-iniciante',
+		description: {
+			ram: "1GB",
+			ssd: "10GB",
+			cores: "2 núcleos",
+			attrs: ["NodeJS", "Acesso Web/FTP","Banco de Dados MySQL","Servidor brasileiro"],
+		},
+	},
+	{
+		name: "Plano Node.JS - Shine",
 		price: "5,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord1',
 		description: {
@@ -23,7 +34,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Basic - 2",
+		name: "Plano Node.JS - Vortex",
 		price: "10,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord2',
 		description: {
@@ -34,7 +45,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Advanced - 3",
+		name: "Plano Node.JS - Echo",
 		price: "24,95",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord3',
 		description: {
@@ -45,7 +56,7 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "Plano Advanced - 4",
+		name: "Plano Node.JS - Drift",
 		price: "32,99",
 		link: 'https://app.neonhost.com.br/index.php?rp=/store/discord/plano-discord4',
 		description: {
