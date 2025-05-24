@@ -130,9 +130,9 @@ export default function ProcessorComparison() {
       url: "https://neonhost.com.br/vps-gamer",
     },
     {
-      title: "VPS Trader",
+      title: "VPS Brasil",
       price: "74",
-      desc: "Servidores para trader com tráfego mensal ilimitado",
+      desc: "Servidores para hospedagem com tráfego mensal ilimitado",
       icon: "target",
       url: "https://neonhost.com.br/vps-brasil",
     },
