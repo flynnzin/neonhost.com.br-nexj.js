@@ -164,10 +164,10 @@ export const NavbarComponent = () => {
                         description: "Servidores custo-benefício único.",
                       },
                       {
-                        href: "/vps-trader",
+                        href: "/vps-brasil",
                         icon: Box,
-                        title: "VPS Trader",
-                        description: "Servidor veloz para traders.",
+                        title: "VPS Brasil",
+                        description: "Servidor veloz para hospedagem.",
                       },
                       {
                         href: "/fivem",
@@ -198,11 +198,11 @@ export const NavbarComponent = () => {
                       </Link>
                     ))}
                   </div>
-                  <Link href="/vps-neon">
+                  <Link href="/vps-gamer">
                     <div className="relative bg-gradient-to-b from-purple-500 to-pink-500 h-52 rounded-lg">
                       <div className="absolute bottom-0 p-4">
                         <Image src="/android-chrome-512x512.webp" alt="logo" height="256" width="72" />
-                        <p className="text-lg font-bold">VPS Neon</p>
+                        <p className="text-lg font-bold">VPS Gamer</p>
                         <p>Servidores localizados em São Paulo.</p>
                       </div>
                     </div>
@@ -569,9 +569,9 @@ export const NavbarComponent = () => {
               </Button>
               {activePopover === "servers-mobile" && (
                 <div className="flex flex-col gap-2 pl-4">
-                  <Link href="/vps-neon" className="w-full">
+                  <Link href="/vps-gamer" className="w-full">
                     <div className="p-2 hover:bg-[#303030] rounded-lg">
-                      <p className="text-base font-semibold">VPS Neon</p>
+                      <p className="text-base font-semibold">VPS Gamer</p>
                       <p className="text-sm text-gray-500">Servidores localizados no Brasil</p>
                     </div>
                   </Link>
@@ -581,10 +581,10 @@ export const NavbarComponent = () => {
                       <p className="text-sm text-gray-500">Servidores custo-benefício único</p>
                     </div>
                   </Link>
-                  <Link href="/vps-trader" className="w-full">
+                  <Link href="/vps-brasil" className="w-full">
                     <div className="p-2 hover:bg-[#303030] rounded-lg">
                       <p className="text-base font-semibold">VPS Trader</p>
-                      <p className="text-sm text-gray-500">Servidor veloz para traders</p>
+                      <p className="text-sm text-gray-500">Servidor veloz para Hospedagem</p>
                     </div>
                   </Link>
                   <Link href="/dedicado" className="w-full">

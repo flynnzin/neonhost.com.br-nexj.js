@@ -123,18 +123,18 @@ export default function ProcessorComparison() {
   // Configuração dos serviços com URLs
   const services = [
     {
-      title: "VPS Neon",
+      title: "VPS Gamer",
       price: "69",
       desc: "VPS de alta performance no Brasil com Anti-DDoS PRO",
       icon: "gamepad",
-      url: "https://neonhost.com.br/vps-neon",
+      url: "https://neonhost.com.br/vps-gamer",
     },
     {
       title: "VPS Trader",
       price: "74",
       desc: "Servidores para trader com tráfego mensal ilimitado",
       icon: "target",
-      url: "https://neonhost.com.br/vps-trader",
+      url: "https://neonhost.com.br/vps-brasil",
     },
     {
       title: "Semi-Dedicados",

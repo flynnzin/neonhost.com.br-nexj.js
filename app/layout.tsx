@@ -194,6 +194,7 @@ export const metadata: Metadata = {
     "Vps Redm",
     "Vps Gamer",
     "Vps gamer",
+    "vps gamer",
     "Servidor VPS Gamer",
     "Servidor Vps Gamer",
     "Servidor Gamer",

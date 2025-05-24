@@ -258,7 +258,7 @@ function getGameData(id: string) {
       name: "Minecraft",
       logo: "/games/page/mine.jpg",
       featuredImage: "/games/page/mine.jpg",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Na NeonHost, oferecemos servidores populares como Vanilla, Forge, Mohist, Paper e Bedrock Edition, além de modpacks como Pixelmon, SkyFactory e RLCraft.",
