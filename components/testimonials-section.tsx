@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
       name: "Rodrigo Oliveira",
       initials: "RO",
       role: "Proprietário de E-commerce",
-      service: "VPS Trader",
+      service: "VPS Brasil",
       rating: 5,
     },
     {
