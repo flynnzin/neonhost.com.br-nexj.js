@@ -55,7 +55,7 @@ export default function VpsGamer() {
 						Escolha o Plano Perfeito para seu Servidor
 					</h2>
 					<p className="text-pink-500 mx-auto text-lg max-w-2xl">
-						Nossos planos VPS Trader são otimizados para oferecer a melhor
+						Nossos planos VPS Brasil são otimizados para oferecer a melhor
 						experiência, com recursos dedicados e proteção contra
 						ataques.
 					</p>
