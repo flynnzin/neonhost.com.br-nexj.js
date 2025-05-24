@@ -39,7 +39,7 @@ export const Footer = () => {
 			icon: <Server className="h-5 w-5 text-pink-500" />,
 			links: [
 				{ name: "VPS Gamer", url: "/vps-gamer", badge: "Popular" },
-				{ name: "VPS Trader", url: "/vps-brasil" },
+				{ name: "VPS Brasil", url: "/vps-brasil" },
 				{ name: "VPS FiveM", url: "/fivem" },
 				{ name: "Semi-Dedicado", url: "/semi-dedicado" },
 				{ name: "Dedicado", url: "/dedicado", badge: "Novo" },
