@@ -8,11 +8,11 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "VPS Neon | Servidores para Jogos | NeonHost",
+		default: "VPS Brasil | Servidores para Jogos | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
-		"VPS Neon com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"VPS Brasil com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
 	keywords: [
 		"NeonHost",
 		"BrasilFivemHost",
@@ -84,6 +84,7 @@ export const metadata: Metadata = {
 		"site",
 		"vps",
 		"vps gamer",
+		"vps brasil",
 		"gaming vps",
 		"vps",
 		"semi dedicado",
@@ -200,10 +201,10 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
-		url: "https://neonhost.com.br/vps-neon",
-		title: "VPS Neon | Servidores para Jogos | NeonHost",
+		url: "https://neonhost.com.br/vps-brasil",
+		title: "VPS Brasil | Servidores para Jogos | NeonHost",
 		description:
-			"VPS Neon com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"VPS Brasil com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		siteName: "NeonHost",
 		images: [
 			{
@@ -226,14 +227,14 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "VPS Neon | NeonHost",
+		title: "VPS Brasil | NeonHost",
 		card: "summary_large_image",
 		description:
-			"VPS Neon com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"VPS Brasil com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
 		images: ["/og-image.jpg"],
 	},
 	alternates: {
-		canonical: "https://neonhost.com.br/vps-neon",
+		canonical: "https://neonhost.com.br/vps-brasil",
 	},
 };
 
