@@ -362,7 +362,7 @@ function getGameData(id: string) {
       name: "Palworld",
       logo: "/games/page/pal.png",
       featuredImage: "/games/page/pal.png",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
@@ -465,7 +465,7 @@ function getGameData(id: string) {
       name: "Project-Zombiod",
       logo: "/games/page/projectzombiod.webp",
       featuredImage: "/games/page/projectzombiod.webp",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
@@ -568,7 +568,7 @@ function getGameData(id: string) {
       name: "enshrouded",
       logo: "/games/page/enshrouded.jpg",
       featuredImage: "/games/page/enshrouded.jpg",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
@@ -671,7 +671,7 @@ function getGameData(id: string) {
       name: "arma reforger",
       logo: "/games/page/armareforger.jpg",
       featuredImage: "/games/page/armareforger.jpg",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
@@ -774,7 +774,7 @@ function getGameData(id: string) {
       name: "dayz",
       logo: "/games/page/dayz.webp",
       featuredImage: "/games/page/dayz.webp",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
@@ -980,7 +980,7 @@ function getGameData(id: string) {
       name: "rust",
       logo: "/games/page/rust.jpg",
       featuredImage: "/games/page/rust.jpg",
-      VpsPlan: "/vps-neon",
+      VpsPlan: "/vps-gamer",
       ComunityPaln: "https://discord.gg/neonhost",
       description:
         "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",

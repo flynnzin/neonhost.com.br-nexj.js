@@ -8,11 +8,11 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "Hospedagem de FiveM | NeonHost",
+		default: "VPS FiveM com DDoS, Ping Baixo e txAdmin — Hospedagem Gamer Profissional",
 		template: "%s | NeonHost",
 	},
 	description:
-		"Hospedagem de FiveM com processadores de alta frequência, baixa latência e proteção anti-DDoS. Ideal para servidores de Minecraft, CS:GO, ARK e mais. Ativação instantânea e painel de controle intuitivo.",
+		"Hospede seu servidor GTA RP com proteção DDoS, instalação automática de txAdmin, e suporte a ESX/vRP. VPS Gamer com ping baixo em São Paulo..",
 	keywords: [
     "NeonHost",
     "BrasilFivemHost",
@@ -232,15 +232,28 @@ export const metadata: Metadata = {
     "vps linux para jogos com painel pterodactyl",
     "vps gamer com proteção ddos grátis",
     "comprar vps barato com ping baixo brasil",
+    "vps fivem barato",
+    "hospedagem fivem ddos",
+    "vps para gta rp",
+    "vps redm brasil",
+    "vps para redm brasil",
+    "vps para redm",
+    "servidor gta rp host",
+    "hospedar servidor redm",
+    "como criar servidor fivem com vps",
+    "melhor vps para fivem 2025",
+    "vps com proteção ddos para gta rp",
+    "hospedagem redm com painel txadmin",
+    "vps fivem ping baixo brasil",
   ],
 
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
 		url: "https://neonhost.com.br/fivem",
-		title: "Hospedagem de FiveM | NeonHost",
+		title: "VPS FiveM com DDoS, Ping Baixo e txAdmin — Hospedagem Gamer Profissional",
 		description:
-			"Hospedagem de FiveM com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"Hospede seu servidor GTA RP com proteção DDoS, instalação automática de txAdmin, e suporte a ESX/vRP. VPS Gamer com ping baixo em São Paulo.",
 		siteName: "NeonHost",
 		images: [
 			{
@@ -263,10 +276,10 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Hospedagem de FiveM | NeonHost",
+		title: "VPS FiveM com DDoS, Ping Baixo e txAdmin — Hospedagem Gamer Profissional",
 		card: "summary_large_image",
 		description:
-			"Hospedagem de FiveM com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
+			"Hospede seu servidor GTA RP com proteção DDoS, instalação automática de txAdmin, e suporte a ESX/vRP. VPS Gamer com ping baixo em São Paulo.",
 		images: ["/og-image.jpg"],
 	},
 	alternates: {

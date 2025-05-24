@@ -18,17 +18,17 @@ export default function VpsGamer() {
 							VPS Fivem de Alta Performance para seus Servidores
 						</h1>
 						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-							Servidores otimizados para FiveM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
+							Hospede seu servidor GTA RP com proteção DDoS, instalação automática de txAdmin, e suporte a ESX/vRP e Creatives. VPS Gamer com ping baixo em São Paulo.! 🚀
 						</p>
 						<div className="flex flex-wrap gap-3 sm:gap-4">
 							<a href="#plans">
 								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Baixa Latência
+									Proteção DDoS
 								</span>
 							</a>
 							<a href="#plans">
 								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Anti-DDoS Premium
+									Compatibilidade com txAdmin
 								</span>
 							</a>
 							<a href="#plans">
