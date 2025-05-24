@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description:
-    "Oferecemos VPS Neon com processadores AMD Ryzen e proteção Anti DDoS, ideais para servidores de jogos e aplicações de alto desempenho.",
+    "Oferecemos VPS Gamer com processadores AMD Ryzen e proteção Anti DDoS, ideais para servidores de jogos e aplicações de alto desempenho.",
   keywords: [
     "NeonHost",
     "BrasilFivemHost",
