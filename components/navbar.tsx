@@ -583,7 +583,7 @@ export const NavbarComponent = () => {
                   </Link>
                   <Link href="/vps-brasil" className="w-full">
                     <div className="p-2 hover:bg-[#303030] rounded-lg">
-                      <p className="text-base font-semibold">VPS Trader</p>
+                      <p className="text-base font-semibold">VPS Brasil</p>
                       <p className="text-sm text-gray-500">Servidor veloz para Hospedagem</p>
                     </div>
                   </Link>
