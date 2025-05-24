@@ -222,7 +222,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-5 justify-center">
                 <Button
                   as={Link}
-                  href="https://app.neonhost.com.br/"
+                  href="/vps-gamer"
                   className="bg-gradient-to-r from-[#9553ff] to-[#ff3e9d] text-white font-medium px-10 py-6 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-[#9553ff]/20 relative overflow-hidden group text-lg"
                   size="lg"
                 >
