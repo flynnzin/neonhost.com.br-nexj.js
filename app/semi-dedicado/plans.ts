@@ -19,7 +19,7 @@ export const plans: Plan[] = [
 			ram: "16GB",
 			ssd: "100GB",
 			cores: "8 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
 	{
@@ -30,7 +30,7 @@ export const plans: Plan[] = [
 			ram: "24GB",
 			ssd: "250GB",
 			cores: "8 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
 	{
@@ -41,7 +41,7 @@ export const plans: Plan[] = [
 			ram: "32GB",
 			ssd: "250GB",
 			cores: "9 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
 	{
@@ -52,7 +52,7 @@ export const plans: Plan[] = [
 			ram: "64GB",
 			ssd: "350GB",
 			cores: "9 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
 ] as const;

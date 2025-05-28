@@ -256,14 +256,14 @@ export const metadata: Metadata = {
 		description:
 			"Servidores Semi-Dedicados com processadores AMD Ryzen, SSD NVMe e proteção DDoS. Performance e confiabilidade para suas aplicações.",
 		siteName: "NeonHost",
-		// images: [
-		// 	{
-		// 		url: "/og-image.jpg",
-		// 		width: 1200,
-		// 		height: 630,
-		// 		alt: "NeonHost - Servidores Semi-Dedicados",
-		// 	},
-		// ],
+		images: [
+			{
+				url: "/bannernh.png",
+				width: 3890,
+				height: 1290,
+				alt: "NeonHost - Servidores Semi-Dedicados",
+			},
+		],
 	},
 	robots: {
 		index: true,
@@ -281,7 +281,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		description:
 			"Servidores Semi-Dedicados com processadores AMD Ryzen, SSD NVMe e proteção DDoS. Performance e confiabilidade para suas aplicações.",
-		images: ["/og-image.jpg"],
+		images: ["/bannernh.png"],
 	},
 	alternates: {
 		canonical: "https://neonhost.com.br/semi-dedicado",
