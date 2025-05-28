@@ -256,9 +256,9 @@ export const metadata: Metadata = {
 		siteName: "NeonHost",
 		images: [
 			{
-				url: "/og-image.jpg",
-				width: 1200,
-				height: 630,
+				url: "/bannernh.png",
+				width: 3890,
+				height: 1290,
 				alt: "NeonHost - Hospedagem de RedM",
 			},
 		],
@@ -279,7 +279,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		description:
 			"Hospedagem de RedM com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
-		images: ["/og-image.jpg"],
+		images: ["/bannernh.png"],
 	},
 	alternates: {
 		canonical: "https://neonhost.com.br/fivem",

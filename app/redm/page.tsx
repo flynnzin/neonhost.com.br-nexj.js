@@ -1,205 +1,384 @@
-"use client";
+"use client"
 
-import { Button, Card, Divider } from "@nextui-org/react";
-import { plans } from "./plans";
-import { AccordionItems } from "../_components/accordion";
-import { Info } from "lucide-react";
-import Link from "next/link";
-import ComparisonTable from "../_components/comparison-table";
-import { CardProduts } from "../_components/card-products";
+import { Button, Card, Divider } from "@nextui-org/react"
+import { plans } from "./plans"
+import { AccordionItems } from "../_components/accordion"
+import {
+  Info,
+  Zap,
+  Shield,
+  Globe,
+  Server,
+  Cpu,
+  HardDrive,
+  MemoryStick,
+  ChevronDown,
+  ChevronUp,
+  CheckCircle,
+} from "lucide-react"
+import Link from "next/link"
+import ComparisonTable from "../_components/comparison-table"
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
+import { useState } from "react"
 
 export default function VpsGamer() {
-	return (
-		<section className="max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-7xl mx-auto">
-			<section className="pt-[25%] md:pt-[15%] lg:pt-[7%]">
-				<div className="grid grid-cols-1 lg:grid-cols-2 mx-auto items-center max-w-7xl gap-8">
-					<div>
-						<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-							VPS RedM de Alta Performance para seus Servidores
-						</h1>
-						<p className="text-gray-400 text-base sm:text-lg mb-6 sm:mb-8">
-							Servidores otimizados para RedM, com processadores de última geração, baixa latência e proteção anti-DDoS. Garanta desempenho máximo para sua cidade RP! 🚀
-						</p>
-						<div className="flex flex-wrap gap-3 sm:gap-4">
-							<a href="#plans">
-								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Baixa Latência
-								</span>
-							</a>
-							<a href="#plans">
-								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Anti-DDoS Premium
-								</span>
-							</a>
-							<a href="#plans">
-								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Cache Externo
-								</span>
-							</a>
-							<a href="#plans">
-								<span className="bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
-									Uptime 99.9%
-								</span>
-							</a>
-						</div>
-					</div>
-					<div className="relative mt-8 lg:mt-0">
-						<img
-							src="/svgs/Cloud hosting-pana.svg"
-							alt="VPS Neon Servers"
-							className="mx-auto w-full max-w-[480px] lg:max-w-none h-auto sm:h-[480px] lg:h-[720px]"
-						/>
-					</div>
-				</div>
-			</section>
-			<section className="pt-[5%] container mx-auto px-4 lg:px-6" id="plans">
-				<div className="text-center mb-12">
-					<h2 className="text-3xl font-bold text-white mb-4">
-						Escolha o Plano Perfeito para seu Servidor
-					</h2>
-					<p className="text-pink-500 mx-auto text-lg max-w-2xl">
-						Nossos planos VPS RedM são otimizados para oferecer a melhor
-						experiência, com recursos dedicados e proteção contra
-						ataques.
-					</p>
-				</div>
+  const shouldReduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll()
+  const backgroundY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, 100])
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-6">
-					{plans.map((plan) => (
-						<CardProduts
-							key={plan.name}
-							price={plan.price}
-							link={plan.link}
-							description={plan.description}
-							name={plan.name}
-						/>
-					))}
+  const features = [
+	{
+	  icon: <Server className="h-6 w-6" />,
+	  title: "Recursos Dedicados",
+	  description: "CPU, RAM e armazenamento exclusivos",
+	},
+	{
+	  icon: <Shield className="h-6 w-6" />,
+	  title: "Proteção Avançada",
+	  description: "Anti-DDoS e firewall configurável",
+	},
+	{
+	  icon: <Zap className="h-6 w-6" />,
+	  title: "Performance Premium",
+	  description: "Hardware de última geração",
+	},
+	{
+	  icon: <Globe className="h-6 w-6" />,
+	  title: "Conectividade Premium",
+	  description: "Rede de alta velocidade no Brasil",
+	},
+  ]
+
+  const stats = [
+	{ value: "99.9%", label: "Uptime" },
+	{ value: "10ms", label: "Latência" },
+	{ value: "24/7", label: "Suporte" },
+	{ value: "1Gbps", label: "Rede" },
+  ]
+
+  return (
+	<div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
+	  {/* Background com blurs */}
+	  <div className="fixed inset-0 z-0">
+		<motion.div className="absolute inset-0" style={{ y: backgroundY }} {...(shouldReduceMotion && { style: {} })}>
+		  <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
+		  <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
+		  <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+		  <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
+		</motion.div>
+	  </div>
+
+	  <section className="relative z-10 max-w-full px-4 md:px-8 lg:px-12 xl:px-16 mx-auto">
+		{/* Hero Section */}
+		<section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
+		  <div className="text-center mb-12">
+			<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+			  <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+				<div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+				Servidores VPS RedM
+			  </span>
+			</motion.div>
+
+			<motion.h1
+			  initial={{ opacity: 0, y: 20 }}
+			  animate={{ opacity: 1, y: 0 }}
+			  transition={{ duration: 0.6, delay: 0.1 }}
+			  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+			>
+			  {/* {" "} */}
+			  <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+				VPS RedM
+			  </span>{" "}
+			  para seus Projetos
+			</motion.h1>
+
+			<motion.p
+			  initial={{ opacity: 0, y: 20 }}
+			  animate={{ opacity: 1, y: 0 }}
+			  transition={{ duration: 0.6, delay: 0.2 }}
+			  className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto"
+			>
+			  Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
+			  especializado para projetos que exigem alta performance.
+			</motion.p>
+
+			{/* Stats em linha */}
+			<motion.div
+			  initial={{ opacity: 0, y: 20 }}
+			  animate={{ opacity: 1, y: 0 }}
+			  transition={{ duration: 0.6, delay: 0.3 }}
+			  className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8"
+			>
+			  {stats.map((stat, index) => (
+				<div key={index} className="text-center">
+				  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+					{stat.value}
+				  </div>
+				  <div className="text-sm text-gray-400">{stat.label}</div>
 				</div>
-			</section>
-
-
-
-			<Divider className="mt-24" />
-			<section className="pt-[5%] px-4 lg:px-6">
-				<div className="container mx-auto">
-					<div className="rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 p-4 sm:p-6 md:p-12 text-center">
-						<h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
-							Precisa de mais recursos para seu servidor de jogos?
-						</h2>
-						<Button className="bg-white text-pink-500 hover:bg-white/90 font-bold px-6 sm:px-10">
-							Falar com Especialista
-						</Button>
-					</div>
-				</div>
-			</section>
-
-			<ComparisonTable />
-
-			<Divider className="mt-20" />
-			<section className="mt-[4%] mb-20 px-4 lg:px-6">
-				<div className="items-center">
-					<h1 className="text-xl md:text-4xl font-bold text-center pb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-						Perguntas Frequentes
-						<div className="relative w-[140px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
-					</h1>
-					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
-						Tire suas dúvidas sobre nossos serviços de VPS RedM e comece a
-						hospedar seu servidor agora mesmo.
-					</p>
-				</div>
-				<AccordionItems />
-			</section>
-
-			<section className="mt-[5%] px-4 lg:px-6">
-				<div className="flex flex-col justify-center items-center">
-					<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center pb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-						Suporte Especializado
-						<div className="relative w-[140px] sm:w-[240px] md:w-[340px] mx-auto mt-2 h-[1px] bg-gradient-to-r from-purple-400 to-pink-500" />
-					</h1>
-					<p className="text-base opacity-70 mb-4 text-center max-w-[300px] md:max-w-2xl mx-auto">
-						Nossa equipe está pronta para ajudar você a configurar e otimizar
-						seu servidor de jogos. Conte com nosso suporte 24/7.
-					</p>
-				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mt-5 mb-20">
-					<Card className="py-8 sm:py-10 px-4 sm:px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Configuração Assistida
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Ajudamos você a configurar seu servidor de jogos do zero, com as
-							melhores práticas e otimizações para cada tipo de jogo.
-						</p>
-						<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Solicitar Configuração
-							</Button>
-						</Link>
-					</Card>
-					<Card className="py-8 sm:py-10 px-4 sm:px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Suporte 24/7
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Suporte técnico especializado em jogos disponível 24 horas por
-							dia. Resolva problemas rapidamente e mantenha seu servidor sempre
-							online.
-						</p>
-						<Link href="https://discord.gg/rGP7prMqF3" target="_blank">
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Acessar Suporte
-							</Button>
-						</Link>
-					</Card>
-					<Card className="py-8 sm:py-10 px-4 sm:px-5 border-none transition-transform hover:scale-105 bg-cards-dark/60 w-full group">
-						<p className="">
-							<Info
-								size={64}
-								className="mx-auto text-pink-500 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 mb-4"
-							/>
-						</p>
-						<h1 className="font-bold text-gray-100 text-xl text-center mb-4">
-							Central de Ajuda
-						</h1>
-						<p className="mb-10 text-center text-gray-400">
-							Acesse nossa base de conhecimento com tutoriais e guias para
-							configurar e otimizar seu servidor de jogos da melhor forma.
-						</p>
-						<Link
-							href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1"
-							target="_blank"
-						>
-							<Button
-								className="absolute bottom-4 w-[calc(100%-64px)] left-1/2 transform -translate-x-1/2"
-								size="md"
-								variant="ghost"
-							>
-								Ver Tutoriais
-							</Button>
-						</Link>
-					</Card>
-				</div>
-			</section>
+			  ))}
+			</motion.div>
+		  </div>
 		</section>
-	);
+
+		{/* Features Grid */}
+		<section className="mb-20">
+		  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+			{features.map((feature, index) => (
+			  <motion.div
+				key={index}
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5, delay: index * 0.1 }}
+				viewport={{ once: true }}
+				className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group backdrop-blur-sm"
+			  >
+				<div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+				  {feature.icon}
+				</div>
+				<h3 className="font-bold text-white mb-2">{feature.title}</h3>
+				<p className="text-gray-400 text-sm">{feature.description}</p>
+			  </motion.div>
+			))}
+		  </div>
+		</section>
+
+		{/* Planos Section - Cards Expansíveis */}
+		<section className="py-20" id="plans">
+		  <div className="text-center mb-16">
+			<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+			  Escolha seu{" "}
+			  <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+				Plano Ideal
+			  </span>
+			</h2>
+			<p className="text-gray-400 mx-auto text-lg max-w-2xl">
+			  Planos VPS RedM com recursos garantidos e performance superior para seus projetos mais exigentes.
+			</p>
+		  </div>
+
+		  {/* Cards Expansíveis */}
+		  <div className="space-y-6 max-w-6xl mx-auto">
+			{plans.map((plan, index) => (
+			  <motion.div
+				key={plan.name}
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5, delay: index * 0.1 }}
+				viewport={{ once: true }}
+				className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
+			  >
+				{/* Header do Card */}
+				<div className="p-6">
+				  <div className="flex items-center justify-between">
+					{/* Left Section - Plan Info */}
+					<div className="flex items-center gap-4">
+					  <button
+						onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+						className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+					  >
+						{expandedCard === index ? (
+						  <ChevronUp className="h-4 w-4 text-purple-400" />
+						) : (
+						  <ChevronDown className="h-4 w-4 text-purple-400" />
+						)}
+					  </button>
+					  <div>
+						<h3 className="text-xl font-bold text-white">{plan.name}</h3>
+						{/* <p className="text-sm text-gray-400">Ideal para projetos de alta demanda</p> */}
+					  </div>
+					</div>
+
+					{/* Middle Section - Specifications Grid */}
+					<div className="hidden lg:grid grid-cols-3 gap-8">
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <MemoryStick className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.ram}</span>
+						</div>
+						<span className="text-xs text-gray-400">RAM Dedicada</span>
+					  </div>
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <Cpu className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.cores}</span>
+						</div>
+						<span className="text-xs text-gray-400">CPU Cores</span>
+					  </div>
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <HardDrive className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.ssd}</span>
+						</div>
+						<span className="text-xs text-gray-400">SSD NVMe</span>
+					  </div>
+					</div>
+
+					{/* Right Section - Price and Button */}
+					<div className="flex items-center gap-6">
+					  <div className="text-right">
+						<div className="flex items-baseline gap-1">
+						  <span className="text-2xl md:text-3xl font-bold text-white">R${plan.price}</span>
+						  <span className="text-sm text-gray-400"></span>
+						</div>
+						{/* <div className="flex items-center gap-2 mt-1">
+						  <span className="text-xs text-gray-400">Cupom de desconto</span>
+						  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+							10%OFF
+						  </span>
+						</div> */}
+					  </div>
+
+					  {plan.link ? (
+						<Link href={plan.link} target="_blank">
+						  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
+							Contratar Agora
+						  </Button>
+						</Link>
+					  ) : (
+						<Button className="bg-gray-600 text-gray-400 cursor-not-allowed px-6 py-3 rounded-xl" disabled>
+						  Sem Estoque
+						</Button>
+					  )}
+					</div>
+				  </div>
+
+				  {/* Mobile Specifications */}
+				  <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
+					<div className="grid grid-cols-3 gap-4">
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <MemoryStick className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.ram}</span>
+						</div>
+						<span className="text-xs text-gray-400">RAM</span>
+					  </div>
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <Cpu className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.cores}</span>
+						</div>
+						<span className="text-xs text-gray-400">CPU</span>
+					  </div>
+					  <div className="text-center">
+						<div className="flex items-center justify-center gap-2 mb-1">
+						  <HardDrive className="h-4 w-4 text-purple-400" />
+						  <span className="font-semibold text-white">{plan.description.ssd}</span>
+						</div>
+						<span className="text-xs text-gray-400">SSD</span>
+					  </div>
+					</div>
+				  </div>
+				</div>
+
+				{/* Expanded Content */}
+				<motion.div
+				  initial={false}
+				  animate={{ height: expandedCard === index ? "auto" : 0 }}
+				  transition={{ duration: 0.3 }}
+				  className="overflow-hidden"
+				>
+				  <div className="px-6 pb-6 border-t border-white/10">
+					<div className="pt-6">
+					  <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
+					  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						{plan.description.attrs.map((attr, attrIndex) => (
+						  <div key={attrIndex} className="flex items-center gap-3">
+							<CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+							<span className="text-gray-300 text-sm">{attr}</span>
+						  </div>
+						))}
+					  </div>
+					</div>
+				  </div>
+				</motion.div>
+			  </motion.div>
+			))}
+		  </div>
+		</section>
+
+		{/* CTA Section */}
+		<section className="py-16">
+		  <div className="rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 p-8 md:p-12 text-center backdrop-blur-sm">
+			<h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+			  Precisa de uma configuração personalizada?
+			</h2>
+			<p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+			  Nossa equipe de especialistas pode criar uma solução sob medida para suas necessidades específicas.
+			</p>
+			<Button className="bg-white text-purple-600 hover:bg-white/90 font-bold px-8 py-3">
+			  Falar com Especialista
+			</Button>
+		  </div>
+		</section>
+		
+		{/* FAQ Section */}
+		<section className="mt-16 mb-20">
+		  <div className="text-center mb-12">
+			<h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
+			  Perguntas Frequentes
+			</h2>
+			<p className="text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços VPS RedM.</p>
+		  </div>
+		  <AccordionItems />
+		</section>
+
+		{/* Support Section */}
+		<section className="mt-16">
+		  <div className="text-center mb-12">
+			<h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
+			  Suporte Especializado
+			</h2>
+			<p className="text-gray-400 max-w-2xl mx-auto">
+			  Nossa equipe está pronta para ajudar você 24 horas por dia, 7 dias por semana.
+			</p>
+		  </div>
+
+		  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
+			{[
+			  {
+				icon: <Info size={48} />,
+				title: "Consultoria Especializada",
+				description: "Ajudamos você a escolher a melhor configuração para seu projeto específico.",
+				link: "https://discord.gg/rGP7prMqF3",
+				buttonText: "Falar com Consultor",
+			  },
+			  {
+				icon: <Info size={48} />,
+				title: "Suporte 24/7",
+				description:
+				  "Suporte técnico especializado disponível 24 horas por dia para resolver qualquer problema.",
+				link: "https://discord.gg/rGP7prMqF3",
+				buttonText: "Acessar Suporte",
+			  },
+			  {
+				icon: <Info size={48} />,
+				title: "Central de Ajuda",
+				description: "Base de conhecimento com tutoriais e guias para otimizar seu servidor.",
+				link: "https://app.neonhost.com.br/submitticket.php?step=2&deptid=1",
+				buttonText: "Ver Tutoriais",
+			  },
+			].map((item, index) => (
+			  <Card
+				key={index}
+				className="p-6 border-none bg-white/5 hover:bg-white/10 transition-all duration-300 group backdrop-blur-sm"
+			  >
+				<div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+				  {item.icon}
+				</div>
+				<h3 className="font-bold text-white text-xl mb-3">{item.title}</h3>
+				<p className="text-gray-400 mb-6">{item.description}</p>
+				<Link href={item.link} target="_blank">
+				  <Button variant="ghost" className="w-full">
+					{item.buttonText}
+				  </Button>
+				</Link>
+			  </Card>
+			))}
+		  </div>
+		</section>
+	  </section>
+	</div>
+  )
 }
