@@ -134,7 +134,7 @@ export default function ProcessorComparison() {
       price: "74",
       desc: "Servidores para hospedagem com tráfego mensal ilimitado",
       icon: "target",
-      url: "https://neonhost.com.br/vps-brasil",
+      url: "https://neonhost.com.br/vps-streaming",
     },
     {
       title: "Semi-Dedicados",
