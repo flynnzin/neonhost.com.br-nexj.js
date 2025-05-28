@@ -1,107 +1,105 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import { Star, Users } from "lucide-react"
 
 const featuredGames = [
   {
     id: "minecraft",
     name: "Minecraft",
-    image: "/games/page/mine.jpg",
-    description: "Construa, explore e sobreviva em um mundo de blocos com possibilidades infinitas.",
+    image: "/games/minecraft.webp",
+    description: "Servidores otimizados para Minecraft com plugins personalizados",
     price: 13.9,
-    discount: 35,
-    originalPrice: 20.9,
-    tags: ["Sandbox", "Aventura", "Multijogador"],
-    purchaseUrl: "https://app.neonhost.com.br/game/minecraft", // URL específica para compra
-  },
-  {
-    id: "palworld",
-    name: "Palworld",
-    image: "/games/page/pal.png",
-    description: "Capture e colecione criaturas em um mundo aberto cheio de aventuras e desafios.",
-    price: 79.9,
-    discount: 34,
-    originalPrice: 120.0,
-    tags: ["Mundo Aberto", "Aventura", "Criaturas"],
-    purchaseUrl: "https://app.neonhost.com.br/game/palworld", // URL específica para compra
+    originalPrice: 19.9,
+    discount: 30,
+    rating: 4.9,
+    players: "15.2K",
+    featured: true,
   },
   {
     id: "fivem",
     name: "FiveM",
-    image: "/games/page/gtav.jpg",
-    description: "Crie e jogue em servidores personalizados com mods e recursos exclusivos.",
-    price: 79.4,
-    discount: 50,
-    originalPrice: 159.9,
-    tags: ["Roleplay", "Mundo Aberto", "Multijogador"],
-    purchaseUrl: "https://app.neonhost.com.br/game/fivem", // URL específica para compra
+    image: "/games/gtav.jpg",
+    description: "Hospedagem premium para servidores FiveM com alta performance",
+    price: 74.9,
+    rating: 4.7,
+    players: "8.5K",
+    featured: true,
+  },
+  {
+    id: "palworld",
+    name: "Palworld",
+    image: "/games/palworld.webp",
+    description: "Servidores dedicados para Palworld com suporte completo",
+    price: 79.9,
+    rating: 4.8,
+    players: "2.5K",
+    featured: true,
+    isNew: true,
   },
 ]
 
 export function FeaturedGames() {
   return (
-    <section className="py-16">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-3xl font-bold text-white">Jogos em Destaque</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mt-2 rounded-full"></div>
-        </div>
-        <Link href="/games/all" className="flex items-center gap-1 text-zinc-400 hover:text-white transition group">
-          <span>Ver todos</span>
-          <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {featuredGames.map((game) => (
-          <div key={game.id} className="group">
-            <div className="bg-zinc-900/50 rounded-lg overflow-hidden border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 h-full flex flex-col">
-              <Link href={`/games/${game.id}`}>
-                <div className="relative aspect-[16/9]">
-                  <Image
-                    src={game.image || "/placeholder.svg"}
-                    alt={game.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 right-3 bg-gradient-to-r from-purple-600 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featuredGames.map((game, index) => (
+        <Link href={`/games/${game.id}`} key={game.id} className="group">
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:bg-white/10">
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src={game.image || "/placeholder.svg"}
+                alt={game.name}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              {game.discount && (
+                <div className="absolute top-3 left-3">
+                  <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                     -{game.discount}%
-                  </div>
+                  </span>
                 </div>
-              </Link>
+              )}
+              {game.isNew && (
+                <div className="absolute top-3 left-3">
+                  <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">NOVO</span>
+                </div>
+              )}
+              <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
+                <Users className="w-3 h-3 text-green-400" />
+                <span className="text-xs text-white">{game.players}</span>
+              </div>
+            </div>
 
-              <div className="p-5 flex-1 flex flex-col">
-                <Link href={`/games/${game.id}`}>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 transition-all">
-                    {game.name}
-                  </h3>
-                </Link>
+            <div className="p-6">
+              <div className="flex items-start justify-between mb-2">
+                <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
+                  {game.name}
+                </h3>
+                <div className="flex items-center gap-1">
+                  <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                  <span className="text-sm text-gray-300">{game.rating}</span>
+                </div>
+              </div>
 
-                <p className="text-zinc-400 text-sm mb-4 flex-1">{game.description}</p>
+              <p className="text-gray-400 mb-4">{game.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {game.tags.map((tag, index) => (
-                    <span key={index} className="text-xs bg-zinc-800 text-zinc-300 px-2 py-1 rounded">
-                      {tag}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {game.originalPrice && (
+                    <span className="text-gray-500 line-through text-sm">
+                      R$ {game.originalPrice.toFixed(2).replace(".", ",")}
                     </span>
-                  ))}
+                  )}
+                  <span className="text-white font-semibold text-lg">R$ {game.price.toFixed(2).replace(".", ",")}</span>
+                  <span className="text-gray-400 text-sm">/mês</span>
                 </div>
-
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-zinc-500 line-through text-sm">
-                        R$ {game.originalPrice.toFixed(2).replace(".", ",")}
-                      </span>
-                      <span className="text-white font-bold text-lg">R$ {game.price.toFixed(2).replace(".", ",")}</span>
-                    </div>
-                  </div>
-                </div>
+                <button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300">
+                  Ver planos
+                </button>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </Link>
+      ))}
+    </div>
   )
 }

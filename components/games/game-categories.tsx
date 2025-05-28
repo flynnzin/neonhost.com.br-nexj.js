@@ -6,63 +6,66 @@ const categories = [
     name: "Ação",
     icon: <Sword className="w-6 h-6" />,
     count: 24,
+    color: "from-red-500 to-orange-500",
   },
   {
     id: "adventure",
     name: "Aventura",
     icon: <Globe className="w-6 h-6" />,
     count: 18,
+    color: "from-green-500 to-emerald-500",
   },
   {
     id: "rpg",
     name: "RPG",
     icon: <Gamepad2 className="w-6 h-6" />,
     count: 15,
+    color: "from-purple-500 to-violet-500",
   },
   {
     id: "simulation",
     name: "Simulação",
     icon: <Cpu className="w-6 h-6" />,
     count: 12,
+    color: "from-blue-500 to-cyan-500",
   },
   {
     id: "multiplayer",
     name: "Multijogador",
     icon: <Users className="w-6 h-6" />,
     count: 30,
+    color: "from-pink-500 to-rose-500",
   },
   {
     id: "indie",
     name: "Indie",
     icon: <Rocket className="w-6 h-6" />,
     count: 22,
+    color: "from-yellow-500 to-orange-500",
   },
 ]
 
 export function GameCategories() {
   return (
-    <section className="py-12">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-3xl font-bold text-white">Categorias</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mt-2 rounded-full"></div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {categories.map((category) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {categories.map((category) => (
+        <div
+          key={category.id}
+          className="group bg-slate-900/50 border border-slate-700/50 hover:border-slate-600/50 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-slate-800/50 cursor-pointer hover:scale-105 backdrop-blur-sm"
+        >
           <div
-            key={category.id}
-            className="bg-zinc-900/50 border border-purple-500/10 hover:border-purple-500/30 rounded-lg p-5 text-center transition-all duration-300 hover:bg-zinc-800/50 group cursor-pointer"
+            className={`w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-gradient-to-br ${category.color} bg-opacity-10 text-white group-hover:scale-110 transition-transform duration-300`}
           >
-            <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/10 to-orange-500/10 text-purple-400 group-hover:text-white transition-colors">
-              {category.icon}
-            </div>
-            <h3 className="text-white font-medium mb-1">{category.name}</h3>
-            <p className="text-zinc-500 text-sm">{category.count} jogos</p>
+            {category.icon}
           </div>
-        ))}
-      </div>
-    </section>
+          <h3 className="text-white font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+            {category.name}
+          </h3>
+          <p className="text-slate-400 text-sm">
+            <span className="font-medium text-white">{category.count}</span> jogos
+          </p>
+        </div>
+      ))}
+    </div>
   )
 }
