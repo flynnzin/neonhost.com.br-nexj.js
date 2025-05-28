@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
+import { maintenanceConfig } from "@/config/maintenance"
+import { MaintenancePage } from "@/components/maintenance-page"
 
 interface PerguntasPageProps {
   params: {
@@ -8,6 +10,19 @@ interface PerguntasPageProps {
 }
 
 export default function PerguntasPage({ params }: PerguntasPageProps) {
+  // Verifica se está em manutenção
+  if (maintenanceConfig.isGamesUnderMaintenance) {
+    return (
+      <MaintenancePage
+        title="FAQ em Breve"
+        subtitle={`Perguntas frequentes sobre ${params.id.charAt(0).toUpperCase() + params.id.slice(1)}`}
+        description="Estamos compilando as principais dúvidas e respostas sobre este jogo para ajudar você da melhor forma possível."
+        showBackButton={true}
+        backUrl="/games"
+      />
+    )
+  }
+
   // Simulando dados do jogo baseado no ID
   const gameData = getGameData(params.id)
 
@@ -16,10 +31,12 @@ export default function PerguntasPage({ params }: PerguntasPageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white pb-16">
-      {/* Cabeçalho do jogo */}
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold">{gameData.name}</h1>
+    <main className="min-h-screen bg-[#0A0C10] text-white">
+      <div className="container mx-auto px-4 pt-24">
+        <h1 className="text-4xl font-bold text-white text-center">FAQ do {params.id} (modo normal)</h1>
+        <p className="text-gray-400 text-center mt-4">
+          Esta página só aparece quando maintenanceConfig.isGamesUnderMaintenance = false
+        </p>
 
         {/* Navegação */}
         <div className="flex border-b border-purple-500/20 mt-4">
