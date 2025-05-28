@@ -8,7 +8,7 @@ import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
 	title: {
-		default: "VPS Gamer | Servidores para Jogos | NeonHost",
+		default: "VPS Gamer no Brasil com Anti DDoS - NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:
@@ -257,9 +257,9 @@ export const metadata: Metadata = {
 		siteName: "NeonHost",
 		images: [
 			{
-				url: "/og-image.jpg",
-				width: 1200,
-				height: 630,
+				url: "/bannernh.png",
+				width: 3890,
+				height: 1290,
 				alt: "NeonHost - VPS Gamer",
 			},
 		],
@@ -280,7 +280,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		description:
 			"VPS Gamer com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
-		images: ["/og-image.jpg"],
+		images: ["/bannernh.png"],
 	},
 	alternates: {
 		canonical: "https://neonhost.com.br/vps-gamer",
