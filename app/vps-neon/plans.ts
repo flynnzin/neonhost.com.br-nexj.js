@@ -19,7 +19,7 @@ export const plans: Plan[] = [
 			ram: "2GB",
 			ssd: "40GB",
 			cores: "2 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -30,7 +30,7 @@ export const plans: Plan[] = [
 			ram: "4GB",
 			ssd: "40GB",
 			cores: "2 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -41,7 +41,7 @@ export const plans: Plan[] = [
 			ram: "6GB",
 			ssd: "40GB",
 			cores: "3 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -52,7 +52,7 @@ export const plans: Plan[] = [
 			ram: "8GB",
 			ssd: "70GB",
 			cores: "4 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -63,7 +63,7 @@ export const plans: Plan[] = [
 			ram: "12GB",
 			ssd: "80GB",
 			cores: "6 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -74,7 +74,7 @@ export const plans: Plan[] = [
 			ram: "16GB",
 			ssd: "120GB",
 			cores: "10 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -85,7 +85,7 @@ export const plans: Plan[] = [
 			ram: "20GB",
 			ssd: "160GB",
 			cores: "12 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 	{
@@ -96,7 +96,7 @@ export const plans: Plan[] = [
 			ram: "32GB",
 			ssd: "200GB",
 			cores: "16 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen"],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
 	},
 ] as const;
