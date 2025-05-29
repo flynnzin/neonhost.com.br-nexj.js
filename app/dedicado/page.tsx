@@ -95,7 +95,7 @@ export default function Dedicados() {
     },
     // INTEL
     {
-      name: "Intel Intel i9 10900k",
+      name: "Intel i9 10900k",
       frequency: "Turbo boost até 4.9GHz",
       cores: 10,
       threads: 20,
@@ -376,7 +376,7 @@ export default function Dedicados() {
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                Intel Xeon
+                Intel
               </button>
             </div>
           </div>
