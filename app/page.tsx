@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import {
   Zap,
   Shield,
@@ -23,37 +22,9 @@ export default function HomePage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // Detecta se o usuário prefere animações reduzidas
-  const shouldReduceMotion = useReducedMotion()
-
-  const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, 100])
-
-  // Carregamento otimizado
   useEffect(() => {
     setIsLoaded(true)
   }, [])
-
-  // Variantes de animação otimizadas
-  const fadeInVariant = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: shouldReduceMotion ? 0.1 : 0.6, ease: "easeOut" },
-    },
-  }
-
-  const staggerVariant = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.1,
-        delayChildren: shouldReduceMotion ? 0 : 0.2,
-      },
-    },
-  }
 
   const plans = [
     {
@@ -206,106 +177,63 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
-      {/* Background otimizado com blurs nos cantos */}
+    <div className="min-h-screen bg-[#0a0a0e] text-white">
+      {/* Background simples */}
       <div className="fixed inset-0 z-0">
-        <motion.div className="absolute inset-0" style={{ y: backgroundY }} {...(shouldReduceMotion && { style: {} })}>
-          {/* Blur no canto superior esquerdo */}
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
-
-          {/* Blur no canto inferior direito */}
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
-
-          {/* Elementos centrais mais sutis */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
-        </motion.div>
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      {/* Hero Section Otimizada */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 z-10">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.div variants={fadeInVariant} initial="hidden" animate="visible" className="mb-6">
+          <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-8">
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
               Infraestrutura no Brasil
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={fadeInVariant}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-          >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Potencialize seu{" "}
-            <span className="relative">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                mundo digital
-              </span>
-              {/* {!shouldReduceMotion && (
-                <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                />
-              )} */}
+            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+              mundo digital
             </span>{" "}
             com{" "}
             <span className="bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text text-transparent">
               Neon Host
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={fadeInVariant}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
-          >
+          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             Revolucionamos a hospedagem no Brasil com nossa infraestrutura exclusiva Neon Host™, combinando velocidade
             extrema, segurança avançada e tecnologia de ponta.
-          </motion.p>
+          </p>
 
-          {/* Features em grid - Otimizado */}
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            animate="visible"
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
-          >
+          {/* Features em grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
               { icon: <Zap className="h-5 w-5" />, text: "Latência ultra-baixa de até 5ms" },
               { icon: <Shield className="h-5 w-5" />, text: "Proteção contra ataques em tempo real" },
               { icon: <Cpu className="h-5 w-5" />, text: "Processadores AMD Ryzen e NVMe Enterprise" },
               { icon: <Clock className="h-5 w-5" />, text: "Garantia de 99,9% de uptime" },
             ].map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInVariant}
-                className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-colors duration-300"
+                className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
               >
                 <div className="text-purple-400">{feature.icon}</div>
                 <span className="text-sm text-gray-300">{feature.text}</span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Seção de Planos Otimizada */}
+      {/* Seção de Planos */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Hospedagem sob medida para{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">você</span>
@@ -315,24 +243,16 @@ export default function HomePage() {
               com suporte técnico especializado, garantindo velocidade e segurança para seu site, jogos online ou
               aplicativos.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInVariant}
-                whileHover={shouldReduceMotion ? {} : { y: -5 }}
-                className={`relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 ${
+                className={`relative p-6 rounded-2xl border backdrop-blur-sm ${
                   plan.popular
                     ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50"
-                    : "bg-white/5 border-white/10 hover:border-purple-500/30"
+                    : "bg-white/5 border-white/10"
                 }`}
               >
                 {plan.popular && (
@@ -374,30 +294,24 @@ export default function HomePage() {
 
                 <a
                   href={plan.url}
-                  className={`block w-full py-3 rounded-xl font-semibold transition-all duration-300 text-center ${
+                  className={`block w-full py-3 rounded-xl font-semibold text-center ${
                     plan.popular
-                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700"
-                      : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                      : "bg-white/10 text-white border border-white/20"
                   }`}
                 >
                   Ver todos os planos
                 </a>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Seção de Infraestrutura Otimizada */}
+      {/* Seção de Infraestrutura */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 mb-6">
               <Server className="h-8 w-8 text-purple-400" />
             </div>
@@ -408,46 +322,30 @@ export default function HomePage() {
               de Ponta
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInVariant}
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                className="group relative p-8 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+                className="p-8 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10"
               >
-                <div className="relative z-10">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
-                    <div className="text-white">{feature.icon}</div>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
+                  <div className="text-white">{feature.icon}</div>
                 </div>
-              </motion.div>
+
+                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Seção de Diferenciais Otimizada */}
+      {/* Seção de Diferenciais */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Conheça os nossos{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -458,24 +356,16 @@ export default function HomePage() {
               Descubra por que milhares de clientes escolhem a NeonHost para seus projetos online de sucesso!
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6" />
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {differentials.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInVariant}
-                whileHover={shouldReduceMotion ? {} : { scale: 1.01 }}
-                className="group p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+                className="p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 transition-transform duration-300">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400">
                     {item.icon}
                   </div>
                   <div className="flex-1">
@@ -483,22 +373,16 @@ export default function HomePage() {
                     <p className="text-gray-400 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Seção de Depoimentos Otimizada */}
+      {/* Seção de Depoimentos */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 mb-6">
               <Quote className="h-8 w-8 text-purple-400" />
             </div>
@@ -511,16 +395,10 @@ export default function HomePage() {
               Descubra por que empresas e gamers escolhem a NeonHost para suas necessidades de hospedagem de alta
               performance
             </p>
-          </motion.div>
+          </div>
 
           {/* Testimonial ativo */}
-          <motion.div
-            key={activeTestimonial}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative p-8 md:p-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-sm mb-8"
-          >
+          <div className="relative p-8 md:p-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-sm mb-8">
             <div className="flex mb-6">
               {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
                 <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
@@ -547,7 +425,7 @@ export default function HomePage() {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Navegação dos testimonials */}
           <div className="flex justify-center space-x-2 mb-12">
@@ -555,48 +433,34 @@ export default function HomePage() {
               <button
                 key={index}
                 onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeTestimonial === index ? "bg-purple-500" : "bg-gray-600"
-                }`}
+                className={`w-3 h-3 rounded-full ${activeTestimonial === index ? "bg-purple-500" : "bg-gray-600"}`}
               />
             ))}
           </div>
 
           {/* Estatísticas */}
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "99.9%", label: "Uptime garantido" },
               { value: "24/7", label: "Suporte técnico" },
               { value: "500+", label: "Clientes satisfeitos" },
               { value: "15ms", label: "Latência média" },
             ].map((stat, index) => (
-              <motion.div key={index} variants={fadeInVariant} className="text-center">
+              <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* FAQ Otimizado */}
+      {/* FAQ */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Perguntas{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -605,24 +469,17 @@ export default function HomePage() {
             </h2>
             <p className="text-xl text-gray-400">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6" />
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={staggerVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="space-y-4"
-          >
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInVariant}
                 className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm"
               >
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+                  className="w-full p-6 text-left flex items-center justify-between"
                 >
                   <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
                   <div className="text-purple-400">
@@ -630,30 +487,71 @@ export default function HomePage() {
                   </div>
                 </button>
 
-                <motion.div
-                  initial={false}
-                  animate={{ height: expandedFaq === index ? "auto" : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
-                >
-                  <div className="p-6 pt-0 text-gray-400 leading-relaxed">{faq.answer}</div>
-                </motion.div>
-              </motion.div>
+                {expandedFaq === index && <div className="p-6 pt-0 text-gray-400 leading-relaxed">{faq.answer}</div>}
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
+
+      {/* Logos dos parceiros */}
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 backdrop-blur-sm p-8 mb-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+          {/* AMD */}
+          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
+            <Image src="/partners/amd-logo.svg" alt="AMD" width={80} height={32} className="filter brightness-75" />
+          </div>
+
+          {/* EXITLAG */}
+          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
+            <Image
+              src="/partners/exitlag-logo.svg"
+              alt="ExitLag"
+              width={96}
+              height={32}
+              className="filter brightness-75"
+            />
+          </div>
+
+          {/* INTERCOM */}
+          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
+            <Image
+              src="/partners/intercom-logo.svg"
+              alt="Intercom"
+              width={96}
+              height={32}
+              className="filter brightness-75"
+            />
+          </div>
+
+          {/* Cirion */}
+          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
+            <Image
+              src="/partners/cirion-logo.svg"
+              alt="Cirion"
+              width={80}
+              height={32}
+              className="filter brightness-75"
+            />
+          </div>
+
+          {/* Cloudflare */}
+          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10 col-span-2 md:col-span-1">
+            <Image
+              src="/partners/cloudflare-logo.svg"
+              alt="Cloudflare"
+              width={112}
+              height={32}
+              className="filter brightness-75"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* CTA Final */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="p-12 rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm"
-          >
+          <div className="p-12 rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Pronto para{" "}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -665,33 +563,20 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white transition-all duration-300"
-              >
+              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white">
                 Começar agora
-              </motion.button>
-              <motion.button
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                className="px-8 py-4 border border-purple-500/30 rounded-xl font-semibold text-purple-400 hover:bg-purple-500/10 transition-all duration-300"
-              >
+              </button>
+              <button className="px-8 py-4 border border-purple-500/30 rounded-xl font-semibold text-purple-400">
                 Falar com especialista
-              </motion.button>
+              </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-<section className="relative py-20 px-4 z-10">
+
+      <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={fadeInVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="p-8 md:p-12 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
-          >
+          <div className="p-8 md:p-12 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <div className="flex items-center justify-between">
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Seu sonho, nossa missão!</h2>
@@ -704,40 +589,18 @@ export default function HomePage() {
               </div>
 
               <div className="hidden lg:block">
-                <motion.div whileHover={shouldReduceMotion ? {} : { scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <Image
-                    src="/games/page/catneon.png"
-                    alt="NeonHost Mascote"
-                    width={200}
-                    height={200}
-                    className="object-contain"
-                  />
-                </motion.div>
+                <Image
+                  src="/games/page/catneon.png"
+                  alt="NeonHost Mascote"
+                  width={200}
+                  height={200}
+                  className="object-contain"
+                />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-
-      {/* Estilos para otimização de performance */}
-      <style jsx global>{`
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-        
-        /* Otimização para elementos que usam transform */
-        .motion-element {
-          will-change: transform;
-        }
-        
-        .motion-element:hover {
-          will-change: auto;
-        }
-      `}</style>
     </div>
   )
 }
