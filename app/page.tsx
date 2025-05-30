@@ -495,58 +495,7 @@ export default function HomePage() {
       </section>
 
       {/* Logos dos parceiros */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 backdrop-blur-sm p-8 mb-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-          {/* AMD */}
-          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
-            <Image src="/partners/amd-logo.svg" alt="AMD" width={80} height={32} className="filter brightness-75" />
-          </div>
-
-          {/* EXITLAG */}
-          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
-            <Image
-              src="/partners/exitlag-logo.svg"
-              alt="ExitLag"
-              width={96}
-              height={32}
-              className="filter brightness-75"
-            />
-          </div>
-
-          {/* INTERCOM */}
-          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
-            <Image
-              src="/partners/intercom-logo.svg"
-              alt="Intercom"
-              width={96}
-              height={32}
-              className="filter brightness-75"
-            />
-          </div>
-
-          {/* Cirion */}
-          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10">
-            <Image
-              src="/partners/cirion-logo.svg"
-              alt="Cirion"
-              width={80}
-              height={32}
-              className="filter brightness-75"
-            />
-          </div>
-
-          {/* Cloudflare */}
-          <div className="flex items-center justify-center p-4 rounded-xl bg-white/5 border border-white/10 col-span-2 md:col-span-1">
-            <Image
-              src="/partners/cloudflare-logo.svg"
-              alt="Cloudflare"
-              width={112}
-              height={32}
-              className="filter brightness-75"
-            />
-          </div>
-        </div>
-      </div>
+      
 
       {/* CTA Final */}
       <section className="relative py-20 px-4 z-10">
