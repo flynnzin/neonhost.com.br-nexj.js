@@ -28,7 +28,7 @@ export const plans: Plan[] = [
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
 		description: {
 			ram: "4GB",
-			ssd: "40GB",
+			ssd: "50GB",
 			cores: "2 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
@@ -39,7 +39,7 @@ export const plans: Plan[] = [
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-3",
 		description: {
 			ram: "6GB",
-			ssd: "40GB",
+			ssd: "60GB",
 			cores: "3 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
 		},
