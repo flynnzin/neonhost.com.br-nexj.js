@@ -3,19 +3,7 @@
 import { Button, Card, Divider } from "@nextui-org/react"
 import { plans } from "./plans"
 import { AccordionItems } from "../_components/accordion"
-import {
-  Info,
-  Zap,
-  Shield,
-  Globe,
-  Server,
-  Cpu,
-  HardDrive,
-  MemoryStick,
-  ChevronDown,
-  ChevronUp,
-  CheckCircle,
-} from "lucide-react"
+import { Info, Zap, Shield, Globe, Server, Cpu, HardDrive, MemoryStick, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import ComparisonTable from "../_components/comparison-table"
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
@@ -86,7 +74,6 @@ export default function VpsGamer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              {/* {" "} */}
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 VPS Neon
               </span>{" "}
@@ -144,7 +131,7 @@ export default function VpsGamer() {
           </div>
         </section>
 
-        {/* Planos Section - Cards Expansíveis */}
+        {/* Planos Section - Cards Minimalistas */}
         <section className="py-20" id="plans">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -158,143 +145,84 @@ export default function VpsGamer() {
             </p>
           </div>
 
-          {/* Cards Expansíveis */}
-          <div className="space-y-6 max-w-6xl mx-auto">
+          {/* Cards Grid Minimalistas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
+                className="group"
               >
-                {/* Header do Card */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    {/* Left Section - Plan Info */}
-                    <div className="flex items-center gap-4">
-                      <button
-                        onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center hover:scale-110 transition-transform duration-300"
-                      >
-                        {expandedCard === index ? (
-                          <ChevronUp className="h-4 w-4 text-purple-400" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 text-purple-400" />
-                        )}
-                      </button>
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-                        {/* <p className="text-sm text-gray-400">Ideal para projetos de alta demanda</p> */}
-                      </div>
-                    </div>
-
-                    {/* Middle Section - Specifications Grid */}
-                    <div className="hidden lg:grid grid-cols-3 gap-8">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">RAM Dedicada</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">CPU Cores</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">SSD NVMe</span>
-                      </div>
-                    </div>
-
-                    {/* Right Section - Price and Button */}
-                    <div className="flex items-center gap-6">
-                      <div className="text-right">
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-2xl md:text-3xl font-bold text-white">R${plan.price}</span>
-                          <span className="text-sm text-gray-400"></span>
-                        </div>
-                        {/* <div className="flex items-center gap-2 mt-1">
-                          <span className="text-xs text-gray-400">Cupom de desconto</span>
-                          <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 py-1 rounded-full text-xs font-medium">
-                            10%OFF
-                          </span>
-                        </div> */}
-                      </div>
-
-                      {plan.link ? (
-                        <Link href={plan.link} target="_blank">
-                          <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
-                            Contratar Agora
-                          </Button>
-                        </Link>
-                      ) : (
-                        <Button className="bg-gray-600 text-gray-400 cursor-not-allowed px-6 py-3 rounded-xl" disabled>
-                          Sem Estoque
-                        </Button>
+                <div className="h-full bg-[#111318] border border-gray-800 hover:border-purple-500/30 rounded-xl overflow-hidden transition-colors duration-300">
+                  {/* Header com nome e preço */}
+                  <div className="p-6 border-b border-gray-800">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-medium text-white">{plan.name}</h3>
+                      {(index === 1 || index === 3) && (
+                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-md">
+                          {index === 1 ? "Popular" : "Recomendado"}
+                        </span>
                       )}
                     </div>
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold text-white">R${plan.price}</span>
+                      <span className="text-gray-400 text-sm ml-1">/mês</span>
+                    </div>
                   </div>
 
-                  {/* Mobile Specifications */}
-                  <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">RAM</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">CPU</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">SSD</span>
-                      </div>
+                  {/* Especificações principais */}
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <MemoryStick className="h-5 w-5 text-purple-400" />
+                      <span className="text-gray-300">{plan.description.ram} RAM</span>
                     </div>
+                    <div className="flex items-center gap-3">
+                      <Cpu className="h-5 w-5 text-purple-400" />
+                      <span className="text-gray-300">{plan.description.cores}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <HardDrive className="h-5 w-5 text-purple-400" />
+                      <span className="text-gray-300">{plan.description.ssd} SSD NVMe</span>
+                    </div>
+
+                    <Divider className="my-4" />
+
+                    {/* Recursos adicionais */}
+                    <div className="space-y-3">
+                      {plan.description.attrs.slice(0, 3).map((attr, attrIndex) => (
+                        <div key={attrIndex} className="flex items-center gap-3">
+                          <CheckCircle className="h-4 w-4 text-green-400" />
+                          <span className="text-gray-400 text-sm">{attr}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Botão de ação */}
+                  <div className="p-6 pt-0">
+                    {plan.link ? (
+                      <Link href={plan.link} target="_blank" className="block">
+                        <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-medium rounded-lg transition-opacity duration-300">
+                          Contratar
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button className="w-full bg-gray-700 text-gray-400 cursor-not-allowed" disabled>
+                        Sem Estoque
+                      </Button>
+                    )}
                   </div>
                 </div>
-
-                {/* Expanded Content */}
-                <motion.div
-                  initial={false}
-                  animate={{ height: expandedCard === index ? "auto" : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-6 border-t border-white/10">
-                    <div className="pt-6">
-                      <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {plan.description.attrs.map((attr, attrIndex) => (
-                          <div key={attrIndex} className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{attr}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Informações adicionais */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-400 text-sm">Todos os planos incluem proteção Anti-DDoS e suporte técnico 24/7</p>
           </div>
         </section>
 
