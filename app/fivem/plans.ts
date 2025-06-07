@@ -21,7 +21,7 @@ export const plans: Plan[] = [
 			ssd: "45GB",
 			cores: "3 vCores",
 			jogadores: "20",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -33,7 +33,7 @@ export const plans: Plan[] = [
 			ssd: "50GB",
 			cores: "5 vCores",
 			jogadores: "50",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -45,7 +45,7 @@ export const plans: Plan[] = [
 			ssd: "60GB",
 			cores: "6 vCores",
 			jogadores: "75",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -57,7 +57,7 @@ export const plans: Plan[] = [
 			ssd: "70GB",
 			cores: "7 vCores",
 			jogadores: "115",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -69,7 +69,7 @@ export const plans: Plan[] = [
 			ssd: "80GB",
 			cores: "8 vCores",
 			jogadores: "150",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -81,7 +81,7 @@ export const plans: Plan[] = [
 			ssd: "90GB",
 			cores: "9 vCores",
 			jogadores: "185",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -93,7 +93,7 @@ export const plans: Plan[] = [
 			ssd: "100GB",
 			cores: "12 vCores",
 			jogadores: "210",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 	{
@@ -105,7 +105,7 @@ export const plans: Plan[] = [
 			ssd: "150GB",
 			cores: "14 vCores",
 			jogadores: "300",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego","Base Exclusiva NeonCore",],
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
 		},
 	},
 ] as const;
