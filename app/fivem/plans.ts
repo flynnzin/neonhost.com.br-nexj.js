@@ -1,12 +1,12 @@
 export const plans = [
   {
     name: "FiveM Start",
-    price: "49,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-start",
+    price: "84,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-1",
     description: {
       ram: "2GB",
       cores: "2 núcleos",
-      ssd: "40GB",
+      ssd: "45GB",
       attrs: [
         "Anti-DDoS Incluído",
         "Painel de Controle",
@@ -19,8 +19,8 @@ export const plans = [
   },
   {
     name: "FiveM Plus",
-    price: "69,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-plus",
+    price: "126,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-2",
     description: {
       ram: "4GB",
       cores: "2 núcleos",
@@ -38,8 +38,8 @@ export const plans = [
   },
   {
     name: "FiveM Pro",
-    price: "99,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-pro",
+    price: "198,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-3",
     description: {
       ram: "6GB",
       cores: "3 núcleos",
@@ -58,8 +58,8 @@ export const plans = [
   },
   {
     name: "FiveM Ultra",
-    price: "149,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-ultra",
+    price: "246,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-4",
     description: {
       ram: "8GB",
       cores: "4 núcleos",
@@ -79,10 +79,10 @@ export const plans = [
   },
   {
     name: "FiveM Extreme",
-    price: "199,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-extreme",
+    price: "289,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-5",
     description: {
-      ram: "12GB",
+      ram: "10GB",
       cores: "6 núcleos",
       ssd: "80GB",
       attrs: [
@@ -101,8 +101,30 @@ export const plans = [
   },
   {
     name: "FiveM Titan",
-    price: "249,90",
-    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-titan",
+    price: "362,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-6",
+    description: {
+      ram: "12GB",
+      cores: "8 núcleos",
+      ssd: "90GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 256 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+        "Migração Gratuita",
+        "IP Dedicado",
+      ],
+    },
+  },
+  {
+    name: "FiveM Elite",
+    price: "429,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-7",
     description: {
       ram: "16GB",
       cores: "8 núcleos",
@@ -118,7 +140,28 @@ export const plans = [
         "Prioridade no Suporte",
         "Migração Gratuita",
         "IP Dedicado",
-        "Consultoria Especializada",
+      ],
+    },
+  },
+  {
+    name: "FiveM Neon",
+    price: "429,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-8",
+    description: {
+      ram: "20GB",
+      cores: "8 núcleos",
+      ssd: "150GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 256 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+        "Migração Gratuita",
+        "IP Dedicado",
       ],
     },
   },
