@@ -1,111 +1,125 @@
-export interface Plan {
-	name: string;
-	price: string;
-	link: string | null;
-	description: {
-		ram: string;
-		ssd: string;
-		cores: string;
-		jogadores: string;
-		attrs: string[];
-	};
-}
-
-export const plans: Plan[] = [
-	{
-		name: "VPS Neon - 1",
-		price: "84,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-1",
-		description: {
-			ram: "2GB",
-			ssd: "45GB",
-			cores: "3 vCores",
-			jogadores: "20",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 2",
-		price: "126,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-2",
-		description: {
-			ram: "4GB",
-			ssd: "50GB",
-			cores: "5 vCores",
-			jogadores: "50",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 3",
-		price: "198,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-3",
-		description: {
-			ram: "6GB",
-			ssd: "60GB",
-			cores: "6 vCores",
-			jogadores: "75",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 4",
-		price: "246,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-4",
-		description: {
-			ram: "8GB",
-			ssd: "70GB",
-			cores: "7 vCores",
-			jogadores: "115",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 5",
-		price: "289,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-5",
-		description: {
-			ram: "10GB",
-			ssd: "80GB",
-			cores: "8 vCores",
-			jogadores: "150",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 6",
-		price: "362,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-6",
-		description: {
-			ram: "12GB",
-			ssd: "90GB",
-			cores: "9 vCores",
-			jogadores: "185",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 7",
-		price: "429,00",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-7",
-		description: {
-			ram: "16GB",
-			ssd: "100GB",
-			cores: "12 vCores",
-			jogadores: "210",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-	{
-		name: "VPS Neon - 8",
-		price: "557,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-8",
-		description: {
-			ram: "20GB",
-			ssd: "150GB",
-			cores: "14 vCores",
-			jogadores: "300",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","Base Exclusiva NeonCore",],
-		},
-	},
-] as const;
+export const plans = [
+  {
+    name: "FiveM Start",
+    price: "49,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-start",
+    description: {
+      ram: "2GB",
+      cores: "2 núcleos",
+      ssd: "40GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 32 jogadores",
+        "Uptime 99.9%",
+      ],
+    },
+  },
+  {
+    name: "FiveM Plus",
+    price: "69,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-plus",
+    description: {
+      ram: "4GB",
+      cores: "2 núcleos",
+      ssd: "50GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 64 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+      ],
+    },
+  },
+  {
+    name: "FiveM Pro",
+    price: "99,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-pro",
+    description: {
+      ram: "6GB",
+      cores: "3 núcleos",
+      ssd: "60GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 96 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+      ],
+    },
+  },
+  {
+    name: "FiveM Ultra",
+    price: "149,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-ultra",
+    description: {
+      ram: "8GB",
+      cores: "4 núcleos",
+      ssd: "70GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 128 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+        "Migração Gratuita",
+      ],
+    },
+  },
+  {
+    name: "FiveM Extreme",
+    price: "199,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-extreme",
+    description: {
+      ram: "12GB",
+      cores: "6 núcleos",
+      ssd: "80GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 196 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+        "Migração Gratuita",
+        "IP Dedicado",
+      ],
+    },
+  },
+  {
+    name: "FiveM Titan",
+    price: "249,90",
+    link: "https://app.neonhost.com.br/index.php?rp=/store/fivem-titan",
+    description: {
+      ram: "16GB",
+      cores: "8 núcleos",
+      ssd: "100GB",
+      attrs: [
+        "Anti-DDoS Incluído",
+        "Painel de Controle",
+        "Suporte 24/7",
+        "Instalação Gratuita",
+        "Até 256 jogadores",
+        "Backup Semanal",
+        "Uptime 99.9%",
+        "Prioridade no Suporte",
+        "Migração Gratuita",
+        "IP Dedicado",
+        "Consultoria Especializada",
+      ],
+    },
+  },
+]

@@ -18,13 +18,9 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import ComparisonTable from "../_components/comparison-table"
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import { useState } from "react"
 
-export default function SemiDedicado() {
-  const shouldReduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, 100])
+export default function VpsGamer() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null)
 
   const features = [
@@ -61,55 +57,39 @@ export default function SemiDedicado() {
     <div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
       {/* Background com blurs */}
       <div className="fixed inset-0 z-0">
-        <motion.div className="absolute inset-0" style={{ y: backgroundY }} {...(shouldReduceMotion && { style: {} })}>
+        <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
-        </motion.div>
+        </div>
       </div>
 
       <section className="relative z-10 max-w-full px-4 md:px-8 lg:px-12 xl:px-16 mx-auto">
         {/* Hero Section */}
         <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
           <div className="text-center mb-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div>
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
                 Servidores Semi-Dedicados
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
-            >
-              Potência{" "}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Semi-Dedicada
+                Semi-Dedicado
               </span>{" "}
               para seus Projetos
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto"
-            >
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
               Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
               especializado para projetos que exigem alta performance.
-            </motion.p>
+            </p>
 
             {/* Stats em linha */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8"
-            >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -118,7 +98,7 @@ export default function SemiDedicado() {
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -126,12 +106,8 @@ export default function SemiDedicado() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group backdrop-blur-sm"
               >
                 <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -139,7 +115,7 @@ export default function SemiDedicado() {
                 </div>
                 <h3 className="font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -154,19 +130,15 @@ export default function SemiDedicado() {
               </span>
             </h2>
             <p className="text-gray-400 mx-auto text-lg max-w-2xl">
-              Planos semi-dedicados com recursos garantidos e performance superior para seus projetos mais exigentes.
+              Planos Semi-Dedicados com recursos garantidos e performance superior para seus projetos mais exigentes.
             </p>
           </div>
 
           {/* Cards Expansíveis */}
           <div className="space-y-6 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
-              <motion.div
+              <div
                 key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
               >
                 {/* Header do Card */}
@@ -184,7 +156,9 @@ export default function SemiDedicado() {
                           <ChevronDown className="h-4 w-4 text-purple-400" />
                         )}
                       </button>
+                      <div>
                         <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+                      </div>
                     </div>
 
                     {/* Middle Section - Specifications Grid */}
@@ -264,11 +238,9 @@ export default function SemiDedicado() {
                 </div>
 
                 {/* Expanded Content */}
-                <motion.div
-                  initial={false}
-                  animate={{ height: expandedCard === index ? "auto" : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                <div
+                  className={`overflow-hidden ${expandedCard === index ? "h-auto" : "h-0"}`}
+                  style={{ transition: "height 0.3s" }}
                 >
                   <div className="px-6 pb-6 border-t border-white/10">
                     <div className="pt-6">
@@ -283,8 +255,8 @@ export default function SemiDedicado() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -304,13 +276,17 @@ export default function SemiDedicado() {
           </div>
         </section>
 
+        <ComparisonTable />
+
+        <Divider className="mt-20" />
+
         {/* FAQ Section */}
         <section className="mt-16 mb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços semi-dedicados.</p>
+            <p className="text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços Semi-Dedicados.</p>
           </div>
           <AccordionItems />
         </section>

@@ -6,13 +6,9 @@ import { AccordionItems } from "../_components/accordion"
 import { Info, Zap, Shield, Globe, Server, Cpu, HardDrive, MemoryStick, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import ComparisonTable from "../_components/comparison-table"
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import { useState } from "react"
 
 export default function VpsGamer() {
-  const shouldReduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [0, 0] : [0, 100])
   const [expandedCard, setExpandedCard] = useState<number | null>(null)
 
   const features = [
@@ -49,54 +45,39 @@ export default function VpsGamer() {
     <div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
       {/* Background com blurs */}
       <div className="fixed inset-0 z-0">
-        <motion.div className="absolute inset-0" style={{ y: backgroundY }} {...(shouldReduceMotion && { style: {} })}>
+        <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
-        </motion.div>
+        </div>
       </div>
 
       <section className="relative z-10 max-w-full px-4 md:px-8 lg:px-12 xl:px-16 mx-auto">
         {/* Hero Section */}
         <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
           <div className="text-center mb-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div>
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
                 Servidores VPS Neon
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
                 VPS Neon
               </span>{" "}
               para seus Projetos
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto"
-            >
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
               Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
               especializado para projetos que exigem alta performance.
-            </motion.p>
+            </p>
 
             {/* Stats em linha */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8"
-            >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -105,7 +86,7 @@ export default function VpsGamer() {
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -113,12 +94,8 @@ export default function VpsGamer() {
         <section className="mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group backdrop-blur-sm"
               >
                 <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -126,7 +103,7 @@ export default function VpsGamer() {
                 </div>
                 <h3 className="font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
@@ -148,14 +125,7 @@ export default function VpsGamer() {
           {/* Cards Grid Minimalistas */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {plans.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="group"
-              >
+              <div key={plan.name} className="group">
                 <div className="h-full bg-[#111318] border border-gray-800 hover:border-purple-500/30 rounded-xl overflow-hidden transition-colors duration-300">
                   {/* Header com nome e preço */}
                   <div className="p-6 border-b border-gray-800">
@@ -216,7 +186,7 @@ export default function VpsGamer() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

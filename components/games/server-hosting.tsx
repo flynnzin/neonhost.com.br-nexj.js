@@ -25,15 +25,6 @@ export function ServerHosting() {
               </div>
             ))}
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
-              Ver todos os planos
-            </button>
-            <button className="border border-white/20 hover:border-purple-500/50 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
-              Falar com suporte
-            </button>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4">

@@ -122,28 +122,29 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Arthur Mendes",
-      role: "Streamer Profissional",
-      service: "Servidor Dedicado",
-      text: "Como streamer, preciso de servidores confiáveis e de alta performance. A NeonHost entrega exatamente isso! A equipe de suporte é incrivelmente ágil e conhecedora.",
+      name: "Eliton Correia",
+      role: "Desenvolvedor Web",
+      service: "VPS Gamer",
+      text: "A NeonHost revolucionou meu negócio online. O desempenho dos servidores é impressionante e o suporte técnico está sempre disponível para resolver qualquer problema. Recomendo fortemente para quem busca confiabilidade e velocidade.",
       rating: 5,
       avatar: "AM",
     },
     {
-      name: "Pedro Silva",
-      role: "Desenvolvedor Web",
-      service: "VPS Gamer",
-      text: "Migrei todos os meus projetos para a NeonHost e a diferença foi imediata. Velocidade incrível e suporte sempre disponível quando preciso.",
+      text: "Migrei meu servidor de jogos para a NeonHost e a diferença foi imediata. Zero lag, uptime perfeito e o atendimento do Leonardo foi excepcional. Ele me guiou em todo o processo de migração e configuração. Estou extremamente satisfeito!",
+      name: "Pedro Almeida",
+      initials: "PA",
+      role: "Administrador de Servidor",
+      service: "VPS Ryzen",
       rating: 5,
-      avatar: "PS",
+      avatar: "PA",
     },
     {
-      name: "Maria Santos",
-      role: "Proprietária de E-commerce",
-      service: "VPS Brasil",
-      text: "Minha loja online nunca teve problemas desde que mudei para a NeonHost. O uptime é realmente 99,9% como prometido.",
+      text: "Precisava de uma solução robusta para minha empresa e a NeonHost superou todas as expectativas. O processo de setup foi simples e o desempenho é consistentemente excelente. O suporte técnico é rápido e eficiente, resolvendo qualquer problema em minutos.",
+      name: "Eric Ferreira",
+      avatar: "EF",
+      role: "CTO de Startup",
+      service: "Servidor Semi-Dedicado",
       rating: 5,
-      avatar: "MS",
     },
   ]
 
@@ -308,40 +309,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção de Infraestrutura */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 mb-6">
-              <Server className="h-8 w-8 text-purple-400" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Infraestrutura
-              </span>{" "}
-              de Ponta
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="p-8 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10"
-              >
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
-                  <div className="text-white">{feature.icon}</div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Seção de Diferenciais */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
@@ -490,35 +457,6 @@ export default function HomePage() {
                 {expandedFaq === index && <div className="p-6 pt-0 text-gray-400 leading-relaxed">{faq.answer}</div>}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Logos dos parceiros */}
-      
-
-      {/* CTA Final */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Pronto para{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                começar?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Junte-se a milhares de clientes satisfeitos e experimente a diferença da NeonHost hoje mesmo.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl font-semibold text-white">
-                Começar agora
-              </button>
-              <button className="px-8 py-4 border border-purple-500/30 rounded-xl font-semibold text-purple-400">
-                Falar com especialista
-              </button>
-            </div>
           </div>
         </div>
       </section>
