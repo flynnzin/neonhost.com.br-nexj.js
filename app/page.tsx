@@ -16,6 +16,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react"
+import { FloatingCoupon } from "@/components/floating-coupon"
 
 export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
@@ -179,6 +180,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
+
+      {/* Cupom flutuante */}
+      <FloatingCoupon />
       {/* Background simples */}
       <div className="fixed inset-0 z-0">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
