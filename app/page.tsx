@@ -180,7 +180,15 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0ZENK8QMW"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'G-E0ZENK8QMW');
+      </script>
       {/* Cupom flutuante */}
       <FloatingCoupon />
       {/* Background simples */}
@@ -254,11 +262,10 @@ export default function HomePage() {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative p-6 rounded-2xl border backdrop-blur-sm ${
-                  plan.popular
+                className={`relative p-6 rounded-2xl border backdrop-blur-sm ${plan.popular
                     ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50"
                     : "bg-white/5 border-white/10"
-                }`}
+                  }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -299,11 +306,10 @@ export default function HomePage() {
 
                 <a
                   href={plan.url}
-                  className={`block w-full py-3 rounded-xl font-semibold text-center ${
-                    plan.popular
+                  className={`block w-full py-3 rounded-xl font-semibold text-center ${plan.popular
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                       : "bg-white/10 text-white border border-white/20"
-                  }`}
+                    }`}
                 >
                   Ver todos os planos
                 </a>
