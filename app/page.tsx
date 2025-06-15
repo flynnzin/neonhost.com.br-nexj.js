@@ -180,15 +180,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0ZENK8QMW"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-E0ZENK8QMW');
-      </script>
+    
       {/* Cupom flutuante */}
       <FloatingCoupon />
       {/* Background simples */}
