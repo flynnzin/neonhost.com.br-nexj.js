@@ -180,12 +180,6 @@ export const NavbarComponent = () => {
                           title: "VPS Fivem",
                           description: "Hospedagem de FiveM.",
                         },
-                        {
-                          href: "/redm",
-                          icon: Cloud,
-                          title: "VPS RedM",
-                          description: "Hospedagem de RedM.",
-                        },
                       ].map((item, index) => (
                         <Link href={item.href} key={`1${index}${item.href}`}>
                           <motion.div
@@ -202,7 +196,6 @@ export const NavbarComponent = () => {
                           </motion.div>
                         </Link>
                       ))}
-                      
                     </div>
                   </div>
 
@@ -267,26 +260,29 @@ export const NavbarComponent = () => {
                     ))}
                   </div>
                   <div className="mt-6 pt-4 border-t border-white/10">
-                <div className="flex items-center justify-between text-sm">
-                  <Link
-                    href="https://status.neonhost.com.br"
-                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    <span>Status</span>
-                    <span className="text-gray-500">→</span>
-                  </Link>
-                  <Link
-                    href="/redes"
-                    className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    <span>Redes</span>
-                    <span className="text-gray-500">→</span>
-                  </Link>
-                  <Link href="https://discord.gg/rGP7prMqF3" className="text-gray-300 hover:text-white transition-colors duration-200">
-                    <span>Changelog</span>
-                  </Link>
-                </div>
-              </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <Link
+                        href="https://status.neonhost.com.br"
+                        className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        <span>Status</span>
+                        <span className="text-gray-500">→</span>
+                      </Link>
+                      <Link
+                        href="/redes"
+                        className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        <span>Redes</span>
+                        <span className="text-gray-500">→</span>
+                      </Link>
+                      <Link
+                        href="https://discord.gg/rGP7prMqF3"
+                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        <span>Changelog</span>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </PopoverContent>
@@ -337,30 +333,26 @@ export const NavbarComponent = () => {
                         </div>
                       </motion.div>
                     </Link>
-                    
                   ))}
                   <Link href="/games">
-										<div className="p-2 rounded-lg flex items-center h-18 h-full hover:bg-[#303030]">
-											<div className="flex items-center space-x-2">
-												<LayoutGrid
-													width={40}
-													height={40}
-													// fill="#fff"
-													color="#fff"
-													className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
-												/>
-												<div className="flex flex-col">
-													<h3 className="text-md font-bold">Todos jogos</h3>
-													<p className="text-xs text-nowrap">
-														Ver todos nossos jogos
-													</p>
-												</div>
-											</div>
-										</div>
-									</Link>
+                    <div className="p-2 rounded-lg flex items-center h-18 h-full hover:bg-[#303030]">
+                      <div className="flex items-center space-x-2">
+                        <LayoutGrid
+                          width={40}
+                          height={40}
+                          // fill="#fff"
+                          color="#fff"
+                          className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 object-cover rounded-lg hover:animate-pulse"
+                        />
+                        <div className="flex flex-col">
+                          <h3 className="text-md font-bold">Todos jogos</h3>
+                          <p className="text-xs text-nowrap">Ver todos nossos jogos</p>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
-              
             </PopoverContent>
           </Popover>
         </NavbarItem>
@@ -588,6 +580,12 @@ export const NavbarComponent = () => {
                       <p className="text-sm text-gray-400">Servidor veloz para Hospedagem</p>
                     </div>
                   </Link>
+                  <Link href="/fivem" className="w-full">
+                    <div className="p-2 hover:bg-white/5 rounded-lg transition-colors duration-200">
+                      <p className="text-base font-semibold text-white">VPS Fivem</p>
+                      <p className="text-sm text-gray-400">Hospedagem de FiveM</p>
+                    </div>
+                  </Link>
                   <Link href="/dedicado" className="w-full">
                     <div className="p-2 hover:bg-white/5 rounded-lg transition-colors duration-200">
                       <p className="text-base font-semibold text-white">VPS Dedicado</p>
@@ -599,7 +597,6 @@ export const NavbarComponent = () => {
             </div>
           </NavbarItem>
 
-              
           <NavbarItem>
             <Link href="https://discord.gg/rGP7prMqF3" target="_blank" className="w-full">
               <Button
