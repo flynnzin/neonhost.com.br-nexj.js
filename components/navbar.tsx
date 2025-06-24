@@ -262,7 +262,7 @@ export const NavbarComponent = () => {
                   <div className="mt-6 pt-4 border-t border-white/10">
                     <div className="flex items-center justify-between text-sm">
                       <Link
-                        href="https://status.neonhost.com.br"
+                        href="https://stats.uptimerobot.com/YJjcBPfgVR"
                         className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
                       >
                         <span>Status</span>
