@@ -40,7 +40,7 @@ export default function HomePage() {
     {
       name: "VPS Gamer",
       description: "VPS de alta performance no Brasil com Anti-DDoS PRO",
-      price: "89",
+      price: "72",
       icon: <Zap className="h-8 w-8" />,
       popular: true,
       features: ["Anti-DDoS PRO", "AMD Ryzen", "Baixa latência", "Suporte 24/7"],
