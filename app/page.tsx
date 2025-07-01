@@ -15,12 +15,17 @@ import {
   Quote,
   ChevronDown,
   ChevronUp,
+  CreditCard,
+  DollarSign,
+  HardDrive,
+  Users,
+  ArrowRight,
 } from "lucide-react"
-import { FloatingCoupon } from "@/components/floating-coupon"
 
 export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [activeFaqCategory, setActiveFaqCategory] = useState("geral")
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -121,6 +126,78 @@ export default function HomePage() {
     },
   ]
 
+  const whyChooseFeatures = [
+    {
+      icon: <HardDrive className="h-6 w-6" />,
+      title: "Infraestrutura de ponta",
+      description: "Servidores de última geração com hardware de alto desempenho.",
+      color: "text-purple-400",
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Segurança garantida",
+      description: "Proteção Anti-DDoS avançada e backups automáticos.",
+      color: "text-pink-400",
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Suporte humanizado",
+      description: "Atendimento 24/7 com especialistas prontos para ajudar.",
+      color: "text-purple-400",
+    },
+  ]
+
+  const operatingSystems = [
+    {
+      name: "Windows",
+      image: "/images/os/windows.svg",
+      color: "bg-blue-500/20 border-blue-500/30 hover:border-blue-500/50",
+      description: "Sistema operacional mais popular do mundo",
+    },
+    {
+      name: "Ubuntu",
+      image: "/images/os/ubuntu.svg",
+      color: "bg-orange-500/20 border-orange-500/30 hover:border-orange-500/50",
+      description: "Distribuição Linux mais amigável",
+    },
+    {
+      name: "Fedora",
+      image: "/images/os/fedora.svg",
+      color: "bg-blue-600/20 border-blue-600/30 hover:border-blue-600/50",
+      description: "Linux com tecnologias de ponta",
+    },
+    {
+      name: "CentOS",
+      image: "/images/os/centos.svg",
+      color: "bg-purple-500/20 border-purple-500/30 hover:border-purple-500/50",
+      description: "Estabilidade para servidores empresariais",
+    },
+    {
+      name: "Debian",
+      image: "/images/os/debian.svg",
+      color: "bg-red-500/20 border-red-500/30 hover:border-red-500/50",
+      description: "Base sólida para muitas distribuições",
+    },
+    {
+      name: "Alma Linux",
+      image: "/images/os/alma.svg",
+      color: "bg-cyan-500/20 border-cyan-500/30 hover:border-cyan-500/50",
+      description: "Sucessor moderno do CentOS",
+    },
+    {
+      name: "OpenSUSE",
+      image: "/images/os/opensuse.svg",
+      color: "bg-green-500/20 border-green-500/30 hover:border-green-500/50",
+      description: "Linux profissional e confiável",
+    },
+    {
+      name: "FreeBSD",
+      image: "/images/os/freebsd.svg",
+      color: "bg-red-600/20 border-red-600/30 hover:border-red-600/50",
+      description: "Sistema Unix-like de alta performance",
+    },
+  ]
+
   const testimonials = [
     {
       name: "Eliton Correia",
@@ -128,12 +205,11 @@ export default function HomePage() {
       service: "VPS Gamer",
       text: "A NeonHost revolucionou meu negócio online. O desempenho dos servidores é impressionante e o suporte técnico está sempre disponível para resolver qualquer problema. Recomendo fortemente para quem busca confiabilidade e velocidade.",
       rating: 5,
-      avatar: "AM",
+      avatar: "EC",
     },
     {
       text: "Migrei meu servidor de jogos para a NeonHost e a diferença foi imediata. Zero lag, uptime perfeito e o atendimento do Leonardo foi excepcional. Ele me guiou em todo o processo de migração e configuração. Estou extremamente satisfeito!",
       name: "Pedro Almeida",
-      initials: "PA",
       role: "Administrador de Servidor",
       service: "VPS Ryzen",
       rating: 5,
@@ -149,23 +225,93 @@ export default function HomePage() {
     },
   ]
 
-  const faqs = [
-    {
-      question: "O que é uma VPS?",
-      answer:
-        "VPS (Servidor Privado Virtual) é um servidor virtual que funciona com recursos dedicados em um servidor físico compartilhado. Diferente da hospedagem compartilhada, você tem recursos garantidos e maior controle sobre o ambiente.",
+  const faqCategories = {
+    geral: {
+      title: "Geral",
+      subtitle: "Perguntas comuns sobre nossos serviços",
+      icon: <Globe className="h-5 w-5" />,
+      questions: [
+        {
+          question: "Quais métodos de pagamento vocês aceitam?",
+          answer:
+            "Aceitamos cartão de crédito, débito, PIX, boleto bancário e transferência bancária. Todos os pagamentos são processados de forma segura.",
+          category: "Financeiro",
+          categoryColor: "bg-green-500/20 text-green-400",
+          icon: <CreditCard className="h-4 w-4" />,
+        },
+        {
+          question: "Vocês oferecem reembolsos?",
+          answer:
+            "Sim, oferecemos garantia de reembolso de 7 dias para novos clientes. Se não ficar satisfeito, devolvemos 100% do valor pago.",
+          category: "Financeiro",
+          categoryColor: "bg-green-500/20 text-green-400",
+          icon: <DollarSign className="h-4 w-4" />,
+        },
+        {
+          question: "Qual o prazo de ativação?",
+          answer:
+            "A ativação é imediata após a confirmação do pagamento. Em casos de análise adicional, pode levar até 24 horas.",
+          category: "Infraestrutura",
+          categoryColor: "bg-blue-500/20 text-blue-400",
+          icon: <Clock className="h-4 w-4" />,
+        },
+      ],
     },
-    {
-      question: "Como funciona a proteção Anti-DDoS?",
-      answer:
-        "Nossa proteção Anti-DDoS monitora constantemente o tráfego de rede, identificando e mitigando ataques em tempo real. Utilizamos filtros avançados e técnicas de mitigação para garantir que seu servidor permaneça online mesmo durante ataques.",
+    jogos: {
+      title: "Servidores de Jogos",
+      subtitle: "Perguntas específicas sobre hospedagem de jogos",
+      icon: <Server className="h-5 w-5" />,
+      questions: [
+        {
+          question: "Como funciona a Proteção/Mitigação?",
+          answer:
+            "Nossa proteção DDoS monitora o tráfego em tempo real, identificando e bloqueando ataques automaticamente, garantindo que seu servidor permaneça online.",
+          category: "Segurança",
+          categoryColor: "bg-red-500/20 text-red-400",
+          icon: <Shield className="h-4 w-4" />,
+        },
+        {
+          question: "O que é e como funciona Proteção DDoS Pro?",
+          answer:
+            "A Proteção DDoS Pro oferece defesa avançada contra ataques de até 1Tbps, com filtragem inteligente e mitigação instantânea para máxima proteção.",
+          category: "Segurança",
+          categoryColor: "bg-red-500/20 text-red-400",
+          icon: <Shield className="h-4 w-4" />,
+        },
+        {
+          question: "Onde estão localizados os data centers de vocês?",
+          answer:
+            "Nossos data centers estão localizados em São Paulo e Rio de Janeiro, garantindo baixa latência para todo o Brasil.",
+          category: "Infraestrutura",
+          categoryColor: "bg-blue-500/20 text-blue-400",
+          icon: <Globe className="h-4 w-4" />,
+        },
+      ],
     },
-    {
-      question: "Qual a diferença entre VPS e servidor dedicado?",
-      answer:
-        "Um servidor dedicado oferece todo o hardware físico exclusivamente para você, enquanto uma VPS compartilha o hardware físico com outros clientes, mas com recursos dedicados. Servidores dedicados oferecem máximo desempenho e personalização, enquanto VPS oferece boa performance com custo mais acessível.",
+    vps: {
+      title: "VPS",
+      subtitle: "Informações sobre Servidor Virtual Privado",
+      icon: <Cpu className="h-5 w-5" />,
+      questions: [
+        {
+          question: "O que é uma VPS?",
+          answer:
+            "VPS (Servidor Privado Virtual) é um servidor virtual que funciona com recursos dedicados em um servidor físico compartilhado. Diferente da hospedagem compartilhada, você tem recursos garantidos e maior controle sobre o ambiente.",
+          category: "Infraestrutura",
+          categoryColor: "bg-blue-500/20 text-blue-400",
+          icon: <Server className="h-4 w-4" />,
+        },
+        {
+          question: "Qual a diferença entre VPS e servidor dedicado?",
+          answer:
+            "Um servidor dedicado oferece todo o hardware físico exclusivamente para você, enquanto uma VPS compartilha o hardware físico com outros clientes, mas com recursos dedicados. Servidores dedicados oferecem máximo desempenho e personalização, enquanto VPS oferece boa performance com custo mais acessível.",
+          category: "Infraestrutura",
+          categoryColor: "bg-blue-500/20 text-blue-400",
+          icon: <HardDrive className="h-4 w-4" />,
+        },
+      ],
     },
-  ]
+  }
 
   if (!isLoaded) {
     return (
@@ -180,11 +326,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
-    
-    <script src="//code.tidio.co/9elaurpjovzpjad85zc6culhkimz00pd.js" async></script>
+      <script src="//code.tidio.co/9elaurpjovzpjad85zc6culhkimz00pd.js" async></script>
 
-      {/* Cupom flutuante */}
-      {/* <FloatingCoupon /> */}
       {/* Background simples */}
       <div className="fixed inset-0 z-0">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
@@ -256,10 +399,11 @@ export default function HomePage() {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative p-6 rounded-2xl border backdrop-blur-sm ${plan.popular
+                className={`relative p-6 rounded-2xl border backdrop-blur-sm ${
+                  plan.popular
                     ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50"
                     : "bg-white/5 border-white/10"
-                  }`}
+                }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -300,15 +444,254 @@ export default function HomePage() {
 
                 <a
                   href={plan.url}
-                  className={`block w-full py-3 rounded-xl font-semibold text-center ${plan.popular
+                  className={`block w-full py-3 rounded-xl font-semibold text-center ${
+                    plan.popular
                       ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                       : "bg-white/10 text-white border border-white/20"
-                    }`}
+                  }`}
                 >
                   Ver todos os planos
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nova Seção: Por que escolher a NeonHost - Layout em Cards */}
+      <section className="relative py-20 px-4 z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Por que escolher a{" "}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                NeonHost?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+              Combinamos tecnologia de ponta, infraestrutura nacional e suporte especializado
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            {/* Cards Grid - 2 colunas */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Card 1 - Segurança Avançada */}
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Segurança Avançada</h3>
+                </div>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Proteção DDoS premium, firewall avançado e monitoramento 24/7 para máxima segurança dos seus dados e
+                  aplicações
+                </p>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Firewall configurável</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Monitoramento em tempo real</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Backup automático</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">SSL gratuito</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - Performance Superior */}
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Performance Superior</h3>
+                </div>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Servidores AMD Ryzen com SSD NVMe, rede de alta velocidade e otimizações para máxima performance
+                </p>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">SSD NVMe ultra-rápido</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Processadores AMD Ryzen</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Rede 10Gbps</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Cache otimizado</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 - Infraestrutura Nacional (Destacado) */}
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-2 border-purple-500/30 hover:border-purple-500/50 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-purple-300 mr-4">
+                    <Globe className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Infraestrutura Nacional</h3>
+                </div>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Datacenter tier 1 no Brasil com conectividade premium para menor latência e melhor experiência
+                </p>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Datacenter Tier 1</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Múltiplas operadoras</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Redundância total</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Energia backup</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 - Suporte Especializado */}
+              <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
+                    <Headphones className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Suporte Especializado</h3>
+                </div>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                  Equipe técnica brasileira disponível 24/7 com conhecimento especializado em cada tipo de servidor
+                </p>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Suporte em português</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Técnicos especializados</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Chat ao vivo</span>
+                  </div>
+                  <div className="flex items-center text-green-400">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <span className="text-gray-300">Tickets prioritários</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Imagem do Datacenter */}
+            <div className="lg:col-span-1">
+              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-1">
+                <Image
+                  // src="/svgs/Cloud hosting-pana.svg"
+                  src="/games/page/about-datacenter.webp"
+                  alt="Datacenter NeonHost - Infraestrutura de alta tecnologia"
+                  width={400}
+                  height={500}
+                  className="rounded-xl w-full h-auto object-cover"
+                />
+                {/* Overlay com informações */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-black/60 backdrop-blur-sm border border-white/10">
+                  <h4 className="text-white font-bold mb-2">Datacenter Tier 1</h4>
+                  <p className="text-gray-300 text-sm">Infraestrutura de classe mundial localizada no Brasil</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Estatísticas */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "99.9%", label: "Uptime Garantido", icon: <Clock className="h-5 w-5" /> },
+              { value: "24/7", label: "Suporte Técnico", icon: <Headphones className="h-5 w-5" /> },
+              { value: "15ms", label: "Latência Média", icon: <Zap className="h-5 w-5" /> },
+              { value: "348Tbps", label: "Proteção DDoS", icon: <Shield className="h-5 w-5" /> },
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex justify-center mb-2 text-purple-400">{stat.icon}</div>
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nova Seção: Sistemas Operacionais com Imagens */}
+      <section className="relative py-20 px-4 z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Confira os{" "}
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                sistemas
+              </span>{" "}
+              disponíveis
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+              Crie uma nova instância com seu sistema operacional preferido ou aplicativo pré-instalado em apenas alguns
+              segundos.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {operatingSystems.map((os, index) => (
+              <div
+                key={index}
+                className={`group p-8 rounded-2xl border backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-pointer ${os.color}`}
+              >
+                <div className="text-center">
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-16 h-16 relative">
+                      <Image
+                        src={os.image || "/placeholder.svg"}
+                        alt={`${os.name} logo`}
+                        width={64}
+                        height={64}
+                        className="object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{os.name}</h3>
+                  <p className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {os.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Informação adicional */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
+              <Server className="h-5 w-5 text-purple-400 mr-2" />
+              <span className="text-purple-300 font-medium">Instalação automática em menos de 60 segundos</span>
+            </div>
           </div>
         </div>
       </section>
@@ -428,43 +811,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Perguntas{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Frequentes
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6" />
-          </div>
+      {/* FAQ Melhorado com Categorias */}
+      
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm"
-              >
-                <button
-                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between"
-                >
-                  <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
-                  <div className="text-purple-400">
-                    {expandedFaq === index ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
-                  </div>
-                </button>
-
-                {expandedFaq === index && <div className="p-6 pt-0 text-gray-400 leading-relaxed">{faq.answer}</div>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* CTA Final */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 md:p-12 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">

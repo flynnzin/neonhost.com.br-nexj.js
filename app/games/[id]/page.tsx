@@ -2,6 +2,7 @@
 
 import { maintenanceConfig } from "@/config/maintenance"
 import { MaintenancePage } from "@/components/maintenance-page"
+import { getGameById } from "@/config/games"
 import Image from "next/image"
 import Link from "next/link"
 import { Star, Users, Shield, Gamepad2, Heart, Share2, ChevronDown } from "lucide-react"
@@ -17,7 +18,7 @@ export default function GamePage({ params }: GamePageProps) {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [isFavorited, setIsFavorited] = useState(false)
 
-  const gameData = getGameData(params.id)
+  const gameData = getGameById(params.id)
 
   const copyToClipboard = async () => {
     try {
@@ -82,7 +83,7 @@ export default function GamePage({ params }: GamePageProps) {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-xl overflow-hidden border border-white/10">
                     <Image
-                      src={gameData.logo || "/placeholder.svg"}
+                      src={gameData.logo || gameData.image}
                       alt={gameData.name}
                       width={64}
                       height={64}
@@ -95,11 +96,11 @@ export default function GamePage({ params }: GamePageProps) {
                       <span>por {gameData.developer}</span>
                       <div className="flex items-center gap-1">
                         <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        <span>4.8</span>
+                        <span>{gameData.rating}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Users className="w-4 h-4" />
-                        <span>2.4k online</span>
+                        <span>{gameData.players} online</span>
                       </div>
                     </div>
                   </div>
@@ -129,7 +130,7 @@ export default function GamePage({ params }: GamePageProps) {
               {/* Featured Image */}
               <div className="relative aspect-video rounded-2xl overflow-hidden mb-8 group">
                 <Image
-                  src={gameData.featuredImage || "/placeholder.svg"}
+                  src={gameData.featuredImage || gameData.image}
                   alt={gameData.name}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -173,7 +174,7 @@ export default function GamePage({ params }: GamePageProps) {
               <div className="mb-12">
                 <h3 className="text-xl font-bold mb-6">Recursos Disponíveis</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {gameData.systems.map((system, index) => (
+                  {gameData.features.map((feature, index) => (
                     <div
                       key={index}
                       className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
@@ -181,8 +182,8 @@ export default function GamePage({ params }: GamePageProps) {
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <Gamepad2 className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-semibold mb-2">{system.name}</h4>
-                      <p className="text-sm text-gray-400">Suporte completo para {system.name.toLowerCase()}</p>
+                      <h4 className="font-semibold mb-2">{feature}</h4>
+                      <p className="text-sm text-gray-400">Recurso incluído em nossos servidores</p>
                     </div>
                   ))}
                 </div>
@@ -192,11 +193,11 @@ export default function GamePage({ params }: GamePageProps) {
               <div className="mb-12">
                 <h3 className="text-xl font-bold mb-6">Informações Técnicas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {gameData.info.map((info, index) => (
+                  {gameData.platforms.map((platform, index) => (
                     <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
                       <div className="flex items-center gap-3">
                         <Shield className="w-5 h-5 text-purple-400" />
-                        <span className="font-medium">{info.name}</span>
+                        <span className="font-medium">{platform}</span>
                       </div>
                     </div>
                   ))}
@@ -212,22 +213,11 @@ export default function GamePage({ params }: GamePageProps) {
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  {gameData.ratings.map((rating, index) => (
-                    <div key={index} className="text-center">
-                      <div className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-purple-500 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20">
-                        <span className="text-2xl font-bold">{rating.score}</span>
-                      </div>
-                      <p className="text-sm text-gray-400">{rating.platform}</p>
-                    </div>
-                  ))}
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {gameData.testimonials.map((testimonial, index) => (
                     <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
                       <div className="flex items-center gap-1 mb-3">
-                        {[...Array(5)].map((_, i) => (
+                        {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
@@ -283,13 +273,17 @@ export default function GamePage({ params }: GamePageProps) {
                   {/* Price Header */}
                   <div className="p-6 border-b border-white/10">
                     <div className="text-center mb-4">
-                      <div className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
-                        <span>-{gameData.discount}%</span>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-gray-400 line-through">
-                          R$ {gameData.originalPrice.toFixed(2).replace(".", ",")}
+                      {gameData.discount && (
+                        <div className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+                          <span>-{gameData.discount}%</span>
                         </div>
+                      )}
+                      <div className="space-y-1">
+                        {gameData.originalPrice && (
+                          <div className="text-sm text-gray-400 line-through">
+                            R$ {gameData.originalPrice.toFixed(2).replace(".", ",")}
+                          </div>
+                        )}
                         <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                           R$ {gameData.price.toFixed(2).replace(".", ",")}
                         </div>
@@ -306,18 +300,24 @@ export default function GamePage({ params }: GamePageProps) {
                     >
                       Ver Planos
                     </Link>
-                    <Link
-                      href={gameData.ComunityPaln || "#"}
-                      className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
-                    >
-                      Comunidade
-                    </Link>
-                    <Link
-                      href={gameData.VpsPlan || "#"}
-                      className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
-                    >
-                      VPS Dedicado
-                    </Link>
+                    {gameData.communityLink && (
+                      <Link
+                        href={gameData.communityLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
+                      >
+                        Comunidade
+                      </Link>
+                    )}
+                    {gameData.vpsLink && (
+                      <Link
+                        href={gameData.vpsLink}
+                        className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
+                      >
+                        VPS Dedicado
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -334,12 +334,18 @@ export default function GamePage({ params }: GamePageProps) {
                       <span className="font-medium">{gameData.platforms.join(", ")}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Processador:</span>
-                      <span className="font-medium">AMD Ryzen</span>
+                      <span className="text-gray-400">Categoria:</span>
+                      <span className="font-medium">{gameData.category}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Mods:</span>
-                      <span className="font-medium text-green-400">Permitido</span>
+                      <span className="text-gray-400">Jogadores:</span>
+                      <span className="font-medium">
+                        {gameData.minPlayers}-{gameData.maxPlayers}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400">RAM Mínima:</span>
+                      <span className="font-medium">{gameData.requirements.ram}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-400">Reembolso:</span>
@@ -381,158 +387,4 @@ export default function GamePage({ params }: GamePageProps) {
       </div>
     </main>
   )
-}
-
-// Função para obter dados do jogo baseado no ID
-function getGameData(id: string) {
-  const games = {
-    minecraft: {
-      id: "minecraft",
-      name: "Minecraft",
-      logo: "/games/page/mine.jpg",
-      featuredImage: "/games/page/mine.jpg",
-      VpsPlan: "/vps-gamer",
-      ComunityPaln: "https://discord.gg/neonhost",
-      description:
-        "Na NeonHost, oferecemos servidores populares como Vanilla, Forge, Mohist, Paper e Bedrock Edition, além de modpacks como Pixelmon, SkyFactory e RLCraft. Nossos servidores são otimizados para oferecer a melhor experiência de jogo possível.",
-      originalPrice: 20.9,
-      price: 13.9,
-      discount: 35,
-      developer: "Mojang Studios",
-      platforms: ["PC", "Xbox", "PlayStation", "Switch"],
-      systems: [
-        { name: "Mods e Plugins" },
-        { name: "Modpacks" },
-        { name: "Atualização automática" },
-        { name: "Backup automático" },
-        { name: "Painel de controle" },
-        { name: "FTP/SFTP" },
-      ],
-      info: [
-        { name: "Proteção DDoS" },
-        { name: "São Paulo" },
-        { name: "Multiplataforma" },
-        { name: "SSD NVMe" },
-        { name: "AMD Ryzen" },
-        { name: "Suporte 24/7" },
-      ],
-      ratings: [
-        { platform: "Google", score: "100%" },
-        { platform: "Trustpilot", score: "100%" },
-        { platform: "Discord", score: "100%" },
-      ],
-      testimonials: [
-        {
-          title: "NeonHost é incrível",
-          author: "Humberto Junior",
-          content:
-            "A neonhost é incrível, custo benefício e um belo suporte, tanto pra colocar mods e essas coisas, recomendo e irei utilizar muito",
-        },
-        {
-          title: "Uso e recomendo",
-          author: "Alexandre Denardi",
-          content:
-            "Já uso a empresa para hospedar servidores a anos GTA RP, servidores Linux, hoje estou até mesmo com meu banco de dados hospedado, sem quedas e SLA perfeito.",
-        },
-        {
-          title: "Excelente suporte",
-          author: "Tomas",
-          content:
-            "NeonHost com suporte e jogos top para jogar, já contratei outros, mas esse servidor está muito bom e com equipamentos muito bons também.",
-        },
-      ],
-      faq: [
-        {
-          question: "Onde estão localizados os servidores?",
-          answer:
-            "Nossos servidores estão localizados em São Paulo, Brasil, garantindo baixa latência para jogadores brasileiros.",
-        },
-        {
-          question: "Como funciona o reembolso?",
-          answer: "Oferecemos reembolso em até 7 dias após a compra, sem perguntas.",
-        },
-        {
-          question: "Posso rodar mods?",
-          answer:
-            "Sim, todos os nossos planos suportam mods e plugins, exceto o plano Bedrock que é exclusivo para Minecraft Bedrock Edition.",
-        },
-        {
-          question: "Posso aumentar meu plano?",
-          answer: "Sim, você pode fazer upgrade do seu plano a qualquer momento através do painel de controle.",
-        },
-        {
-          question: "Como faço pra acessar após a compra?",
-          answer: "Após a compra, você receberá um email com as instruções de acesso ao painel de controle.",
-        },
-      ],
-    },
-    palworld: {
-      id: "palworld",
-      name: "Palworld",
-      logo: "/games/page/pal.png",
-      featuredImage: "/games/page/pal.png",
-      VpsPlan: "/vps-gamer",
-      ComunityPaln: "https://discord.gg/neonhost",
-      description:
-        "Hospede seu próprio servidor de Palworld com a NeonHost. Capture, colecione e batalhe com criaturas em um mundo aberto cheio de aventuras e desafios.",
-      originalPrice: 120.0,
-      price: 79.9,
-      discount: 34,
-      developer: "Pocketpair",
-      platforms: ["PC", "Xbox"],
-      systems: [{ name: "Mods e Plugins" }, { name: "Configuração Personalizada" }, { name: "Atualização automática" }],
-      info: [{ name: "Proteção DDoS" }, { name: "São Paulo" }, { name: "Multiplataforma" }],
-      ratings: [
-        { platform: "Google", score: "100%" },
-        { platform: "Trustpilot", score: "100%" },
-        { platform: "Discord", score: "100%" },
-      ],
-      testimonials: [
-        {
-          title: "Servidor estável",
-          author: "Ricardo Almeida",
-          content:
-            "Servidor de Palworld muito estável, sem quedas e com ótimo desempenho mesmo com muitos jogadores online.",
-        },
-        {
-          title: "Suporte excelente",
-          author: "Mariana Costa",
-          content:
-            "O suporte da NeonHost é excelente, me ajudaram a configurar mods no meu servidor de Palworld rapidamente.",
-        },
-        {
-          title: "Recomendo demais",
-          author: "Felipe Santos",
-          content: "Melhor hospedagem para Palworld, preço justo e servidor com ótimo desempenho. Recomendo demais!",
-        },
-      ],
-      faq: [
-        {
-          question: "Quantos jogadores o servidor suporta?",
-          answer:
-            "Depende do plano escolhido, mas nossos servidores de Palworld suportam de 10 a 100 jogadores simultâneos.",
-        },
-        {
-          question: "Posso instalar mods no servidor?",
-          answer: "Sim, todos os nossos planos de Palworld suportam mods e configurações personalizadas.",
-        },
-        {
-          question: "Como funciona o backup?",
-          answer:
-            "Realizamos backups automáticos diários do seu servidor, e você também pode criar backups manuais a qualquer momento.",
-        },
-        {
-          question: "Posso transferir meu mundo existente?",
-          answer: "Sim, nossa equipe de suporte pode ajudar a transferir seu mundo existente para nosso servidor.",
-        },
-        {
-          question: "O servidor fica online 24/7?",
-          answer: "Sim, todos os nossos servidores ficam online 24 horas por dia, 7 dias por semana.",
-        },
-      ],
-    },
-    // Adicione outros jogos seguindo o mesmo padrão...
-  }
-
-  return games[id as keyof typeof games] || games.minecraft
 }

@@ -1,7 +1,7 @@
 // Configuração de manutenção para as páginas de jogos
 export const maintenanceConfig = {
   // Altere para false quando quiser liberar as páginas de jogos
-  isGamesUnderMaintenance: true,
+  isGamesUnderMaintenance: false,
 
   // Mensagens personalizáveis
   title: "Em Breve",

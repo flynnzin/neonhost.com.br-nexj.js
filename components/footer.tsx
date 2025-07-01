@@ -78,7 +78,7 @@ export const Footer = () => {
           external: true,
         },
         { name: "Discord", url: "https://discord.gg/rGP7prMqF3", external: true },
-        { name: "FAQ", url: "https://help.neonhost.com.br/", external: true },
+        { name: "FAQ", url: "https://suporte.neonhost.com.br/", external: true },
         {
           name: "Reclame aqui",
           url: "https://www.reclameaqui.com.br/empresa/59-630-804-cristopher-leonardo-teixeira-ferreira/",

@@ -5,7 +5,8 @@ import Image from "next/image"
 import { useState } from "react"
 import { maintenanceConfig } from "@/config/maintenance"
 import { MaintenancePage } from "@/components/maintenance-page"
-import { Check, X, ChevronRight, Zap, Shield, Cpu, Server, Users, Clock, Database } from "lucide-react"
+import { getGameById } from "@/config/games"
+import { Check, ChevronRight, Zap, Shield, Cpu, Server, Users, Clock, Database } from "lucide-react"
 
 interface Params {
   id: string
@@ -13,283 +14,6 @@ interface Params {
 
 interface PageProps {
   params: Params
-}
-
-interface Plan {
-  id: string
-  name: string
-  description: string
-  price: number
-  originalPrice: number
-  discount: number
-  features: {
-    name: string
-    included: boolean
-  }[]
-  specs: {
-    ram: string
-    cpu: string
-    storage: string
-    players: string
-    backups: string
-    ddosProtection: string
-  }
-  popular?: boolean
-  badge?: string
-  productLink?: string
-}
-
-// Função para obter dados do jogo baseado no ID
-function getGameData(id: string) {
-  const games = {
-    minecraft: {
-      id: "minecraft",
-      name: "Minecraft",
-      logo: "/games/page/mine.jpg",
-      description: "Hospedagem de servidores Minecraft otimizados para o melhor desempenho",
-      plans: [
-        {
-          id: "basic",
-          name: "Basic",
-          description: "Ideal para pequenos grupos de amigos",
-          price: 9.99,
-          originalPrice: 14.99,
-          discount: 33,
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/basic",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: false },
-            { name: "Suporte prioritário", included: false },
-            { name: "Backups diários", included: false },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "2GB",
-            cpu: "1 vCore",
-            storage: "10GB SSD NVMe",
-            players: "10 jogadores",
-            backups: "Semanal",
-            ddosProtection: "Básica",
-          },
-        },
-        {
-          id: "standard",
-          name: "Standard",
-          description: "Para servidores com mais jogadores e mods",
-          price: 19.99,
-          originalPrice: 29.99,
-          discount: 33,
-          popular: true,
-          badge: "Mais Popular",
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/standard",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: false },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "4GB",
-            cpu: "2 vCores",
-            storage: "20GB SSD NVMe",
-            players: "25 jogadores",
-            backups: "Diário",
-            ddosProtection: "Avançada",
-          },
-        },
-        {
-          id: "premium",
-          name: "Premium",
-          description: "Para servidores grandes com muitos mods",
-          price: 29.99,
-          originalPrice: 44.99,
-          discount: 33,
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/premium",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: true },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "6GB",
-            cpu: "3 vCores",
-            storage: "30GB SSD NVMe",
-            players: "40 jogadores",
-            backups: "Diário",
-            ddosProtection: "Premium",
-          },
-        },
-        {
-          id: "ultimate",
-          name: "Ultimate",
-          description: "Para grandes comunidades e modpacks pesados",
-          price: 39.99,
-          originalPrice: 59.99,
-          discount: 33,
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/ultimate",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: true },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "8GB",
-            cpu: "4 vCores",
-            storage: "40GB SSD NVMe",
-            players: "60+ jogadores",
-            backups: "Diário",
-            ddosProtection: "Premium",
-          },
-        },
-        {
-          id: "extreme",
-          name: "Extreme",
-          description: "Para servidores de alta performance",
-          price: 59.99,
-          originalPrice: 89.99,
-          discount: 33,
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/extreme",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: true },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "12GB",
-            cpu: "6 vCores",
-            storage: "60GB SSD NVMe",
-            players: "100+ jogadores",
-            backups: "Diário",
-            ddosProtection: "Premium",
-          },
-        },
-        {
-          id: "titan",
-          name: "Titan",
-          description: "Nossa solução mais poderosa para Minecraft",
-          price: 79.99,
-          originalPrice: 119.99,
-          discount: 33,
-          badge: "Máximo Desempenho",
-          productLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/titan",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Plugins ilimitados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: true },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "16GB",
-            cpu: "8 vCores",
-            storage: "80GB SSD NVMe",
-            players: "150+ jogadores",
-            backups: "Diário",
-            ddosProtection: "Premium",
-          },
-        },
-      ],
-    },
-    palworld: {
-      id: "palworld",
-      name: "Palworld",
-      logo: "/games/page/pal.png",
-      description: "Hospedagem de servidores Palworld com desempenho otimizado",
-      plans: [
-        {
-          id: "starter",
-          name: "Básico",
-          description: "Para pequenos grupos de jogadores",
-          price: 39.9,
-          originalPrice: 59.9,
-          discount: 33,
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Mods suportados", included: true },
-            { name: "Domínio personalizado", included: false },
-            { name: "Suporte prioritário", included: false },
-            { name: "Backups diários", included: false },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "4GB",
-            cpu: "2 vCores",
-            storage: "30GB SSD NVMe",
-            players: "10 jogadores",
-            backups: "Semanal",
-            ddosProtection: "Básica",
-          },
-        },
-        {
-          id: "standard",
-          name: "Avançado",
-          description: "Para servidores médios com mais jogadores",
-          price: 69.9,
-          originalPrice: 99.9,
-          discount: 30,
-          popular: true,
-          badge: "Mais Popular",
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Mods suportados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: false },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "8GB",
-            cpu: "4 vCores",
-            storage: "50GB SSD NVMe",
-            players: "25 jogadores",
-            backups: "Diário",
-            ddosProtection: "Avançada",
-          },
-        },
-        {
-          id: "premium",
-          name: "Premium",
-          description: "Para grandes comunidades de Palworld",
-          price: 119.9,
-          originalPrice: 169.9,
-          discount: 29,
-          features: [
-            { name: "Painel de controle", included: true },
-            { name: "Mods suportados", included: true },
-            { name: "Domínio personalizado", included: true },
-            { name: "Suporte prioritário", included: true },
-            { name: "Backups diários", included: true },
-            { name: "Proteção DDoS", included: true },
-          ],
-          specs: {
-            ram: "16GB",
-            cpu: "8 vCores",
-            storage: "100GB SSD NVMe",
-            players: "50+ jogadores",
-            backups: "Diário",
-            ddosProtection: "Premium",
-          },
-        },
-      ],
-    },
-    // Adicione outros jogos conforme necessário
-  }
-
-  // Retorna os dados do jogo ou um jogo padrão se não encontrar
-  return games[id as keyof typeof games] || games.minecraft
 }
 
 export default function PlansPage({ params }: PageProps) {
@@ -310,7 +34,7 @@ export default function PlansPage({ params }: PageProps) {
     )
   }
 
-  const gameData = getGameData(params.id)
+  const gameData = getGameById(params.id)
 
   if (!gameData) {
     return (
@@ -392,13 +116,13 @@ export default function PlansPage({ params }: PageProps) {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-xl overflow-hidden border border-white/10 relative">
-                <Image src={gameData.logo || "/placeholder.svg"} alt={gameData.name} fill className="object-cover" />
+                <Image src={gameData.logo || gameData.image} alt={gameData.name} fill className="object-cover" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 animate-gradient">
                 Planos para {gameData.name}
               </h1>
             </div>
-            <p className="text-xl text-gray-300 mb-8">{gameData.description}</p>
+            <p className="text-xl text-gray-300 mb-8">{gameData.shortDescription}</p>
 
             {/* Seletor de ciclo de cobrança */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-2 inline-flex mx-auto">
@@ -450,11 +174,11 @@ export default function PlansPage({ params }: PageProps) {
       {/* Planos */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {gameData.plans.slice(0, visiblePlans).map((plan: Plan) => (
+          {gameData.plans.slice(0, visiblePlans).map((plan, index) => (
             <div
               key={plan.id}
               className={`relative bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] ${
-                plan.popular ? "md:-mt-4 md:mb-4" : ""
+                index === 1 ? "md:-mt-4 md:mb-4" : ""
               }`}
             >
               {/* Efeito de borda neon */}
@@ -463,29 +187,31 @@ export default function PlansPage({ params }: PageProps) {
               </div>
 
               {/* Badge de popular */}
-              {plan.badge && (
+              {index === 1 && (
                 <div className="absolute top-0 right-0">
                   <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold px-4 py-1 rounded-bl-lg rounded-tr-lg shadow-lg shadow-purple-500/25">
-                    {plan.badge}
+                    Mais Popular
                   </div>
                 </div>
               )}
 
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-gray-400 mb-6">{plan.description}</p>
+                <p className="text-gray-400 mb-6">Para {plan.players} jogadores</p>
 
                 {/* Preço */}
                 <div className="mb-6">
                   <div className="flex items-center gap-2 mb-1">
-                    {plan.discount > 0 && (
-                      <span className="bg-gradient-to-r from-purple-600 to-orange-500 text-white text-xs px-2 py-1 rounded">
-                        -{plan.discount}%
-                      </span>
+                    {plan.originalPrice && (
+                      <>
+                        <span className="bg-gradient-to-r from-purple-600 to-orange-500 text-white text-xs px-2 py-1 rounded">
+                          -{Math.round(((plan.originalPrice - plan.price) / plan.originalPrice) * 100)}%
+                        </span>
+                        <span className="text-gray-400 line-through text-sm">
+                          R$ {plan.originalPrice.toFixed(2).replace(".", ",")}
+                        </span>
+                      </>
                     )}
-                    <span className="text-gray-400 line-through text-sm">
-                      R$ {plan.originalPrice.toFixed(2).replace(".", ",")}
-                    </span>
                   </div>
                   <div className="flex items-baseline">
                     <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
@@ -520,7 +246,7 @@ export default function PlansPage({ params }: PageProps) {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">RAM</div>
-                      <div className="font-medium">{plan.specs.ram}</div>
+                      <div className="font-medium">{plan.ram}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -529,7 +255,7 @@ export default function PlansPage({ params }: PageProps) {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">CPU</div>
-                      <div className="font-medium">{plan.specs.cpu}</div>
+                      <div className="font-medium">{plan.cpu}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -538,7 +264,7 @@ export default function PlansPage({ params }: PageProps) {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">Armazenamento</div>
-                      <div className="font-medium">{plan.specs.storage}</div>
+                      <div className="font-medium">{plan.storage}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -547,28 +273,24 @@ export default function PlansPage({ params }: PageProps) {
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">Capacidade</div>
-                      <div className="font-medium">{plan.specs.players}</div>
+                      <div className="font-medium">{plan.players} jogadores</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Recursos */}
                 <div className="space-y-3 mb-8">
-                  {plan.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      {feature.included ? (
-                        <Check className="w-5 h-5 text-green-400" />
-                      ) : (
-                        <X className="w-5 h-5 text-gray-500" />
-                      )}
-                      <span className={feature.included ? "text-gray-200" : "text-gray-500"}>{feature.name}</span>
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-green-400" />
+                      <span className="text-gray-200">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Botão de ação */}
                 <Link
-                  href={plan.productLink || "#"}
+                  href={plan.paymentLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 group-hover:scale-105"
@@ -613,7 +335,7 @@ export default function PlansPage({ params }: PageProps) {
                 <thead>
                   <tr className="border-b border-white/10">
                     <th className="text-left py-4 px-4">Recurso</th>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <th key={plan.id} className="text-center py-4 px-4">
                         {plan.name}
                       </th>
@@ -623,71 +345,39 @@ export default function PlansPage({ params }: PageProps) {
                 <tbody>
                   <tr className="border-b border-white/10">
                     <td className="py-4 px-4 text-gray-400">RAM</td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.ram}
+                        {plan.ram}
                       </td>
                     ))}
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-4 px-4 text-gray-400">CPU</td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.cpu}
+                        {plan.cpu}
                       </td>
                     ))}
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-4 px-4 text-gray-400">Armazenamento</td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.storage}
+                        {plan.storage}
                       </td>
                     ))}
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="py-4 px-4 text-gray-400">Jogadores</td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.players}
+                        {plan.players}
                       </td>
                     ))}
                   </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">Backups</td>
-                    {gameData.plans.map((plan: Plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.backups}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">Proteção DDoS</td>
-                    {gameData.plans.map((plan: Plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
-                        {plan.specs.ddosProtection}
-                      </td>
-                    ))}
-                  </tr>
-                  {/* Features */}
-                  {gameData.plans[0].features.map((feature, featureIndex) => (
-                    <tr key={featureIndex} className="border-b border-white/10">
-                      <td className="py-4 px-4 text-gray-400">{feature.name}</td>
-                      {gameData.plans.map((plan: Plan) => (
-                        <td key={plan.id} className="text-center py-4 px-4">
-                          {plan.features[featureIndex].included ? (
-                            <Check className="w-5 h-5 text-green-400 mx-auto" />
-                          ) : (
-                            <X className="w-5 h-5 text-gray-500 mx-auto" />
-                          )}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                  {/* Preço */}
-                  <tr className="border-b border-white/10">
+                  <tr>
                     <td className="py-4 px-4 text-gray-400">Preço Mensal</td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4 font-bold">
                         R$ {plan.price.toFixed(2).replace(".", ",")}
                       </td>
@@ -695,10 +385,10 @@ export default function PlansPage({ params }: PageProps) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4"></td>
-                    {gameData.plans.map((plan: Plan) => (
+                    {gameData.plans.map((plan) => (
                       <td key={plan.id} className="text-center py-4 px-4">
                         <Link
-                          href={plan.productLink || "#"}
+                          href={plan.paymentLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-block w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
@@ -779,37 +469,12 @@ export default function PlansPage({ params }: PageProps) {
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Como funciona a ativação do servidor?</h4>
-              <p className="text-gray-400">
-                Após a confirmação do pagamento, seu servidor é ativado automaticamente e você recebe um email com as
-                instruções de acesso ao painel de controle.
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Posso mudar de plano depois?</h4>
-              <p className="text-gray-400">
-                Sim, você pode fazer upgrade ou downgrade do seu plano a qualquer momento através do painel de controle,
-                com ajuste proporcional de valores.
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Como funciona o suporte técnico?</h4>
-              <p className="text-gray-400">
-                Oferecemos suporte via ticket, chat ao vivo e Discord. Nosso tempo médio de resposta é de menos de 30
-                minutos para todos os planos.
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-2">Posso testar antes de contratar?</h4>
-              <p className="text-gray-400">
-                Oferecemos garantia de 7 dias. Se você não ficar satisfeito com o serviço, devolvemos seu dinheiro sem
-                perguntas.
-              </p>
-            </div>
+            {gameData.faq.map((item, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h4 className="text-xl font-bold mb-2">{item.question}</h4>
+                <p className="text-gray-400">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -828,21 +493,23 @@ export default function PlansPage({ params }: PageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="https://app.neonhost.com.br/index.php?rp=/store/minecraft"
+                href={gameData.paymentLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 text-center"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
               >
                 Escolher um Plano
               </Link>
-              <Link
-                href="https://discord.gg/neonhost"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-medium transition-colors border border-white/10 text-center"
-              >
-                Entrar no Discord
-              </Link>
+              {gameData.communityLink && (
+                <Link
+                  href={gameData.communityLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-medium transition-colors border border-white/10"
+                >
+                  Entrar no Discord
+                </Link>
+              )}
             </div>
           </div>
         </div>

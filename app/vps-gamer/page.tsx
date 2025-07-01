@@ -118,7 +118,7 @@ export default function VpsGamer() {
           </div>
         </section>
 
-        {/* Planos Section - Cards Expansíveis */}
+        {/* Planos Section - Cards Compactos */}
         <section className="py-20" id="plans">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -132,21 +132,24 @@ export default function VpsGamer() {
             </p>
           </div>
 
-          {/* Cards Expansíveis */}
-          <div className="space-y-6 max-w-6xl mx-auto">
+          {/* Cards Compactos */}
+          <div className="space-y-4 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
+                className="group relative bg-[#0f0f1a] backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-xl transition-all duration-300 overflow-hidden"
               >
-                {/* Header do Card */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    {/* Left Section - Plan Info */}
-                    <div className="flex items-center gap-4">
+                {/* Linha sutil no topo */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="p-4 lg:p-5">
+                  {/* Header Compacto */}
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    {/* Left Section */}
+                    <div className="flex items-center gap-3">
                       <button
                         onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:border-purple-500/30 flex items-center justify-center transition-all duration-300 hover:bg-white/10 flex-shrink-0"
                       >
                         {expandedCard === index ? (
                           <ChevronUp className="h-4 w-4 text-purple-400" />
@@ -154,100 +157,105 @@ export default function VpsGamer() {
                           <ChevronDown className="h-4 w-4 text-purple-400" />
                         )}
                       </button>
-                      <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-                    </div>
 
-                    {/* Middle Section - Specifications Grid */}
-                    <div className="hidden lg:grid grid-cols-3 gap-8">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
+                      <div>
+                        <h3 className="text-lg lg:text-xl font-bold text-white">{plan.name}</h3>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                          <span className="text-xs text-gray-400">Disponível</span>
                         </div>
-                        <span className="text-xs text-gray-400">Memoria RAM</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">CPU Cores</span>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">SSD NVMe</span>
                       </div>
                     </div>
 
-                    {/* Right Section - Price and Button */}
-                    <div className="flex items-center gap-6">
+                    {/* Especificações Inline */}
+                    <div className="hidden md:flex items-center gap-6 text-sm">
+                      <div className="flex items-center gap-2">
+                        <MemoryStick className="h-4 w-4 text-purple-400" />
+                        <span className="text-white font-medium">{plan.description.ram}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Cpu className="h-4 w-4 text-pink-400" />
+                        <span className="text-white font-medium">{plan.description.cores}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <HardDrive className="h-4 w-4 text-blue-400" />
+                        <span className="text-white font-medium">{plan.description.ssd}</span>
+                      </div>
+                    </div>
+
+                    {/* Right Section - Preço e Botão */}
+                    <div className="flex items-center gap-4">
                       <div className="text-right">
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-2xl md:text-3xl font-bold text-white">R${plan.price}</span>
-                          <span className="text-sm text-gray-400"></span>
+                        <div className="text-2xl lg:text-3xl font-bold text-white">
+                          R${plan.price}
+                          <span className="text-sm text-gray-400 font-normal">/mês</span>
                         </div>
                       </div>
 
                       {plan.link ? (
                         <Link href={plan.link} target="_blank">
-                          <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
-                            Contratar Agora
+                          <button className="px-5 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-sm">
+                            Contratar
                           </button>
                         </Link>
                       ) : (
-                        <button className="bg-gray-600 text-gray-400 cursor-not-allowed px-6 py-3 rounded-xl" disabled>
+                        <button
+                          className="px-5 py-2.5 bg-gray-600/50 text-gray-400 cursor-not-allowed rounded-lg font-semibold whitespace-nowrap text-sm"
+                          disabled
+                        >
                           Sem Estoque
                         </button>
                       )}
                     </div>
                   </div>
 
-                  {/* Mobile Specifications */}
-                  <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">RAM</span>
+                  {/* Especificações Mobile */}
+                  <div className="md:hidden mt-4 pt-4 border-t border-white/10">
+                    <div className="grid grid-cols-3 gap-3 text-sm">
+                      <div className="flex items-center gap-2">
+                        <MemoryStick className="h-4 w-4 text-purple-400" />
+                        <span className="text-white font-medium">{plan.description.ram}</span>
                       </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">CPU</span>
+                      <div className="flex items-center gap-2">
+                        <Cpu className="h-4 w-4 text-pink-400" />
+                        <span className="text-white font-medium">{plan.description.cores}</span>
                       </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
-                        </div>
-                        <span className="text-xs text-gray-400">SSD</span>
+                      <div className="flex items-center gap-2">
+                        <HardDrive className="h-4 w-4 text-blue-400" />
+                        <span className="text-white font-medium">{plan.description.ssd}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Expanded Content */}
+                {/* Conteúdo Expandido Compacto */}
                 <div
-                  className={`overflow-hidden ${expandedCard === index ? "h-auto" : "h-0"}`}
-                  style={{ transition: "height 0.3s" }}
+                  className={`overflow-hidden transition-all duration-300 ${
+                    expandedCard === index ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+                  }`}
                 >
-                  <div className="px-6 pb-6 border-t border-white/10">
-                    <div className="pt-6">
-                      <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="px-4 lg:px-5 pb-4 lg:pb-5 border-t border-white/10">
+                    <div className="pt-4">
+                      <h4 className="text-base font-semibold text-white mb-3 flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-400" />
+                        Recursos inclusos
+                      </h4>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {plan.description.attrs.map((attr, attrIndex) => (
-                          <div key={attrIndex} className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{attr}</span>
+                          <div key={attrIndex} className="flex items-center gap-2 text-sm">
+                            <div className="w-1 h-1 rounded-full bg-purple-400 flex-shrink-0"></div>
+                            <span className="text-gray-300">{attr}</span>
                           </div>
                         ))}
+                      </div>
+
+                      {/* Badge de Garantia Compacto */}
+                      <div className="mt-4 p-2.5 rounded-lg bg-green-500/10 border border-green-500/20">
+                        <div className="flex items-center gap-2 text-green-400 text-sm">
+                          <Shield className="h-3.5 w-3.5" />
+                          <span>Garantia de 99.9% de Uptime</span>
+                        </div>
                       </div>
                     </div>
                   </div>
