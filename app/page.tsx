@@ -696,43 +696,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção de Diferenciais */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Conheça os nossos{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                diferenciais
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Descubra por que milhares de clientes escolhem a NeonHost para seus projetos online de sucesso!
-            </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {differentials.map((item, index) => (
-              <div
-                key={index}
-                className="p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400">
-                    {item.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Seção de Depoimentos */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
