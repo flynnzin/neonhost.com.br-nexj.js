@@ -35,14 +35,13 @@ import { useState, useEffect } from "react"
 const gameCategories = {
   bestsellers: getPopularGames().slice(0, 3),
   vpsGames: [
-    { id: "dayz", name: "DayZ", price: 74.9, image: "/placeholder.svg?height=60&width=60" },
-    { id: "ragnarok", name: "Ragnarok", price: 74.9, image: "/placeholder.svg?height=60&width=60" },
-    { id: "redm", name: "RedM", price: 74.9, image: "/placeholder.svg?height=60&width=60" },
+    { id: "dayz", name: "DayZ", price: 74.9, image: "/games/dayzF.webp" },
+    { id: "ragnarok", name: "Ragnarok", price: 74.9, image: "/games/ragnarok.jpg" },
+    { id: "redm", name: "RedM", price: 74.9, image: "/games/redM.png" },
   ],
   upcoming: [
-    { id: "hytale", name: "Hytale", status: "Em breve", image: "/placeholder.svg?height=60&width=60" },
-    { id: "gta6", name: "GTA 6", status: "Em breve", image: "/placeholder.svg?height=60&width=60" },
-    { id: "ark2", name: "ARK 2", status: "Em breve", image: "/placeholder.svg?height=60&width=60" },
+    { id: "hytale", name: "Hytale", status: "Em breve", image: "/games/Hytale.png" },
+    { id: "gta6", name: "GTA 6", status: "Em breve", image: "/games/gta6.jpg" },
   ],
 }
 
@@ -70,7 +69,7 @@ const newsGuides = [
     title: "Abra uma cidade Roleplay",
     description:
       "Para de perder tempo, e abra seu servidor de FiveM com a NeonHost, processadores AMD Ryzen e Proteção Anti DDoS, você possui estabilidade e segurança!",
-    image: "/games/fivem.webp",
+    image: "/games/cf22a625de9672e1250f31aee91daf3a.jpg",
     category: "Dica",
     link: "/blog/servidor-fivem",
   },
@@ -250,7 +249,7 @@ export default function GamesPage() {
             <Clock className="w-5 h-5" />
             Novidades
           </button>
-          <div className="ml-auto flex items-center gap-4">
+          {/* <div className="ml-auto flex items-center gap-4">
             <button
               onClick={() => (window.location.href = "/wishlist")}
               className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors relative"
@@ -275,7 +274,7 @@ export default function GamesPage() {
                 </span>
               )}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -451,18 +450,10 @@ export default function GamesPage() {
             <section className="mb-12">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Notícias & Guias</h2>
-                <Link
-                  href="/blog"
-                  className="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"
-                >
-                  Ver todos
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {newsGuides.map((item) => (
-                  <Link key={item.id} href={item.link} className="group">
                     <div className="bg-gray-800/50 rounded-xl overflow-hidden hover:bg-gray-800 transition-all duration-300 group-hover:scale-105 border border-gray-700/50 hover:border-purple-500/30">
                       <div className="aspect-[16/10] relative">
                         <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
@@ -472,12 +463,8 @@ export default function GamesPage() {
                         <div className="text-purple-400 text-sm font-semibold mb-2">{item.category}</div>
                         <h3 className="font-bold mb-2 group-hover:text-purple-400 transition-colors">{item.title}</h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.description}</p>
-                        <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300">
-                          Saiba mais
-                        </button>
                       </div>
                     </div>
-                  </Link>
                 ))}
               </div>
             </section>
@@ -681,13 +668,6 @@ export default function GamesPage() {
             <section className="mb-12">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Jogos com Descontos</h2>
-                <Link
-                  href="/games/discounts"
-                  className="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2"
-                >
-                  Ver todos os descontos
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
