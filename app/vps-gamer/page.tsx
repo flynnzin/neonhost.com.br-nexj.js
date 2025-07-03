@@ -1,12 +1,8 @@
 "use client"
-
 import { plans } from "./plans"
-import { AccordionItems } from "../_components/accordion"
+import type React from "react"
+
 import {
-  Info,
-  Zap,
-  Shield,
-  Globe,
   Server,
   Cpu,
   HardDrive,
@@ -14,64 +10,322 @@ import {
   ChevronDown,
   ChevronUp,
   CheckCircle,
+  Shield,
+  Zap,
+  Globe,
+  Info,
 } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, memo, useMemo, useCallback } from "react"
 
-export default function VpsGamer() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+// Componente de botão otimizado sem NextUI
+const OptimizedButton = memo(
+  ({
+    children,
+    href,
+    disabled = false,
+    className = "",
+    onClick,
+    ...props
+  }: {
+    children: React.ReactNode
+    href?: string
+    disabled?: boolean
+    className?: string
+    onClick?: () => void
+  }) => {
+    const baseClasses =
+      "inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+    const enabledClasses =
+      "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white transform hover:scale-105"
+    const disabledClasses = "bg-gray-600 text-gray-400 cursor-not-allowed"
 
-  const features = [
-    {
-      icon: <Server className="h-6 w-6" />,
-      title: "Recursos Dedicados",
-      description: "CPU, RAM e armazenamento exclusivos",
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Proteção Avançada",
-      description: "Anti-DDoS e firewall configurável",
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Performance Premium",
-      description: "Hardware de última geração",
-    },
-    {
-      icon: <Globe className="h-6 w-6" />,
-      title: "Conectividade Premium",
-      description: "Rede de alta velocidade no Brasil",
-    },
-  ]
+    const finalClasses = `${baseClasses} ${disabled ? disabledClasses : enabledClasses} ${className}`
 
-  const stats = [
-    { value: "99.9%", label: "Uptime" },
-    { value: "10ms", label: "Latência" },
-    { value: "24/7", label: "Suporte" },
-    { value: "1Gbps", label: "Rede" },
-  ]
+    if (href && !disabled) {
+      return (
+        <Link href={href} target="_blank" rel="noopener noreferrer" className={finalClasses} {...props}>
+          {children}
+        </Link>
+      )
+    }
 
-  return (
-    <div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
-      {/* Background com blurs */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
+    return (
+      <button className={finalClasses} disabled={disabled} onClick={onClick} {...props}>
+        {children}
+      </button>
+    )
+  },
+)
+
+OptimizedButton.displayName = "OptimizedButton"
+
+// Componente de estatísticas ultra-otimizado
+const StatsGrid = memo(() => (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-2xl font-bold text-white">99.9%</div>
+      <div className="text-sm text-gray-400">Uptime</div>
+    </div>
+    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-2xl font-bold text-white">10ms</div>
+      <div className="text-sm text-gray-400">Latência</div>
+    </div>
+    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-2xl font-bold text-white">24/7</div>
+      <div className="text-sm text-gray-400">Suporte</div>
+    </div>
+    <div className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-2xl font-bold text-white">1Gbps</div>
+      <div className="text-sm text-gray-400">Rede</div>
+    </div>
+  </div>
+))
+
+StatsGrid.displayName = "StatsGrid"
+
+// Features otimizadas
+const FeaturesGrid = memo(() => (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-purple-400 mb-4 flex justify-center">
+        <Server className="h-6 w-6" />
+      </div>
+      <h3 className="font-bold text-white text-lg mb-2">Recursos Dedicados</h3>
+      <p className="text-gray-400 text-sm">CPU, RAM e armazenamento exclusivos</p>
+    </div>
+    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-purple-400 mb-4 flex justify-center">
+        <Shield className="h-6 w-6" />
+      </div>
+      <h3 className="font-bold text-white text-lg mb-2">Proteção Avançada</h3>
+      <p className="text-gray-400 text-sm">Anti-DDoS e firewall configurável</p>
+    </div>
+    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-purple-400 mb-4 flex justify-center">
+        <Zap className="h-6 w-6" />
+      </div>
+      <h3 className="font-bold text-white text-lg mb-2">Performance Premium</h3>
+      <p className="text-gray-400 text-sm">Hardware de última geração</p>
+    </div>
+    <div className="text-center p-6 bg-white/5 rounded-xl border border-white/10">
+      <div className="text-purple-400 mb-4 flex justify-center">
+        <Globe className="h-6 w-6" />
+      </div>
+      <h3 className="font-bold text-white text-lg mb-2">Conectividade Premium</h3>
+      <p className="text-gray-400 text-sm">Rede de alta velocidade no Brasil</p>
+    </div>
+  </div>
+))
+
+FeaturesGrid.displayName = "FeaturesGrid"
+
+// Componente de plano ultra-otimizado
+const PlanCard = memo(
+  ({
+    plan,
+    isExpanded,
+    onToggle,
+  }: {
+    plan: (typeof plans)[0]
+    isExpanded: boolean
+    onToggle: () => void
+  }) => (
+    <article className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300">
+      <div className="p-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={onToggle}
+              className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              aria-label={`${isExpanded ? "Fechar" : "Expandir"} detalhes do plano ${plan.name}`}
+              aria-expanded={isExpanded}
+            >
+              {isExpanded ? (
+                <ChevronUp className="h-4 w-4 text-purple-400" aria-hidden="true" />
+              ) : (
+                <ChevronDown className="h-4 w-4 text-purple-400" aria-hidden="true" />
+              )}
+            </button>
+            <div>
+              <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+            </div>
+          </div>
+
+          {/* Desktop specs */}
+          <div className="hidden lg:grid grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <MemoryStick className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.ram}</span>
+              </div>
+              <span className="text-xs text-gray-400">RAM Dedicada</span>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <Cpu className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.cores}</span>
+              </div>
+              <span className="text-xs text-gray-400">CPU Cores</span>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <HardDrive className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.ssd}</span>
+              </div>
+              <span className="text-xs text-gray-400">SSD NVMe</span>
+            </div>
+          </div>
+
+          {/* Price and CTA */}
+          <div className="flex items-center gap-6">
+            <div className="text-right">
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl md:text-3xl font-bold text-white">R${plan.price}</span>
+                <span className="text-sm text-gray-400">/mês</span>
+              </div>
+            </div>
+
+            <OptimizedButton href={plan.link || undefined} disabled={!plan.link}>
+              {plan.link ? "Contratar Agora" : "Sem Estoque"}
+            </OptimizedButton>
+          </div>
+        </div>
+
+        {/* Mobile specs */}
+        <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <MemoryStick className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.ram}</span>
+              </div>
+              <span className="text-xs text-gray-400">RAM</span>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <Cpu className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.cores}</span>
+              </div>
+              <span className="text-xs text-gray-400">CPU</span>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <HardDrive className="h-4 w-4 text-purple-400" aria-hidden="true" />
+                <span className="font-semibold text-white">{plan.description.ssd}</span>
+              </div>
+              <span className="text-xs text-gray-400">SSD</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <section className="relative z-10 max-w-full px-4 md:px-8 lg:px-12 xl:px-16 mx-auto">
+      {/* Expanded content */}
+      {isExpanded && (
+        <div className="px-6 pb-6 border-t border-white/10">
+          <div className="pt-6">
+            <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+              {plan.description.attrs.map((attr, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-gray-300 text-sm">{attr}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </article>
+  ),
+)
+
+PlanCard.displayName = "PlanCard"
+
+// FAQ simplificado sem lazy loading para reduzir complexity
+const SimpleFAQ = memo(() => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: "Qual a diferença entre VPS Gamer e VPS comum?",
+      answer: "VPS Gamer possui recursos dedicados, proteção DDoS avançada e otimizações específicas para jogos.",
+    },
+    {
+      question: "Posso instalar qualquer jogo no VPS?",
+      answer: "Sim, você tem acesso root completo e pode instalar qualquer jogo compatível com Linux/Windows.",
+    },
+    {
+      question: "Como funciona a proteção DDoS?",
+      answer: "Nossa proteção DDoS filtra automaticamente ataques maliciosos, mantendo seu servidor online.",
+    },
+    {
+      question: "Qual o tempo de ativação?",
+      answer: "Seu VPS é ativado automaticamente em até 5 minutos após a confirmação do pagamento.",
+    },
+  ]
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {faqs.map((faq, index) => (
+        <div key={index} className="mb-4 bg-white/5 rounded-xl border border-white/10">
+          <button
+            className="w-full p-6 text-left flex justify-between items-center hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-xl"
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            aria-expanded={openIndex === index}
+          >
+            <span className="font-semibold text-white">{faq.question}</span>
+            {openIndex === index ? (
+              <ChevronUp className="h-5 w-5 text-purple-400" aria-hidden="true" />
+            ) : (
+              <ChevronDown className="h-5 w-5 text-purple-400" aria-hidden="true" />
+            )}
+          </button>
+          {openIndex === index && (
+            <div className="px-6 pb-6">
+              <p className="text-gray-400">{faq.answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+})
+
+SimpleFAQ.displayName = "SimpleFAQ"
+
+// Componente principal ultra-otimizado
+export default function VpsGamer() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+
+  // Memoizar callback para evitar re-renders
+  const handleCardToggle = useCallback((index: number) => {
+    setExpandedCard((prev) => (prev === index ? null : index))
+  }, [])
+
+  // Memoizar planos
+  const memoizedPlans = useMemo(() => plans, [])
+
+  return (
+    <div className="min-h-screen bg-[#0a0a0e] text-white">
+      {/* Background CSS otimizado */}
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(600px at 0% 0%, rgba(147,51,234,0.15) 0%, transparent 50%),
+            radial-gradient(600px at 100% 100%, rgba(236,72,153,0.15) 0%, transparent 50%)
+          `,
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
-          <div className="text-center mb-12">
-            <div>
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                Servidores VPS Gamer
-              </span>
+        <section className="pt-20 md:pt-32 pb-16">
+          <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" aria-hidden="true" />
+              Servidores VPS Gamer
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -81,218 +335,53 @@ export default function VpsGamer() {
               para seus Projetos
             </h1>
 
-            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-              Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
-              especializado para projetos que exigem alta performance.
+            <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+              Escolha o plano ideal para seu negócio e evolua conforme suas necessidades.
             </p>
 
-            {/* Stats em linha */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            <StatsGrid />
           </div>
         </section>
 
-        {/* Features Grid */}
-        <section className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group backdrop-blur-sm"
-              >
-                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400 text-sm">{feature.description}</p>
-              </div>
-            ))}
-          </div>
+        {/* Features */}
+        <section className="pb-16">
+          <FeaturesGrid />
         </section>
 
-        {/* Planos Section - Cards Compactos */}
-        <section className="py-20" id="plans">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Escolha seu{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Plano Ideal
-              </span>
-            </h2>
-            <p className="text-gray-400 mx-auto text-lg max-w-2xl">
-              Planos VPS Gamer com recursos garantidos e performance superior para seus projetos mais exigentes.
+        {/* Plans */}
+        <section className="pb-16" id="plans">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Nossos Planos VPS Gamer</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Servidores otimizados para jogos com proteção DDoS e suporte 24/7
             </p>
           </div>
 
-          {/* Cards Compactos */}
-          <div className="space-y-4 max-w-5xl mx-auto">
-            {plans.map((plan, index) => (
-              <div
+          <div className="space-y-6">
+            {memoizedPlans.map((plan, index) => (
+              <PlanCard
                 key={plan.name}
-                className="group relative bg-[#0f0f1a] backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-xl transition-all duration-300 overflow-hidden"
-              >
-                {/* Linha sutil no topo */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                <div className="p-4 lg:p-5">
-                  {/* Header Compacto */}
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    {/* Left Section */}
-                    <div className="flex items-center gap-3">
-                      <button
-                        onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:border-purple-500/30 flex items-center justify-center transition-all duration-300 hover:bg-white/10 flex-shrink-0"
-                      >
-                        {expandedCard === index ? (
-                          <ChevronUp className="h-4 w-4 text-purple-400" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 text-purple-400" />
-                        )}
-                      </button>
-
-                      <div>
-                        <h3 className="text-lg lg:text-xl font-bold text-white">{plan.name}</h3>
-                        <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                          <span className="text-xs text-gray-400">Disponível</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Especificações Inline */}
-                    <div className="hidden md:flex items-center gap-6 text-sm">
-                      <div className="flex items-center gap-2">
-                        <MemoryStick className="h-4 w-4 text-purple-400" />
-                        <span className="text-white font-medium">{plan.description.ram}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Cpu className="h-4 w-4 text-pink-400" />
-                        <span className="text-white font-medium">{plan.description.cores}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <HardDrive className="h-4 w-4 text-blue-400" />
-                        <span className="text-white font-medium">{plan.description.ssd}</span>
-                      </div>
-                    </div>
-
-                    {/* Right Section - Preço e Botão */}
-                    <div className="flex items-center gap-4">
-                      <div className="text-right">
-                        <div className="text-2xl lg:text-3xl font-bold text-white">
-                          R${plan.price}
-                          <span className="text-sm text-gray-400 font-normal">/mês</span>
-                        </div>
-                      </div>
-
-                      {plan.link ? (
-                        <Link href={plan.link} target="_blank">
-                          <button className="px-5 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all duration-300 whitespace-nowrap text-sm">
-                            Contratar
-                          </button>
-                        </Link>
-                      ) : (
-                        <button
-                          className="px-5 py-2.5 bg-gray-600/50 text-gray-400 cursor-not-allowed rounded-lg font-semibold whitespace-nowrap text-sm"
-                          disabled
-                        >
-                          Sem Estoque
-                        </button>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Especificações Mobile */}
-                  <div className="md:hidden mt-4 pt-4 border-t border-white/10">
-                    <div className="grid grid-cols-3 gap-3 text-sm">
-                      <div className="flex items-center gap-2">
-                        <MemoryStick className="h-4 w-4 text-purple-400" />
-                        <span className="text-white font-medium">{plan.description.ram}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Cpu className="h-4 w-4 text-pink-400" />
-                        <span className="text-white font-medium">{plan.description.cores}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <HardDrive className="h-4 w-4 text-blue-400" />
-                        <span className="text-white font-medium">{plan.description.ssd}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Conteúdo Expandido Compacto */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    expandedCard === index ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-4 lg:px-5 pb-4 lg:pb-5 border-t border-white/10">
-                    <div className="pt-4">
-                      <h4 className="text-base font-semibold text-white mb-3 flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-400" />
-                        Recursos inclusos
-                      </h4>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {plan.description.attrs.map((attr, attrIndex) => (
-                          <div key={attrIndex} className="flex items-center gap-2 text-sm">
-                            <div className="w-1 h-1 rounded-full bg-purple-400 flex-shrink-0"></div>
-                            <span className="text-gray-300">{attr}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Badge de Garantia Compacto */}
-                      <div className="mt-4 p-2.5 rounded-lg bg-green-500/10 border border-green-500/20">
-                        <div className="flex items-center gap-2 text-green-400 text-sm">
-                          <Shield className="h-3.5 w-3.5" />
-                          <span>Garantia de 99.9% de Uptime</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                plan={plan}
+                isExpanded={expandedCard === index}
+                onToggle={() => handleCardToggle(index)}
+              />
             ))}
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16">
-          <div className="rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 p-8 md:p-12 text-center backdrop-blur-sm">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Precisa de uma configuração personalizada?
-            </h2>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Nossa equipe de especialistas pode criar uma solução sob medida para suas necessidades específicas.
-            </p>
-            <button className="bg-white text-purple-600 hover:bg-white/90 font-bold px-8 py-3">
-              Falar com Especialista
-            </button>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="mt-16 mb-20">
+        {/* FAQ */}
+        <section className="pb-16">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
               Perguntas Frequentes
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços VPS Gamer.</p>
           </div>
-          <AccordionItems />
+          <SimpleFAQ />
         </section>
 
-        {/* Support Section */}
-        <section className="mt-16">
+        {/* Support */}
+        <section className="pb-20">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
               Suporte Especializado
@@ -302,50 +391,48 @@ export default function VpsGamer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
-            {[
-              {
-                icon: <Info size={48} />,
-                title: "Consultoria Especializada",
-                description: "Ajudamos você a escolher a melhor configuração para seu projeto específico.",
-                link: "https://discord.gg/rGP7prMqF3",
-                buttonText: "Falar com Consultor",
-              },
-              {
-                icon: <Info size={48} />,
-                title: "Suporte 24/7",
-                description:
-                  "Suporte técnico especializado disponível 24 horas por dia para resolver qualquer problema.",
-                link: "https://discord.gg/rGP7prMqF3",
-                buttonText: "Acessar Suporte",
-              },
-              {
-                icon: <Info size={48} />,
-                title: "Central de Ajuda",
-                description: "Base de conhecimento com tutoriais e guias para otimizar seu servidor.",
-                link: "https://app.neonhost.com.br/submitticket.php?step=2&deptid=1",
-                buttonText: "Ver Tutoriais",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="p-6 border-none bg-white/5 hover:bg-white/10 transition-all duration-300 group backdrop-blur-sm"
-              >
-                <div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
-                </div>
-                <h3 className="font-bold text-white text-xl mb-3">{item.title}</h3>
-                <p className="text-gray-400 mb-6">{item.description}</p>
-                <Link href={item.link} target="_blank">
-                  <button className="w-full text-white/80 hover:text-white transition-colors duration-200">
-                    {item.buttonText}
-                  </button>
-                </Link>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
+              <div className="text-purple-400 mb-4">
+                <Info size={48} aria-hidden="true" />
               </div>
-            ))}
+              <h3 className="font-bold text-white text-xl mb-3">Consultoria Especializada</h3>
+              <p className="text-gray-400 mb-6">
+                Ajudamos você a escolher a melhor configuração para seu projeto específico.
+              </p>
+              <OptimizedButton href="https://discord.gg/rGP7prMqF3" className="w-full">
+                Falar com Consultor
+              </OptimizedButton>
+            </div>
+
+            <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
+              <div className="text-purple-400 mb-4">
+                <Info size={48} aria-hidden="true" />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-3">Suporte 24/7</h3>
+              <p className="text-gray-400 mb-6">
+                Suporte técnico especializado disponível 24 horas por dia para resolver qualquer problema.
+              </p>
+              <OptimizedButton href="https://discord.gg/rGP7prMqF3" className="w-full">
+                Acessar Suporte
+              </OptimizedButton>
+            </div>
+
+            <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
+              <div className="text-purple-400 mb-4">
+                <Info size={48} aria-hidden="true" />
+              </div>
+              <h3 className="font-bold text-white text-xl mb-3">Central de Ajuda</h3>
+              <p className="text-gray-400 mb-6">
+                Base de conhecimento com tutoriais e guias para otimizar seu servidor.
+              </p>
+              <OptimizedButton href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1" className="w-full">
+                Ver Tutoriais
+              </OptimizedButton>
+            </div>
           </div>
         </section>
-      </section>
+      </div>
     </div>
   )
 }
