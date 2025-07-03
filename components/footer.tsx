@@ -345,9 +345,9 @@ export const Footer = () => {
           <div className="flex flex-wrap gap-6 items-center">
             <div className="flex gap-6">
               {[
-                { name: "Privacidade", url: "/privacidade" },
-                { name: "Termos", url: "/termos" },
-                { name: "Cookies", url: "/cookies" },
+                { name: "Privacidade", url: "/" },
+                { name: "Termos", url: "/" },
+                { name: "Cookies", url: "/" },
               ].map((item, index) => (
                 <Link
                   key={index}
