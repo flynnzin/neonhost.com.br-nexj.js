@@ -376,7 +376,7 @@ export default function Dedicados() {
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                Intel
+                Intel Core
               </button>
             </div>
           </div>
