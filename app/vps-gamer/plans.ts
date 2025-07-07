@@ -12,47 +12,36 @@ export interface Plan {
 
 export const plans: Plan[] = [
 	{
-		name: "VPS Gamer - 1",
-		price: "72,90",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-1",
-		description: {
-			ram: "2GB",
-			ssd: "40GB",
-			cores: "2 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
-		},
-	},
-	{
-		name: "VPS Gamer - 2",
-		price: "92,90",
+		name: "NeonStart",
+		price: "96,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
 		description: {
 			ram: "4GB",
 			ssd: "50GB",
-			cores: "2 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
+			cores: "3 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
 	{
-		name: "VPS Gamer - 3",
-		price: "119,90",
+		name: "NeonBoost",
+		price: "149,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-3",
 		description: {
 			ram: "6GB",
 			ssd: "60GB",
-			cores: "3 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
+			cores: "4 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
 	{
-		name: "VPS Gamer - 4",
-		price: "169,90",
+		name: "NeonCore",
+		price: "189,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-4",
 		description: {
 			ram: "8GB",
 			ssd: "70GB",
-			cores: "4 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
+			cores: "5 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
 	{
