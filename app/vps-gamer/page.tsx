@@ -14,6 +14,9 @@ import {
   Zap,
   Globe,
   Info,
+  Gauge,
+  Network,
+  Settings,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, memo, useMemo, useCallback } from "react"
@@ -120,6 +123,25 @@ const FeaturesGrid = memo(() => (
 
 FeaturesGrid.displayName = "FeaturesGrid"
 
+const FeatureIcon = memo(({ feature }: { feature: string }) => {
+  const getIcon = (feature: string) => {
+    if (feature.includes("Anti-DDoS")) return <Shield className="h-4 w-4" />
+    if (feature.includes("AMD Ryzen")) return <Cpu className="h-4 w-4" />
+    if (feature.includes("Cache")) return <Zap className="h-4 w-4" />
+    if (feature.includes("Gbps") || feature.includes("TB")) return <Network className="h-4 w-4" />
+    if (feature.includes("Painel")) return <Settings className="h-4 w-4" />
+    return <CheckCircle className="h-4 w-4" />
+  }
+
+  return (
+    <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/20 text-green-400">
+      {getIcon(feature)}
+    </div>
+  )
+})
+
+FeatureIcon.displayName = "FeatureIcon"
+
 // Componente de plano ultra-otimizado
 const PlanCard = memo(
   ({
@@ -220,22 +242,51 @@ const PlanCard = memo(
         </div>
       </div>
 
-      {/* Expanded content */}
-      {isExpanded && (
-        <div className="px-6 pb-6 border-t border-white/10">
-          <div className="pt-6">
-            <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
-              {plan.description.attrs.map((attr, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" aria-hidden="true" />
-                  <span className="text-gray-300 text-sm">{attr}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Expanded content com design melhorado */}
+        {isExpanded && (
+          <div className="px-6 pb-6 border-t border-white/20 bg-gradient-to-br from-white/5 to-transparent">
+            <div className="pt-6">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 flex items-center justify-center">
+                  <CheckCircle className="h-4 w-4 text-green-400" />
+                </div>
+                <h4 className="text-lg font-semibold text-white">Recursos inclusos:</h4>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
+                {plan.description.attrs.map((attr, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-white/5 to-white/10 border border-white/10 hover:border-green-500/30 transition-all duration-300 group/feature"
+                  >
+                    <FeatureIcon feature={attr} />
+                    <span className="text-gray-300 text-sm font-medium group-hover/feature:text-white transition-colors duration-300">
+                      {attr}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Performance indicators */}
+              <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+                <div className="flex items-center gap-2 mb-3">
+                  <Gauge className="h-5 w-5 text-purple-400" />
+                  <span className="font-semibold text-white">Performance Garantida</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Uptime:</span>
+                    <span className="text-green-400 font-semibold">99.9%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Latência:</span>
+                    <span className="text-blue-400 font-semibold">{"<"}15ms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </article>
   ),
 )
