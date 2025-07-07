@@ -45,47 +45,37 @@ export const plans: Plan[] = [
 		},
 	},
 	{
-		name: "VPS Gamer - 5",
-		price: "259,90",
+		name: "NeonPower",
+		price: "239,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-5",
 		description: {
-			ram: "12GB",
+			ram: "10GB",
 			ssd: "80GB",
-			cores: "6 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
+			cores: "7 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
 	{
-		name: "VPS Gamer - 6",
-		price: "359,90",
+		name: "NeonPro",
+		price: "289,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-6",
+		description: {
+			ram: "12GB",
+			ssd: "90GB",
+			cores: "8 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
+		},
+	},
+	{
+		name: "NeonXtreme",
+		price: "359,90",
+		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-7",
 		description: {
 			ram: "16GB",
 			ssd: "100GB",
-			cores: "10 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
+			cores: "9 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
-	{
-		name: "VPS Gamer - 7",
-		price: "450,00",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-7",
-		description: {
-			ram: "20GB",
-			ssd: "120GB",
-			cores: "12 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
-		},
-	},
-	{
-		name: "VPS Gamer - 8",
-		price: "560,00",
-		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-8",
-		description: {
-			ram: "32GB",
-			ssd: "150GB",
-			cores: "16 núcleos",
-			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","10TB Trafego"],
-		},
-	},
+
 ] as const;
