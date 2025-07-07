@@ -214,7 +214,7 @@ export const NavbarComponent = () => {
                         <p className="text-sm text-gray-300 mb-4">
                           Servidores localizados em São Paulo com máxima performance
                         </p>
-                        <div className="text-2xl font-bold text-white">R$ 72,90</div>
+                        <div className="text-2xl font-bold text-white">R$ 96,90</div>
                         <div className="text-xs text-gray-400">por mês</div>
                       </div>
                       <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-xl"></div>
