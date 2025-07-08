@@ -10,10 +10,8 @@ import {
   Headphones,
   Server,
   Globe,
-  Star,
   CheckCircle,
   Cpu,
-  Quote,
   ChevronDown,
   ChevronUp,
   CreditCard,
@@ -46,7 +44,6 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
         </span>
       </div>
     )}
-
     <div className="flex items-center mb-4">
       <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
         {plan.icon}
@@ -55,9 +52,7 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
         <h3 className="text-xl font-bold text-white">{plan.name}</h3>
       </div>
     </div>
-
     <p className="text-gray-400 mb-6 text-sm leading-relaxed">{plan.description}</p>
-
     <div className="mb-6">
       <div className="flex items-baseline">
         <span className="text-sm text-gray-400">R$</span>
@@ -66,7 +61,6 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
         <span className="text-sm text-gray-400 ml-2">/mensal</span>
       </div>
     </div>
-
     <ul className="space-y-3 mb-8" role="list">
       {plan.features.map((feature: string, featureIndex: number) => (
         <li key={featureIndex} className="flex items-center text-sm text-gray-300">
@@ -75,7 +69,6 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
         </li>
       ))}
     </ul>
-
     <Link
       href={plan.url}
       className={`block w-full py-3 rounded-xl font-semibold text-center transition-all duration-300 ${
@@ -262,53 +255,53 @@ export default function HomePage() {
   const operatingSystems = useMemo(
     () => [
       {
-      name: "Windows",
-      image: "/images/os/windows.svg",
-      color: "bg-blue-500/20 border-blue-500/30 hover:border-blue-500/50",
-      description: "Sistema operacional mais popular do mundo",
-    },
-    {
-      name: "Ubuntu",
-      image: "/images/os/ubuntu.svg",
-      color: "bg-orange-500/20 border-orange-500/30 hover:border-orange-500/50",
-      description: "Distribuição Linux mais amigável",
-    },
-    {
-      name: "Fedora",
-      image: "/images/os/fedora.svg",
-      color: "bg-blue-600/20 border-blue-600/30 hover:border-blue-600/50",
-      description: "Linux com tecnologias de ponta",
-    },
-    {
-      name: "CentOS",
-      image: "/images/os/centos.svg",
-      color: "bg-purple-500/20 border-purple-500/30 hover:border-purple-500/50",
-      description: "Estabilidade para servidores empresariais",
-    },
-    {
-      name: "Debian",
-      image: "/images/os/debian.svg",
-      color: "bg-red-500/20 border-red-500/30 hover:border-red-500/50",
-      description: "Base sólida para muitas distribuições",
-    },
-    {
-      name: "Alma Linux",
-      image: "/images/os/alma.svg",
-      color: "bg-cyan-500/20 border-cyan-500/30 hover:border-cyan-500/50",
-      description: "Sucessor moderno do CentOS",
-    },
-    {
-      name: "OpenSUSE",
-      image: "/images/os/opensuse.svg",
-      color: "bg-green-500/20 border-green-500/30 hover:border-green-500/50",
-      description: "Linux profissional e confiável",
-    },
-    {
-      name: "FreeBSD",
-      image: "/images/os/freebsd.svg",
-      color: "bg-red-600/20 border-red-600/30 hover:border-red-600/50",
-      description: "Sistema Unix-like de alta performance",
-    },
+        name: "Windows",
+        image: "/images/os/windows.svg",
+        color: "bg-blue-500/20 border-blue-500/30 hover:border-blue-500/50",
+        description: "Sistema operacional mais popular do mundo",
+      },
+      {
+        name: "Ubuntu",
+        image: "/images/os/ubuntu.svg",
+        color: "bg-orange-500/20 border-orange-500/30 hover:border-orange-500/50",
+        description: "Distribuição Linux mais amigável",
+      },
+      {
+        name: "Fedora",
+        image: "/images/os/fedora.svg",
+        color: "bg-blue-600/20 border-blue-600/30 hover:border-blue-600/50",
+        description: "Linux com tecnologias de ponta",
+      },
+      {
+        name: "CentOS",
+        image: "/images/os/centos.svg",
+        color: "bg-purple-500/20 border-purple-500/30 hover:border-purple-500/50",
+        description: "Estabilidade para servidores empresariais",
+      },
+      {
+        name: "Debian",
+        image: "/images/os/debian.svg",
+        color: "bg-red-500/20 border-red-500/30 hover:border-red-500/50",
+        description: "Base sólida para muitas distribuições",
+      },
+      {
+        name: "Alma Linux",
+        image: "/images/os/alma.svg",
+        color: "bg-cyan-500/20 border-cyan-500/30 hover:border-cyan-500/50",
+        description: "Sucessor moderno do CentOS",
+      },
+      {
+        name: "OpenSUSE",
+        image: "/images/os/opensuse.svg",
+        color: "bg-green-500/20 border-green-500/30 hover:border-green-500/50",
+        description: "Linux profissional e confiável",
+      },
+      {
+        name: "FreeBSD",
+        image: "/images/os/freebsd.svg",
+        color: "bg-red-600/20 border-red-600/30 hover:border-red-600/50",
+        description: "Sistema Unix-like de alta performance",
+      },
     ],
     [],
   )
@@ -412,16 +405,27 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
-      {/* Background otimizado com CSS puro */}
-      <div
-        className="fixed inset-0 z-0"
-        style={{
-          background: `
+      {/* Background com grid quadriculado */}
+      <div className="fixed inset-0 z-0">
+        {/* Grid quadriculado */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
+          ></div>
+        </div>
+
+        {/* Efeitos de blur coloridos */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
             radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
             radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
           `,
-        }}
-      />
+          }}
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 z-10">
@@ -432,7 +436,6 @@ export default function HomePage() {
               Infraestrutura no Brasil
             </span>
           </div>
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Potencialize seu{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
@@ -443,12 +446,10 @@ export default function HomePage() {
               Neon Host
             </span>
           </h1>
-
           <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
             Revolucionamos a hospedagem no Brasil com nossa infraestrutura exclusiva Neon Host™, combinando velocidade
             extrema, segurança avançada e tecnologia de ponta.
           </p>
-
           {/* Features em grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
@@ -485,7 +486,6 @@ export default function HomePage() {
               aplicativos.
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan, index) => (
               <PlanCard key={plan.name} plan={plan} index={index} />
@@ -508,7 +508,6 @@ export default function HomePage() {
               Combinamos tecnologia de ponta, infraestrutura nacional e suporte especializado
             </p>
           </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* Cards Grid */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -516,7 +515,6 @@ export default function HomePage() {
                 <FeatureCard key={feature.title} feature={feature} index={index} />
               ))}
             </div>
-
             {/* Imagem do Datacenter */}
             <div className="lg:col-span-1">
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-1">
@@ -535,7 +533,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
           {/* Estatísticas */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
@@ -586,13 +583,11 @@ export default function HomePage() {
               segundos.
             </p>
           </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {operatingSystems.map((os, index) => (
               <OSCard key={os.name} os={os} index={index} />
             ))}
           </div>
-
           <div className="mt-12 text-center">
             <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
               <Server className="h-5 w-5 text-purple-400 mr-2" aria-hidden="true" />
@@ -614,7 +609,6 @@ export default function HomePage() {
             </h2>
             <p className="text-xl text-gray-400">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
           </div>
-
           <div className="space-y-4">
             {faqQuestions.map((faq, index) => (
               <FAQItem
