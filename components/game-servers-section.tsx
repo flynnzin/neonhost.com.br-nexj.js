@@ -256,7 +256,7 @@ export default function GameServersSection() {
 
   const getSelectedGameUrl = () => {
     const selectedGameObj = games.find((game) => game.id === selectedGame)
-    return selectedGameObj ? selectedGameObj.url : "/game"
+    return selectedGameObj ? selectedGameObj.url : "/games"
   }
 
   // Encontrar o jogo selecionado para exibir sua imagem maior

@@ -61,11 +61,11 @@ export const Footer = () => {
       title: "Jogos",
       icon: <Gamepad2 className="h-5 w-5 text-pink-400" />,
       links: [
-        { name: "Palworld", url: "/game/palworld", badge: "Novo" },
-        { name: "Minecraft", url: "/game/minecraft" },
-        { name: "Valheim", url: "/game/valheim" },
-        { name: "Project Zomboid", url: "/game/project-zomboid" },
-        { name: "Rust", url: "/game/rust" },
+        { name: "Palworld", url: "/games/palworld", badge: "Novo" },
+        { name: "Minecraft", url: "/games/minecraft" },
+        { name: "Valheim", url: "/games/valheim" },
+        { name: "Project Zomboid", url: "/games/project-zomboid" },
+        { name: "Rust", url: "/games/rust" },
       ],
     },
     {

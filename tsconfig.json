@@ -28,7 +28,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"app/[locale]/game/[gameid]/page.tsx"
+		"app/[locale]/games/[gameid]/page.tsx"
 	],
 	"exclude": ["node_modules"]
 }
