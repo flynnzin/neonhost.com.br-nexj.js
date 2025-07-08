@@ -51,17 +51,24 @@ export default function RedesPage() {
     <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Background Effects - Same as main page */}
       <div className="fixed inset-0 z-0">
+        {/* Grid quadriculado */}
         <div className="absolute inset-0">
-          {/* Blur no canto superior esquerdo */}
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/15 via-purple-500/8 to-transparent rounded-full blur-3xl"></div>
-
-          {/* Blur no canto inferior direito */}
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-pink-500/15 via-pink-500/8 to-transparent rounded-full blur-3xl"></div>
-
-          {/* Elementos centrais mais sutis */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
+          <div
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
+          ></div>
         </div>
+
+        {/* Efeitos de blur coloridos */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
+          `,
+          }}
+        />
       </div>
 
       {/* Hero Section */}

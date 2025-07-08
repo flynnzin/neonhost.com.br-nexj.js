@@ -87,9 +87,26 @@ export default function TermosPage() {
 
   return (
     <div className="min-h-screen bg-black text-white select-none">
-      {/* Background Effects */}
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-900/20 via-black to-cyan-900/20" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+      <div className="fixed inset-0 z-0">
+        {/* Grid quadriculado */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
+          ></div>
+        </div>
+
+        {/* Efeitos de blur coloridos */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
+          `,
+          }}
+        />
+      </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
         {/* Header */}

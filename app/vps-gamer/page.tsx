@@ -360,15 +360,26 @@ export default function VpsGamer() {
   return (
     <div className="min-h-screen bg-[#0a0a0e] text-white">
       {/* Background CSS otimizado */}
-      <div
-        className="fixed inset-0 -z-10"
-        style={{
-          background: `
-            radial-gradient(600px at 0% 0%, rgba(147,51,234,0.15) 0%, transparent 50%),
-            radial-gradient(600px at 100% 100%, rgba(236,72,153,0.15) 0%, transparent 50%)
+      <div className="fixed inset-0 z-0">
+        {/* Grid quadriculado */}
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
+          ></div>
+        </div>
+
+        {/* Efeitos de blur coloridos */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
           `,
-        }}
-      />
+          }}
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
