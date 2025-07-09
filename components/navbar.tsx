@@ -21,6 +21,7 @@ import { default as Link, default as NextLink } from "next/link"
 import { useState, useEffect } from "react"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { motion } from "framer-motion"
+import { CrownIcon } from "./crown-icon"
 
 export const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -494,6 +495,14 @@ export const NavbarComponent = () => {
         </NavbarItem>
       </NavbarContent>
 
+      <NavbarItem key="host-fivem" className="mt-0">
+        <NextLink href="/fivem" className="p-0">
+          <p className="p-0 m-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-2">
+            Host Fivem <CrownIcon size={16} className="animate-pulse" />
+          </p>
+        </NextLink>
+      </NavbarItem>
+
       <NavbarContent>
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden mt-0" />
       </NavbarContent>
@@ -582,7 +591,9 @@ export const NavbarComponent = () => {
                   </Link>
                   <Link href="/fivem" className="w-full">
                     <div className="p-2 hover:bg-white/5 rounded-lg transition-colors duration-200">
-                      <p className="text-base font-semibold text-white">VPS Fivem</p>
+                      <p className="text-base font-semibold text-white flex items-center gap-2">
+                        VPS Fivem <CrownIcon size={14} />
+                      </p>
                       <p className="text-sm text-gray-400">Hospedagem de FiveM</p>
                     </div>
                   </Link>
