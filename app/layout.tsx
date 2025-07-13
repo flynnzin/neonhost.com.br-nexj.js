@@ -126,6 +126,9 @@ export const metadata: Metadata = {
 		"cache-externo vps gamer",
 		"cache externo vps",
 		"cache externo vps gamer",
+		"vps",
+		"TacoHost",
+		"Neopixelhost",
 	],
 
 	openGraph: {
