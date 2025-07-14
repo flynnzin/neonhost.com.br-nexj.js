@@ -14,6 +14,11 @@ export const metadata: Metadata = {
 	description:
 		"Oferecemos VPS Gamer com processadores AMD Ryzen e proteção Anti DDoS, ideais para servidores de jogos e aplicações de alto desempenho.",
 	keywords: [
+		"top 10 melhores host fivem",
+		"top 10 melhores vps gamer",
+		"As top 10 melhores vps gamer",
+		"As top 10 melhores vps fivem",
+		"As top 10 melhores host fivem",
 		"NeonHost",
 		"WyzeHost",
 		"TynaHost",
