@@ -394,7 +394,7 @@ export const NavbarComponent = () => {
                       icon: ChartNetwork,
                     },
                     {
-                      href: "/Sites",
+                      href: "/hospedagem/site",
                       title: "Hospedagem de Sites",
                       description: "Hospede seus Sites com CyberPanel.",
                       icon: GlobeLock,
