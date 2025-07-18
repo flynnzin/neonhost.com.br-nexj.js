@@ -14,7 +14,7 @@ jobs:
       - name: Github Releases To Discord
         uses: SethCohen/github-releases-to-discord@v1.16.2
         with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_url: "https://discord.com/api/webhooks/1395906972317909052/T2-T-_x0qFh6FP-z9pw0BgRXyBoUA4fW_quiBrE5fEPn9A3Um6hAAkf-9-Ip--X505Fh"
           color: "259006"
           username: ${{ github.event.repository.name }}
           avatar_url: " https://cdn.neonhost.com.br/neonhostinger/logoneon.png"
