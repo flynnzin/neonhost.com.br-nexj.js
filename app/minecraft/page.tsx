@@ -180,7 +180,7 @@ export default function MinecraftPage() {
                 <Database className="w-4 h-4" />
                 Java Edition
               </button>
-              <button
+              {/* <button
                 onClick={() => setSelectedEdition("bedrock")}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
                   selectedEdition === "bedrock"
@@ -190,7 +190,7 @@ export default function MinecraftPage() {
               >
                 <Server className="w-4 h-4" />
                 Bedrock Edition
-              </button>
+              </button> */}
             </div>
           </div>
 
