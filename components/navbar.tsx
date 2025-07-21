@@ -1,8 +1,16 @@
 "use client"
 
 import { Button } from "@nextui-org/button"
-import { Navbar, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuToggle } from "@nextui-org/navbar"
-import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react"
+import {
+  Navbar,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuToggle,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@nextui-org/react"
 import {
   Gamepad2,
   GlobeLock,
