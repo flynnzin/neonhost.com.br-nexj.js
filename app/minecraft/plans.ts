@@ -187,27 +187,27 @@ export const minecraftPlans: MinecraftPlan[] = [
     edition: "java", // Definido como Java Edition
   },
   // Exemplo de plano Bedrock (você pode adicionar mais ou ajustar conforme necessário)
-  {
-    id: "minecraft-bedrock-basic",
-    name: "Minecraft Bedrock Básico",
-    price: 15.9,
-    originalPrice: undefined, // changed from null to undefined
-    discount: undefined,      // changed from null to undefined
-    players: 15,
-    ram: "2GB",
-    cpu: "2 vCores",
-    storage: "15GB NVMe",
-    features: [
-      "Backup Diário Automático",
-      "Suporte 24/7 Especializado",
-      "Proteção Anti-DDoS",
-      "Painel de Controle Web",
-      "Add-ons e Comportamentos",
-      "Acesso FTP/SFTP",
-    ],
-    paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/plano-bedrock-basico",
-    edition: "bedrock", // Definido como Bedrock Edition
-  },
+  // {
+  //   id: "minecraft-bedrock-basic",
+  //   name: "Minecraft Bedrock Básico",
+  //   price: 15.9,
+  //   originalPrice: undefined, // changed from null to undefined
+  //   discount: undefined,      // changed from null to undefined
+  //   players: 15,
+  //   ram: "2GB",
+  //   cpu: "2 vCores",
+  //   storage: "15GB NVMe",
+  //   features: [
+  //     "Backup Diário Automático",
+  //     "Suporte 24/7 Especializado",
+  //     "Proteção Anti-DDoS",
+  //     "Painel de Controle Web",
+  //     "Add-ons e Comportamentos",
+  //     "Acesso FTP/SFTP",
+  //   ],
+  //   paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/minecraft/plano-bedrock-basico",
+  //   edition: "java", // Definido como Bedrock Edition
+  // },
 ]
 
 export const minecraftFeatures = [
