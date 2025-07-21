@@ -191,8 +191,8 @@ export const minecraftPlans: MinecraftPlan[] = [
     id: "minecraft-bedrock-basic",
     name: "Minecraft Bedrock Básico",
     price: 15.9,
-    originalPrice: null,
-    discount: null,
+    originalPrice: undefined, // changed from null to undefined
+    discount: undefined,      // changed from null to undefined
     players: 15,
     ram: "2GB",
     cpu: "2 vCores",
