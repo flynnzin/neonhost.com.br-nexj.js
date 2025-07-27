@@ -12,6 +12,17 @@ export interface Plan {
 
 export const plans: Plan[] = [
 	{
+		name: "NeonInitial",
+		price: "72,90",
+		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-1",
+		description: {
+			ram: "2GB",
+			ssd: "40GB",
+			cores: "2 núcleos",
+			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
+		},
+	},
+	{
 		name: "NeonStart",
 		price: "96,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-2",
