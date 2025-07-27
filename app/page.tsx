@@ -183,7 +183,7 @@ export default function HomePage() {
       {
         name: "VPS Streaming",
         description: "Servidores no Brasil com tráfego mensal ilimitado",
-        price: "74",
+        price: "249,90",
         icon: <Globe className="h-8 w-8" />,
         popular: false,
         features: ["Tráfego ilimitado", "SSD NVMe", "Painel de Controle", "Backup diário"],
@@ -192,7 +192,7 @@ export default function HomePage() {
       {
         name: "VPS Gamer",
         description: "VPS de alta performance no Brasil com Anti-DDoS PRO",
-        price: "72",
+        price: "96,90",
         icon: <Zap className="h-8 w-8" />,
         popular: true,
         features: ["Anti-DDoS PRO", "AMD Ryzen", "Baixa latência", "Suporte 24/7"],
@@ -201,7 +201,7 @@ export default function HomePage() {
       {
         name: "Semi-Dedicados",
         description: "Servidores robustos Windows e Linux no Brasil",
-        price: "299",
+        price: "305,96",
         icon: <Server className="h-8 w-8" />,
         popular: false,
         features: ["Windows/Linux", "Recursos dedicados", "IP dedicado", "Acesso root"],
@@ -210,7 +210,7 @@ export default function HomePage() {
       {
         name: "Servidores Dedicados",
         description: "Servidores físicos de alta performance no Brasil",
-        price: "1190",
+        price: "950",
         icon: <Cpu className="h-8 w-8" />,
         popular: false,
         features: ["Hardware dedicado", "Máxima performance", "Configuração custom", "Suporte premium"],
