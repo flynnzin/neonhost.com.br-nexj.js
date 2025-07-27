@@ -46,7 +46,7 @@ export const minecraftPlans: MinecraftPlan[] = [
     // originalPrice: 119.9,
     // discount: 58,
     players: 175,
-    ram: "10GB",
+    ram: "16GB",
     cpu: "6 vCores",
     storage: "60GB NVMe",
     features: [
