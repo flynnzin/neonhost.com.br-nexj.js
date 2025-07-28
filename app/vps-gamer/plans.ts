@@ -35,7 +35,7 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "NeonBoost",
-		price: "149,90",
+		price: "129,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/amd-ryzen-3",
 		description: {
 			ram: "6GB",
