@@ -13,12 +13,12 @@ export interface Plan {
 export const plans: Plan[] = [
 	{
 		name: "AMD Ryzen 1",
-		price: "305,96",
+		price: "374,96",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicado-1",
 		description: {
-			ram: "16GB",
-			ssd: "100GB",
-			cores: "8 núcleos",
+			ram: "18GB",
+			ssd: "110GB",
+			cores: "7 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},

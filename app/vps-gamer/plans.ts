@@ -79,12 +79,12 @@ export const plans: Plan[] = [
 	},
 	{
 		name: "NeonXtreme",
-		price: "359,90",
+		price: "339,90",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/vps-gamer/vps-gamer-amd-ryzen-7",
 		description: {
-			ram: "16GB",
-			ssd: "100GB",
-			cores: "9 núcleos",
+			ram: "17GB",
+			ssd: "90GB",
+			cores: "8 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
