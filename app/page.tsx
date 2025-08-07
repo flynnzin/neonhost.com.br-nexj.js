@@ -198,15 +198,15 @@ export default function HomePage() {
         features: ["Anti-DDoS PRO", "AMD Ryzen", "Baixa latência", "Suporte 24/7"],
         url: "/vps-gamer",
       },
-      {
-        name: "Semi-Dedicados",
-        description: "Servidores robustos Windows e Linux no Brasil",
-        price: "305,96",
-        icon: <Server className="h-8 w-8" />,
-        popular: false,
-        features: ["Windows/Linux", "Recursos dedicados", "IP dedicado", "Acesso root"],
-        url: "/semi-dedicado",
-      },
+      // {
+      //   name: "Semi-Dedicados",
+      //   description: "Servidores robustos Windows e Linux no Brasil",
+      //   price: "305,96",
+      //   icon: <Server className="h-8 w-8" />,
+      //   popular: false,
+      //   features: ["Windows/Linux", "Recursos dedicados", "IP dedicado", "Acesso root"],
+      //   url: "/semi-dedicado",
+      // },
       {
         name: "Servidores Dedicados",
         description: "Servidores físicos de alta performance no Brasil",
@@ -472,28 +472,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção de Planos */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Hospedagem sob medida para{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">você</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Desempenho e confiabilidade para levar seu projeto ao próximo nível. Planos de servidores personalizados
-              com suporte técnico especializado, garantindo velocidade e segurança para seu site, jogos online ou
-              aplicativos.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {plans.map((plan, index) => (
-              <PlanCard key={plan.name} plan={plan} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Seção: Por que escolher a NeonHost */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-7xl mx-auto">
@@ -562,36 +540,6 @@ export default function HomePage() {
                 348Tbps
               </div>
               <div className="text-gray-400 text-sm">Proteção DDoS</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção: Sistemas Operacionais */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Confira os{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                sistemas
-              </span>{" "}
-              disponíveis
-            </h2>
-            <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-              Crie uma nova instância com seu sistema operacional preferido ou aplicativo pré-instalado em apenas alguns
-              segundos.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {operatingSystems.map((os, index) => (
-              <OSCard key={os.name} os={os} index={index} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30">
-              <Server className="h-5 w-5 text-purple-400 mr-2" aria-hidden="true" />
-              <span className="text-purple-300 font-medium">Instalação automática em menos de 60 segundos</span>
             </div>
           </div>
         </div>
