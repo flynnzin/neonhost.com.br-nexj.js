@@ -84,7 +84,7 @@ export const plans: Plan[] = [
 		description: {
 			ram: "17GB",
 			ssd: "90GB",
-			cores: "8 núcleos",
+			cores: "9 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps / 20TB","Painel de Controle",],
 		},
 	},
