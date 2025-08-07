@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { NavbarComponent } from "@/components/navbar";
+import HelpSystem from "@/components/help-system"
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 import clsx from "clsx";
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 	},
 keywords: [
     "NeonHost",
+    "Host",
     "BrasilFivemHost",
     "FiveM Host",
     "BBHost",
