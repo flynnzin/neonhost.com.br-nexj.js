@@ -216,7 +216,7 @@ export default function TermosPage() {
                   <p className="mb-2">
                     Ao contratar qualquer serviço da NeonHost, você concorda integralmente com estes Termos de Serviço.
                     A NeonHost é uma empresa especializada em hospedagem de servidores de jogos, VPS (Virtual Private
-                    Server), servidores dedicados e semi-dedicados, oferecendo soluções de alta performance com proteção
+                    Server) e servidores dedicados, oferecendo soluções de alta performance com proteção
                     DDoS avançada.
                   </p>
                   <p>
