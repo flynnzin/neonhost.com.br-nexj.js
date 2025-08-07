@@ -53,7 +53,7 @@ export const Footer = () => {
         { name: "VPS Gamer", url: "/vps-gamer", badge: "Popular" },
         { name: "VPS Brasil", url: "/vps-streaming" },
         { name: "VPS FiveM", url: "/fivem" },
-        { name: "Semi-Dedicado", url: "/semi-dedicado" },
+        // { name: "Semi-Dedicado", url: "/semi-dedicado" },
         { name: "Dedicado", url: "/dedicado", badge: "Novo" },
       ],
     },
