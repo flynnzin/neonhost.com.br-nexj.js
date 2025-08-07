@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
       name: "Eric Ferreira",
       initials: "EF",
       role: "CTO de Startup",
-      service: "Servidor Semi-Dedicado",
+      service: "Servidor Dedicado",
       rating: 5,
     },
   ]
