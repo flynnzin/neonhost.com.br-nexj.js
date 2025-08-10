@@ -1410,7 +1410,7 @@ export const gamesConfig: Game[] = [
     slug: "fivem",
     image: "/games/fivem.webp",
     logo: "/games/fivem.webp",
-    featuredImage: "/games/redTemion.jpg",
+    featuredImage: "/games/fivembg.jpg",
     description:
       "",
     shortDescription: "FiveM é uma modificação para Grand Theft Auto V que permite aos jogadores criar e jogar em servidores personalizados.",
