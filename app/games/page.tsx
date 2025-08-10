@@ -40,7 +40,6 @@ const gameCategories = {
     { id: "redm", name: "RedM", price: 74.9, image: "/games/redM.png" },
   ],
   upcoming: [
-    { id: "hytale", name: "Hytale", status: "Em breve", image: "/games/Hytale.png" },
     { id: "gta6", name: "GTA 6", status: "Em breve", image: "/games/gta6.jpg" },
   ],
 }
@@ -358,7 +357,7 @@ export default function GamesPage() {
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl font-bold">
-                    {activeTab === "descobrir" && "Todos os jogos"}
+                    {activeTab === "descobrir" && "Todos os serviços"}
                     {activeTab === "navegar" && "Jogos com desconto"}
                     {activeTab === "novidades" && "Novos lançamentos"}
                   </h2>

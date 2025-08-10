@@ -496,14 +496,6 @@ export default function HomePage() {
             {/* Imagem do Datacenter */}
             <div className="lg:col-span-1">
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-1">
-                <Image
-                  src="/games/page/about-datacenter.webp"
-                  alt="Datacenter NeonHost - Infraestrutura de alta tecnologia"
-                  width={400}
-                  height={500}
-                  className="rounded-xl w-full h-auto object-cover"
-                  loading="lazy"
-                />
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-black/60 backdrop-blur-sm border border-white/10">
                   <h4 className="text-white font-bold mb-2">Datacenter Tier 1</h4>
                   <p className="text-gray-300 text-sm">Infraestrutura de classe mundial localizada no Brasil</p>

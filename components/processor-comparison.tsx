@@ -136,13 +136,13 @@ export default function ProcessorComparison() {
       icon: "target",
       url: "https://neonhost.com.br/vps-streaming",
     },
-    {
-      title: "Semi-Dedicados",
-      price: "305",
-      desc: "Servidores robustos Windows e Linux no Brasil",
-      icon: "server",
-      url: "https://neonhost.com.br/semi-dedicado",
-    },
+    // {
+    //   title: "Semi-Dedicados",
+    //   price: "305",
+    //   desc: "Servidores robustos Windows e Linux no Brasil",
+    //   icon: "server",
+    //   url: "https://neonhost.com.br/semi-dedicado",
+    // },
     {
       title: "Servidores Dedicados",
       price: "1550",
