@@ -1,22 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://neonhost.com.br/robots.txt</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/sitemap.xml</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/dedicado</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/anti-ddos</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/semi-dedicado</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-<url><loc>https://neonhost.com.br/vps-gamer</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/colocation</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/redes</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/vps-streaming</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/vps-neon</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://neonhost.com.br/games/minecraft</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/games/palworld</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/games/project-zomboid</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/games/rust</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/fivem</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/minecraft</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/rust</loc><lastmod>2025-07-27T00:04:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
-<url><loc>https://neonhost.com.br/games/valheim</loc><lastmod>2025-02-15T12:00:32.147Z</lastmod><changefreq>daily</changefreq><priority>0.64</priority></url>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://neonhost.com.br/</loc>
+	<lastmod>2025-08-10T09:58:35+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/vps-gamer</loc>
+	<lastmod>2025-08-10T09:58:36+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/redes</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/about</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/vps-streaming</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/fivem</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/palworld</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/minecraft</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/valheim</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/project-zomboid</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/rust</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/sobre</loc>
+	<lastmod>2025-08-10T09:58:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/dedicados</loc>
+	<lastmod>2025-08-10T09:58:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/image</loc>
+	<lastmod>2025-08-10T09:58:40+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/cs2</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/ark</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/euro-truck-simulator-2</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/dayz</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/ragnarok</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/redm</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/terraria</loc>
+	<lastmod>2025-08-10T09:58:43+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/a</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/palworld/planos</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/palworld/perguntas</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/contato</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/minecraft/planos</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/minecraft/perguntas</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/valheim/planos</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/valheim/perguntas</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/rust/planos</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/rust/perguntas</loc>
+	<lastmod>2025-08-10T09:58:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/cs2/planos</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/cs2/perguntas</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/euro-truck-simulator-2/planos</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/euro-truck-simulator-2/perguntas</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/ark/planos</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/ark/perguntas</loc>
+	<lastmod>2025-08-10T09:58:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/redm/planos</loc>
+	<lastmod>2025-08-10T09:58:46+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/redm/perguntas</loc>
+	<lastmod>2025-08-10T09:58:46+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/terraria/planos</loc>
+	<lastmod>2025-08-10T09:58:46+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://neonhost.com.br/games/terraria/perguntas</loc>
+	<lastmod>2025-08-10T09:58:46+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
 </urlset>
