@@ -1604,7 +1604,7 @@ export const gamesConfig: Game[] = [
     ],
   },
 
-  //   Valheim
+  //   Conan Exiles
   {
     id: "conan-exiles",
     name: "Conan Exiles",
@@ -1672,6 +1672,96 @@ export const gamesConfig: Game[] = [
         storage: "10GB NVMe",
         features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
         paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-conan-exiles/conan-exiles-8gb",
+      },
+    ],
+    faq: [
+      {
+        question: "Qual a velocidade do link?",
+        answer: "Todos os nossos serviços contam com link de 1Gbps. Além disso, utilizamos as melhores rotas e infraestrutura de rede para garantir baixa latência e alta disponibilidade.",
+      },
+      {
+        question: "Como funciona o backup?",
+        answer: "Realizamos backups automáticos diários de todos os serviços e mantemos as últimas 7 versões. Você também pode criar backups manuais a qualquer momento através do painel de controle.",
+      },
+    ],
+    testimonials: [
+      // {
+      //   title: "Servidor estável",
+      //   author: "Lucas Ferreira",
+      //   content: "Utilizo o NodeJs há anos, esse é o servidor mais estável que já usei. Recomendo!",
+      //   rating: 5,
+      // },
+    ],
+  },
+
+  //   Conan Exiles
+  {
+    id: "multi-theft-auto-san-andreas-mta",
+    name: "Multi Theft Auto: San Andreas (MTA)",
+    slug: "multi-theft-auto-san-andreas-mta",
+    image: "/games/mta.jpg",
+    logo: "/games/mta.jpg",
+    featuredImage: "/games/mta_banner.jpg",
+    description:
+      "",
+    shortDescription: "Multi Theft Auto: San Andreas é uma modificação para o jogo Grand Theft Auto: San Andreas que permite jogar online em servidores personalizados.",
+    price: 27.99,
+    category: "Sbrevivência",
+    rating: 4.9,
+    players: "120.9K",
+    paymentLink: "https://app.neonhost.com.br/games/astroneer",
+    vpsLink: "/vps-gamer",
+    communityLink: "https://discord.gg/neonhost",
+    platforms: ["PC","PlayStation","Xbox"],
+    developer: "Rockstar Games",
+    isNew: true,
+    isPopular: true,
+    features: [
+      "Backup Automático",
+      "Suporte 24/7",
+      "Anti-DDoS Incluído",
+      "Painel de Controle",
+    ],
+    minPlayers: 1,
+    maxPlayers: 32,
+    requirements: {
+      ram: "4GB mínimo",
+      cpu: "Intel i7 ou AMD equivalente",
+      storage: "20GB disponível",
+    },
+    plans: [
+      {
+        id: "multi-theft-auto-san-andreas-mta-starter",
+        name: "Multi Theft Auto - 1GB",
+        price: 27.99,
+        players: 999,
+        ram: "1GB",
+        cpu: "1 vCores",
+        storage: "5GB NVMe",
+        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/mtasa/multi-theft-auto-san-andreas-1gb",
+      },
+      {
+        id: "multi-theft-auto-san-andreas-mta-professional",
+        name: "Multi Theft Auto - 5GB",
+        price: 39.90,
+         players: 999,
+        ram: "5GB",
+        cpu: "3 vCores",
+        storage: "10GB NVMe",
+        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/mtasa/multi-theft-auto-san-andreas-5gb",
+      },
+      {
+        id: "multi-theft-auto-san-andreas-mta-business",
+        name: "Multi Theft Auto - 8GB",
+        price: 59.90,
+        players: 999,
+        ram: "8GB",
+        cpu: "5 vCores",
+        storage: "20GB NVMe",
+        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/mtasa/multi-theft-auto-san-andreas-8gb",
       },
     ],
     faq: [
