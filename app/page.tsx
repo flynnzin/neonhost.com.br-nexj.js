@@ -8,7 +8,6 @@ import {
   Shield,
   Clock,
   Headphones,
-  Server,
   Globe,
   CheckCircle,
   Cpu,
@@ -16,6 +15,7 @@ import {
   ChevronUp,
   CreditCard,
   DollarSign,
+  Trophy,
 } from "lucide-react"
 
 // Componente de Loading otimizado
@@ -198,15 +198,6 @@ export default function HomePage() {
         features: ["Anti-DDoS PRO", "AMD Ryzen", "Baixa latência", "Suporte 24/7"],
         url: "/vps-gamer",
       },
-      // {
-      //   name: "Semi-Dedicados",
-      //   description: "Servidores robustos Windows e Linux no Brasil",
-      //   price: "305,96",
-      //   icon: <Server className="h-8 w-8" />,
-      //   popular: false,
-      //   features: ["Windows/Linux", "Recursos dedicados", "IP dedicado", "Acesso root"],
-      //   url: "/semi-dedicado",
-      // },
       {
         name: "Servidores Dedicados",
         description: "Servidores físicos de alta performance no Brasil",
@@ -247,6 +238,32 @@ export default function HomePage() {
         description:
           "Equipe técnica brasileira disponível 24/7 com conhecimento especializado em cada tipo de servidor",
         highlight: "Suporte em português 24/7",
+      },
+    ],
+    [],
+  )
+
+  const guarantees = useMemo(
+    () => [
+      {
+        icon: <Trophy className="h-8 w-8" />,
+        title: "SLA 99.9%",
+        description: "Garantia de uptime com compensação em caso de indisponibilidade",
+      },
+      {
+        icon: <Clock className="h-8 w-8" />,
+        title: "Setup em 5 minutos",
+        description: "Servidor configurado e entregue em até 5 minutos após pagamento",
+      },
+      {
+        icon: <Headphones className="h-8 w-8" />,
+        title: "Suporte Premium",
+        description: "Atendimento especializado 24/7 em português com técnicos qualificados",
+      },
+      {
+        icon: <Shield className="h-8 w-8" />,
+        title: "Segurança Total",
+        description: "Proteção DDoS, firewall e monitoramento contínuo inclusos",
       },
     ],
     [],
@@ -472,68 +489,224 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção: Por que escolher a NeonHost */}
+      {/* Seção: Desempenho que Importa */}
       <section className="relative py-20 px-4 z-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Por que escolher a{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                NeonHost?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-              Combinamos tecnologia de ponta, infraestrutura nacional e suporte especializado
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Desempenho que Importa</h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {/* Cards Grid */}
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {whyChooseFeatures.map((feature, index) => (
-                <FeatureCard key={feature.title} feature={feature} index={index} />
-              ))}
+
+          {/* Métricas de Performance */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                348 Tbps
+              </div>
+              <div className="text-gray-400 text-lg">Proteção DDoS</div>
             </div>
-            {/* Imagem do Datacenter */}
-            <div className="lg:col-span-1">
-              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-1">
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-black/60 backdrop-blur-sm border border-white/10">
-                  <h4 className="text-white font-bold mb-2">Datacenter Tier 1</h4>
-                  <p className="text-gray-300 text-sm">Infraestrutura de classe mundial localizada no Brasil</p>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                -3ms
+              </div>
+              <div className="text-gray-400 text-lg">Redução de Latência</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                99.99%
+              </div>
+              <div className="text-gray-400 text-lg">Disponibilidade da Rede</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+                500Gbps
+              </div>
+              <div className="text-gray-400 text-lg">Capacidade de Rede</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção: Recursos Principais */}
+      <section className="relative py-20 px-4 z-10 bg-white overflow-hidden">
+        {/* Background grid pattern for this section */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237e22ce' fillOpacity='0.3'%3E%3Cpath d='M0 0h1v1H0zM2 2h1v1H2zM4 4h1v1H4zM6 6h1v1H6zM8 8h1v1H8zM10 10h1v1H10zM12 12h1v1H12zM14 14h1v1H14zM16 16h1v1H16zM18 18h1v1H18zM20 20h1v1H20zM22 22h1v1H22z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: "24px 24px",
+          }}
+        />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Proteção DDoS Empresarial */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg relative">
+              <div className="flex items-center mb-6">
+                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
+                  <Shield className="h-8 w-8 text-purple-500" />
                 </div>
               </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Proteção DDoS Empresarial</h3>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Capacidade de mitigação de 348 Tbps</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Proteção contra ataques UDP e TCP</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Otimização para servidores de jogos</span>
+                </div>
+              </div>
+
+              <Link
+                href="/anti-ddos"
+                className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-medium hover:opacity-80 transition-opacity"
+              >
+                Saiba mais
+                <svg className="w-4 h-4 ml-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Hardware de Alta Performance */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg relative">
+              <div className="flex items-center mb-6">
+                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
+                  <Cpu className="h-8 w-8 text-purple-500" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Hardware de Alta Performance</h3>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Processadores AMD e Intel de última geração</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Armazenamento SSD NVMe</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Memória DDR4 ECC</span>
+                </div>
+              </div>
+
+              <Link
+                href="/vps-gamer"
+                className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-medium hover:opacity-80 transition-opacity"
+              >
+                Ver servidores
+                <svg className="w-4 h-4 ml-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Excelência em Rede */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg relative">
+              <div className="flex items-center mb-6">
+                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
+                  <Globe className="h-8 w-8 text-purple-500" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Excelência em Rede</h3>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Capacidade de rede de 500Gbps</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Múltiplos uplinks de 100GE</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-600">Rotas globais otimizadas</span>
+                </div>
+              </div>
+
+              <Link
+                href="/redes"
+                className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-medium hover:opacity-80 transition-opacity"
+              >
+                Detalhes da rede
+                <svg className="w-4 h-4 ml-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
-          {/* Estatísticas */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
-              <Clock className="h-5 w-5 text-purple-400 mx-auto mb-2" aria-hidden="true" />
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
-                99.9%
-              </div>
-              <div className="text-gray-400 text-sm">Uptime Garantido</div>
+        </div>
+      </section>
+
+      {/* Seção: Nossas Garantias */}
+      <section className="relative py-20 px-4 z-10 bg-white">
+        {/* Background grid pattern for white section */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237e22ce' fillOpacity='0.3'%3E%3Cpath d='M0 0h1v1H0zM2 2h1v1H2zM4 4h1v1H4zM6 6h1v1H6zM8 8h1v1H8zM10 10h1v1H10zM12 12h1v1H12zM14 14h1v1H14zM16 16h1v1H16zM18 18h1v1H18zM20 20h1v1H20zM22 22h1v1H22z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: "24px 24px",
+          }}
+        />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-100 border border-pink-200 text-pink-600 text-sm font-medium mb-6">
+              <Shield className="h-4 w-4 mr-2" />
+              Nossas Garantias
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
-              <Headphones className="h-5 w-5 text-purple-400 mx-auto mb-2" aria-hidden="true" />
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
-                24/7
-              </div>
-              <div className="text-gray-400 text-sm">Suporte Técnico</div>
-            </div>
-            <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
-              <Zap className="h-5 w-5 text-purple-400 mx-auto mb-2" aria-hidden="true" />
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
-                15ms
-              </div>
-              <div className="text-gray-400 text-sm">Latência Média</div>
-            </div>
-            <div className="text-center p-4 rounded-xl bg-white/5 border border-white/10">
-              <Shield className="h-5 w-5 text-purple-400 mx-auto mb-2" aria-hidden="true" />
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">
-                348Tbps
-              </div>
-              <div className="text-gray-400 text-sm">Proteção DDoS</div>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Compromisso com a Excelência
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Oferecemos garantias sólidas para que você tenha total confiança
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {guarantees.map((guarantee, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300"
+              >
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-pink-100 to-purple-100">
+                    <div className="text-pink-500">{guarantee.icon}</div>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{guarantee.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{guarantee.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Curved border with NeonHost colors (purple to pink gradient) */}
+        <div className="absolute bottom-0 left-0 w-full h-32 overflow-hidden">
+          <div
+            className="absolute bottom-0 left-0 w-full h-64 rounded-tr-[100%] transform -translate-y-32"
+            style={{
+              background: "linear-gradient(90deg, #7e22ce 0%, #ec4899 100%)",
+              opacity: 0.1,
+            }}
+          ></div>
+          <div
+            className="absolute bottom-0 left-0 w-full h-64 bg-[#0a0a0e] rounded-tr-[100%] transform -translate-y-32"
+            style={{
+              clipPath: "polygon(0 30%, 100% 0, 100% 100%, 0% 100%)",
+            }}
+          ></div>
         </div>
       </section>
 
