@@ -1377,19 +1377,21 @@ export const gamesConfig: Game[] = [
         ram: "4GB",
         cpu: "3 vCores",
         storage: "50GB NVMe",
-        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
-        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-4gb",
+        features: ["Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-1",
+        // paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-4gb",
       },
       {
         id: "fivem-professional",
         name: "FiveM - 6GB",
-        price: 149.90,
+        price: 129.90,
         players: 250,
         ram: "6GB",
         cpu: "4 vCores",
         storage: "60GB NVMe",
-        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
-        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-6gb",
+        features: ["Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-2",
+        // paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-6gb",
       },
       {
         id: "fivem-business",
@@ -1399,8 +1401,9 @@ export const gamesConfig: Game[] = [
         ram: "8GB",
         cpu: "5 vCores",
         storage: "70GB NVMe",
-        features: ["Sem Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
-        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-8gb",
+        features: ["Acesso SSh", "Painel Web", "AMD Ryzen 9", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-3",
+        // paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/hospedagem-ptero-fivem/fivem-8gb",
       },
     ],
     faq: [
@@ -1694,7 +1697,7 @@ export const gamesConfig: Game[] = [
     ],
   },
 
-  //   Conan Exiles
+  //   Multi Theft Auto: San Andreas (MTA)
   {
     id: "multi-theft-auto-san-andreas-mta",
     name: "Multi Theft Auto: San Andreas (MTA)",
