@@ -66,7 +66,7 @@ export const NavbarComponent = () => {
     {
       name: "Minecraft",
       img: "/games/minecraft.webp",
-      link: "/games/minecraft",
+      link: "/minecraft",
       discountPrice: "R$ 13,90",
     },
     {
