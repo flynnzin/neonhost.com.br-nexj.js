@@ -1,6 +1,4 @@
 "use client"
-
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useEffect, useCallback, useMemo } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -21,10 +19,10 @@ import {
 
 // Componente de Loading otimizado
 const LoadingSpinner = () => (
-  <div className="min-h-screen bg-[#0a0a0e] text-white flex items-center justify-center">
+  <div className="min-h-screen bg-white text-gray-900 flex items-center justify-center">
     <div className="text-center">
       <div className="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-gray-400">Carregando...</p>
+      <p className="text-gray-600">Carregando...</p>
     </div>
   </div>
 )
@@ -33,9 +31,7 @@ const LoadingSpinner = () => (
 const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
   <article
     className={`relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-      plan.popular
-        ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-500/50"
-        : "bg-white/5 border-white/10"
+      plan.popular ? "bg-gradient-to-b from-purple-50 to-pink-50 border-purple-200" : "bg-gray-50 border-gray-200"
     }`}
   >
     {plan.popular && (
@@ -46,26 +42,26 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
       </div>
     )}
     <div className="flex items-center mb-4">
-      <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
+      <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600 mr-4">
         {plan.icon}
       </div>
       <div>
-        <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+        <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
       </div>
     </div>
-    <p className="text-gray-400 mb-6 text-sm leading-relaxed">{plan.description}</p>
+    <p className="text-gray-600 mb-6 text-sm leading-relaxed">{plan.description}</p>
     <div className="mb-6">
       <div className="flex items-baseline">
-        <span className="text-sm text-gray-400">R$</span>
-        <span className="text-4xl font-bold text-white ml-1">{plan.price}</span>
-        <span className="text-sm text-gray-400 ml-1">,90</span>
-        <span className="text-sm text-gray-400 ml-2">/mensal</span>
+        <span className="text-sm text-gray-600">R$</span>
+        <span className="text-4xl font-bold text-gray-900 ml-1">{plan.price}</span>
+        <span className="text-sm text-gray-600 ml-1">,90</span>
+        <span className="text-sm text-gray-600 ml-2">/mensal</span>
       </div>
     </div>
     <ul className="space-y-3 mb-8" role="list">
       {plan.features.map((feature: string, featureIndex: number) => (
-        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
-          <CheckCircle className="h-4 w-4 text-green-400 mr-3 flex-shrink-0" aria-hidden="true" />
+        <li key={featureIndex} className="flex items-center text-sm text-gray-700">
+          <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" aria-hidden="true" />
           {feature}
         </li>
       ))}
@@ -75,7 +71,7 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
       className={`block w-full py-3 rounded-xl font-semibold text-center transition-all duration-300 ${
         plan.popular
           ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90"
-          : "bg-white/10 text-white border border-white/20 hover:bg-white/20"
+          : "bg-gray-200 text-gray-900 border border-gray-300 hover:bg-gray-300"
       }`}
       aria-label={`Ver planos de ${plan.name}`}
     >
@@ -86,16 +82,16 @@ const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
 
 // Componente de Feature otimizado
 const FeatureCard = ({ feature, index }: { feature: any; index: number }) => (
-  <article className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 transition-all duration-300">
+  <article className="p-6 rounded-2xl bg-gray-50 backdrop-blur-sm border border-gray-200 hover:border-purple-300 transition-all duration-300">
     <div className="flex items-center mb-4">
-      <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 mr-4">
+      <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600 mr-4">
         {feature.icon}
       </div>
-      <h3 className="text-xl font-bold text-white">{feature.title}</h3>
+      <h3 className="text-xl font-bold text-gray-900">{feature.title}</h3>
     </div>
-    <p className="text-gray-400 mb-4 text-sm leading-relaxed">{feature.description}</p>
+    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{feature.description}</p>
     {feature.highlight && (
-      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-500/10 text-pink-400 border border-pink-500/20">
+      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-600 border border-pink-200">
         {feature.highlight}
       </div>
     )}
@@ -105,7 +101,7 @@ const FeatureCard = ({ feature, index }: { feature: any; index: number }) => (
 // Componente de Sistema Operacional otimizado
 const OSCard = ({ os, index }: { os: any; index: number }) => (
   <div
-    className={`group p-8 rounded-2xl border backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-pointer ${os.color}`}
+    className={`group p-8 rounded-2xl border backdrop-blur-sm hover:scale-105 transition-all duration-300 cursor-pointer bg-gray-50 border-gray-200 hover:border-purple-300`}
   >
     <div className="text-center">
       <div className="mb-6 flex justify-center">
@@ -120,8 +116,8 @@ const OSCard = ({ os, index }: { os: any; index: number }) => (
           />
         </div>
       </div>
-      <h3 className="text-lg font-semibold text-white mb-2">{os.name}</h3>
-      <p className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <h3 className="text-lg font-semibold text-gray-900 mb-2">{os.name}</h3>
+      <p className="text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {os.description}
       </p>
     </div>
@@ -135,23 +131,23 @@ const FAQItem = ({
   isExpanded,
   onToggle,
 }: { faq: any; index: number; isExpanded: boolean; onToggle: () => void }) => (
-  <div className="border border-gray-800/50 rounded-xl bg-white/5 backdrop-blur-sm">
+  <div className="border border-gray-200 rounded-xl bg-gray-50 backdrop-blur-sm">
     <button
-      className="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-inset rounded-xl"
+      className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-inset rounded-xl"
       onClick={onToggle}
       aria-expanded={isExpanded}
       aria-controls={`faq-answer-${index}`}
     >
-      <span className="text-white font-medium pr-4">{faq.question}</span>
+      <span className="text-gray-900 font-medium pr-4">{faq.question}</span>
       {isExpanded ? (
-        <ChevronUp className="h-5 w-5 text-purple-400 flex-shrink-0" aria-hidden="true" />
+        <ChevronUp className="h-5 w-5 text-purple-600 flex-shrink-0" aria-hidden="true" />
       ) : (
-        <ChevronDown className="h-5 w-5 text-purple-400 flex-shrink-0" aria-hidden="true" />
+        <ChevronDown className="h-5 w-5 text-purple-600 flex-shrink-0" aria-hidden="true" />
       )}
     </button>
     {isExpanded && (
       <div id={`faq-answer-${index}`} className="px-6 pb-6">
-        <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
         {faq.category && (
           <div
             className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium mt-3 ${faq.categoryColor}`}
@@ -422,13 +418,13 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0e] text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Background com grid quadriculado */}
       <div className="fixed inset-0 z-0">
         {/* Grid quadriculado */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.08)_1px,transparent_1px)] bg-[size:24px_24px]"
             style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
           ></div>
         </div>
@@ -438,8 +434,8 @@ export default function HomePage() {
           className="absolute inset-0"
           style={{
             background: `
-            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
-            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
+            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.05) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.05) 0%, transparent 50%)
           `,
           }}
         />
@@ -449,42 +445,42 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center px-4 z-10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-8">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-600 text-sm font-medium mb-8">
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" aria-hidden="true"></div>
               Infraestrutura no Brasil
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
             Potencialize seu{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 bg-clip-text text-transparent">
               mundo digital
             </span>{" "}
             com{" "}
-            <span className="bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
               Neon Host
             </span>
           </h1>
-          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
             Revolucionamos a hospedagem no Brasil com nossa infraestrutura exclusiva Neon Host™, combinando velocidade
             extrema, segurança avançada e tecnologia de ponta.
           </p>
           {/* Features em grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <Zap className="h-5 w-5 text-purple-400" aria-hidden="true" />
-              <span className="text-sm text-gray-300">Latência ultra-baixa de até 5ms</span>
+            <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 backdrop-blur-sm border border-gray-200">
+              <Zap className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <span className="text-sm text-gray-700">Latência ultra-baixa de até 5ms</span>
             </div>
-            <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <Shield className="h-5 w-5 text-purple-400" aria-hidden="true" />
-              <span className="text-sm text-gray-300">Proteção contra ataques em tempo real</span>
+            <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 backdrop-blur-sm border border-gray-200">
+              <Shield className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <span className="text-sm text-gray-700">Proteção contra ataques em tempo real</span>
             </div>
-            <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <Cpu className="h-5 w-5 text-purple-400" aria-hidden="true" />
-              <span className="text-sm text-gray-300">Processadores AMD Ryzen e NVMe Enterprise</span>
+            <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 backdrop-blur-sm border border-gray-200">
+              <Cpu className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <span className="text-sm text-gray-700">Processadores AMD Ryzen e NVMe Enterprise</span>
             </div>
-            <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <Clock className="h-5 w-5 text-purple-400" aria-hidden="true" />
-              <span className="text-sm text-gray-300">Garantia de 99,9% de uptime</span>
+            <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 backdrop-blur-sm border border-gray-200">
+              <Clock className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <span className="text-sm text-gray-700">Garantia de 99,9% de uptime</span>
             </div>
           </div>
         </div>
@@ -494,34 +490,34 @@ export default function HomePage() {
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Desempenho que Importa</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Desempenho que Importa</h2>
           </div>
 
           {/* Métricas de Performance */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 348 Tbps
               </div>
-              <div className="text-gray-400 text-lg">Proteção DDoS</div>
+              <div className="text-gray-600 text-lg">Proteção DDoS</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 -3ms
               </div>
-              <div className="text-gray-400 text-lg">Redução de Latência</div>
+              <div className="text-gray-600 text-lg">Redução de Latência</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 99.99%
               </div>
-              <div className="text-gray-400 text-lg">Disponibilidade da Rede</div>
+              <div className="text-gray-600 text-lg">Disponibilidade da Rede</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 500Gbps
               </div>
-              <div className="text-gray-400 text-lg">Capacidade de Rede</div>
+              <div className="text-gray-600 text-lg">Capacidade de Rede</div>
             </div>
           </div>
         </div>
@@ -692,36 +688,19 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-
-        {/* Curved border with NeonHost colors (purple to pink gradient) */}
-        <div className="absolute bottom-0 left-0 w-full h-32 overflow-hidden">
-          <div
-            className="absolute bottom-0 left-0 w-full h-64 rounded-tr-[100%] transform -translate-y-32"
-            style={{
-              background: "linear-gradient(90deg, #7e22ce 0%, #ec4899 100%)",
-              opacity: 0.1,
-            }}
-          ></div>
-          <div
-            className="absolute bottom-0 left-0 w-full h-64 bg-[#0a0a0e] rounded-tr-[100%] transform -translate-y-32"
-            style={{
-              clipPath: "polygon(0 30%, 100% 0, 100% 100%, 0% 100%)",
-            }}
-          ></div>
-        </div>
       </section>
 
       {/* FAQ Otimizado */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Perguntas{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Frequentes
               </span>
             </h2>
-            <p className="text-xl text-gray-400">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
+            <p className="text-xl text-gray-600">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
           </div>
           <div className="space-y-4">
             {faqQuestions.map((faq, index) => (

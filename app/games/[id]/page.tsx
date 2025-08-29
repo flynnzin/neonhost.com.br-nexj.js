@@ -44,10 +44,10 @@ export default function GamePage({ params }: GamePageProps) {
 
   if (!gameData) {
     return (
-      <div className="min-h-screen bg-[#0A0C10] flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">Jogo não encontrado</h1>
-          <Link href="/games" className="text-purple-400 hover:text-purple-300">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Jogo não encontrado</h1>
+          <Link href="/games" className="text-purple-600 hover:text-purple-700">
             Voltar para jogos
           </Link>
         </div>
@@ -56,22 +56,22 @@ export default function GamePage({ params }: GamePageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[#0A0C10] text-white">
+    <main className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0C10]/50 to-[#0A0C10]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white" />
         <div className="relative container mx-auto px-4 pt-24 pb-16">
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">
+          <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8">
+            <Link href="/" className="hover:text-gray-900 transition-colors">
               Início
             </Link>
             <span>/</span>
-            <Link href="/games" className="hover:text-white transition-colors">
+            <Link href="/games" className="hover:text-gray-900 transition-colors">
               Jogos
             </Link>
             <span>/</span>
-            <span className="text-white">{gameData.name}</span>
+            <span className="text-gray-900">{gameData.name}</span>
           </nav>
 
           {/* Game Header */}
@@ -81,7 +81,7 @@ export default function GamePage({ params }: GamePageProps) {
               {/* Game Title & Info */}
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden border border-white/10">
+                  <div className="w-16 h-16 rounded-xl overflow-hidden border border-gray-200">
                     <Image
                       src={gameData.logo || gameData.image}
                       alt={gameData.name}
@@ -92,7 +92,7 @@ export default function GamePage({ params }: GamePageProps) {
                   </div>
                   <div>
                     <h1 className="text-4xl font-bold mb-2">{gameData.name}</h1>
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-4 text-sm text-gray-600">
                       <span>por {gameData.developer}</span>
                       <div className="flex items-center gap-1">
                         <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -110,16 +110,16 @@ export default function GamePage({ params }: GamePageProps) {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setIsFavorited(!isFavorited)}
-                    className={`flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors ${
-                      isFavorited ? "text-red-400" : ""
+                    className={`flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors ${
+                      isFavorited ? "text-red-500" : "text-gray-700"
                     }`}
                   >
-                    <Heart className={`w-4 h-4 ${isFavorited ? "fill-red-400" : ""}`} />
+                    <Heart className={`w-4 h-4 ${isFavorited ? "fill-red-500" : ""}`} />
                     <span>{isFavorited ? "Favoritado" : "Favoritar"}</span>
                   </button>
                   <button
                     onClick={copyToClipboard}
-                    className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors text-gray-700"
                   >
                     <Share2 className="w-4 h-4" />
                     <span>Copiar URL</span>
@@ -138,28 +138,28 @@ export default function GamePage({ params }: GamePageProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
-                  <h2 className="text-2xl font-bold mb-2">Hospedagem Premium</h2>
-                  <p className="text-gray-300">Servidores otimizados para {gameData.name}</p>
+                  <h2 className="text-2xl font-bold mb-2 text-white">Hospedagem Premium</h2>
+                  <p className="text-gray-200">Servidores otimizados para {gameData.name}</p>
                 </div>
               </div>
 
               {/* Navigation Tabs */}
-              <div className="flex border-b border-white/10 mb-8">
+              <div className="flex border-b border-gray-200 mb-8">
                 <Link
                   href={`/games/${params.id}`}
-                  className="px-6 py-3 border-b-2 border-purple-500 text-purple-400 font-medium"
+                  className="px-6 py-3 border-b-2 border-purple-500 text-purple-600 font-medium"
                 >
                   Visão Geral
                 </Link>
                 <Link
                   href={`/games/${params.id}/planos`}
-                  className="px-6 py-3 text-gray-400 hover:text-white transition-colors"
+                  className="px-6 py-3 text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   Planos
                 </Link>
                 <Link
                   href={`/games/${params.id}/perguntas`}
-                  className="px-6 py-3 text-gray-400 hover:text-white transition-colors"
+                  className="px-6 py-3 text-gray-600 hover:text-gray-900 transition-colors"
                 >
                   FAQ
                 </Link>
@@ -167,7 +167,7 @@ export default function GamePage({ params }: GamePageProps) {
 
               {/* Description */}
               <div className="mb-8">
-                <p className="text-gray-300 leading-relaxed">{gameData.description}</p>
+                <p className="text-gray-700 leading-relaxed">{gameData.description}</p>
               </div>
 
               {/* Features Grid */}
@@ -177,13 +177,13 @@ export default function GamePage({ params }: GamePageProps) {
                   {gameData.features.map((feature, index) => (
                     <div
                       key={index}
-                      className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
+                      className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:bg-gray-100 transition-all duration-300 group"
                     >
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <Gamepad2 className="w-6 h-6 text-white" />
                       </div>
-                      <h4 className="font-semibold mb-2">{feature}</h4>
-                      <p className="text-sm text-gray-400">Recurso incluído em nossos servidores</p>
+                      <h4 className="font-semibold mb-2 text-gray-900">{feature}</h4>
+                      <p className="text-sm text-gray-600">Recurso incluído em nossos servidores</p>
                     </div>
                   ))}
                 </div>
@@ -194,10 +194,10 @@ export default function GamePage({ params }: GamePageProps) {
                 <h3 className="text-xl font-bold mb-6">Informações Técnicas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {gameData.platforms.map((platform, index) => (
-                    <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                       <div className="flex items-center gap-3">
-                        <Shield className="w-5 h-5 text-purple-400" />
-                        <span className="font-medium">{platform}</span>
+                        <Shield className="w-5 h-5 text-purple-500" />
+                        <span className="font-medium text-gray-900">{platform}</span>
                       </div>
                     </div>
                   ))}
@@ -208,22 +208,22 @@ export default function GamePage({ params }: GamePageProps) {
               <div className="mb-12">
                 <div className="flex items-center justify-between mb-8">
                   <h3 className="text-2xl font-bold">Avaliações dos Clientes</h3>
-                  <Link href="#" className="text-purple-400 hover:text-purple-300 text-sm">
+                  <Link href="#" className="text-purple-600 hover:text-purple-700 text-sm">
                     Ver todas →
                   </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {gameData.testimonials.map((testimonial, index) => (
-                    <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                       <div className="flex items-center gap-1 mb-3">
                         {[...Array(testimonial.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                         ))}
                       </div>
-                      <h4 className="font-semibold mb-2">{testimonial.title}</h4>
-                      <p className="text-sm text-gray-400 mb-3">por {testimonial.author}</p>
-                      <p className="text-sm text-gray-300">{testimonial.content}</p>
+                      <h4 className="font-semibold mb-2 text-gray-900">{testimonial.title}</h4>
+                      <p className="text-sm text-gray-600 mb-3">por {testimonial.author}</p>
+                      <p className="text-sm text-gray-700">{testimonial.content}</p>
                     </div>
                   ))}
                 </div>
@@ -234,21 +234,21 @@ export default function GamePage({ params }: GamePageProps) {
                 <h3 className="text-2xl font-bold mb-6">Perguntas Frequentes</h3>
                 <div className="space-y-4">
                   {gameData.faq.slice(0, 3).map((item, index) => (
-                    <div key={index} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                    <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
                       <button
                         onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                        className="flex items-center justify-between w-full p-6 text-left hover:bg-white/5 transition-colors"
+                        className="flex items-center justify-between w-full p-6 text-left hover:bg-gray-100 transition-colors text-gray-900"
                       >
                         <span className="font-medium">{item.question}</span>
                         <ChevronDown
-                          className={`w-5 h-5 text-gray-400 transition-transform ${
+                          className={`w-5 h-5 text-gray-600 transition-transform ${
                             expandedFaq === index ? "rotate-180" : ""
                           }`}
                         />
                       </button>
                       {expandedFaq === index && (
                         <div className="px-6 pb-6">
-                          <p className="text-gray-300">{item.answer}</p>
+                          <p className="text-gray-700">{item.answer}</p>
                         </div>
                       )}
                     </div>
@@ -257,7 +257,7 @@ export default function GamePage({ params }: GamePageProps) {
                 <div className="mt-6 text-center">
                   <Link
                     href={`/games/${params.id}/perguntas`}
-                    className="text-purple-400 hover:text-purple-300 font-medium"
+                    className="text-purple-600 hover:text-purple-700 font-medium"
                   >
                     Ver todas as perguntas →
                   </Link>
@@ -269,9 +269,9 @@ export default function GamePage({ params }: GamePageProps) {
             <div className="lg:col-span-1">
               <div className="sticky top-24">
                 {/* Pricing Card */}
-                <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden mb-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden mb-6">
                   {/* Price Header */}
-                  <div className="p-6 border-b border-white/10">
+                  <div className="p-6 border-b border-gray-200">
                     <div className="text-center mb-4">
                       {gameData.discount && (
                         <div className="inline-flex items-center gap-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
@@ -280,14 +280,14 @@ export default function GamePage({ params }: GamePageProps) {
                       )}
                       <div className="space-y-1">
                         {gameData.originalPrice && (
-                          <div className="text-sm text-gray-400 line-through">
+                          <div className="text-sm text-gray-500 line-through">
                             R$ {gameData.originalPrice.toFixed(2).replace(".", ",")}
                           </div>
                         )}
-                        <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                        <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                           R$ {gameData.price.toFixed(2).replace(".", ",")}
                         </div>
-                        <div className="text-sm text-gray-400">por mês</div>
+                        <div className="text-sm text-gray-600">por mês</div>
                       </div>
                     </div>
                   </div>
@@ -305,7 +305,7 @@ export default function GamePage({ params }: GamePageProps) {
                         href={gameData.communityLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
+                        className="block w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-xl font-medium text-center transition-colors border border-gray-200"
                       >
                         Comunidade
                       </Link>
@@ -313,7 +313,7 @@ export default function GamePage({ params }: GamePageProps) {
                     {gameData.vpsLink && (
                       <Link
                         href={gameData.vpsLink}
-                        className="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-medium text-center transition-colors border border-white/10"
+                        className="block w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-xl font-medium text-center transition-colors border border-gray-200"
                       >
                         VPS Dedicado
                       </Link>
@@ -322,34 +322,34 @@ export default function GamePage({ params }: GamePageProps) {
                 </div>
 
                 {/* Game Details */}
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h4 className="font-bold mb-4">Detalhes do Jogo</h4>
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                  <h4 className="font-bold mb-4 text-gray-900">Detalhes do Jogo</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Desenvolvedor:</span>
-                      <span className="font-medium">{gameData.developer}</span>
+                      <span className="text-gray-600">Desenvolvedor:</span>
+                      <span className="font-medium text-gray-900">{gameData.developer}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Plataformas:</span>
-                      <span className="font-medium">{gameData.platforms.join(", ")}</span>
+                      <span className="text-gray-600">Plataformas:</span>
+                      <span className="font-medium text-gray-900">{gameData.platforms.join(", ")}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Categoria:</span>
-                      <span className="font-medium">{gameData.category}</span>
+                      <span className="text-gray-600">Categoria:</span>
+                      <span className="font-medium text-gray-900">{gameData.category}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Jogadores:</span>
-                      <span className="font-medium">
+                      <span className="text-gray-600">Jogadores:</span>
+                      <span className="font-medium text-gray-900">
                         {gameData.minPlayers}-{gameData.maxPlayers}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">RAM Mínima:</span>
-                      <span className="font-medium">{gameData.requirements.ram}</span>
+                      <span className="text-gray-600">RAM Mínima:</span>
+                      <span className="font-medium text-gray-900">{gameData.requirements.ram}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Reembolso:</span>
-                      <span className="font-medium">7 dias</span>
+                      <span className="text-gray-600">Reembolso:</span>
+                      <span className="font-medium text-gray-900">7 dias</span>
                     </div>
                   </div>
                 </div>
@@ -360,11 +360,11 @@ export default function GamePage({ params }: GamePageProps) {
       </div>
 
       {/* Bottom CTA Section */}
-      <div className="border-t border-white/10 bg-white/5">
+      <div className="border-t border-gray-200 bg-gray-50">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Pronto para começar?</h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Pronto para começar?</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Oferecemos uma ampla gama de planos para atender a diversos tipos de projetos, desde hospedagem de
               servidores até soluções VPS completas.
             </p>
@@ -377,7 +377,7 @@ export default function GamePage({ params }: GamePageProps) {
               </Link>
               <Link
                 href="/contato"
-                className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-medium transition-colors border border-white/10"
+                className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-xl font-medium transition-colors border border-gray-200"
               >
                 Falar com Suporte
               </Link>

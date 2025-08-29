@@ -17,24 +17,11 @@ export default function AntiDDosPage() {
   const [isCountVisible, setIsCountVisible] = useState(false)
   const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 })
 
-  // Referência para o efeito de partículas
-  const particlesRef = useRef<HTMLCanvasElement | null>(null)
-
   // Efeito de parallax no scroll
   const { scrollYProgress } = useScroll()
-  const parallaxY1 = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const parallaxY2 = useTransform(scrollYProgress, [0, 1], [0, -200])
-  const parallaxY3 = useTransform(scrollYProgress, [0, 1], [0, -50])
-
-  // Efeito de seguir o mouse
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  const parallaxY1 = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const parallaxY2 = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const parallaxY3 = useTransform(scrollYProgress, [0, 1], [0, -25])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,128 +70,6 @@ export default function AntiDDosPage() {
     }
   }, [isCountVisible])
 
-  // Efeito de partículas
-  useEffect(() => {
-    // Verificar se estamos no navegador e se o canvas existe
-    if (typeof window === "undefined" || !particlesRef.current) return
-
-    const canvas = particlesRef.current
-    const ctx = canvas.getContext("2d")
-
-    if (!ctx) return
-
-    // Configurar o canvas para ocupar toda a tela
-    const resizeCanvas = () => {
-      if (canvas) {
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
-      }
-    }
-
-    resizeCanvas()
-    window.addEventListener("resize", resizeCanvas)
-
-    // Criar partículas
-    const particlesArray: Particle[] = []
-    const numberOfParticles = 50
-
-    // Classe Particle com tipagem adequada
-    class Particle {
-      x: number
-      y: number
-      size: number
-      speedX: number
-      speedY: number
-      color: string
-
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
-        this.size = Math.random() * 3 + 1
-        this.speedX = Math.random() * 1 - 0.5
-        this.speedY = Math.random() * 1 - 0.5
-        this.color = Math.random() > 0.5 ? "rgba(233, 30, 99, 0.3)" : "rgba(156, 39, 176, 0.3)"
-      }
-
-      update() {
-        this.x += this.speedX
-        this.y += this.speedY
-
-        // Verificar limites
-        if (this.x > canvas.width) this.x = 0
-        else if (this.x < 0) this.x = canvas.width
-        if (this.y > canvas.height) this.y = 0
-        else if (this.y < 0) this.y = canvas.height
-
-        // Tamanho aleatório para efeito visual
-        this.size = Math.random() * 3 + 1
-      }
-
-      draw() {
-        if (ctx) {
-          ctx.fillStyle = this.color
-          ctx.beginPath()
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-          ctx.fill()
-        }
-      }
-    }
-
-    const init = () => {
-      for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle())
-      }
-    }
-
-    init()
-
-    const connectParticles = () => {
-      if (!ctx) return
-
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-          const dx = particlesArray[a].x - particlesArray[b].x
-          const dy = particlesArray[a].y - particlesArray[b].y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 100) {
-            ctx.strokeStyle = particlesArray[a].color
-            ctx.lineWidth = 0.2
-            ctx.beginPath()
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y)
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y)
-            ctx.stroke()
-          }
-        }
-      }
-    }
-
-    let animationFrameId: number
-
-    const animate = () => {
-      if (!ctx) return
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update()
-        particlesArray[i].draw()
-      }
-
-      // Conectar partículas próximas
-      connectParticles()
-
-      animationFrameId = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas)
-      cancelAnimationFrame(animationFrameId)
-    }
-  }, [])
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -220,9 +85,9 @@ export default function AntiDDosPage() {
     },
   }
 
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: { duration: 2, repeat: Number.POSITIVE_INFINITY },
+  const subtlePulse = {
+    scale: [1, 1.02, 1],
+    transition: { duration: 3, repeat: Number.POSITIVE_INFINITY },
   }
 
   // Função para abrir o link do Discord
@@ -231,130 +96,99 @@ export default function AntiDDosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0e] text-white">
-      {/* Canvas para partículas */}
-      <canvas ref={particlesRef} className="fixed inset-0 z-0 pointer-events-none" />
-
-      {/* Background Gradient Effect */}
-      <div className="fixed inset-0 -z-10 bg-[#0a0a0e]">
+    <div className="min-h-screen bg-white text-gray-900">
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"
+            style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
+          ></div>
+        </div>
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at ${scrollY / 10}% ${50 + scrollY / 100}%, rgba(156, 39, 176, 0.3) 0%, transparent 50%), 
-                              radial-gradient(circle at ${80 - scrollY / 20}% ${30 - scrollY / 100}%, rgba(233, 30, 99, 0.3) 0%, transparent 50%)`,
+            background: `
+            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.02) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.02) 0%, transparent 50%)
+          `,
           }}
         />
       </div>
 
       {/* Hero Section */}
-      <section className="container relative mx-auto px-4 py-16 z-10">
+      <section className="container relative mx-auto px-4 py-20 z-10">
         <motion.div
-          className="mx-auto max-w-5xl"
+          className="mx-auto max-w-5xl text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
+          <motion.div
+            className="mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-600 text-sm font-medium">
+              <Shield className="h-4 w-4 mr-2" />
+              Proteção Anti-DDoS
+            </span>
+          </motion.div>
+
           <motion.h1
-            className="mb-6 text-5xl font-bold leading-tight"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="mb-6 text-5xl md:text-6xl font-bold leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block">
-              <span className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Localização
-              </span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Proteção Avançada
             </span>{" "}
-            <span className="inline-block">
-              &{" "}
-              <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-                Anti DDoS
-              </span>
-            </span>
+            <span className="text-gray-900">Anti-DDoS</span>
           </motion.h1>
+
           <motion.p
-            className="mb-8 text-lg text-gray-300"
+            className="mb-12 text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Proteção Anti DDoS com capacidade total de até 348TB/s. Mitigação a tempo real, sempre ativa, garantindo o
-            tempo de resposta mais rápido contra qualquer ameaças/ataques. Todos nossos servidores são em São Paulo, e
-            também contamos com o modelo de proteção Cloudflare. Com 348TB/s. de capacidade de rede, 23x vezes maior que
-            os maiores ataques DDoS já registrados, a Cloudflare pode mitigar ataques de qualquer tamanho.
+            Proteção Anti-DDoS com capacidade total de até 348TB/s. Mitigação em tempo real, sempre ativa, garantindo o
+            tempo de resposta mais rápido contra qualquer ameaça. Todos nossos servidores são em São Paulo, com proteção
+            Cloudflare de nível empresarial.
           </motion.p>
+
           <motion.div
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.button
-              className="relative overflow-hidden rounded-md border border-gray-700 bg-[#131318] px-6 py-3 font-medium text-white transition-all hover:bg-[#1a1a20]"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 20px rgba(233, 30, 99, 0.3)",
-                borderColor: "#e91e63",
-              }}
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:opacity-90 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={openDiscord}
             >
-              <span className="relative z-10">Começar agora</span>
-              <motion.span
-                className="absolute inset-0 -z-0 bg-gradient-to-r from-pink-500/20 to-purple-600/20 opacity-0"
-                whileHover={{ opacity: 1 }}
-              />
-              <motion.span
-                className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-pink-500"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.7, 0.2, 0.7],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-              />
+              Começar agora
             </motion.button>
             <motion.button
-              className="relative overflow-hidden rounded-md border border-gray-700 bg-[#131318] px-6 py-3 font-medium text-white transition-all hover:bg-[#1a1a20]"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 20px rgba(156, 39, 176, 0.3)",
-                borderColor: "#9c27b0",
-              }}
+              className="px-8 py-4 bg-gray-50 text-gray-900 border border-gray-200 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={openDiscord}
             >
-              <span className="relative z-10">Entrar em contato</span>
-              <motion.span
-                className="absolute inset-0 -z-0 bg-gradient-to-r from-purple-600/20 to-pink-500/20 opacity-0"
-                whileHover={{ opacity: 1 }}
-              />
-              <motion.span
-                className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-purple-500"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.7, 0.2, 0.7],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-              />
+              Entrar em contato
             </motion.button>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Features Section */}
-      <section className="container relative mx-auto px-4 py-16 z-10">
+      <section className="container relative mx-auto px-4 py-20 z-10">
         <motion.div
-          className="grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -362,118 +196,80 @@ export default function AntiDDosPage() {
         >
           {/* Feature 1 */}
           <motion.div
-            className="group rounded-lg border border-transparent p-6 transition-all hover:border-pink-500/20 hover:bg-[#131318]"
+            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
             variants={fadeInUp}
-            whileHover={{
-              y: -10,
-              boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-            }}
+            whileHover={{ y: -5 }}
             style={{ y: parallaxY1 }}
           >
             <motion.div
-              className="mb-4 inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-              animate={pulseAnimation}
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              animate={subtlePulse}
             >
-              <motion.div
-                initial={{ rotate: 0 }}
-                animate={{ rotate: [0, 15, 0, -15, 0] }}
-                transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <Zap className="h-8 w-8 text-pink-500" />
-              </motion.div>
+              <Zap className="h-8 w-8 text-purple-600" />
             </motion.div>
-            <h3 className="mb-2 text-xl font-bold">Mitigação InLine</h3>
-            <p className="text-gray-400">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900">Mitigação InLine</h3>
+            <p className="text-gray-600 leading-relaxed">
               Mitigação sempre ativa, garantindo o melhor tempo de resposta contra qualquer ameaça.
             </p>
-            <motion.div
-              className="mt-4 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-full"
-              initial={{ width: 0 }}
-              whileHover={{ width: "100%" }}
-            />
           </motion.div>
 
           {/* Feature 2 */}
           <motion.div
-            className="group rounded-lg border border-transparent p-6 transition-all hover:border-pink-500/20 hover:bg-[#131318]"
+            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
             variants={fadeInUp}
-            whileHover={{
-              y: -10,
-              boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-            }}
+            whileHover={{ y: -5 }}
             style={{ y: parallaxY2 }}
           >
             <motion.div
-              className="mb-4 inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-              animate={pulseAnimation}
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              animate={subtlePulse}
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              >
-                <Clock className="h-8 w-8 text-pink-500" />
-              </motion.div>
+              <Clock className="h-8 w-8 text-purple-600" />
             </motion.div>
-            <h3 className="mb-2 text-xl font-bold">Monitoramento 24/7</h3>
-            <p className="text-gray-400">Monitoramento e equipe dedicada a solução de qualquer situação.</p>
-            <motion.div
-              className="mt-4 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-full"
-              initial={{ width: 0 }}
-              whileHover={{ width: "100%" }}
-            />
+            <h3 className="mb-4 text-2xl font-bold text-gray-900">Monitoramento 24/7</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Monitoramento contínuo e equipe dedicada à solução de qualquer situação.
+            </p>
           </motion.div>
 
           {/* Feature 3 */}
           <motion.div
-            className="group rounded-lg border border-transparent p-6 transition-all hover:border-pink-500/20 hover:bg-[#131318]"
+            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
             variants={fadeInUp}
-            whileHover={{
-              y: -10,
-              boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-            }}
+            whileHover={{ y: -5 }}
             style={{ y: parallaxY3 }}
           >
             <motion.div
-              className="mb-4 inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-              animate={pulseAnimation}
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              animate={subtlePulse}
             >
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <Shield className="h-8 w-8 text-pink-500" />
-              </motion.div>
+              <Shield className="h-8 w-8 text-purple-600" />
             </motion.div>
-            <h3 className="mb-2 text-xl font-bold">Proteção Incluída</h3>
-            <p className="text-gray-400">Todos os serviços no Brasil incluem a mitigação DDoS.</p>
-            <motion.div
-              className="mt-4 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-full"
-              initial={{ width: 0 }}
-              whileHover={{ width: "100%" }}
-            />
+            <h3 className="mb-4 text-2xl font-bold text-gray-900">Proteção Incluída</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Todos os serviços no Brasil incluem a mitigação DDoS sem custo adicional.
+            </p>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Capacity Section */}
-      <section className="container relative mx-auto px-4 py-16 z-10">
-        <div className="mx-auto max-w-5xl">
+      <section className="container relative mx-auto px-4 py-20 z-10">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="mb-6 text-4xl font-bold">Qual a capacidade?</h2>
-            <p className="mb-12 text-lg text-gray-300" ref={countRef}>
+            <h2 className="mb-6 text-4xl md:text-5xl font-bold text-gray-900">Capacidade de Proteção</h2>
+            <p className="mb-16 text-xl text-gray-600 max-w-3xl mx-auto" ref={countRef}>
               Garantimos toda a segurança e estabilidade da proteção DDoS com capacidade de até{" "}
               <motion.span
-                className="text-pink-500"
+                className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
                 initial={{ scale: 1 }}
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
                 {count} TB/s
               </motion.span>
@@ -490,171 +286,110 @@ export default function AntiDDosPage() {
           >
             {/* Card 1 */}
             <motion.div
-              className="group rounded-lg border border-gray-800 bg-[#131318] p-6 transition-all hover:border-pink-500/30"
+              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
-              whileHover={{
-                y: -10,
-                boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-              }}
+              whileHover={{ y: -5 }}
             >
-              <div className="mb-4 flex justify-center">
+              <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: "0 0 20px rgba(233, 30, 99, 0.5)",
-                  }}
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <motion.div
-                    animate={{
-                      rotate: [0, 10, 0, -10, 0],
-                    }}
-                    transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                  >
-                    <ShieldAlert className="h-8 w-8 text-pink-500" />
-                  </motion.div>
+                  <ShieldAlert className="h-8 w-8 text-purple-600" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-center text-xl font-bold">Mitigação em tempo real</h3>
-              <p className="text-center text-gray-400">
+              <h3 className="mb-4 text-xl font-bold text-gray-900">Mitigação em Tempo Real</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Mantemos nossa rede permanentemente ativa para oferecer a resposta mais ágil contra qualquer tipo de
                 ameaça ou ataque. Sua segurança é nossa prioridade.
               </p>
-              <motion.div
-                className="mx-auto mt-6 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-1/2"
-                initial={{ width: 0 }}
-                whileHover={{ width: "50%" }}
-              />
             </motion.div>
 
             {/* Card 2 */}
             <motion.div
-              className="group rounded-lg border border-gray-800 bg-[#131318] p-6 transition-all hover:border-pink-500/30"
+              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
-              whileHover={{
-                y: -10,
-                boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-              }}
+              whileHover={{ y: -5 }}
             >
-              <div className="mb-4 flex justify-center">
+              <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: "0 0 20px rgba(233, 30, 99, 0.5)",
-                  }}
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <motion.div
-                    animate={{
-                      y: [0, -5, 0, 5, 0],
-                    }}
-                    transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                  >
-                    <BarChart className="h-8 w-8 text-pink-500" />
-                  </motion.div>
+                  <BarChart className="h-8 w-8 text-purple-600" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-center text-xl font-bold">Sem null-route/blackhole</h3>
-              <p className="text-center text-gray-400">
+              <h3 className="mb-4 text-xl font-bold text-gray-900">Sem Null-Route</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Optamos por não empregar técnicas como null-route/blackhole e redirecionamento de rota em nosso sistema
                 de proteção. Priorizamos as abordagens mais eficazes.
               </p>
-              <motion.div
-                className="mx-auto mt-6 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-1/2"
-                initial={{ width: 0 }}
-                whileHover={{ width: "50%" }}
-              />
             </motion.div>
 
             {/* Card 3 */}
             <motion.div
-              className="group rounded-lg border border-gray-800 bg-[#131318] p-6 transition-all hover:border-pink-500/30"
+              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
-              whileHover={{
-                y: -10,
-                boxShadow: "0 10px 30px -10px rgba(233, 30, 99, 0.3)",
-              }}
+              whileHover={{ y: -5 }}
             >
-              <div className="mb-4 flex justify-center">
+              <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-500/10 p-3"
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: "0 0 20px rgba(233, 30, 99, 0.5)",
-                  }}
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <motion.div
-                    animate={{
-                      rotate: 360,
-                    }}
-                    transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                  >
-                    <Target className="h-8 w-8 text-pink-500" />
-                  </motion.div>
+                  <Target className="h-8 w-8 text-purple-600" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-center text-xl font-bold">Direto ao ponto</h3>
-              <p className="text-center text-gray-400">
+              <h3 className="mb-4 text-xl font-bold text-gray-900">Direto ao Ponto</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Realizamos a mitigação dos ataques diretamente em sua origem, garantindo sempre recursos disponíveis
                 para uso.
               </p>
-              <motion.div
-                className="mx-auto mt-6 h-1 w-0 bg-gradient-to-r from-pink-500 to-purple-600 transition-all duration-300 group-hover:w-1/2"
-                initial={{ width: 0 }}
-                whileHover={{ width: "50%" }}
-              />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Dashboard Preview */}
-      <section className="container relative mx-auto px-4 py-16 z-10">
+      <section className="container relative mx-auto px-4 py-20 z-10">
         <motion.div
-          className="mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-800 bg-[#131318] p-6"
+          className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-lg"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
-          whileHover={{
-            boxShadow: "0 0 30px rgba(233, 30, 99, 0.2)",
-            borderColor: "rgba(233, 30, 99, 0.3)",
-          }}
+          whileHover={{ boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.1)" }}
         >
-          <div className="flex items-center gap-2">
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Shield className="h-5 w-5 text-pink-500" />
-            </motion.div>
-            <h3 className="text-xl font-bold">Dashboard de Proteção</h3>
-            <div className="ml-auto flex items-center gap-2">
-              <span className="flex items-center gap-1">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <motion.div className="p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100" animate={subtlePulse}>
+                <Shield className="h-6 w-6 text-purple-600" />
+              </motion.div>
+              <h3 className="text-2xl font-bold text-gray-900">Dashboard de Proteção</h3>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex items-center gap-2">
                 <motion.span
-                  className="h-2 w-2 rounded-full bg-green-500"
+                  className="h-3 w-3 rounded-full bg-green-500"
                   animate={{
                     opacity: [1, 0.5, 1],
-                    scale: [1, 1.2, 1],
+                    scale: [1, 1.1, 1],
                   }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 ></motion.span>
-                <span className="text-sm text-gray-400">Operacional</span>
+                <span className="text-sm font-medium text-green-600">Operacional</span>
               </span>
-              <span className="text-sm text-gray-400">19:22:10</span>
+              <span className="text-sm text-gray-500">19:22:10</span>
             </div>
           </div>
 
-          {/* Animated wave effect */}
-          <div className="relative mt-4 h-20 w-full overflow-hidden rounded bg-[#0a0a0e]">
+          <div className="relative h-24 w-full overflow-hidden rounded-xl bg-gray-50 border border-gray-200">
             <motion.div
               className="absolute bottom-0 left-0 h-full w-[200%]"
               style={{
                 backgroundImage:
-                  "linear-gradient(270deg, transparent 0%, rgba(233, 30, 99, 0.2) 50%, transparent 100%)",
-                height: "40px",
+                  "linear-gradient(270deg, transparent 0%, rgba(126, 34, 206, 0.1) 50%, transparent 100%)",
+                height: "60%",
                 bottom: "0",
               }}
               animate={{
@@ -662,7 +397,7 @@ export default function AntiDDosPage() {
               }}
               transition={{
                 repeat: Number.POSITIVE_INFINITY,
-                duration: 5,
+                duration: 8,
                 ease: "linear",
               }}
             />
@@ -670,65 +405,37 @@ export default function AntiDDosPage() {
               className="absolute bottom-0 left-0 h-full w-[200%]"
               style={{
                 backgroundImage:
-                  "linear-gradient(270deg, transparent 0%, rgba(156, 39, 176, 0.2) 50%, transparent 100%)",
-                height: "20px",
-                bottom: "10px",
+                  "linear-gradient(270deg, transparent 0%, rgba(255, 62, 157, 0.1) 50%, transparent 100%)",
+                height: "40%",
+                bottom: "10%",
               }}
               animate={{
                 x: ["-100%", "0%"],
               }}
               transition={{
                 repeat: Number.POSITIVE_INFINITY,
-                duration: 7,
-                ease: "linear",
-              }}
-            />
-            <motion.div
-              className="absolute bottom-0 left-0 h-full w-[200%]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(270deg, transparent 0%, rgba(233, 30, 99, 0.1) 50%, transparent 100%)",
-                height: "15px",
-                bottom: "5px",
-              }}
-              animate={{
-                x: ["0%", "-100%"],
-              }}
-              transition={{
-                repeat: Number.POSITIVE_INFINITY,
-                duration: 9,
+                duration: 12,
                 ease: "linear",
               }}
             />
           </div>
 
-          {/* Cybersecurity visualization */}
-          <div className="mt-4 relative h-10">
-            <motion.div
-              className="absolute inset-0 flex items-center justify-between px-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="h-2 w-1 bg-pink-500"
-                  animate={{
-                    height: [2, Math.random() * 16 + 4, 2],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Number.POSITIVE_INFINITY,
-                    delay: i * 0.1,
-                  }}
-                />
-              ))}
-            </motion.div>
+          <div className="mt-6 grid grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-gray-900">348TB/s</div>
+              <div className="text-sm text-gray-600">Capacidade Total</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600">100%</div>
+              <div className="text-sm text-gray-600">Uptime</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-purple-600">&lt;5ms</div>
+              <div className="text-sm text-gray-600">Latência</div>
+            </div>
           </div>
         </motion.div>
       </section>
-
     </div>
   )
 }

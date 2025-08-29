@@ -38,10 +38,10 @@ export default function PlansPage({ params }: PageProps) {
 
   if (!gameData) {
     return (
-      <div className="min-h-screen bg-[#0A0C10] flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">Jogo não encontrado</h1>
-          <Link href="/games" className="text-purple-400 hover:text-purple-300">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Jogo não encontrado</h1>
+          <Link href="/games" className="text-purple-600 hover:text-purple-700">
             Voltar para jogos
           </Link>
         </div>
@@ -85,53 +85,53 @@ export default function PlansPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[#0A0C10] text-white pb-24">
+    <main className="min-h-screen bg-white text-gray-900 pb-24">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-[#0A0C10]" />
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-100/50 via-transparent to-white" />
+        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=100&width=100')] opacity-5" />
 
         {/* Efeito de partículas */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-purple-500/30 rounded-full filter blur-[100px] animate-pulse-slow" />
-        <div className="absolute top-40 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full filter blur-[120px] animate-pulse-slow" />
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-purple-200/30 rounded-full filter blur-[100px] animate-pulse-slow" />
+        <div className="absolute top-40 right-1/4 w-96 h-96 bg-pink-200/20 rounded-full filter blur-[120px] animate-pulse-slow" />
 
         <div className="relative container mx-auto px-4 pt-32 pb-20">
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">
+          <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8">
+            <Link href="/" className="hover:text-gray-900 transition-colors">
               Início
             </Link>
             <span>/</span>
-            <Link href="/games" className="hover:text-white transition-colors">
+            <Link href="/games" className="hover:text-gray-900 transition-colors">
               Jogos
             </Link>
             <span>/</span>
-            <Link href={`/games/${params.id}`} className="hover:text-white transition-colors">
+            <Link href={`/games/${params.id}`} className="hover:text-gray-900 transition-colors">
               {gameData.name}
             </Link>
             <span>/</span>
-            <span className="text-white">Planos</span>
+            <span className="text-gray-900">Planos</span>
           </nav>
 
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl overflow-hidden border border-white/10 relative">
+              <div className="w-16 h-16 rounded-xl overflow-hidden border border-gray-200 relative">
                 <Image src={gameData.logo || gameData.image} alt={gameData.name} fill className="object-cover" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 animate-gradient">
+              <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-gradient">
                 Planos para {gameData.name}
               </h1>
             </div>
-            <p className="text-xl text-gray-300 mb-8">{gameData.shortDescription}</p>
+            <p className="text-xl text-gray-600 mb-8">{gameData.shortDescription}</p>
 
             {/* Seletor de ciclo de cobrança */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-2 inline-flex mx-auto">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-2 inline-flex mx-auto">
               <button
                 onClick={() => setBillingCycle("monthly")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   billingCycle === "monthly"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 Mensal
@@ -141,30 +141,30 @@ export default function PlansPage({ params }: PageProps) {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   billingCycle === "quarterly"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                Trimestral <span className="text-xs text-green-400">-5%</span>
+                Trimestral <span className="text-xs text-green-600">-5%</span>
               </button>
               <button
                 onClick={() => setBillingCycle("semiannual")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   billingCycle === "semiannual"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                Semestral <span className="text-xs text-green-400">-10%</span>
+                Semestral <span className="text-xs text-green-600">-10%</span>
               </button>
               <button
                 onClick={() => setBillingCycle("annual")}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   billingCycle === "annual"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                Anual <span className="text-xs text-green-400">-20%</span>
+                Anual <span className="text-xs text-green-600">-20%</span>
               </button>
             </div>
           </div>
@@ -177,13 +177,13 @@ export default function PlansPage({ params }: PageProps) {
           {gameData.plans.slice(0, visiblePlans).map((plan, index) => (
             <div
               key={plan.id}
-              className={`relative bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden group transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] ${
-                index === 1 ? "md:-mt-4 md:mb-4" : ""
+              className={`relative bg-white border border-gray-200 rounded-2xl overflow-hidden group transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/10 ${
+                index === 1 ? "md:-mt-4 md:mb-4 shadow-lg shadow-purple-500/5" : "shadow-sm"
               }`}
             >
               {/* Efeito de borda neon */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 rounded-2xl border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+                <div className="absolute inset-0 rounded-2xl border border-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)]"></div>
               </div>
 
               {/* Badge de popular */}
@@ -196,8 +196,8 @@ export default function PlansPage({ params }: PageProps) {
               )}
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-gray-400 mb-6">Para {plan.players} jogadores</p>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">{plan.name}</h3>
+                <p className="text-gray-600 mb-6">Para {plan.players} jogadores</p>
 
                 {/* Preço */}
                 <div className="mb-6">
@@ -207,14 +207,14 @@ export default function PlansPage({ params }: PageProps) {
                         <span className="bg-gradient-to-r from-purple-600 to-orange-500 text-white text-xs px-2 py-1 rounded">
                           -{Math.round(((plan.originalPrice - plan.price) / plan.originalPrice) * 100)}%
                         </span>
-                        <span className="text-gray-400 line-through text-sm">
+                        <span className="text-gray-500 line-through text-sm">
                           R$ {plan.originalPrice.toFixed(2).replace(".", ",")}
                         </span>
                       </>
                     )}
                   </div>
                   <div className="flex items-baseline">
-                    <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+                    <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
                       R${" "}
                       {(
                         getDiscountedPrice(plan.price, billingCycle) /
@@ -229,10 +229,10 @@ export default function PlansPage({ params }: PageProps) {
                         .toFixed(2)
                         .replace(".", ",")}
                     </span>
-                    <span className="text-gray-400 ml-2">/{cycleText[billingCycle]}</span>
+                    <span className="text-gray-600 ml-2">/{cycleText[billingCycle]}</span>
                   </div>
                   {billingCycle !== "monthly" && (
-                    <div className="text-xs text-green-400 mt-1">
+                    <div className="text-xs text-green-600 mt-1">
                       Economia de {cycleDiscount[billingCycle]} no plano {billingCycle}
                     </div>
                   )}
@@ -241,39 +241,39 @@ export default function PlansPage({ params }: PageProps) {
                 {/* Especificações */}
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                      <Server className="w-5 h-5 text-purple-400" />
+                    <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                      <Server className="w-5 h-5 text-purple-600" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">RAM</div>
-                      <div className="font-medium">{plan.ram}</div>
+                      <div className="text-sm text-gray-500">RAM</div>
+                      <div className="font-medium text-gray-900">{plan.ram}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                      <Cpu className="w-5 h-5 text-purple-400" />
+                    <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                      <Cpu className="w-5 h-5 text-purple-600" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">CPU</div>
-                      <div className="font-medium">{plan.cpu}</div>
+                      <div className="text-sm text-gray-500">CPU</div>
+                      <div className="font-medium text-gray-900">{plan.cpu}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                      <Database className="w-5 h-5 text-purple-400" />
+                    <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                      <Database className="w-5 h-5 text-purple-600" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">Armazenamento</div>
-                      <div className="font-medium">{plan.storage}</div>
+                      <div className="text-sm text-gray-500">Armazenamento</div>
+                      <div className="font-medium text-gray-900">{plan.storage}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                      <Users className="w-5 h-5 text-purple-400" />
+                    <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-purple-600" />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400">Capacidade</div>
-                      <div className="font-medium">{plan.players} jogadores</div>
+                      <div className="text-sm text-gray-500">Capacidade</div>
+                      <div className="font-medium text-gray-900">{plan.players} jogadores</div>
                     </div>
                   </div>
                 </div>
@@ -282,8 +282,8 @@ export default function PlansPage({ params }: PageProps) {
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-green-400" />
-                      <span className="text-gray-200">{feature}</span>
+                      <Check className="w-5 h-5 text-green-500" />
+                      <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -307,7 +307,7 @@ export default function PlansPage({ params }: PageProps) {
           <div className="text-center mt-12">
             <button
               onClick={handleShowMorePlans}
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-medium transition-colors border border-white/10"
+              className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-xl font-medium transition-colors border border-gray-200"
             >
               Ver Todos os Planos
               <ChevronRight className="w-5 h-5" />
@@ -319,7 +319,7 @@ export default function PlansPage({ params }: PageProps) {
         <div className="text-center mt-12">
           <button
             onClick={() => setShowComparison(!showComparison)}
-            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-medium transition-colors border border-white/10"
+            className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-xl font-medium transition-colors border border-gray-200"
           >
             {showComparison ? "Ocultar Comparação" : "Comparar Todos os Planos"}
             <ChevronRight className={`w-5 h-5 transition-transform ${showComparison ? "rotate-90" : ""}`} />
@@ -329,56 +329,56 @@ export default function PlansPage({ params }: PageProps) {
         {/* Tabela de comparação */}
         {showComparison && (
           <div className="mt-16 overflow-x-auto">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-8 text-center">Comparação Detalhada de Planos</h3>
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <h3 className="text-2xl font-bold mb-8 text-center text-gray-900">Comparação Detalhada de Planos</h3>
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left py-4 px-4">Recurso</th>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-4 px-4 text-gray-900">Recurso</th>
                     {gameData.plans.map((plan) => (
-                      <th key={plan.id} className="text-center py-4 px-4">
+                      <th key={plan.id} className="text-center py-4 px-4 text-gray-900">
                         {plan.name}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">RAM</td>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4 text-gray-600">RAM</td>
                     {gameData.plans.map((plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
+                      <td key={plan.id} className="text-center py-4 px-4 text-gray-900">
                         {plan.ram}
                       </td>
                     ))}
                   </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">CPU</td>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4 text-gray-600">CPU</td>
                     {gameData.plans.map((plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
+                      <td key={plan.id} className="text-center py-4 px-4 text-gray-900">
                         {plan.cpu}
                       </td>
                     ))}
                   </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">Armazenamento</td>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4 text-gray-600">Armazenamento</td>
                     {gameData.plans.map((plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
+                      <td key={plan.id} className="text-center py-4 px-4 text-gray-900">
                         {plan.storage}
                       </td>
                     ))}
                   </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-4 px-4 text-gray-400">Jogadores</td>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4 text-gray-600">Jogadores</td>
                     {gameData.plans.map((plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4">
+                      <td key={plan.id} className="text-center py-4 px-4 text-gray-900">
                         {plan.players}
                       </td>
                     ))}
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 text-gray-400">Preço Mensal</td>
+                    <td className="py-4 px-4 text-gray-600">Preço Mensal</td>
                     {gameData.plans.map((plan) => (
-                      <td key={plan.id} className="text-center py-4 px-4 font-bold">
+                      <td key={plan.id} className="text-center py-4 px-4 font-bold text-gray-900">
                         R$ {plan.price.toFixed(2).replace(".", ",")}
                       </td>
                     ))}
@@ -408,50 +408,50 @@ export default function PlansPage({ params }: PageProps) {
       {/* Seção de recursos */}
       <div className="container mx-auto px-4 mt-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Recursos Inclusos em Todos os Planos</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Recursos Inclusos em Todos os Planos</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Todos os nossos servidores de {gameData.name} incluem estes recursos essenciais para garantir a melhor
             experiência de jogo
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Ativação Instantânea</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Ativação Instantânea</h3>
+            <p className="text-gray-600">
               Seu servidor estará pronto para uso em segundos após a confirmação do pagamento.
             </p>
           </div>
 
-          <div className="bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Shield className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Proteção DDoS</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Proteção DDoS</h3>
+            <p className="text-gray-600">
               Todos os servidores contam com proteção contra ataques DDoS para garantir estabilidade.
             </p>
           </div>
 
-          <div className="bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Server className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Hardware Premium</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Hardware Premium</h3>
+            <p className="text-gray-600">
               Servidores equipados com processadores AMD Ryzen e SSDs NVMe para desempenho máximo.
             </p>
           </div>
 
-          <div className="bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
+          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 group">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Clock className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Suporte 24/7</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl font-bold mb-2 text-gray-900">Suporte 24/7</h3>
+            <p className="text-gray-600">
               Nossa equipe de suporte está disponível 24 horas por dia, 7 dias por semana para ajudar.
             </p>
           </div>
@@ -461,8 +461,8 @@ export default function PlansPage({ params }: PageProps) {
       {/* FAQ */}
       <div className="container mx-auto px-4 mt-24">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Perguntas Frequentes</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Perguntas Frequentes</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             Tire suas dúvidas sobre nossos servidores de {gameData.name}
           </p>
         </div>
@@ -470,9 +470,9 @@ export default function PlansPage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
             {gameData.faq.map((item, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <h4 className="text-xl font-bold mb-2">{item.question}</h4>
-                <p className="text-gray-400">{item.answer}</p>
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                <h4 className="text-xl font-bold mb-2 text-gray-900">{item.question}</h4>
+                <p className="text-gray-600">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -481,14 +481,14 @@ export default function PlansPage({ params }: PageProps) {
 
       {/* CTA Final */}
       <div className="container mx-auto px-4 mt-24">
-        <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-gray-200 rounded-2xl p-8 md:p-12 relative overflow-hidden">
           {/* Efeitos de luz */}
-          <div className="absolute -top-24 -left-24 w-48 h-48 bg-purple-500/30 rounded-full filter blur-[80px]" />
-          <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-pink-500/30 rounded-full filter blur-[80px]" />
+          <div className="absolute -top-24 -left-24 w-48 h-48 bg-purple-200/30 rounded-full filter blur-[80px]" />
+          <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-pink-200/30 rounded-full filter blur-[80px]" />
 
           <div className="relative z-10 text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pronto para começar sua aventura?</h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Pronto para começar sua aventura?</h2>
+            <p className="text-xl text-gray-600 mb-8">
               Escolha o plano ideal para você e comece a jogar {gameData.name} com seus amigos agora mesmo!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -496,7 +496,7 @@ export default function PlansPage({ params }: PageProps) {
                 href={gameData.paymentLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-xl font-medium text-center transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 group-hover:scale-105"
               >
                 Escolher um Plano
               </Link>
@@ -505,7 +505,7 @@ export default function PlansPage({ params }: PageProps) {
                   href={gameData.communityLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-medium transition-colors border border-white/10"
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-xl font-medium transition-colors border border-gray-200"
                 >
                   Entrar no Discord
                 </Link>
