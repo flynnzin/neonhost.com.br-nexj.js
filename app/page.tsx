@@ -419,9 +419,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Background com grid quadriculado */}
+      {/* Background with grid pattern */}
       <div className="fixed inset-0 z-0">
-        {/* Grid quadriculado */}
+        {/* Grid pattern */}
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.08)_1px,transparent_1px)] bg-[size:24px_24px]"
@@ -429,17 +429,85 @@ export default function HomePage() {
           ></div>
         </div>
 
-        {/* Efeitos de blur coloridos */}
+        {/* Colored blur effects */}
         <div
           className="absolute inset-0"
           style={{
-            background: `
-            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.05) 0%, transparent 50%),
-            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.05) 0%, transparent 50%)
-          `,
+            background: `radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.05) 0%, transparent 50%), radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.05) 0%, transparent 50%)`,
           }}
         />
       </div>
+
+      {/* Structured data for the page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Hospedagem de Jogos no Brasil | NeonHost",
+            description:
+              "Hospedagem de alto desempenho com infraestrutura no Brasil, proteção Anti-DDoS e servidores otimizados para jogos",
+            url: "https://neonhost.com.br",
+            mainEntity: {
+              "@type": "FAQPage",
+              mainEntity: faqQuestions.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://neonhost.com.br",
+                },
+              ],
+            },
+            provider: {
+              "@type": "Organization",
+              name: "NeonHost",
+              url: "https://neonhost.com.br",
+            },
+          }),
+        }}
+      />
+
+      {/* Structured data for the service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Hospedagem de Jogos VPS",
+            description: "Serviços de hospedagem VPS otimizados para jogos com proteção Anti-DDoS",
+            provider: {
+              "@type": "Organization",
+              name: "NeonHost",
+            },
+            areaServed: "BR",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Planos de Hospedagem",
+              itemListElement: plans.map((plan) => ({
+                "@type": "Offer",
+                name: plan.name,
+                description: plan.description,
+                price: plan.price,
+                priceCurrency: "BRL",
+              })),
+            },
+          }),
+        }}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 z-10">
@@ -464,7 +532,7 @@ export default function HomePage() {
             Revolucionamos a hospedagem no Brasil com nossa infraestrutura exclusiva Neon Host™, combinando velocidade
             extrema, segurança avançada e tecnologia de ponta.
           </p>
-          {/* Features em grid */}
+          {/* Features in grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 backdrop-blur-sm border border-gray-200">
               <Zap className="h-5 w-5 text-purple-600" aria-hidden="true" />
@@ -486,14 +554,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção: Desempenho que Importa */}
+      {/* Section: Performance that Matters */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Desempenho que Importa</h2>
           </div>
 
-          {/* Métricas de Performance */}
+          {/* Performance Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
@@ -523,7 +591,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção: Recursos Principais */}
+      {/* Section: Main Features */}
       <section className="relative py-20 px-4 z-10 bg-white overflow-hidden">
         {/* Background grid pattern for this section */}
         <div
@@ -536,7 +604,7 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Proteção DDoS Empresarial */}
+            {/* Enterprise DDoS Protection */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
@@ -571,7 +639,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Hardware de Alta Performance */}
+            {/* High-Performance Hardware */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
@@ -606,7 +674,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Excelência em Rede */}
+            {/* Network Excellence */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 mr-4">
@@ -644,7 +712,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Seção: Nossas Garantias */}
+      {/* Section: Our Guarantees */}
       <section className="relative py-20 px-4 z-10 bg-white">
         {/* Background grid pattern for white section */}
         <div
@@ -657,10 +725,6 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-100 border border-pink-200 text-pink-600 text-sm font-medium mb-6">
-              <Shield className="h-4 w-4 mr-2" />
-              Nossas Garantias
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Compromisso com a Excelência
@@ -690,7 +754,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Otimizado */}
+      {/* FAQ Optimized */}
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
