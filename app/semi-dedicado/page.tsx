@@ -54,24 +54,24 @@ export default function VpsGamer() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#0a0a0e] text-white overflow-hidden relative">
-      {/* Background com blurs */}
+    <div className="min-h-screen bg-white text-gray-900 overflow-hidden relative">
+      {/* Background com grid sutil */}
       <div className="fixed inset-0 z-0">
-        {/* Grid quadriculado */}
+        {/* Grid quadriculado sutil */}
         <div className="absolute inset-0">
           <div
-            className="absolute inset-0 bg-[linear-gradient(rgba(118,67,201,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,67,201,0.12)_1px,transparent_1px)] bg-[size:24px_24px]"
+            className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:24px_24px]"
             style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
           ></div>
         </div>
 
-        {/* Efeitos de blur coloridos */}
+        {/* Efeitos de blur muito sutis */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-            radial-gradient(600px circle at top left, rgba(126, 34, 206, 0.15) 0%, transparent 50%),
-            radial-gradient(600px circle at bottom right, rgba(255, 62, 157, 0.15) 0%, transparent 50%)
+            radial-gradient(600px circle at top left, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+            radial-gradient(600px circle at bottom right, rgba(168, 85, 247, 0.03) 0%, transparent 50%)
           `,
           }}
         />
@@ -82,20 +82,17 @@ export default function VpsGamer() {
         <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
           <div className="text-center mb-12">
             <div>
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 text-sm font-medium mb-6">
+                <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                 Servidores Semi-Dedicados
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Semi-Dedicado
-              </span>{" "}
-              para seus Projetos
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <span className="text-indigo-600">Semi-Dedicado</span> para seus Projetos
             </h1>
 
-            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
               especializado para projetos que exigem alta performance.
             </p>
@@ -104,10 +101,8 @@ export default function VpsGamer() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-indigo-600">{stat.value}</div>
+                  <div className="text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -120,13 +115,13 @@ export default function VpsGamer() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-all duration-300 group backdrop-blur-sm"
+                className="p-6 rounded-2xl bg-gray-50 border border-gray-200 hover:border-indigo-300 transition-all duration-300 group"
               >
-                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-400 text-sm">{feature.description}</p>
+                <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -135,13 +130,10 @@ export default function VpsGamer() {
         {/* Planos Section - Cards Expansíveis */}
         <section className="py-20" id="plans">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Escolha seu{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Plano Ideal
-              </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Escolha seu <span className="text-indigo-600">Plano Ideal</span>
             </h2>
-            <p className="text-gray-400 mx-auto text-lg max-w-2xl">
+            <p className="text-gray-600 mx-auto text-lg max-w-2xl">
               Planos Semi-Dedicados com recursos garantidos e performance superior para seus projetos mais exigentes.
             </p>
           </div>
@@ -151,7 +143,7 @@ export default function VpsGamer() {
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/30 rounded-2xl transition-all duration-300"
+                className="group relative bg-white border border-gray-200 hover:border-indigo-300 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 {/* Header do Card */}
                 <div className="p-6">
@@ -160,16 +152,16 @@ export default function VpsGamer() {
                     <div className="flex items-center gap-4">
                       <button
                         onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center hover:scale-110 transition-transform duration-300"
                       >
                         {expandedCard === index ? (
-                          <ChevronUp className="h-4 w-4 text-purple-400" />
+                          <ChevronUp className="h-4 w-4 text-indigo-600" />
                         ) : (
-                          <ChevronDown className="h-4 w-4 text-purple-400" />
+                          <ChevronDown className="h-4 w-4 text-indigo-600" />
                         )}
                       </button>
                       <div>
-                        <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+                        <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
                       </div>
                     </div>
 
@@ -177,24 +169,24 @@ export default function VpsGamer() {
                     <div className="hidden lg:grid grid-cols-3 gap-8">
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
+                          <MemoryStick className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.ram}</span>
                         </div>
-                        <span className="text-xs text-gray-400">RAM Dedicada</span>
+                        <span className="text-xs text-gray-500">RAM Dedicada</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
+                          <Cpu className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.cores}</span>
                         </div>
-                        <span className="text-xs text-gray-400">CPU Cores</span>
+                        <span className="text-xs text-gray-500">CPU Cores</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
+                          <HardDrive className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.ssd}</span>
                         </div>
-                        <span className="text-xs text-gray-400">SSD NVMe</span>
+                        <span className="text-xs text-gray-500">SSD NVMe</span>
                       </div>
                     </div>
 
@@ -202,19 +194,19 @@ export default function VpsGamer() {
                     <div className="flex items-center gap-6">
                       <div className="text-right">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-2xl md:text-3xl font-bold text-white">R${plan.price}</span>
-                          <span className="text-sm text-gray-400"></span>
+                          <span className="text-2xl md:text-3xl font-bold text-gray-900">R${plan.price}</span>
+                          <span className="text-sm text-gray-500"></span>
                         </div>
                       </div>
 
                       {plan.link ? (
                         <Link href={plan.link} target="_blank">
-                          <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
+                          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">
                             Contratar Agora
                           </Button>
                         </Link>
                       ) : (
-                        <Button className="bg-gray-600 text-gray-400 cursor-not-allowed px-6 py-3 rounded-xl" disabled>
+                        <Button className="bg-gray-300 text-gray-500 cursor-not-allowed px-6 py-3 rounded-xl" disabled>
                           Sem Estoque
                         </Button>
                       )}
@@ -222,28 +214,28 @@ export default function VpsGamer() {
                   </div>
 
                   {/* Mobile Specifications */}
-                  <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
+                  <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ram}</span>
+                          <MemoryStick className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.ram}</span>
                         </div>
-                        <span className="text-xs text-gray-400">RAM</span>
+                        <span className="text-xs text-gray-500">RAM</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.cores}</span>
+                          <Cpu className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.cores}</span>
                         </div>
-                        <span className="text-xs text-gray-400">CPU</span>
+                        <span className="text-xs text-gray-500">CPU</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-purple-400" />
-                          <span className="font-semibold text-white">{plan.description.ssd}</span>
+                          <HardDrive className="h-4 w-4 text-indigo-600" />
+                          <span className="font-semibold text-gray-900">{plan.description.ssd}</span>
                         </div>
-                        <span className="text-xs text-gray-400">SSD</span>
+                        <span className="text-xs text-gray-500">SSD</span>
                       </div>
                     </div>
                   </div>
@@ -254,14 +246,14 @@ export default function VpsGamer() {
                   className={`overflow-hidden ${expandedCard === index ? "h-auto" : "h-0"}`}
                   style={{ transition: "height 0.3s" }}
                 >
-                  <div className="px-6 pb-6 border-t border-white/10">
+                  <div className="px-6 pb-6 border-t border-gray-200">
                     <div className="pt-6">
-                      <h4 className="text-lg font-semibold text-white mb-4">Recursos inclusos:</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Recursos inclusos:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {plan.description.attrs.map((attr, attrIndex) => (
                           <div key={attrIndex} className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{attr}</span>
+                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">{attr}</span>
                           </div>
                         ))}
                       </div>
@@ -275,88 +267,19 @@ export default function VpsGamer() {
 
         {/* CTA Section */}
         <section className="py-16">
-          <div className="rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 p-8 md:p-12 text-center backdrop-blur-sm">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <div className="rounded-2xl bg-indigo-50 border border-indigo-200 p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Precisa de uma configuração personalizada?
             </h2>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
               Nossa equipe de especialistas pode criar uma solução sob medida para suas necessidades específicas.
             </p>
-            <Button className="bg-white text-purple-600 hover:bg-white/90 font-bold px-8 py-3">
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3">
               Falar com Especialista
             </Button>
           </div>
         </section>
 
-        <ComparisonTable />
-
-        <Divider className="mt-20" />
-
-        {/* FAQ Section */}
-        <section className="mt-16 mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
-              Perguntas Frequentes
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços Semi-Dedicados.</p>
-          </div>
-          <AccordionItems />
-        </section>
-
-        {/* Support Section */}
-        <section className="mt-16">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
-              Suporte Especializado
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Nossa equipe está pronta para ajudar você 24 horas por dia, 7 dias por semana.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-20">
-            {[
-              {
-                icon: <Info size={48} />,
-                title: "Consultoria Especializada",
-                description: "Ajudamos você a escolher a melhor configuração para seu projeto específico.",
-                link: "https://discord.gg/rGP7prMqF3",
-                buttonText: "Falar com Consultor",
-              },
-              {
-                icon: <Info size={48} />,
-                title: "Suporte 24/7",
-                description:
-                  "Suporte técnico especializado disponível 24 horas por dia para resolver qualquer problema.",
-                link: "https://discord.gg/rGP7prMqF3",
-                buttonText: "Acessar Suporte",
-              },
-              {
-                icon: <Info size={48} />,
-                title: "Central de Ajuda",
-                description: "Base de conhecimento com tutoriais e guias para otimizar seu servidor.",
-                link: "https://app.neonhost.com.br/submitticket.php?step=2&deptid=1",
-                buttonText: "Ver Tutoriais",
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="p-6 border-none bg-white/5 hover:bg-white/10 transition-all duration-300 group backdrop-blur-sm"
-              >
-                <div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
-                </div>
-                <h3 className="font-bold text-white text-xl mb-3">{item.title}</h3>
-                <p className="text-gray-400 mb-6">{item.description}</p>
-                <Link href={item.link} target="_blank">
-                  <Button variant="ghost" className="w-full">
-                    {item.buttonText}
-                  </Button>
-                </Link>
-              </Card>
-            ))}
-          </div>
-        </section>
       </section>
     </div>
   )

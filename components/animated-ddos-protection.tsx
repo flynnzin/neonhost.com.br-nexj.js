@@ -65,7 +65,7 @@ export function AnimatedDdosProtection() {
 
     // Função para desenhar a grade
     const drawGrid = () => {
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.05)"
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.05)"
       ctx.lineWidth = 1
 
       // Linhas horizontais
@@ -87,10 +87,9 @@ export function AnimatedDdosProtection() {
 
     // Função para desenhar a linha de proteção
     const drawProtectionLine = () => {
-      // Gradiente para a linha
       const gradient = ctx.createLinearGradient(protectionLineX, 0, protectionLineX + 5, 0)
-      gradient.addColorStop(0, "rgba(120, 80, 255, 0.8)")
-      gradient.addColorStop(1, "rgba(120, 80, 255, 0.2)")
+      gradient.addColorStop(0, "rgba(99, 102, 241, 0.8)")
+      gradient.addColorStop(1, "rgba(99, 102, 241, 0.2)")
 
       ctx.fillStyle = gradient
       ctx.fillRect(protectionLineX, 0, 2, canvas.height)
@@ -99,7 +98,7 @@ export function AnimatedDdosProtection() {
       const time = Date.now() / 1000
       const pulseY = (Math.sin(time * 2) * 0.5 + 0.5) * canvas.height
 
-      ctx.fillStyle = "rgba(180, 120, 255, 0.8)"
+      ctx.fillStyle = "rgba(99, 102, 241, 0.8)"
       ctx.beginPath()
       ctx.arc(protectionLineX, pulseY, 4, 0, Math.PI * 2)
       ctx.fill()
@@ -109,30 +108,24 @@ export function AnimatedDdosProtection() {
     const updateAttacks = () => {
       attacks.forEach((attack) => {
         if (!attack.active) {
-          // Reativar ataques inativos aleatoriamente
           if (Math.random() < 0.02) {
             attack.active = true
-            attack.x = Math.random() * 50 // Começar da esquerda
+            attack.x = Math.random() * 50
             attack.y = Math.random() * canvas.height
           }
           return
         }
 
-        // Mover o ataque
         attack.x += attack.speed
 
-        // Verificar colisão com a linha de proteção
         if (attack.x >= protectionLineX - attack.size) {
-          // Criar efeito de colisão
           ctx.fillStyle = "rgba(255, 100, 100, 0.8)"
           ctx.beginPath()
           ctx.arc(attack.x, attack.y, attack.size * 2, 0, Math.PI * 2)
           ctx.fill()
 
-          // Desativar o ataque
           attack.active = false
 
-          // Efeito de pulso no escudo mais próximo
           const nearestShield = shields.reduce((nearest, shield) => {
             const distCurrent = Math.abs(shield.y - attack.y)
             const distNearest = Math.abs(nearest.y - attack.y)
@@ -145,7 +138,6 @@ export function AnimatedDdosProtection() {
           return
         }
 
-        // Desenhar o ataque
         const gradient = ctx.createRadialGradient(attack.x, attack.y, 0, attack.x, attack.y, attack.size)
         gradient.addColorStop(0, "rgba(255, 80, 80, 0.8)")
         gradient.addColorStop(1, "rgba(255, 80, 80, 0)")
@@ -155,7 +147,6 @@ export function AnimatedDdosProtection() {
         ctx.arc(attack.x, attack.y, attack.size, 0, Math.PI * 2)
         ctx.fill()
 
-        // Rastro do ataque
         ctx.strokeStyle = "rgba(255, 80, 80, 0.3)"
         ctx.lineWidth = 1
         ctx.beginPath()
@@ -168,7 +159,6 @@ export function AnimatedDdosProtection() {
     // Função para atualizar e desenhar os escudos
     const updateShields = () => {
       shields.forEach((shield) => {
-        // Diminuir o tamanho e opacidade gradualmente
         if (shield.size > 2 + Math.random() * 3) {
           shield.size *= 0.95
         }
@@ -177,8 +167,7 @@ export function AnimatedDdosProtection() {
           shield.opacity *= 0.95
         }
 
-        // Desenhar o escudo
-        ctx.fillStyle = `rgba(120, 80, 255, ${shield.opacity})`
+        ctx.fillStyle = `rgba(99, 102, 241, ${shield.opacity})`
         ctx.beginPath()
         ctx.arc(shield.x, shield.y, shield.size, 0, Math.PI * 2)
         ctx.fill()
@@ -187,16 +176,13 @@ export function AnimatedDdosProtection() {
 
     // Função de animação principal
     const animate = () => {
-      // Limpar o canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Desenhar elementos
       drawGrid()
       drawProtectionLine()
       updateShields()
       updateAttacks()
 
-      // Continuar a animação
       requestAnimationFrame(animate)
     }
 
@@ -210,15 +196,15 @@ export function AnimatedDdosProtection() {
   }, [])
 
   return (
-    <div className="relative w-full h-[200px] bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10">
+    <div className="relative w-full h-[200px] bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
       <div className="absolute top-3 left-3 z-10 flex items-center gap-2">
-        <Shield className="h-5 w-5 text-purple-400" />
-        <span className="text-sm font-medium text-white">Proteção DDoS em tempo real</span>
+        <Shield className="h-5 w-5 text-indigo-600" />
+        <span className="text-sm font-medium text-gray-900">Proteção DDoS em tempo real</span>
       </div>
 
-      <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2 bg-black/30 px-3 py-1 rounded-full">
-        <ZapOff className="h-4 w-4 text-red-400" />
-        <span className="text-xs font-medium text-white">Ataques bloqueados</span>
+      <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2 bg-white/80 px-3 py-1 rounded-full border border-gray-200">
+        <ZapOff className="h-4 w-4 text-red-500" />
+        <span className="text-xs font-medium text-gray-700">Ataques bloqueados</span>
       </div>
 
       <canvas ref={canvasRef} className="w-full h-full" />
