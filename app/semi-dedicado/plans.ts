@@ -16,8 +16,8 @@ export const plans: Plan[] = [
 		price: "374,96",
 		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicado-1",
 		description: {
-			ram: "18GB",
-			ssd: "110GB",
+			ram: "16GB",
+			ssd: "100GB",
 			cores: "7 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
@@ -28,8 +28,8 @@ export const plans: Plan[] = [
 		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicada-2",
 		description: {
 			ram: "24GB",
-			ssd: "250GB",
-			cores: "8 núcleos",
+			ssd: "150GB",
+			cores: "10 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
@@ -39,8 +39,8 @@ export const plans: Plan[] = [
 		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicada-3",
 		description: {
 			ram: "32GB",
-			ssd: "250GB",
-			cores: "9 núcleos",
+			ssd: "200GB",
+			cores: "12 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
@@ -50,8 +50,8 @@ export const plans: Plan[] = [
 		link: "https://app.neonhost.com.br/index.php?rp=/store/semi-dedicados/semi-dedicada-4",
 		description: {
 			ram: "64GB",
-			ssd: "350GB",
-			cores: "9 núcleos",
+			ssd: "320GB",
+			cores: "16 núcleos",
 			attrs: ["Anti-DDoS Incluso", "AMD Ryzen 9","Cache-Externo","1Gbps","Painel de Controle","30TB Trafego"],
 		},
 	},
