@@ -66,7 +66,7 @@ export default function MinecraftPage() {
                 Crie experiências incríveis com processadores de última geração e proteção Anti-DDoS ilimitada.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg shadow-purple-500/25">
                   Começar Agora
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -74,7 +74,7 @@ export default function MinecraftPage() {
                 <button className="border-2 border-purple-200 text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
                   Ver Planos
                 </button>
-              </div>
+              </div> */}
             </motion.div>
 
             {/* Right Content - Image */}
@@ -481,7 +481,7 @@ export default function MinecraftPage() {
                 Crie seu servidor Minecraft agora e receba migração gratuita dos seus mundos existentes
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <button className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg">
                   Começar Agora
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -490,7 +490,7 @@ export default function MinecraftPage() {
                   <Headphones className="w-5 h-5 mr-2" />
                   Falar com Suporte
                 </button>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
