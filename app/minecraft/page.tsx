@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { minecraftPlans } from "./plans" // Importa os planos
+import { minecraftPlans } from "./plans"
 import {
   Users,
   Database,
@@ -20,7 +20,12 @@ import {
   Headphones,
   Wrench,
   Rocket,
-  Play,
+  Server,
+  Globe,
+  Lock,
+  Gauge,
+  Package,
+  RefreshCw,
 } from "lucide-react"
 
 export default function MinecraftPage() {
@@ -31,102 +36,199 @@ export default function MinecraftPage() {
     setExpandedPlan(expandedPlan === planId ? null : planId)
   }
 
-  // Filtra os planos com base na edição selecionada
   const filteredPlans = minecraftPlans.filter((plan) => plan.edition === selectedEdition)
 
   return (
-    <div className="min-h-screen relative bg-white">
-      {/* White Theme Grid Background */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.08)_1px,transparent_1px)] bg-[size:24px_24px]"
-          style={{ maskImage: "linear-gradient(transparent, black, transparent)" }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative z-10 py-20 px-4">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-purple-50 to-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
             >
-              <div className="space-y-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="inline-block"
-                >
-                  <div className="bg-indigo-50 text-indigo-600 border border-indigo-200 mb-4 px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">
-                    <Zap className="w-3 h-3 mr-1" />
-                    Servidores de Alta Performance
-                  </div>
-                </motion.div>
+              <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
+                <Zap className="w-4 h-4 text-purple-600" />
+                <span className="text-purple-700 text-sm font-medium">Powered by AMD Ryzen 9 7900x</span>
+              </div>
 
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  <span className="text-gray-900">Eleve o nível do seu </span>
-                  <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
-                    servidor
-                  </span>
-                  <br />
-                  <span className="text-gray-900">de minecraft</span>
-                </h1>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-balance">
+                <span className="text-gray-900">Servidores Minecraft</span>
+                <br />
+                <span className="text-purple-600">de alta performance</span>
+              </h1>
 
-                <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
-                  Profissionalize seu servidor com <span className="text-indigo-600 font-semibold">AMD Ryzen 9</span> e
-                  proteção <span className="text-purple-600 font-semibold">Anti-DDoS</span> de alta capacidade!
-                </p>
+              <p className="text-xl text-gray-600 leading-relaxed text-pretty">
+                Crie experiências incríveis com processadores de última geração e proteção Anti-DDoS ilimitada.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg shadow-purple-500/25">
+                  Começar Agora
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+                <button className="border-2 border-purple-200 text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
+                  Ver Planos
+                </button>
               </div>
             </motion.div>
 
-            {/* Right Content - Minecraft Character with Subtle Effects */}
+            {/* Right Content - Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="relative flex justify-center lg:justify-end"
+            >
+              <div className="relative w-[400px] h-[400px] bg-gradient-to-br from-purple-100 to-purple-50 rounded-3xl flex items-center justify-center shadow-xl">
+                <Image src="/games/1.webp" alt="Minecraft Server" width={300} height={300} className="object-contain" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-white border-y border-gray-100">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: Server, value: "99.9%", label: "Uptime garantido" },
+              { icon: Gauge, value: "<5ms", label: "Latência média" },
+              { icon: Globe, value: "24/7", label: "Suporte ativo" },
+              { icon: Lock, value: "100%", label: "Proteção DDoS" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 rounded-2xl mb-4">
+                  <stat.icon className="w-7 h-7 text-purple-600" />
+                </div>
+                <p className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</p>
+                <p className="text-sm text-gray-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Automatic Features Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
+        <div className="container mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
+              Gerenciamento <span className="text-purple-600">automático</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+              Instale mods e troque versões com apenas um clique através do nosso painel avançado
+            </p>
+          </motion.div>
+
+          <div className="space-y-16">
+            {/* Mod Installer - Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            >
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
+                  <Package className="w-4 h-4 text-purple-600" />
+                  <span className="text-purple-700 text-sm font-medium">Instalação Automática</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-balance">
+                  Instalador de Mods Automático
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed text-pretty">
+                  Escolha entre dezenas de versões do Minecraft incluindo Vanilla, Paper, Fabric, Forge, Spigot e muito
+                  mais. Instale com apenas um clique e comece a jogar imediatamente.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Suporte para todas as versões populares",
+                    "Instalação com um clique",
+                    "Configuração automática otimizada",
+                    "Compatibilidade garantida",
+                  ].map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-purple-600" />
+                      </div>
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                  <Image
+                    src="/images/minecraft/2.png"
+                    alt="Instalador de Mods Automático"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-purple-600 rounded-full blur-3xl opacity-20"></div>
+              </div>
+            </motion.div>
+
+            {/* Version Changer - Right (offset down) */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:mt-20"
             >
-              <div className="relative">
-                <div className="relative w-80 h-80 bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-center shadow-lg">
-                  <div className="relative z-10">
-                    <Image
-                      src="/games/1.webp"
-                      alt="Minecraft Server"
-                      width={200}
-                      height={200}
-                      className="object-contain"
-                    />
-                  </div>
+              <div className="relative order-2 lg:order-1">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                  <Image
+                    src="/images/minecraft/1.png"
+                    alt="Mudança Automática de Versão"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto"
+                  />
                 </div>
-
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute -top-6 -right-6 w-12 h-12 bg-indigo-500 rounded-lg shadow-lg flex items-center justify-center"
-                >
-                  <Database className="w-6 h-6 text-white" />
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute -bottom-6 -left-6 w-10 h-10 bg-purple-500 rounded-lg shadow-lg flex items-center justify-center"
-                >
-                  <Shield className="w-5 h-5 text-white" />
-                </motion.div>
-
-                <motion.div
-                  animate={{ x: [-5, 5, -5] }}
-                  transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute top-1/2 -left-8 w-8 h-8 bg-indigo-400 rounded-lg shadow-lg flex items-center justify-center"
-                >
-                  <Zap className="w-4 h-4 text-white" />
-                </motion.div>
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-600 rounded-full blur-3xl opacity-20"></div>
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
+                  <RefreshCw className="w-4 h-4 text-purple-600" />
+                  <span className="text-purple-700 text-sm font-medium">Atualização Instantânea</span>
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-balance">
+                  Mudança de Versão Automática
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed text-pretty">
+                  Navegue por milhares de modpacks populares do CurseForge e instale diretamente no seu servidor.
+                  Atualize ou troque de versão sem complicação e sem perder seus dados.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    "Acesso a milhares de modpacks",
+                    "Atualização sem downtime",
+                    "Backup automático antes de trocar",
+                    "Rollback com um clique",
+                  ].map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-purple-600" />
+                      </div>
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </div>
@@ -134,35 +236,31 @@ export default function MinecraftPage() {
       </section>
 
       {/* Plans Section */}
-      <section className="relative z-10 py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Escolha seu{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                plano ideal
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
+              Escolha o plano <span className="text-purple-600">perfeito</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Servidores otimizados para Minecraft com processadores de{" "}
-              <span className="text-indigo-600">alta performance</span>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+              Todos os planos incluem AMD Ryzen 9 7900x e proteção Anti-DDoS ilimitada
             </p>
           </motion.div>
 
           {/* Edition Selector */}
           <div className="flex justify-center mb-12">
-            <div className="flex bg-gray-100 rounded-xl p-1 border border-gray-200">
+            <div className="flex bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
               <button
                 onClick={() => setSelectedEdition("java")}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+                className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                   selectedEdition === "java"
-                    ? "bg-indigo-500 text-white shadow-lg"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    ? "bg-purple-600 text-white shadow-md"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 <Database className="w-4 h-4" />
@@ -172,82 +270,90 @@ export default function MinecraftPage() {
           </div>
 
           {/* Plans Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-6">
             {filteredPlans.map((plan, index) => (
               <motion.div
                 key={plan.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group"
               >
                 <div
-                  className={`relative bg-white border transition-all duration-300 hover:shadow-lg rounded-lg ${
+                  className={`relative bg-white border-2 transition-all duration-300 hover:shadow-xl rounded-2xl overflow-visible h-full ${
                     plan.isPopular
-                      ? "border-indigo-200 shadow-md shadow-indigo-100"
+                      ? "border-purple-500 shadow-lg shadow-purple-500/10"
                       : plan.isRecommended
-                        ? "border-purple-200 shadow-md shadow-purple-100"
-                        : "border-gray-200 hover:border-indigo-200"
+                        ? "border-purple-400 shadow-lg shadow-purple-400/10"
+                        : "border-gray-200 hover:border-purple-300"
                   }`}
                 >
                   {plan.isPopular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">
-                      <Crown className="w-3 h-3 mr-1" />
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold inline-flex items-center shadow-md z-10 whitespace-nowrap">
+                      <Crown className="w-3.5 h-3.5 mr-1.5" />
                       Mais Popular
                     </div>
                   )}
                   {plan.isRecommended && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium inline-flex items-center">
-                      <Star className="w-3 h-3 mr-1" />
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold inline-flex items-center shadow-md z-10 whitespace-nowrap">
+                      <Star className="w-3.5 h-3.5 mr-1.5" />
                       Recomendado
                     </div>
                   )}
 
-                  <div className="text-center pb-4 relative z-10 p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                          R$ {plan.price.toFixed(2)}
-                        </span>
-                        {plan.originalPrice && (
-                          <span className="text-lg text-gray-400 line-through">R$ {plan.originalPrice.toFixed(2)}</span>
-                        )}
-                      </div>
-                      {plan.discount && (
-                        <div className="bg-green-500 text-white px-2 py-1 rounded text-sm font-medium inline-block">
-                          {plan.discount}% OFF
+                  <div className="p-8">
+                    {/* Plan Header */}
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-center gap-3">
+                          <span className="text-4xl font-bold text-purple-600">R$ {plan.price.toFixed(2)}</span>
+                          {plan.originalPrice && (
+                            <span className="text-lg text-gray-400 line-through">
+                              R$ {plan.originalPrice.toFixed(2)}
+                            </span>
+                          )}
                         </div>
-                      )}
-                      <p className="text-sm text-gray-500">/mês</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 relative z-10 p-6 pt-0">
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-indigo-500" />
-                        <span className="text-gray-700">{plan.players} jogadores</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Database className="w-4 h-4 text-purple-500" />
-                        <span className="text-gray-700">{plan.ram} RAM</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Cpu className="w-4 h-4 text-indigo-500" />
-                        <span className="text-gray-700">{plan.cpu}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <HardDrive className="w-4 h-4 text-purple-500" />
-                        <span className="text-gray-700">{plan.storage}</span>
+                        {plan.discount && (
+                          <div className="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {plan.discount}% OFF
+                          </div>
+                        )}
+                        <p className="text-sm text-gray-500">/mês</p>
                       </div>
                     </div>
 
-                    <div className="space-y-2">
+                    {/* Specs Grid */}
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
+                        <Users className="w-5 h-5 text-purple-600 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600">Jogadores</p>
+                        <p className="text-sm font-bold text-gray-900">{plan.players}</p>
+                      </div>
+                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
+                        <Database className="w-5 h-5 text-purple-600 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600">RAM</p>
+                        <p className="text-sm font-bold text-gray-900">{plan.ram}</p>
+                      </div>
+                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
+                        <Cpu className="w-5 h-5 text-purple-600 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600">CPU</p>
+                        <p className="text-sm font-bold text-gray-900">{plan.cpu}</p>
+                      </div>
+                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
+                        <HardDrive className="w-5 h-5 text-purple-600 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600">Storage</p>
+                        <p className="text-sm font-bold text-gray-900">{plan.storage}</p>
+                      </div>
+                    </div>
+
+                    {/* Features List */}
+                    <div className="space-y-3 mb-6">
                       {plan.features
                         .slice(0, expandedPlan === plan.id ? plan.features.length : 4)
                         .map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm">
-                            <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <div key={idx} className="flex items-start gap-2 text-sm">
+                            <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
                             <span className="text-gray-700">{feature}</span>
                           </div>
                         ))}
@@ -256,7 +362,7 @@ export default function MinecraftPage() {
                     {plan.features.length > 4 && (
                       <button
                         onClick={() => togglePlan(plan.id)}
-                        className="w-full text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50 px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium flex items-center justify-center"
+                        className="w-full text-purple-600 hover:bg-purple-50 px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium flex items-center justify-center mb-4"
                       >
                         {expandedPlan === plan.id ? (
                           <>
@@ -264,18 +370,19 @@ export default function MinecraftPage() {
                           </>
                         ) : (
                           <>
-                            Ver mais recursos <ChevronDown className="w-4 h-4 ml-1" />
+                            Ver todos os recursos <ChevronDown className="w-4 h-4 ml-1" />
                           </>
                         )}
                       </button>
                     )}
 
+                    {/* CTA Button */}
                     <button
-                      className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center"
+                      className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-md"
                       onClick={() => window.open(plan.paymentLink, "_blank")}
                     >
                       Contratar Agora
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      <ArrowRight className="w-5 h-5 ml-2" />
                     </button>
                   </div>
                 </div>
@@ -286,63 +393,53 @@ export default function MinecraftPage() {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 py-20 px-4">
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Por que escolher a{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                NeonHost
-              </span>
-              ?
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
+              Recursos <span className="text-purple-600">exclusivos</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Recursos exclusivos para garantir a melhor experiência no seu servidor Minecraft
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+              Tudo que você precisa para criar o servidor Minecraft perfeito
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: Rocket,
-                title: "AMD Ryzen 9 7950X",
-                description: "Processadores de última geração para máxima performance",
-                color: "from-indigo-500 to-purple-600",
+                title: "AMD Ryzen 9 7900x",
+                description: "Processadores de última geração com 12 núcleos e 24 threads para performance máxima",
               },
               {
                 icon: Shield,
                 title: "Proteção Anti-DDoS",
-                description: "Proteção avançada contra ataques DDoS incluída gratuitamente",
-                color: "from-purple-500 to-indigo-600",
+                description: "Proteção ilimitada contra ataques DDoS incluída em todos os planos",
               },
               {
                 icon: Database,
                 title: "Backup Automático",
-                description: "Backups diários automáticos para proteger seus mundos",
-                color: "from-indigo-500 to-blue-600",
+                description: "Backups diários automáticos para garantir a segurança dos seus mundos",
               },
               {
                 icon: Zap,
                 title: "Instalação Instantânea",
-                description: "Modpacks e plugins instalados com apenas um clique",
-                color: "from-purple-500 to-pink-600",
+                description: "Modpacks e plugins instalados com apenas um clique através do painel",
               },
               {
                 icon: Headphones,
                 title: "Suporte 24/7",
-                description: "Equipe especializada disponível 24 horas por dia",
-                color: "from-indigo-500 to-purple-600",
+                description: "Equipe especializada disponível 24 horas por dia, 7 dias por semana",
               },
               {
                 icon: Wrench,
                 title: "Painel Avançado",
-                description: "Controle total do seu servidor através do nosso painel",
-                color: "from-purple-500 to-indigo-600",
+                description: "Controle total do seu servidor através do nosso painel intuitivo",
               },
             ].map((feature, index) => (
               <motion.div
@@ -350,19 +447,16 @@ export default function MinecraftPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group"
               >
-                <div className="bg-white border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all duration-300 h-full group rounded-lg">
-                  <div className="p-6 text-center relative z-10">
-                    <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <feature.icon className="w-12 h-12 text-indigo-500 group-hover:text-purple-500 transition-colors duration-300" />
+                <div className="bg-white border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300 h-full rounded-2xl p-8">
+                  <div className="mb-6">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 rounded-2xl">
+                      <feature.icon className="w-7 h-7 text-purple-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                      {feature.description}
-                    </p>
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -371,40 +465,31 @@ export default function MinecraftPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl p-12 md:p-16 text-center shadow-xl"
           >
-            <div className="relative bg-gray-50 rounded-2xl p-12 border border-gray-200 shadow-lg">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <h2 className="text-4xl font-bold text-gray-900">
-                    Pronto para criar seu servidor dos{" "}
-                    <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                      sonhos
-                    </span>
-                    ?
-                  </h2>
-                  <p className="text-xl text-gray-600">
-                    Comece agora mesmo e receba <span className="text-indigo-600 font-semibold">migração gratuita</span>{" "}
-                    dos seus mundos existentes
-                  </p>
-                </div>
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white text-balance">
+                Pronto para começar sua aventura?
+              </h2>
+              <p className="text-xl text-purple-100 max-w-2xl mx-auto text-pretty">
+                Crie seu servidor Minecraft agora e receba migração gratuita dos seus mundos existentes
+              </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 text-lg shadow-lg rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
-                    <Play className="w-5 h-5 mr-2" />
-                    Começar Agora
-                  </button>
-                  <button className="border-2 border-indigo-300 text-indigo-600 hover:bg-indigo-50 hover:border-indigo-400 px-8 py-3 text-lg bg-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
-                    <Headphones className="w-5 h-5 mr-2" />
-                    Falar com Suporte
-                  </button>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <button className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg">
+                  Começar Agora
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center">
+                  <Headphones className="w-5 h-5 mr-2" />
+                  Falar com Suporte
+                </button>
               </div>
             </div>
           </motion.div>
