@@ -19,7 +19,7 @@ export const plans = [
   },
   {
     name: "NeonSpeed",
-    price: "129,90",
+    price: "149,90",
     link: "https://app.neonhost.com.br/index.php?rp=/store/vps-fivem/vps-fivem-2",
     description: {
       ram: "6GB",
