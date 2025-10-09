@@ -1787,7 +1787,111 @@ export const gamesConfig: Game[] = [
     ],
   },
 
-
+    //  Icarus
+  {
+    id: "icarus",
+    name: "Icarus",
+    slug: "icarus",
+    image: "/games/icarus.webp",
+    logo: "/games/icarus.webp",
+    featuredImage: "/games/icarus.webp",
+    description:
+      "ICARUS é um jogo de sobrevivência PvE com modos de mundo aberto persistentes e baseados em missões para até oito jogadores cooperativos.",
+    shortDescription: "Sobreviva",
+    price: 89.90,
+    category: "Simulação",
+    rating: 4.8,
+    players: "6.9K",
+    paymentLink: "https://app.neonhost.com.br/games/icarus",
+    vpsLink: "/vps-gamer",
+    communityLink: "https://discord.gg/neonhost",
+    platforms: ["PC"],
+    developer: "RocketWerkz",
+    isNew: true,
+    isPopular: false,
+    features: [
+      "Mods Steam Workshop",
+      "Configuração Avançada",
+      "Backup Automático",
+      "Suporte 24/7",
+      "Anti-DDoS Incluído",
+      "Painel de Controle",
+      "Crossplay",
+      "Cluster Support",
+    ],
+    minPlayers: 1,
+    maxPlayers: 12,
+    requirements: {
+      ram: "6GB mínimo",
+      cpu: "Intel i5 ou AMD equivalente",
+      storage: "20GB disponível",
+    },
+    plans: [
+      {
+        id: "icarus-6gb",
+        name: "Icarus - 6GB",
+        price: 89.90,
+        players: 3,
+        ram: "6GB",
+        cpu: "4 vCores",
+        storage: "15GB NVMe",
+        features: ["Painel Web", "Backup Automático", "Suporte 24/7", "Anti-DDoS"],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/icarus/icarus-6gb",
+      },
+      {
+        id: "icarus-10gb",
+        name: "Icarus - 10GB",
+        price: 109.78,
+        players: 6,
+        ram: "10GB",
+        cpu: "4 vCores",
+        storage: "20GB NVMe",
+        features: [
+          "Painel Web",
+          "Backup Automático",
+          "Suporte 24/7",
+          "Anti-DDoS",
+          "Configuração Avançada",
+        ],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/icarus/icarus-10gb",
+      },
+      {
+        id: "Icarus-16gb",
+        name: "Icarus - 16GB",
+        price: 139.90,
+        players: 8,
+        ram: "16GB",
+        cpu: "4 vCores",
+        storage: "25GB NVMe",
+        features: [
+          "Painel Web",
+          "Backup Automático",
+          "Suporte 24/7",
+          "Anti-DDoS",
+          "Configuração Avançada",
+        ],
+        paymentLink: "https://app.neonhost.com.br/index.php?rp=/store/icarus/icarus-16gb",
+      },
+    ],
+    faq: [
+      {
+        question: "Suporta mods do Steam Workshop?",
+        answer: "Sim, você pode instalar qualquer mod disponível no Steam Workshop automaticamente.",
+      },
+      {
+        question: "O que é cluster?",
+        answer: "Cluster permite conectar múltiplos mapas ARK para transferir personagens e itens entre eles.",
+      },
+    ],
+    testimonials: [
+      // {
+      //   title: "Servidor estável",
+      //   author: "Lucas Ferreira",
+      //   content: "Jogo ARK há anos, esse é o servidor mais estável que já usei. Recomendo!",
+      //   rating: 5,
+      // },
+    ],
+  },
 
 
 
