@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://neonhost.com.br/
+Host: https://www.neonhost.com.br/
 
 # Sitemaps
-Sitemap: https://neonhost.com.br/sitemap.xml
+Sitemap: https://www.neonhost.com.br/sitemap.xml
