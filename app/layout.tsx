@@ -421,7 +421,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://neonhost.com.br/og-image.png",
+        url: "/bannernh.png",
         width: 1200,
         height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
@@ -437,7 +437,7 @@ export const metadata: Metadata = {
     creator: "@neonhost",
     images: [
       {
-        url: "https://neonhost.com.br/og-image.png",
+        url: "/bannernh.png",
         width: 1200,
         height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
