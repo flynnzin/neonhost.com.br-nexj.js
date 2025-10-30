@@ -509,11 +509,11 @@ export const metadata: Metadata = {
     siteName: "NeonHost",
     images: [
       {
-        url: "/bannernh.png",
-        width: 3890,
-        height: 1290,
-        alt: "NeonHost - Servidores Dedicados",
-      },
+				url: "/NeonHost.jpg",
+				width: 1280,
+				height: 630,
+				alt: "NeonHost - Hospedagem de Jogos no Brasil",
+			},
     ],
   },
   robots: {
@@ -532,7 +532,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     description:
       "Servidores Dedicados com processadores AMD Ryzen, até 128GB de RAM DDR5 e SSD NVMe. Performance e confiabilidade para suas aplicações.",
-    images: ["/bannernh.png"],
+    images: ["/NeonHost.jpg"],
   },
   alternates: {
     canonical: "https://neonhost.com.br/dedicados",

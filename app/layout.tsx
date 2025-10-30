@@ -421,9 +421,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/bannernh.png",
-        width: 1200,
-        height: 630,
+        url: "/NeonHost.jpg",
+        width: 1280,
+        height: 853,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
       },
     ],
@@ -437,8 +437,8 @@ export const metadata: Metadata = {
     creator: "@neonhost",
     images: [
       {
-        url: "/bannernh.png",
-        width: 1200,
+        url: "/NeonHost.jpg",
+        width: 1280,
         height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
       },
@@ -486,7 +486,6 @@ export default async function RootLayout({
             "@type": "Organization",
             name: "NeonHost",
             url: "https://neonhost.com.br",
-            logo: "https://neonhost.com.br/logo.png",
             description:
               "Hospedagem de jogos no Brasil com VPS Gamer, proteção Anti-DDoS e infraestrutura de alta performance",
             address: {

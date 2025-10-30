@@ -509,10 +509,10 @@ export const metadata: Metadata = {
 		siteName: "NeonHost",
 		images: [
 			{
-				url: "/bannernh.png",
-				width: 3890,
-				height: 1290,
-				alt: "NeonHost - Hospedagem de FiveM",
+				url: "/NeonHost.jpg",
+				width: 1280,
+				height: 630,
+				alt: "NeonHost - Hospedagem de Jogos no Brasil",
 			},
 		],
 	},
@@ -532,7 +532,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		description:
 			"Hospede seu servidor GTA RP com proteção DDoS, instalação automática de txAdmin, e suporte a ESX/vRP. VPS Gamer com ping baixo em São Paulo.",
-		images: ["/bannernh.png"],
+		images: ["/NeonHost.jpg"],
 	},
 	alternates: {
 		canonical: "https://neonhost.com.br/fivem",
