@@ -422,8 +422,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/NeonHost.jpg",
-        width: 1280,
-        height: 853,
+				width: 1280,
+				height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
       },
     ],
