@@ -1,7 +1,6 @@
 import type React from "react"
 import { Footer } from "@/components/footer"
 import { NavbarComponent } from "@/components/navbar"
-import { PromoBanner } from "@/components/promo-banner"
 import Script from "next/script"
 import { siteConfig } from "@/config/site"
 import "@/styles/globals.css"
@@ -423,8 +422,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/NeonHost.jpg",
-        width: 1280,
-        height: 630,
+				width: 1280,
+				height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
       },
     ],
@@ -466,69 +465,64 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <head>
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          async
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        id="gtm-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
 						(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 						})(window,document,'script','dataLayer','GTM-NLK4RWTG');
 					`,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "NeonHost",
-              url: "https://neonhost.com.br",
-              description:
-                "Hospedagem de jogos no Brasil com VPS Gamer, proteção Anti-DDoS e infraestrutura de alta performance",
-              address: {
-                "@type": "PostalAddress",
-                addressCountry: "BR",
-                addressRegion: "SP",
-                addressLocality: "São Paulo",
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "NeonHost",
+            url: "https://neonhost.com.br",
+            description:
+              "Hospedagem de jogos no Brasil com VPS Gamer, proteção Anti-DDoS e infraestrutura de alta performance",
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "BR",
+              addressRegion: "SP",
+              addressLocality: "São Paulo",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+55-11-99999-9999",
+              contactType: "customer service",
+              availableLanguage: "Portuguese",
+            },
+            sameAs: ["https://twitter.com/neonhost", "https://facebook.com/neonhost", "https://instagram.com/neonhost"],
+            offers: [
+              {
+                "@type": "Offer",
+                name: "VPS Gamer",
+                description: "VPS de alta performance com proteção Anti-DDoS",
+                price: "72.90",
+                priceCurrency: "BRL",
+                availability: "https://schema.org/InStock",
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+55-11-99999-9999",
-                contactType: "customer service",
-                availableLanguage: "Portuguese",
+              {
+                "@type": "Offer",
+                name: "VPS Streaming",
+                description: "Servidores com tráfego ilimitado",
+                price: "249.90",
+                priceCurrency: "BRL",
+                availability: "https://schema.org/InStock",
               },
-              sameAs: [
-                "https://twitter.com/neonhost",
-                "https://facebook.com/neonhost",
-                "https://instagram.com/neonhost",
-              ],
-              offers: [
-                {
-                  "@type": "Offer",
-                  name: "VPS Gamer",
-                  description: "VPS de alta performance com proteção Anti-DDoS",
-                  price: "72.90",
-                  priceCurrency: "BRL",
-                  availability: "https://schema.org/InStock",
-                },
-                {
-                  "@type": "Offer",
-                  name: "VPS Streaming",
-                  description: "Servidores com tráfego ilimitado",
-                  price: "249.90",
-                  priceCurrency: "BRL",
-                  availability: "https://schema.org/InStock",
-                },
-              ],
-            }),
-          }}
-        />
+            ],
+          }),
+        }}
+      />
+      <head>
         <meta name="google-site-verification" content="hsbqhlsa_EF36270POQ4hf418PvGn0QT3CcCRkw1fRE" />
         <meta name="author" content="NeonHost" />
         <meta name="geo.region" content="BR-SP" />
@@ -540,7 +534,6 @@ export default async function RootLayout({
       </head>
       <body className={clsx("min-h-screen bg-white text-gray-900", inter.className)}>
         <div className="relative flex flex-col">
-          <PromoBanner />
           <div className="border-b border-b-gray-700">
             <NavbarComponent />
           </div>
