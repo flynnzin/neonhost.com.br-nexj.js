@@ -91,7 +91,7 @@ export const NavbarComponent = () => {
 
   return (
     <Navbar
-      className="bg-white fixed border-b border-gray-200 h-16"
+      className="bg-white fixed border-b border-gray-200 h-16 top-[35px]"
       maxWidth={"2xl"}
       position="static"
       onMenuOpenChange={setIsMenuOpen}
