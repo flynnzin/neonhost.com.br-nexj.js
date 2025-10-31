@@ -510,7 +510,7 @@ export const metadata: Metadata = {
 		siteName: "NeonHost",
 		images: [
 			{
-				url: "/NeonHost.jpg",
+				url: "/NeonHost.png",
 				width: 1280,
 				height: 630,
 				alt: "NeonHost - Hospedagem de Jogos no Brasil",
@@ -533,7 +533,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		description:
 			"Servidores Semi-Dedicados com processadores AMD Ryzen, SSD NVMe e proteção DDoS. Performance e confiabilidade para suas aplicações.",
-		images: ["/NeonHost.jpg"],
+		images: ["/NeonHost.png"],
 	},
 	alternates: {
 		canonical: "https://neonhost.com.br/semi-dedicado",
