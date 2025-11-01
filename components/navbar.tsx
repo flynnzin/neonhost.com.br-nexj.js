@@ -111,13 +111,13 @@ export const NavbarComponent = () => {
           </motion.div>
         </NavbarItem>
 
-        <NavbarItem key="02" className="mt-0">
+        {/* <NavbarItem key="02" className="mt-0">
           <NextLink href="/" className="p-0">
             <p className="p-0 m-0 bg-transparent data-[hover=true]:bg-transparent font-semibold text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200">
               Início
             </p>
           </NextLink>
-        </NavbarItem>
+        </NavbarItem> */}
 
         {/* Servidores */}
         <NavbarItem className="mt-0" onMouseLeave={closePopoverWithDelay}>
@@ -197,7 +197,23 @@ export const NavbarComponent = () => {
         </NavbarItem>
 
         {/* Jogos */}
-        <NavbarItem className="mt-0" onMouseLeave={closePopoverWithDelay}>
+        
+        {/* Minecraft */}
+        <NavbarItem key="games" className="mt-0">
+          <NextLink href="/games" className="p-0">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 transition-all duration-200"
+            >
+              <span className="font-semibold text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center gap-2">
+                <Gamepad2 className="h-4 w-4" />
+                Jogos
+              </span>
+
+            </motion.div>
+          </NextLink>
+        </NavbarItem>
+        {/* <NavbarItem className="mt-0" onMouseLeave={closePopoverWithDelay}>
           <Popover placement="bottom" offset={20} showArrow isOpen={activePopover === "games"}>
             <PopoverTrigger>
               <Button
@@ -261,7 +277,7 @@ export const NavbarComponent = () => {
               </div>
             </PopoverContent>
           </Popover>
-        </NavbarItem>
+        </NavbarItem> */}
 
         {/* Minecraft */}
         <NavbarItem key="minecraft" className="mt-0">

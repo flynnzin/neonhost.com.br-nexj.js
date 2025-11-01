@@ -1,6 +1,7 @@
 "use client"
 import { plans } from "./plans"
 import type React from "react"
+import { CyberPlanCard } from "@/components/cyber-plan-card"
 
 import {
   Server,
@@ -379,16 +380,21 @@ export default function VpsGamer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {memoizedPlans.map((plan, index) => (
-              <PlanCard
-                key={plan.name}
-                plan={plan}
-                isExpanded={expandedCard === index}
-                onToggle={() => handleCardToggle(index)}
-              />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {plans.map((plan, index) => (
+                        <CyberPlanCard
+                          key={plan.name}
+                          name={plan.name}
+                          ram={plan.description.ram}
+                          cores={plan.description.cores}
+                          ssd={plan.description.ssd}
+                          price={plan.price}
+                          link={plan.link || ""}
+                          additionalFeatures={plan.description.attrs}
+                          index={index}
+                        />
+                      ))}
+                    </div>
         </section>
 
         {/* FAQ */}

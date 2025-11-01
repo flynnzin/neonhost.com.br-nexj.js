@@ -387,7 +387,7 @@ export default function HomePage() {
       {
         question: "O que é e como funciona Proteção DDoS Pro?",
         answer:
-          "A Proteção DDoS Pro oferece defesa avançada contra ataques de até 1Tbps, com filtragem inteligente e mitigação instantânea para máxima proteção.",
+          "A Proteção DDoS Pro oferece defesa avançada contra ataques de até 449Tbps, com filtragem inteligente e mitigação instantânea para máxima proteção.",
         category: "Segurança",
         categoryColor: "bg-red-500/20 text-red-400",
         icon: <Shield className="h-4 w-4" />,
@@ -565,13 +565,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                348 Tbps
+                449 Tbps
               </div>
               <div className="text-gray-600 text-lg">Proteção DDoS</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                -3ms
+                -7ms
               </div>
               <div className="text-gray-600 text-lg">Redução de Latência</div>
             </div>
@@ -583,7 +583,7 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                500Gbps
+                935Gbps
               </div>
               <div className="text-gray-600 text-lg">Capacidade de Rede</div>
             </div>
@@ -616,7 +616,7 @@ export default function HomePage() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-600">Capacidade de mitigação de 348 Tbps</span>
+                  <span className="text-gray-600">Capacidade de mitigação de 449 Tbps</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -659,7 +659,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-600">Memória DDR4 ECC</span>
+                  <span className="text-gray-600">Memória DDR5 ECC</span>
                 </div>
               </div>
 
@@ -686,7 +686,7 @@ export default function HomePage() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-600">Capacidade de rede de 500Gbps</span>
+                  <span className="text-gray-600">Capacidade de rede de 935Gbps</span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>

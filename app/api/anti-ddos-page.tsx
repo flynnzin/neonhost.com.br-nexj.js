@@ -58,11 +58,11 @@ export default function AntiDDosPage() {
     if (isCountVisible) {
       const interval = setInterval(() => {
         setCount((prev) => {
-          if (prev < 348) {
+          if (prev < 449) {
             return prev + 1
           }
           clearInterval(interval)
-          return 348
+          return 449
         })
       }, 15)
 
@@ -154,7 +154,7 @@ export default function AntiDDosPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Proteção Anti-DDoS com capacidade total de até 348TB/s. Mitigação em tempo real, sempre ativa, garantindo o
+            Proteção Anti-DDoS com capacidade total de até 449TB/s. Mitigação em tempo real, sempre ativa, garantindo o
             tempo de resposta mais rápido contra qualquer ameaça. Todos nossos servidores são em São Paulo, com proteção
             Cloudflare de nível empresarial.
           </motion.p>
@@ -422,7 +422,7 @@ export default function AntiDDosPage() {
 
           <div className="mt-6 grid grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-gray-900">348TB/s</div>
+              <div className="text-2xl font-bold text-gray-900">449TB/s</div>
               <div className="text-sm text-gray-600">Capacidade Total</div>
             </div>
             <div className="text-center">

@@ -335,7 +335,7 @@ export default function SobreNosPage() {
               <h3 className="mb-4 text-center text-xl font-bold text-gray-900">Segurança</h3>
               <p className="text-center text-gray-600">
                 Nossos servidores possuem criptografia de ponta-a-ponta, garantindo assim a segurança e integridade dos
-                seus dados, com proteção Anti-DDoS de até 296TB/s.
+                seus dados, com proteção Anti-DDoS de até 449TB/s.
               </p>
 
               <motion.div

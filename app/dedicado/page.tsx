@@ -234,7 +234,7 @@ export default function Dedicados() {
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: "Proteção Anti-DDoS 348TB/s",
+      title: "Proteção Anti-DDoS 449TB/s",
       description:
         "Protegemos seu servidor contra ataques DDoS para garantir estabilidade e segurança em jogos online, mantendo sua comunidade sempre conectada",
     },
@@ -256,7 +256,7 @@ export default function Dedicados() {
     { value: "99.9%", label: "Uptime" },
     { value: "15ms", label: "Latência" },
     { value: "24/7", label: "Suporte" },
-    { value: "348TB/s", label: "Anti-DDoS" },
+    { value: "449TB/s", label: "Anti-DDoS" },
   ]
 
   return (
@@ -460,7 +460,7 @@ export default function Dedicados() {
                     <div className="text-center p-4 rounded-xl bg-gray-50">
                       <Shield className="h-6 w-6 text-purple-600 mx-auto mb-2" />
                       <div className="text-gray-900 font-bold">Anti-DDoS</div>
-                      <div className="text-gray-600 text-sm">348TB/s</div>
+                      <div className="text-gray-600 text-sm">449TB/s</div>
                     </div>
                   </div>
 

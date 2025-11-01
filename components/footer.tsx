@@ -86,7 +86,7 @@ export const Footer = () => {
       icon: <Building2 className="h-5 w-5 text-green-600" />,
       links: [
         { name: "Área do Cliente", url: "https://app.neonhost.com.br/login", external: true },
-        { name: "Status Rede", url: "https://stats.uptimerobot.com/YJjcBPfgVR", external: true },
+        { name: "Status Rede", url: "https://neonhost.instatus.com", external: true },
         { name: "Sobre Nós", url: "/sobre" },
         {
           name: "Termos de Serviço",

@@ -8,11 +8,6 @@ export const PromoBanner = () => {
   const [isVisible, setIsVisible] = useState(true)
 
 
-  const handleClose = () => {
-    setIsVisible(false)
-    localStorage.setItem("promoBannerClosed", "true")
-  }
-
   return (
     <AnimatePresence>
       {isVisible && (
@@ -27,7 +22,7 @@ export const PromoBanner = () => {
             <div className="flex items-center gap-2 text-center">
               <span className="text-xs sm:text-sm font-medium">
                 🔥 Utilize o cupom <span className="font-bold bg-white/20 px-2 py-0.5 rounded">NEON15</span> e tenha{" "}
-                <span className="font-bold">15% de desconto</span> no primeiro mês em qualquer plano!
+                <span className="font-bold">15% de desconto</span> recorrente em qualquer plano!
               </span>
             </div>
 

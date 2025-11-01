@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@nextui-org/react"
-import { MemoryStickIcon, Cpu, HardDrive, Wifi, Check } from "lucide-react"
+import { MemoryStickIcon, Cpu, HardDrive, Wifi, Check, Info } from "lucide-react"
 import Link from "next/link"
 
 interface CyberPlanCardProps {
@@ -44,7 +44,7 @@ export function CyberPlanCard({
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <div className="relative bg-white border border-gray-200 rounded-2xl p-6 hover:border-purple-300 hover:shadow-lg transition-all duration-300 group">
+      <div className="relative bg-gradient-to-br from-white to-purple-50 border border-gray-200 rounded-2xl p-6 hover:border-purple-300 hover:shadow-lg transition-all duration-300 group">
         {/* Popular badge */}
         {popular && (
           <div className="absolute -top-3 left-6">
@@ -88,13 +88,21 @@ export function CyberPlanCard({
             </div>
           </div>
 
-          <div className="flex items-center p-3 bg-purple-50 rounded-lg">
+          <div className="relative group/storage flex items-center p-3 bg-purple-50 rounded-lg cursor-help hover:bg-purple-100 transition-colors">
             <div className="p-2 bg-purple-100 rounded-lg mr-3">
               <HardDrive className="w-4 h-4 text-purple-600" />
             </div>
-            <div>
+            <div className="flex-1">
               <div className="text-xs text-gray-500">Disco</div>
-              <div className="font-semibold text-gray-900">{ssd}</div>
+              <div className="font-semibold text-gray-900 flex items-center gap-1">
+                {ssd}
+                <Info className="w-3 h-3 text-purple-500" />
+              </div>
+            </div>
+            {/* Custom tooltip using Tailwind */}
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-sm font-semibold rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover/storage:opacity-100 transition-opacity duration-200 pointer-events-none">
+              Cada GB adicional será cobrado R$ 1,00
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-purple-700"></div>
             </div>
           </div>
 
