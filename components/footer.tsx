@@ -46,7 +46,7 @@ export const Footer = () => {
       icon: <Server className="h-5 w-5 text-purple-600" />,
       links: [
         { name: "VPS Gamer", url: "/vps-gamer", badge: "Popular" },
-        // { name: "VPS Brasil", url: "/vps-streaming" },
+        { name: "VPS Ryzen", url: "/vps-ryzen" },
         { name: "VPS FiveM", url: "/fivem" },
         { name: "Dedicado", url: "/dedicado", badge: "Novo" },
       ],
@@ -87,6 +87,7 @@ export const Footer = () => {
       links: [
         { name: "Área do Cliente", url: "https://app.neonhost.com.br/login", external: true },
         { name: "Status Rede", url: "https://neonhost.instatus.com", external: true },
+        { name: "NeonShield", url: "https://shield.neonhost.com.br", external: true },
         { name: "Sobre Nós", url: "/sobre" },
         {
           name: "Termos de Serviço",

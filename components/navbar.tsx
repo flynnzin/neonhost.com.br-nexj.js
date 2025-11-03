@@ -144,6 +144,21 @@ export const NavbarComponent = () => {
             >
               <div className="w-full p-6">
                 <div className="space-y-3">
+                  <Link href="/vps-ryzen">
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-200"
+                    >
+                      <div className="p-3 rounded-xl bg-purple-100 border border-purple-200">
+                        <Gamepad2 className="h-4 w-4 text-purple-600" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-sm font-bold text-gray-900 mb-1">VPS Ryzen</div>
+                        <div className="text-xs text-gray-600">AMD Ryzen 9 com memorias RAM DDR5.</div>
+                      </div>
+                    </motion.div>
+                  </Link>
+
                   <Link href="/vps-gamer">
                     <motion.div
                       whileHover={{ x: 4 }}
@@ -192,6 +207,8 @@ export const NavbarComponent = () => {
                   </Link>
                 </div>
               </div>
+
+              
             </PopoverContent>
           </Popover>
         </NavbarItem>
