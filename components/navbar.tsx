@@ -144,7 +144,7 @@ export const NavbarComponent = () => {
             >
               <div className="w-full p-6">
                 <div className="space-y-3">
-                  <Link href="/vps-ryzen">
+                  <Link href="/vps">
                     <motion.div
                       whileHover={{ x: 4 }}
                       className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-200"
@@ -208,13 +208,13 @@ export const NavbarComponent = () => {
                 </div>
               </div>
 
-              
+
             </PopoverContent>
           </Popover>
         </NavbarItem>
 
         {/* Jogos */}
-        
+
         {/* Minecraft */}
         <NavbarItem key="games" className="mt-0">
           <NextLink href="/games" className="p-0">
@@ -574,6 +574,12 @@ export const NavbarComponent = () => {
                   <Link href="/vps-gamer" className="w-full">
                     <div className="p-2 hover:bg-gray-50 rounded-lg transition-colors duration-200">
                       <p className="text-base font-semibold text-gray-900">VPS Gamer</p>
+                      <p className="text-sm text-gray-600">Servidores localizados no Brasil</p>
+                    </div>
+                  </Link>
+                  <Link href="/vps" className="w-full">
+                    <div className="p-2 hover:bg-gray-50 rounded-lg transition-colors duration-200">
+                      <p className="text-base font-semibold text-gray-900">VPS Ryzen</p>
                       <p className="text-sm text-gray-600">Servidores localizados no Brasil</p>
                     </div>
                   </Link>
