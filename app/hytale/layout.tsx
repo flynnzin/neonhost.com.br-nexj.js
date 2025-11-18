@@ -510,10 +510,10 @@ export const metadata: Metadata = {
     siteName: "NeonHost",
     images: [
       {
-        url: "/bannernh.png",
-        width: 3890,
-        height: 1290,
-        alt: "NeonHost - Servidor Hytale",
+        url: "/NeonHost.png",
+        width: 1280,
+        height: 630,
+        alt: "NeonHost - Hospedagem de Jogos no Brasil",
       },
     ],
   },
