@@ -11,7 +11,7 @@ import { Inter } from "next/font/google"
 
 export const metadata: Metadata = {
   title: {
-    default: "Hospedagem de Jogos no Brasil | NeonHost",
+    default: "Host de Jogos no Brasil | NeonHost",
     template: `%s - ${siteConfig.name}`,
   },
   description:

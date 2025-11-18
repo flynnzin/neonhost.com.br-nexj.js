@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hospedagem Minecraft | NeonHost",
+  title: "Host de Minecraft | NeonHost",
   description:
     "Hospedagem de servidores Minecraft com modpacks automáticos, backup diário e suporte 24/7. Planos a partir de R$ 13,90. Vanilla, Forge, Paper, Bedrock e muito mais.",
   keywords: [

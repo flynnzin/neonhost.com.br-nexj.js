@@ -9,7 +9,7 @@ import { Inter } from "next/font/google";
 export const metadata: Metadata = {
 	title: {
 		default:
-			"Servidores Semi-Dedicados | Hospedagem de Alto Desempenho | NeonHost",
+			"Semi-Dedicados | Hospedagem de Alto Desempenho | NeonHost",
 		template: "%s | NeonHost",
 	},
 	description:

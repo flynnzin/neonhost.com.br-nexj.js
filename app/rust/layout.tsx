@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Hospedagem de Rust | Host de Rust | Hospedado no Brasil - NeonHost",
+  title: "Host de Rust | Host de Rust | Hospedado no Brasil - NeonHost",
   description:
     "Crie seu servidor de Rust para a LATAM. Adicione Carbon ou Oxide..",
   keywords:

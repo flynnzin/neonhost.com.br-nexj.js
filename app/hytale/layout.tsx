@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: {
-    default: "Servidor Hytale - Hospedagem Premium com Anti-DDoS | NeonHost",
+    default: "Host Hytale - Hospedagem Premium com Anti-DDoS | NeonHost",
     template: "%s | NeonHost",
   },
   description:
