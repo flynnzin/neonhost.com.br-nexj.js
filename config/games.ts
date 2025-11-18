@@ -102,7 +102,7 @@ export const gamesConfig: Game[] = [
         price: 13.9,
         originalPrice: 29.9,
         players: 5,
-        ram: "2GB",
+        ram: "1GB",
         cpu: "2 vCores",
         storage: "10GB NVMe",
         features: [
