@@ -61,6 +61,7 @@ export const Footer = () => {
         { name: "FiveM", url: "/fivem" },
         { name: "Project Zomboid", url: "/games/project-zomboid" },
         { name: "Rust", url: "/games/rust" },
+        { name: "Hytale", url: "/hytale" },
       ],
     },
     {
