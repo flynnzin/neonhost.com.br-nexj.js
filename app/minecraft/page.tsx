@@ -39,9 +39,9 @@ export default function MinecraftPage() {
   const filteredPlans = minecraftPlans.filter((plan) => plan.edition === selectedEdition)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-purple-50 to-white">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -51,30 +51,20 @@ export default function MinecraftPage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
-                <Zap className="w-4 h-4 text-purple-600" />
-                <span className="text-purple-700 text-sm font-medium">Powered by AMD Ryzen 9 7900x</span>
+              <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/50 px-4 py-2 rounded-full">
+                <Zap className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                <span className="text-purple-700 dark:text-purple-300 text-sm font-medium">Powered by AMD Ryzen 9 7900x</span>
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-balance">
-                <span className="text-gray-900">Servidores Minecraft</span>
+                <span className="text-gray-900 dark:text-white">Servidores Minecraft</span>
                 <br />
-                <span className="text-purple-600">de alta performance</span>
+                <span className="text-purple-600 dark:text-purple-400">de alta performance</span>
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed text-pretty">
+              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
                 Crie experiências incríveis com processadores de última geração e proteção Anti-DDoS ilimitada.
               </p>
-
-              {/* <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg shadow-purple-500/25">
-                  Começar Agora
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="border-2 border-purple-200 text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
-                  Ver Planos
-                </button>
-              </div> */}
             </motion.div>
 
             {/* Right Content - Image */}
@@ -84,7 +74,7 @@ export default function MinecraftPage() {
               transition={{ duration: 0.6 }}
               className="relative flex justify-center lg:justify-end"
             >
-              <div className="relative w-[400px] h-[400px] bg-gradient-to-br from-purple-100 to-purple-50 rounded-3xl flex items-center justify-center shadow-xl">
+              <div className="relative w-[400px] h-[400px] bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-gray-800/30 rounded-3xl flex items-center justify-center shadow-xl">
                 <Image src="/games/1.webp" alt="Minecraft Server" width={300} height={300} className="object-contain" />
               </div>
             </motion.div>
@@ -93,7 +83,7 @@ export default function MinecraftPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-white border-y border-gray-100">
+      <section className="py-16 px-4 bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -103,11 +93,11 @@ export default function MinecraftPage() {
               { icon: Lock, value: "100%", label: "Proteção DDoS" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 rounded-2xl mb-4">
-                  <stat.icon className="w-7 h-7 text-purple-600" />
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 dark:bg-purple-900/50 rounded-2xl mb-4">
+                  <stat.icon className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                 </div>
-                <p className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</p>
-                <p className="text-sm text-gray-600">{stat.label}</p>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -115,7 +105,7 @@ export default function MinecraftPage() {
       </section>
 
       {/* Automatic Features Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50 dark:from-gray-900 dark:to-purple-900/20">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,10 +113,10 @@ export default function MinecraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
-              Gerenciamento <span className="text-purple-600">automático</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-balance">
+              Gerenciamento <span className="text-purple-600 dark:text-purple-400">automático</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-pretty">
               Instale mods e troque versões com apenas um clique através do nosso painel avançado
             </p>
           </motion.div>
@@ -141,14 +131,14 @@ export default function MinecraftPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
-                  <Package className="w-4 h-4 text-purple-600" />
-                  <span className="text-purple-700 text-sm font-medium">Instalação Automática</span>
+                <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/50 px-4 py-2 rounded-full">
+                  <Package className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                  <span className="text-purple-700 dark:text-purple-300 text-sm font-medium">Instalação Automática</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-balance">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-balance">
                   Instalador de Mods Automático
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed text-pretty">
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
                   Escolha entre dezenas de versões do Minecraft incluindo Vanilla, Paper, Fabric, Forge, Spigot e muito
                   mais. Instale com apenas um clique e comece a jogar imediatamente.
                 </p>
@@ -160,16 +150,16 @@ export default function MinecraftPage() {
                     "Compatibilidade garantida",
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
-                        <Check className="w-4 h-4 text-purple-600" />
+                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                       </div>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
                   <Image
                     src="/images/minecraft/2.png"
                     alt="Instalador de Mods Automático"
@@ -191,7 +181,7 @@ export default function MinecraftPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:mt-20"
             >
               <div className="relative order-2 lg:order-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
                   <Image
                     src="/images/minecraft/1.png"
                     alt="Mudança Automática de Versão"
@@ -203,14 +193,14 @@ export default function MinecraftPage() {
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-600 rounded-full blur-3xl opacity-20"></div>
               </div>
               <div className="space-y-6 order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
-                  <RefreshCw className="w-4 h-4 text-purple-600" />
-                  <span className="text-purple-700 text-sm font-medium">Atualização Instantânea</span>
+                <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/50 px-4 py-2 rounded-full">
+                  <RefreshCw className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                  <span className="text-purple-700 dark:text-purple-300 text-sm font-medium">Atualização Instantânea</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-balance">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-balance">
                   Mudança de Versão Automática
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed text-pretty">
+                <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-pretty">
                   Navegue por milhares de modpacks populares do CurseForge e instale diretamente no seu servidor.
                   Atualize ou troque de versão sem complicação e sem perder seus dados.
                 </p>
@@ -222,10 +212,10 @@ export default function MinecraftPage() {
                     "Rollback com um clique",
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center">
-                        <Check className="w-4 h-4 text-purple-600" />
+                      <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                       </div>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -236,7 +226,7 @@ export default function MinecraftPage() {
       </section>
 
       {/* Plans Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-purple-50 dark:from-gray-900 dark:to-purple-900/20">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -244,23 +234,23 @@ export default function MinecraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
-              Escolha o plano <span className="text-purple-600">perfeito</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-balance">
+              Escolha o plano <span className="text-purple-600 dark:text-purple-400">perfeito</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-pretty">
               Todos os planos incluem AMD Ryzen 9 7900x e proteção Anti-DDoS ilimitada
             </p>
           </motion.div>
 
           {/* Edition Selector */}
           <div className="flex justify-center mb-12">
-            <div className="flex bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
+            <div className="flex bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-1 shadow-sm">
               <button
                 onClick={() => setSelectedEdition("java")}
                 className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                   selectedEdition === "java"
                     ? "bg-purple-600 text-white shadow-md"
-                    : "text-gray-600 hover:text-gray-900"
+                    : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 <Database className="w-4 h-4" />
@@ -280,12 +270,12 @@ export default function MinecraftPage() {
                 className="group"
               >
                 <div
-                  className={`relative bg-white border-2 transition-all duration-300 hover:shadow-xl rounded-2xl overflow-visible h-full ${
+                  className={`relative bg-white dark:bg-gray-800/50 border-2 transition-all duration-300 hover:shadow-xl rounded-2xl overflow-visible h-full ${
                     plan.isPopular
                       ? "border-purple-500 shadow-lg shadow-purple-500/10"
                       : plan.isRecommended
                         ? "border-purple-400 shadow-lg shadow-purple-400/10"
-                        : "border-gray-200 hover:border-purple-300"
+                        : "border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600"
                   }`}
                 >
                   {plan.isPopular && (
@@ -304,10 +294,10 @@ export default function MinecraftPage() {
                   <div className="p-8">
                     {/* Plan Header */}
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{plan.name}</h3>
                       <div className="space-y-2">
                         <div className="flex items-center justify-center gap-3">
-                          <span className="text-4xl font-bold text-purple-600">R$ {plan.price.toFixed(2)}</span>
+                          <span className="text-4xl font-bold text-purple-600 dark:text-purple-400">R$ {plan.price.toFixed(2)}</span>
                           {plan.originalPrice && (
                             <span className="text-lg text-gray-400 line-through">
                               R$ {plan.originalPrice.toFixed(2)}
@@ -319,31 +309,31 @@ export default function MinecraftPage() {
                             {plan.discount}% OFF
                           </div>
                         )}
-                        <p className="text-sm text-gray-500">/mês</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">/mês</p>
                       </div>
                     </div>
 
                     {/* Specs Grid */}
                     <div className="grid grid-cols-2 gap-3 mb-6">
-                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
-                        <Users className="w-5 h-5 text-purple-600 mx-auto mb-1" />
-                        <p className="text-xs text-gray-600">Jogadores</p>
-                        <p className="text-sm font-bold text-gray-900">{plan.players}</p>
+                      <div className="bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800/50 rounded-xl p-3 text-center">
+                        <Users className="w-5 h-5 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600 dark:text-gray-400">Jogadores</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">{plan.players}</p>
                       </div>
-                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
-                        <Database className="w-5 h-5 text-purple-600 mx-auto mb-1" />
-                        <p className="text-xs text-gray-600">RAM</p>
-                        <p className="text-sm font-bold text-gray-900">{plan.ram}</p>
+                      <div className="bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800/50 rounded-xl p-3 text-center">
+                        <Database className="w-5 h-5 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600 dark:text-gray-400">RAM</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">{plan.ram}</p>
                       </div>
-                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
-                        <Cpu className="w-5 h-5 text-purple-600 mx-auto mb-1" />
-                        <p className="text-xs text-gray-600">CPU</p>
-                        <p className="text-sm font-bold text-gray-900">{plan.cpu}</p>
+                      <div className="bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800/50 rounded-xl p-3 text-center">
+                        <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600 dark:text-gray-400">CPU</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">{plan.cpu}</p>
                       </div>
-                      <div className="bg-purple-50 border border-purple-100 rounded-xl p-3 text-center">
-                        <HardDrive className="w-5 h-5 text-purple-600 mx-auto mb-1" />
-                        <p className="text-xs text-gray-600">Storage</p>
-                        <p className="text-sm font-bold text-gray-900">{plan.storage}</p>
+                      <div className="bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800/50 rounded-xl p-3 text-center">
+                        <HardDrive className="w-5 h-5 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+                        <p className="text-xs text-gray-600 dark:text-gray-400">Storage</p>
+                        <p className="text-sm font-bold text-gray-900 dark:text-white">{plan.storage}</p>
                       </div>
                     </div>
 
@@ -354,7 +344,7 @@ export default function MinecraftPage() {
                         .map((feature, idx) => (
                           <div key={idx} className="flex items-start gap-2 text-sm">
                             <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">{feature}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                     </div>
@@ -362,7 +352,7 @@ export default function MinecraftPage() {
                     {plan.features.length > 4 && (
                       <button
                         onClick={() => togglePlan(plan.id)}
-                        className="w-full text-purple-600 hover:bg-purple-50 px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium flex items-center justify-center mb-4"
+                        className="w-full text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/50 px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium flex items-center justify-center mb-4"
                       >
                         {expandedPlan === plan.id ? (
                           <>
@@ -393,7 +383,7 @@ export default function MinecraftPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -401,10 +391,10 @@ export default function MinecraftPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
-              Recursos <span className="text-purple-600">exclusivos</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 text-balance">
+              Recursos <span className="text-purple-600 dark:text-purple-400">exclusivos</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-pretty">
               Tudo que você precisa para criar o servidor Minecraft perfeito
             </p>
           </motion.div>
@@ -449,14 +439,14 @@ export default function MinecraftPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-white border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300 h-full rounded-2xl p-8">
+                <div className="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 hover:shadow-lg transition-all duration-300 h-full rounded-2xl p-8">
                   <div className="mb-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 rounded-2xl">
-                      <feature.icon className="w-7 h-7 text-purple-600" />
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-purple-100 dark:bg-purple-900/50 rounded-2xl">
+                      <feature.icon className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -465,7 +455,7 @@ export default function MinecraftPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -480,17 +470,6 @@ export default function MinecraftPage() {
               <p className="text-xl text-purple-100 max-w-2xl mx-auto text-pretty">
                 Crie seu servidor Minecraft agora e receba migração gratuita dos seus mundos existentes
               </p>
-
-              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button className="bg-white text-purple-600 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center shadow-lg">
-                  Começar Agora
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center">
-                  <Headphones className="w-5 h-5 mr-2" />
-                  Falar com Suporte
-                </button>
-              </div> */}
             </div>
           </motion.div>
         </div>

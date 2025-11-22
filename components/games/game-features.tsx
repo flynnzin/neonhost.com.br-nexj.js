@@ -56,12 +56,12 @@ export function GameGrid() {
   return (
     <div className="mt-8">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-white">Todos os jogos</h2>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Todos os jogos</h2>
         <div className="flex gap-2">
-          <button className="rounded-full border border-purple-700/50 text-zinc-400 hover:text-white hover:bg-gradient-to-r hover:from-purple-700/30 hover:to-orange-700/30 h-10 w-10 inline-flex items-center justify-center">
+          <button className="rounded-full border border-gray-200 dark:border-purple-700/50 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-purple-700/30 h-10 w-10 inline-flex items-center justify-center">
             <ChevronLeft size={18} />
           </button>
-          <button className="rounded-full border border-purple-700/50 text-zinc-400 hover:text-white hover:bg-gradient-to-r hover:from-purple-700/30 hover:to-orange-700/30 h-10 w-10 inline-flex items-center justify-center">
+          <button className="rounded-full border border-gray-200 dark:border-purple-700/50 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-purple-700/30 h-10 w-10 inline-flex items-center justify-center">
             <ChevronRight size={18} />
           </button>
         </div>

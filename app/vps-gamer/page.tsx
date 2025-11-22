@@ -66,21 +66,21 @@ OptimizedButton.displayName = "OptimizedButton"
 // Componente de estatísticas ultra-otimizado
 const StatsGrid = memo(() => (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
-    <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-2xl font-bold text-gray-900">99.9%</div>
-      <div className="text-sm text-gray-600">Uptime</div>
+    <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-2xl font-bold text-gray-900 dark:text-white">99.9%</div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
     </div>
-    <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-2xl font-bold text-gray-900">10ms</div>
-      <div className="text-sm text-gray-600">Latência</div>
+    <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-2xl font-bold text-gray-900 dark:text-white">10ms</div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">Latência</div>
     </div>
-    <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-2xl font-bold text-gray-900">24/7</div>
-      <div className="text-sm text-gray-600">Suporte</div>
+    <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-2xl font-bold text-gray-900 dark:text-white">24/7</div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">Suporte</div>
     </div>
-    <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-2xl font-bold text-gray-900">1Gbps</div>
-      <div className="text-sm text-gray-600">Rede</div>
+    <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-2xl font-bold text-gray-900 dark:text-white">1Gbps</div>
+      <div className="text-sm text-gray-600 dark:text-gray-400">Rede</div>
     </div>
   </div>
 ))
@@ -90,33 +90,33 @@ StatsGrid.displayName = "StatsGrid"
 // Features otimizadas
 const FeaturesGrid = memo(() => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
-    <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-purple-600 mb-4 flex justify-center">
+    <div className="text-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-purple-600 dark:text-purple-400 mb-4 flex justify-center">
         <Server className="h-6 w-6" />
       </div>
-      <h3 className="font-bold text-gray-900 text-lg mb-2">Recursos Dedicados</h3>
-      <p className="text-gray-600 text-sm">CPU, RAM e armazenamento exclusivos</p>
+      <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-2">Recursos Dedicados</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm">CPU, RAM e armazenamento exclusivos</p>
     </div>
-    <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-purple-600 mb-4 flex justify-center">
+    <div className="text-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-purple-600 dark:text-purple-400 mb-4 flex justify-center">
         <Shield className="h-6 w-6" />
       </div>
-      <h3 className="font-bold text-gray-900 text-lg mb-2">Proteção Avançada</h3>
-      <p className="text-gray-600 text-sm">Anti-DDoS e firewall configurável</p>
+      <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-2">Proteção Avançada</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm">Anti-DDoS e firewall configurável</p>
     </div>
-    <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-purple-600 mb-4 flex justify-center">
+    <div className="text-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-purple-600 dark:text-purple-400 mb-4 flex justify-center">
         <Zap className="h-6 w-6" />
       </div>
-      <h3 className="font-bold text-gray-900 text-lg mb-2">Performance Premium</h3>
-      <p className="text-gray-600 text-sm">Hardware de última geração</p>
+      <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-2">Performance Premium</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm">Hardware de última geração</p>
     </div>
-    <div className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-      <div className="text-purple-600 mb-4 flex justify-center">
+    <div className="text-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+      <div className="text-purple-600 dark:text-purple-400 mb-4 flex justify-center">
         <Globe className="h-6 w-6" />
       </div>
-      <h3 className="font-bold text-gray-900 text-lg mb-2">Conectividade Premium</h3>
-      <p className="text-gray-600 text-sm">Rede de alta velocidade no Brasil</p>
+      <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-2">Conectividade Premium</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm">Rede de alta velocidade no Brasil</p>
     </div>
   </div>
 ))
@@ -172,79 +172,65 @@ const PlanCard = memo(
     isExpanded: boolean
     onToggle: () => void
   }) => (
-    <article className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300">
+    <article className="bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-all duration-300">
       <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-        <div className="text-sm text-purple-600 mb-4">Disponível agora</div>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
+        <div className="text-sm text-purple-600 dark:text-purple-400 mb-4">Disponível agora</div>
 
-        <div className="text-3xl font-bold text-purple-600 mb-6">
-          R$ {plan.price} <span className="text-base text-gray-600 font-normal">/mês</span>
+        <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-6">
+          R$ {plan.price} <span className="text-base text-gray-600 dark:text-gray-400 font-normal">/mês</span>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="text-center p-3 bg-purple-50 rounded-lg">
-          <Cpu className="h-4 w-4 text-purple-600 mx-auto mb-1" />
-          <div className="text-sm font-medium text-gray-900">{plan.description.cores}</div>
-          <div className="text-xs text-gray-600">CPU</div>
+        <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/50 rounded-lg">
+          <Cpu className="h-4 w-4 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+          <div className="text-sm font-medium text-gray-900 dark:text-white">{plan.description.cores}</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">CPU</div>
         </div>
-        <div className="text-center p-3 bg-purple-50 rounded-lg">
-          <MemoryStick className="h-4 w-4 text-purple-600 mx-auto mb-1" />
-          <div className="text-sm font-medium text-gray-900">{plan.description.ram}</div>
-          <div className="text-xs text-gray-600">RAM</div>
+        <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/50 rounded-lg">
+          <MemoryStick className="h-4 w-4 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+          <div className="text-sm font-medium text-gray-900 dark:text-white">{plan.description.ram}</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">RAM</div>
         </div>
-        <div className="text-center p-3 bg-purple-50 rounded-lg">
-          <HardDrive className="h-4 w-4 text-purple-600 mx-auto mb-1" />
-          <div className="text-sm font-medium text-gray-900">{plan.description.ssd}</div>
-          <div className="text-xs text-gray-600">Disco</div>
+        <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/50 rounded-lg">
+          <HardDrive className="h-4 w-4 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+          <div className="text-sm font-medium text-gray-900 dark:text-white">{plan.description.ssd}</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">Disco</div>
         </div>
-        <div className="text-center p-3 bg-purple-50 rounded-lg">
-          <Network className="h-4 w-4 text-purple-600 mx-auto mb-1" />
-          <div className="text-sm font-medium text-gray-900">1Gbps</div>
-          <div className="text-xs text-gray-600">Rede</div>
+        <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/50 rounded-lg">
+          <Network className="h-4 w-4 text-purple-600 dark:text-purple-400 mx-auto mb-1" />
+          <div className="text-sm font-medium text-gray-900 dark:text-white">1Gbps</div>
+          <div className="text-xs text-gray-600 dark:text-gray-400">Rede</div>
         </div>
       </div>
 
       <div className="space-y-2 mb-6">
         <div className="flex items-center gap-2">
           <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">Anti-DDoS Incluído</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Anti-DDoS Incluído</span>
         </div>
         <div className="flex items-center gap-2">
           <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">Painel de Controle</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Painel de Controle</span>
         </div>
         <div className="flex items-center gap-2">
           <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">Suporte 24/7</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Suporte 24/7</span>
         </div>
         <div className="flex items-center gap-2">
           <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">AMD Ryzen 9</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">AMD Ryzen 9</span>
         </div>
-        {/* <div className="flex items-center gap-2">
-          <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">
-            Até{" "}
-            {plan.name === "NeonInitial"
-              ? "32"
-              : plan.name === "NeonStart"
-                ? "64"
-                : plan.name === "NeonBoost"
-                  ? "96"
-                  : "128"}{" "}
-            jogadores
-          </span>
-        </div> */}
         <div className="flex items-center gap-2">
           <CheckCircle className="h-4 w-4 text-green-600" />
-          <span className="text-sm text-gray-700">Uptime 99.9%</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Uptime 99.9%</span>
         </div>
       </div>
 
       <OptimizedButton
         href={`https://app.neonhost.com.br/cart.php?a=add&pid=${plan.name === "NeonInitial" ? "1" : plan.name === "NeonStart" ? "2" : plan.name === "NeonBoost" ? "3" : "4"}`}
-        className="w-full bg-purple-100 hover:bg-purple-200 text-purple-600 font-medium py-3 px-4 rounded-lg transition-colors duration-200"
+        className="w-full bg-purple-100 dark:bg-purple-900/50 hover:bg-purple-200 dark:hover:bg-purple-900 text-purple-600 dark:text-purple-300 font-medium py-3 px-4 rounded-lg transition-colors duration-200"
       >
         Contratar agora!
       </OptimizedButton>
@@ -280,22 +266,22 @@ const SimpleFAQ = memo(() => {
   return (
     <div className="max-w-4xl mx-auto">
       {faqs.map((faq, index) => (
-        <div key={index} className="mb-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div key={index} className="mb-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
           <button
-            className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-xl"
+            className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-xl"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-gray-900">{faq.question}</span>
+            <span className="font-semibold text-gray-900 dark:text-white">{faq.question}</span>
             {openIndex === index ? (
-              <ChevronUp className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <ChevronUp className="h-5 w-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
             ) : (
-              <ChevronDown className="h-5 w-5 text-purple-600" aria-hidden="true" />
+              <ChevronDown className="h-5 w-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
             )}
           </button>
           {openIndex === index && (
             <div className="px-6 pb-6">
-              <p className="text-gray-600">{faq.answer}</p>
+              <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
             </div>
           )}
         </div>
@@ -319,7 +305,7 @@ export default function VpsGamer() {
   const memoizedPlans = useMemo(() => plans, [])
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Background CSS otimizado */}
       <div className="fixed inset-0 z-0">
         {/* Grid quadriculado */}
@@ -346,19 +332,19 @@ export default function VpsGamer() {
         {/* Hero Section */}
         <section className="pt-20 md:pt-32 pb-16">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-600 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/50 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-300 text-sm font-medium mb-6">
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" aria-hidden="true" />
               Servidores VPS Gamer
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 VPS Gamer
               </span>{" "}
               para seus Projetos
             </h1>
 
-            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
               Escolha o plano ideal para seu negócio e evolua conforme suas necessidades.
             </p>
 
@@ -374,8 +360,8 @@ export default function VpsGamer() {
         {/* Plans */}
         <section className="pb-16" id="plans">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nossos Planos VPS Gamer</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Nossos Planos VPS Gamer</h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Servidores otimizados para jogos com proteção DDoS e suporte 24/7
             </p>
           </div>
@@ -403,7 +389,7 @@ export default function VpsGamer() {
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços VPS Gamer.</p>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços VPS Gamer.</p>
           </div>
           <SimpleFAQ />
         </section>
@@ -414,18 +400,18 @@ export default function VpsGamer() {
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
               Suporte Especializado
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Nossa equipe está pronta para ajudar você 24 horas por dia, 7 dias por semana.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-300">
-              <div className="text-purple-600 mb-4">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+              <div className="text-purple-600 dark:text-purple-400 mb-4">
                 <Info size={48} aria-hidden="true" />
               </div>
-              <h3 className="font-bold text-gray-900 text-xl mb-3">Consultoria Especializada</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-3">Consultoria Especializada</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Ajudamos você a escolher a melhor configuração para seu projeto específico.
               </p>
               <OptimizedButton href="https://discord.gg/rGP7prMqF3" className="w-full">
@@ -433,12 +419,12 @@ export default function VpsGamer() {
               </OptimizedButton>
             </div>
 
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-300">
-              <div className="text-purple-600 mb-4">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+              <div className="text-purple-600 dark:text-purple-400 mb-4">
                 <Info size={48} aria-hidden="true" />
               </div>
-              <h3 className="font-bold text-gray-900 text-xl mb-3">Suporte 24/7</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-3">Suporte 24/7</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Suporte técnico especializado disponível 24 horas por dia para resolver qualquer problema.
               </p>
               <OptimizedButton href="https://discord.gg/rGP7prMqF3" className="w-full">
@@ -446,12 +432,12 @@ export default function VpsGamer() {
               </OptimizedButton>
             </div>
 
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors duration-300">
-              <div className="text-purple-600 mb-4">
+            <div className="p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+              <div className="text-purple-600 dark:text-purple-400 mb-4">
                 <Info size={48} aria-hidden="true" />
               </div>
-              <h3 className="font-bold text-gray-900 text-xl mb-3">Central de Ajuda</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-3">Central de Ajuda</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Base de conhecimento com tutoriais e guias para otimizar seu servidor.
               </p>
               <OptimizedButton href="https://app.neonhost.com.br/submitticket.php?step=2&deptid=1" className="w-full">

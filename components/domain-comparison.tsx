@@ -28,19 +28,19 @@ export function DomainComparison() {
 
   return (
     <div
-      className="bg-[#111827] backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
+      className="bg-gray-100 dark:bg-[#111827] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="p-4 bg-[#1f2937] text-center text-gray-400 text-sm flex items-center justify-center gap-2">
+      <div className="p-4 bg-gray-200 dark:bg-[#1f2937] text-center text-gray-500 dark:text-gray-400 text-sm flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 bg-red-500 rounded-full"></span>
         <span>Antes:</span>
       </div>
-      <div className="p-6 text-center font-mono text-lg text-gray-300 h-[60px] flex items-center justify-center">
+      <div className="p-6 text-center font-mono text-lg text-gray-800 dark:text-gray-300 h-[60px] flex items-center justify-center">
         {examples[currentSlide].ip}
       </div>
 
-      <div className="p-4 bg-gradient-to-r from-purple-900/50 to-pink-900/50 text-center text-purple-300 text-sm flex items-center justify-center gap-2">
+      <div className="p-4 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-center text-purple-600 dark:text-purple-300 text-sm flex items-center justify-center gap-2">
         <Globe className="h-4 w-4" />
         <span>Depois:</span>
       </div>
@@ -54,14 +54,14 @@ export function DomainComparison() {
           <button
             key={index}
             className={`w-2 h-2 rounded-full transition-all ${
-              currentSlide === index ? "bg-purple-500 w-4" : "bg-gray-600"
+              currentSlide === index ? "bg-purple-500 w-4" : "bg-gray-300 dark:bg-gray-600"
             }`}
             onClick={() => setCurrentSlide(index)}
           />
         ))}
       </div>
 
-      <div className="text-center text-xs text-gray-500 pb-4">Alterne para ver mais exemplos</div>
+      <div className="text-center text-xs text-gray-500 dark:text-gray-500 pb-4">Alterne para ver mais exemplos</div>
     </div>
   )
 }

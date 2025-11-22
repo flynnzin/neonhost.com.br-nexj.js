@@ -96,7 +96,7 @@ export default function AntiDDosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0">
           <div
@@ -130,7 +130,7 @@ export default function AntiDDosPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-600 text-sm font-medium">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 dark:bg-purple-900/50 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-300 text-sm font-medium">
               <Shield className="h-4 w-4 mr-2" />
               Proteção Anti-DDoS
             </span>
@@ -145,11 +145,11 @@ export default function AntiDDosPage() {
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Proteção Avançada
             </span>{" "}
-            <span className="text-gray-900">Anti-DDoS</span>
+            <span className="text-gray-900 dark:text-white">Anti-DDoS</span>
           </motion.h1>
 
           <motion.p
-            className="mb-12 text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="mb-12 text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -174,7 +174,7 @@ export default function AntiDDosPage() {
               Começar agora
             </motion.button>
             <motion.button
-              className="px-8 py-4 bg-gray-50 text-gray-900 border border-gray-200 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300"
+              className="px-8 py-4 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={openDiscord}
@@ -196,57 +196,57 @@ export default function AntiDDosPage() {
         >
           {/* Feature 1 */}
           <motion.div
-            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
+            className="group p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300"
             variants={fadeInUp}
             whileHover={{ y: -5 }}
             style={{ y: parallaxY1 }}
           >
             <motion.div
-              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
               animate={subtlePulse}
             >
-              <Zap className="h-8 w-8 text-purple-600" />
+              <Zap className="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </motion.div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-900">Mitigação InLine</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Mitigação InLine</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               Mitigação sempre ativa, garantindo o melhor tempo de resposta contra qualquer ameaça.
             </p>
           </motion.div>
 
           {/* Feature 2 */}
           <motion.div
-            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
+            className="group p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300"
             variants={fadeInUp}
             whileHover={{ y: -5 }}
             style={{ y: parallaxY2 }}
           >
             <motion.div
-              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
               animate={subtlePulse}
             >
-              <Clock className="h-8 w-8 text-purple-600" />
+              <Clock className="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </motion.div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-900">Monitoramento 24/7</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Monitoramento 24/7</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               Monitoramento contínuo e equipe dedicada à solução de qualquer situação.
             </p>
           </motion.div>
 
           {/* Feature 3 */}
           <motion.div
-            className="group p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300"
+            className="group p-8 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300"
             variants={fadeInUp}
             whileHover={{ y: -5 }}
             style={{ y: parallaxY3 }}
           >
             <motion.div
-              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+              className="mb-6 inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
               animate={subtlePulse}
             >
-              <Shield className="h-8 w-8 text-purple-600" />
+              <Shield className="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </motion.div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-900">Proteção Incluída</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Proteção Incluída</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               Todos os serviços no Brasil incluem a mitigação DDoS sem custo adicional.
             </p>
           </motion.div>
@@ -262,8 +262,8 @@ export default function AntiDDosPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="mb-6 text-4xl md:text-5xl font-bold text-gray-900">Capacidade de Proteção</h2>
-            <p className="mb-16 text-xl text-gray-600 max-w-3xl mx-auto" ref={countRef}>
+            <h2 className="mb-6 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Capacidade de Proteção</h2>
+            <p className="mb-16 text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" ref={countRef}>
               Garantimos toda a segurança e estabilidade da proteção DDoS com capacidade de até{" "}
               <motion.span
                 className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
@@ -286,20 +286,20 @@ export default function AntiDDosPage() {
           >
             {/* Card 1 */}
             <motion.div
-              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="group p-8 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
               whileHover={{ y: -5 }}
             >
               <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <ShieldAlert className="h-8 w-8 text-purple-600" />
+                  <ShieldAlert className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-xl font-bold text-gray-900">Mitigação em Tempo Real</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Mitigação em Tempo Real</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Mantemos nossa rede permanentemente ativa para oferecer a resposta mais ágil contra qualquer tipo de
                 ameaça ou ataque. Sua segurança é nossa prioridade.
               </p>
@@ -307,20 +307,20 @@ export default function AntiDDosPage() {
 
             {/* Card 2 */}
             <motion.div
-              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="group p-8 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
               whileHover={{ y: -5 }}
             >
               <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <BarChart className="h-8 w-8 text-purple-600" />
+                  <BarChart className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-xl font-bold text-gray-900">Sem Null-Route</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Sem Null-Route</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Optamos por não empregar técnicas como null-route/blackhole e redirecionamento de rota em nosso sistema
                 de proteção. Priorizamos as abordagens mais eficazes.
               </p>
@@ -328,20 +328,20 @@ export default function AntiDDosPage() {
 
             {/* Card 3 */}
             <motion.div
-              className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-purple-300 transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="group p-8 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 shadow-sm hover:shadow-lg"
               variants={fadeInUp}
               whileHover={{ y: -5 }}
             >
               <div className="mb-6 flex justify-center">
                 <motion.div
-                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 p-4"
+                  className="inline-flex rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 p-4"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Target className="h-8 w-8 text-purple-600" />
+                  <Target className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                 </motion.div>
               </div>
-              <h3 className="mb-4 text-xl font-bold text-gray-900">Direto ao Ponto</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Direto ao Ponto</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                 Realizamos a mitigação dos ataques diretamente em sua origem, garantindo sempre recursos disponíveis
                 para uso.
               </p>
@@ -353,7 +353,7 @@ export default function AntiDDosPage() {
       {/* Dashboard Preview */}
       <section className="container relative mx-auto px-4 py-20 z-10">
         <motion.div
-          className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-lg"
+          className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/50 p-8 shadow-lg"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -362,10 +362,10 @@ export default function AntiDDosPage() {
         >
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <motion.div className="p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100" animate={subtlePulse}>
-                <Shield className="h-6 w-6 text-purple-600" />
+              <motion.div className="p-2 rounded-lg bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50" animate={subtlePulse}>
+                <Shield className="h-6 w-6 text-purple-600 dark:text-purple-400" />
               </motion.div>
-              <h3 className="text-2xl font-bold text-gray-900">Dashboard de Proteção</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard de Proteção</h3>
             </div>
             <div className="flex items-center gap-3">
               <span className="flex items-center gap-2">
@@ -377,13 +377,13 @@ export default function AntiDDosPage() {
                   }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 ></motion.span>
-                <span className="text-sm font-medium text-green-600">Operacional</span>
+                <span className="text-sm font-medium text-green-600 dark:text-green-400">Operacional</span>
               </span>
-              <span className="text-sm text-gray-500">19:22:10</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">19:22:10</span>
             </div>
           </div>
 
-          <div className="relative h-24 w-full overflow-hidden rounded-xl bg-gray-50 border border-gray-200">
+          <div className="relative h-24 w-full overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
             <motion.div
               className="absolute bottom-0 left-0 h-full w-[200%]"
               style={{
@@ -422,16 +422,16 @@ export default function AntiDDosPage() {
 
           <div className="mt-6 grid grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-gray-900">449TB/s</div>
-              <div className="text-sm text-gray-600">Capacidade Total</div>
+              <div className="text-2xl font-bold text-gray-900 dark:text-white">449TB/s</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Capacidade Total</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">100%</div>
-              <div className="text-sm text-gray-600">Uptime</div>
+              <div className="text-2xl font-bold text-green-600 dark:text-green-400">100%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">&lt;5ms</div>
-              <div className="text-sm text-gray-600">Latência</div>
+              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">&lt;5ms</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Latência</div>
             </div>
           </div>
         </motion.div>

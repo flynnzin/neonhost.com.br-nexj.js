@@ -13,7 +13,7 @@ const bestSellers = [
     id: "minecraft",
     name: "Minecraft",
     price: 13.9,
-    image: "/games/page/mine.jpg",
+    image: "/games/page/mine.png",
   },
   {
     id: "fivem",
@@ -25,10 +25,10 @@ const bestSellers = [
 
 export function BestSellers() {
   return (
-    <div className="bg-zinc-900/50 rounded-lg p-4 border border-purple-500/20">
+    <div className="bg-white dark:bg-zinc-900/50 rounded-lg p-4 border border-gray-200 dark:border-purple-500/20">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-white">Mais Vendidos</h2>
-        <Link href="/mais-vendidos" className="text-zinc-400 hover:text-white">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-white">Mais Vendidos</h2>
+        <Link href="/mais-vendidos" className="text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white">
           <ChevronRight size={20} />
         </Link>
       </div>
@@ -44,10 +44,10 @@ export function BestSellers() {
               />
             </div>
             <div>
-              <h3 className="text-white font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 transition">
+              <h3 className="text-gray-900 dark:text-white font-medium group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 transition">
                 {game.name}
               </h3>
-              <p className="text-white">R$ {game.price.toFixed(2).replace(".", ",")}</p>
+              <p className="text-gray-900 dark:text-white">R$ {game.price.toFixed(2).replace(".", ",")}</p>
             </div>
           </Link>
         ))}

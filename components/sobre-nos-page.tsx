@@ -30,7 +30,6 @@ export default function SobreNosPage() {
 
   // Parallax effect
   const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 300])
 
   // Animation variants
   const fadeInUp = {
@@ -59,7 +58,7 @@ export default function SobreNosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-x-hidden">
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 py-16 z-10 relative">
@@ -83,7 +82,7 @@ export default function SobreNosPage() {
             </motion.h1>
 
             <motion.p
-              className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -99,7 +98,7 @@ export default function SobreNosPage() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.button
-                className="relative overflow-hidden rounded-md border border-gray-200 bg-gray-50 px-6 py-3 font-medium text-gray-900 transition-all hover:bg-gray-100"
+                className="relative overflow-hidden rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-6 py-3 font-medium text-gray-900 dark:text-white transition-all hover:bg-gray-100 dark:hover:bg-gray-700"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 0 20px rgba(233, 30, 99, 0.3)",
@@ -116,7 +115,7 @@ export default function SobreNosPage() {
               </motion.button>
 
               <motion.button
-                className="relative overflow-hidden rounded-md border border-gray-200 bg-gray-50 px-6 py-3 font-medium text-gray-900 transition-all hover:bg-gray-100"
+                className="relative overflow-hidden rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-6 py-3 font-medium text-gray-900 dark:text-white transition-all hover:bg-gray-100 dark:hover:bg-gray-700"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 0 20px rgba(156, 39, 176, 0.3)",
@@ -169,13 +168,12 @@ export default function SobreNosPage() {
                 </span>
               </h2>
 
-              <p className="text-lg text-gray-600 mb-6">
-                A Neonhost surgiu para fornecer aos clientes a melhor e mais segura experiência com hospedagens. Sabemos
+                            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6"> Sabemos
                 o quanto é difícil encontrar uma empresa que oferece qualidade, segurança, atendimento especializado e
                 preços acessíveis, e é por isso que estamos aqui.
               </p>
 
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
                 Nossa missão é proporcionar soluções de hospedagem de alta performance, com segurança de ponta e suporte
                 técnico especializado, permitindo que nossos clientes foquem no crescimento de seus negócios.
               </p>
@@ -204,26 +202,26 @@ export default function SobreNosPage() {
 
               {/* Stats overlay */}
               <motion.div
-                className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-lg border border-gray-200"
+                className="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-4 rounded-lg border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
               >
                 <div className="flex justify-between">
                   <div className="text-center">
-                    <p className="text-gray-600 text-sm">Uptime</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Uptime</p>
                     <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                       99.9%
                     </p>
                   </div>
                   <div className="text-center">
-                    <p className="text-gray-600 text-sm">Clientes</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Clientes</p>
                     <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                       1000+
                     </p>
                   </div>
                   <div className="text-center">
-                    <p className="text-gray-600 text-sm">Suporte</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Suporte</p>
                     <p className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                       24/7
                     </p>
@@ -250,7 +248,7 @@ export default function SobreNosPage() {
                 Nossos Diferenciais
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               O que nos torna diferentes e por que tantos clientes confiam em nós para hospedar seus projetos mais
               importantes.
             </p>
@@ -265,7 +263,7 @@ export default function SobreNosPage() {
           >
             {/* Card 1 */}
             <motion.div
-              className="group rounded-lg border border-gray-200 bg-gray-50 p-6 transition-all hover:border-pink-500/30"
+              className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-6 transition-all hover:border-pink-500/30"
               variants={fadeInUp}
               whileHover={{
                 y: -10,
@@ -292,7 +290,7 @@ export default function SobreNosPage() {
               </div>
 
               <h3 className="mb-4 text-center text-xl font-bold text-gray-900">Velocidade</h3>
-              <p className="text-center text-gray-600">
+              <p className="text-center text-gray-600 dark:text-gray-400">
                 Nossa banda larga de alta capacidade nos permite oferecer a maior velocidade e baixa latência para os
                 seus projetos, garantindo uma experiência fluida para seus usuários.
               </p>
@@ -306,7 +304,7 @@ export default function SobreNosPage() {
 
             {/* Card 2 */}
             <motion.div
-              className="group rounded-lg border border-gray-200 bg-gray-50 p-6 transition-all hover:border-pink-500/30"
+              className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-6 transition-all hover:border-pink-500/30"
               variants={fadeInUp}
               whileHover={{
                 y: -10,
@@ -333,7 +331,7 @@ export default function SobreNosPage() {
               </div>
 
               <h3 className="mb-4 text-center text-xl font-bold text-gray-900">Segurança</h3>
-              <p className="text-center text-gray-600">
+              <p className="text-center text-gray-600 dark:text-gray-400">
                 Nossos servidores possuem criptografia de ponta-a-ponta, garantindo assim a segurança e integridade dos
                 seus dados, com proteção Anti-DDoS de até 449TB/s.
               </p>
@@ -347,7 +345,7 @@ export default function SobreNosPage() {
 
             {/* Card 3 */}
             <motion.div
-              className="group rounded-lg border border-gray-200 bg-gray-50 p-6 transition-all hover:border-pink-500/30"
+              className="group rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-6 transition-all hover:border-pink-500/30"
               variants={fadeInUp}
               whileHover={{
                 y: -10,
@@ -374,7 +372,7 @@ export default function SobreNosPage() {
               </div>
 
               <h3 className="mb-4 text-center text-xl font-bold text-gray-900">Suporte eficiente</h3>
-              <p className="text-center text-gray-600">
+              <p className="text-center text-gray-600 dark:text-gray-400">
                 Temos uma equipe composta por diversos especialistas que estão preparados para atendê-lo de forma
                 eficiente e o mais rápido possível, 24 horas por dia.
               </p>
@@ -427,12 +425,12 @@ export default function SobreNosPage() {
                 </span>
               </h2>
 
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                 Na busca incessante por soluções confiáveis e sem preocupações, nossa empresa tem como missão oferecer a
                 melhor hospedagem para suas aplicações.
               </p>
 
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
                 Com uma equipe altamente capacitada e especializada, garantimos atendimento eficiente e descomplicado,
                 para que você se concentre no crescimento do seu negócio.
               </p>
@@ -448,8 +446,8 @@ export default function SobreNosPage() {
                     <Award className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Infraestrutura de ponta</h4>
-                    <p className="text-gray-600">Servidores de última geração com hardware de alto desempenho.</p>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Infraestrutura de ponta</h4>
+                    <p className="text-gray-600 dark:text-gray-400">Servidores de última geração com hardware de alto desempenho.</p>
                   </div>
                 </motion.li>
 
@@ -463,8 +461,8 @@ export default function SobreNosPage() {
                     <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Segurança garantida</h4>
-                    <p className="text-gray-600">Proteção Anti-DDoS avançada e backups automáticos.</p>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Segurança garantida</h4>
+                    <p className="text-gray-600 dark:text-gray-400">Proteção Anti-DDoS avançada e backups automáticos.</p>
                   </div>
                 </motion.li>
 
@@ -478,8 +476,8 @@ export default function SobreNosPage() {
                     <Users className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900">Suporte humanizado</h4>
-                    <p className="text-gray-600">Atendimento 24/7 com especialistas prontos para ajudar.</p>
+                    <h4 className="font-medium text-gray-900 dark:text-white">Suporte humanizado</h4>
+                    <p className="text-gray-600 dark:text-gray-400">Atendimento 24/7 com especialistas prontos para ajudar.</p>
                   </div>
                 </motion.li>
               </ul>
@@ -514,7 +512,7 @@ export default function SobreNosPage() {
               href="https://instagram.com/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -528,7 +526,7 @@ export default function SobreNosPage() {
               href="https://facebook.com/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -542,7 +540,7 @@ export default function SobreNosPage() {
               href="https://twitter.com/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -556,7 +554,7 @@ export default function SobreNosPage() {
               href="https://youtube.com/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -570,7 +568,7 @@ export default function SobreNosPage() {
               href="https://linkedin.com/company/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -584,7 +582,7 @@ export default function SobreNosPage() {
               href="https://discord.gg/neonhost"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 border border-gray-200 hover:border-pink-500/50 transition-all"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-pink-500/50 dark:hover:border-pink-500/50 transition-all"
               variants={scaleIn}
               whileHover={{
                 scale: 1.1,
@@ -600,7 +598,7 @@ export default function SobreNosPage() {
       {/* CTA Section */}
       <section ref={ctaRef} className="container mx-auto px-4 py-20 relative z-10">
         <motion.div
-          className="max-w-5xl mx-auto rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 p-12 relative overflow-hidden"
+          className="max-w-5xl mx-auto rounded-2xl border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-12 relative overflow-hidden"
           style={{
             opacity: isCtaInView ? 1 : 0,
             transform: isCtaInView ? "none" : "translateY(30px)",
@@ -620,7 +618,7 @@ export default function SobreNosPage() {
               </span>
             </h2>
 
-            <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
               Selecione o plano que se encaixa com seu projeto e comece agora! Ou entre em contato com nossa equipe para
               obter uma solução exclusiva para você.
             </p>
@@ -635,7 +633,7 @@ export default function SobreNosPage() {
               </motion.button>
 
               <motion.button
-                className="px-8 py-3 rounded-md border border-gray-200 bg-gray-50 text-gray-900 font-medium"
+                className="px-8 py-3 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white font-medium"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 0 20px rgba(156, 39, 176, 0.3)",

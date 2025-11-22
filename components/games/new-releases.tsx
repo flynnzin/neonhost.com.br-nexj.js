@@ -42,10 +42,10 @@ export function NewReleases() {
     <section>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-bold text-white">Lançamentos Recentes</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Lançamentos Recentes</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mt-2 rounded-full"></div>
         </div>
-        <Link href="/games/new" className="flex items-center gap-1 text-zinc-400 hover:text-white transition group">
+        <Link href="/games/new" className="flex items-center gap-1 text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white transition group">
           <span>Ver todos</span>
           <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
@@ -54,7 +54,7 @@ export function NewReleases() {
       <div className="space-y-6">
         {newGames.map((game) => (
           <Link href={`/games/${game.id}`} key={game.id} className="group">
-            <div className="bg-zinc-900/50 rounded-lg overflow-hidden border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+            <div className="bg-white dark:bg-zinc-900/50 rounded-lg overflow-hidden border border-gray-200 dark:border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
               <div className="flex flex-col md:flex-row">
                 <div className="relative w-full md:w-1/3 aspect-[16/9] md:aspect-auto">
                   <Image
@@ -70,16 +70,16 @@ export function NewReleases() {
 
                 <div className="p-5 md:w-2/3">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 transition-all">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-orange-400 transition-all">
                       {game.name}
                     </h3>
-                    <div className="text-zinc-500 text-sm mt-1 md:mt-0">Lançado em {game.releaseDate}</div>
+                    <div className="text-gray-600 dark:text-zinc-500 text-sm mt-1 md:mt-0">Lançado em {game.releaseDate}</div>
                   </div>
 
-                  <p className="text-zinc-400 text-sm mb-4">{game.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-400 text-sm mb-4">{game.description}</p>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-white font-bold">R$ {game.price.toFixed(2).replace(".", ",")}</span>
+                    <span className="text-gray-900 dark:text-white font-bold">R$ {game.price.toFixed(2).replace(".", ",")}</span>
                   </div>
                 </div>
               </div>

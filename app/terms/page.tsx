@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Background with grid pattern */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0">
@@ -28,22 +28,24 @@ export default function TermsPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors mb-8"
+            className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-500 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar
           </Link>
           <h1 className="text-5xl font-bold mb-4">
             Termos de{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Serviço</span>
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Serviço
+            </span>
           </h1>
-          <p className="text-xl text-gray-600">Última atualização: {new Date().toLocaleDateString("pt-BR")}</p>
+          <p className="text-xl text-gray-600 dark:text-gray-400">Última atualização: {new Date().toLocaleDateString("pt-BR")}</p>
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
+        <div className="prose prose-lg max-w-none space-y-8 text-gray-700 dark:text-gray-300">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Aceitação dos Termos</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Aceitação dos Termos</h2>
             <p>
               Ao acessar e utilizar os serviços da NeonHost, você concorda em estar vinculado pelos termos e condições
               estabelecidos neste documento. Se você não concorda com qualquer parte destes termos, por favor, não
@@ -52,7 +54,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Descrição dos Serviços</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Descrição dos Serviços</h2>
             <p>
               A NeonHost fornece serviços de hospedagem, incluindo VPS (Servidor Privado Virtual), Servidores Dedicados
               e Proteção DDoS. Todos os serviços são fornecidos "tal como estão" e sujeitos à disponibilidade.
@@ -66,7 +68,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Registro de Conta</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Registro de Conta</h2>
             <p>
               Para utilizar nossos serviços, você deve criar uma conta e fornecer informações precisas, completas e
               atualizadas. Você é responsável por:
@@ -79,7 +81,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Pagamentos e Faturamento</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Pagamentos e Faturamento</h2>
             <p>
               Os preços estão sujeitos a mudanças com aviso prévio de 30 dias. Você concorda em pagar todas as taxas
               associadas à sua conta de acordo com os termos de pagamento apresentados no momento da compra.
@@ -93,7 +95,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Política de Cancelamento</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Política de Cancelamento</h2>
             <p>
               Você pode cancelar sua conta a qualquer momento. O cancelamento entra em vigor no final do período de
               faturamento atual. Oferecemos garantia de reembolso de 7 dias para novos clientes.
@@ -101,7 +103,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Uso Aceitável</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Uso Aceitável</h2>
             <p>Você concorda em não utilizar nossos serviços para:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Violar qualquer lei ou regulamentação aplicável</li>
@@ -114,7 +116,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Disponibilidade e Garantias</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">7. Disponibilidade e Garantias</h2>
             <p>
               Oferecemos SLA de 99,9% de uptime. Embora nos esforcemos para manter serviços ininterruptos, não
               garantimos que o serviço será sempre disponível e sem erros.
@@ -122,7 +124,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Limitação de Responsabilidade</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">8. Limitação de Responsabilidade</h2>
             <p>
               A NeonHost não será responsável por danos indiretos, incidentais, especiais, consequentes ou punitivos,
               incluindo perda de dados, lucros ou receitas, mesmo se avisada da possibilidade de tais danos.
@@ -130,7 +132,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Suspensão de Conta</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">9. Suspensão de Conta</h2>
             <p>Reservamos o direito de suspender ou cancelar sua conta se você:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Violar estes termos de serviço</li>
@@ -141,7 +143,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Modificações dos Termos</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">10. Modificações dos Termos</h2>
             <p>
               A NeonHost se reserva o direito de modificar estes termos a qualquer momento. Mudanças substanciais serão
               notificadas com antecedência. O uso continuado dos serviços implica aceitação das modificações.
@@ -149,7 +151,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Lei Aplicável</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">11. Lei Aplicável</h2>
             <p>
               Estes termos são regidos pelas leis da República Federativa do Brasil, especificamente a legislação do
               Estado de Rio De Janeiro, sem prejudicar as disposições de qualquer lei de proteção ao consumidor aplicável.
@@ -157,7 +159,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Contato</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">12. Contato</h2>
             <p>Para dúvidas sobre estes Termos de Serviço, entre em contato conosco através de:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Email: contato@neonhost.com.br</li>
@@ -170,3 +172,4 @@ export default function TermsPage() {
     </div>
   )
 }
+

@@ -23,7 +23,7 @@ export default function GridBackground() {
       >
         <defs>
           <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8A2BE2" strokeWidth="1" />
+            <path d="M 40 0 L 0 0 0 40" fill="none" className="stroke-gray-300 dark:stroke-[#8A2BE2]" strokeWidth="1" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />

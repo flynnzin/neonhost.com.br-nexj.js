@@ -13,10 +13,10 @@ export function LoadingScreen() {
 	return (
 		<div
 			id="preloader"
-			className={`fixed inset-0 flex items-center justify-center bg-white z-[9999999] transition-opacity duration-300 ${loaded ? "opacity-0 pointer-events-none" : ""}`}
+			className={`fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-[9999999] transition-opacity duration-300 ${loaded ? "opacity-0 pointer-events-none" : ""}`}
 		>
 			<div className="relative text-center">
-				<div className="w-36 h-36 border-4 border-gray-300 border-t-theme rounded-full animate-spin mb-6"></div>
+				<div className="w-36 h-36 border-4 border-gray-300 dark:border-gray-700 border-t-theme rounded-full animate-spin mb-6"></div>
 				<div className="text-5xl font-bold tracking-widest flex gap-1">
 					{["N", "E", "O", "N"].map((letter, index) => (
 						<span

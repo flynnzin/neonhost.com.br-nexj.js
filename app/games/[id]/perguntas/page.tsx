@@ -27,28 +27,28 @@ export default function PerguntasPage({ params }: PerguntasPageProps) {
   const gameData = getGameData(params.id)
 
   if (!gameData) {
-    return <div className="min-h-screen flex items-center justify-center">Jogo não encontrado</div>
+    return <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white">Jogo não encontrado</div>
   }
 
   return (
-    <main className="min-h-screen bg-[#0A0C10] text-white">
+    <main className="min-h-screen bg-white dark:bg-[#0A0C10] text-gray-900 dark:text-white">
       <div className="container mx-auto px-4 pt-24">
-        <h1 className="text-4xl font-bold text-white text-center">FAQ do {params.id} (modo normal)</h1>
-        <p className="text-gray-400 text-center mt-4">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white text-center">FAQ do {params.id} (modo normal)</h1>
+        <p className="text-gray-500 dark:text-gray-400 text-center mt-4">
           Esta página só aparece quando maintenanceConfig.isGamesUnderMaintenance = false
         </p>
 
         {/* Navegação */}
         <div className="flex border-b border-purple-500/20 mt-4">
-          <Link href={`/games/${params.id}`} className="text-zinc-400 hover:text-white px-4 py-2">
+          <Link href={`/games/${params.id}`} className="text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white px-4 py-2">
             Visão Geral
           </Link>
-          <Link href={`/games/${params.id}/planos`} className="text-zinc-400 hover:text-white px-4 py-2">
+          <Link href={`/games/${params.id}/planos`} className="text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white px-4 py-2">
             Planos
           </Link>
           <Link
             href={`/games/${params.id}/perguntas`}
-            className="text-white border-b-2 border-orange-500 px-4 py-2 font-medium"
+            className="text-gray-900 dark:text-white border-b-2 border-orange-500 px-4 py-2 font-medium"
           >
             Perguntas frequentes
           </Link>
@@ -60,21 +60,21 @@ export default function PerguntasPage({ params }: PerguntasPageProps) {
           <div className="space-y-4">
             {gameData.faq.map((item, index) => (
               <div key={index} className="border border-purple-500/10 rounded-lg overflow-hidden">
-                <button className="flex items-center justify-between w-full p-4 text-left bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors">
+                <button className="flex items-center justify-between w-full p-4 text-left bg-gray-50 dark:bg-zinc-900/50 hover:bg-gray-100 dark:hover:bg-zinc-800/50 transition-colors">
                   <span className="font-medium">{item.question}</span>
                   <ChevronDown size={20} />
                 </button>
-                <div className="p-4 bg-zinc-800/30 border-t border-purple-500/10">
-                  <p className="text-zinc-300">{item.answer}</p>
+                <div className="p-4 bg-gray-100 dark:bg-zinc-800/30 border-t border-purple-500/10">
+                  <p className="text-gray-700 dark:text-zinc-300">{item.answer}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Contato */}
-          <div className="mt-12 bg-gradient-to-r from-purple-900/20 to-orange-900/20 rounded-lg p-8 text-center">
+          <div className="mt-12 bg-gradient-to-r from-purple-100/50 to-orange-100/50 dark:from-purple-900/20 dark:to-orange-900/20 rounded-lg p-8 text-center">
             <h3 className="text-xl font-bold mb-4">Ainda tem dúvidas?</h3>
-            <p className="text-zinc-300 mb-6">
+            <p className="text-gray-700 dark:text-zinc-300 mb-6">
               Nossa equipe de suporte está disponível 24/7 para ajudar com qualquer dúvida que você possa ter.
             </p>
             <button className="bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 text-white px-6 py-3 rounded-md font-medium transition-colors">

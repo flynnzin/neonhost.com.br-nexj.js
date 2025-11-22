@@ -126,14 +126,14 @@ export default function ArticleFeedback({
   // Se não estiver montado no cliente, renderizar versão simplificada
   if (!isMounted) {
     return (
-      <div className="bg-[#1a1a24] border border-gray-800 rounded-xl p-6">
-        <h3 className="text-lg font-bold text-white mb-4">Este artigo foi útil?</h3>
+      <div className="bg-gray-100 dark:bg-[#1a1a24] border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Este artigo foi útil?</h3>
         <div className="flex items-center gap-4">
-          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded-lg" disabled>
+          <button className="flex items-center bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 rounded-lg" disabled>
             <ThumbsUp className="h-5 w-5 mr-2" />
             <span>Sim ({initialHelpful})</span>
           </button>
-          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded-lg" disabled>
+          <button className="flex items-center bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-4 py-2 rounded-lg" disabled>
             <ThumbsDown className="h-5 w-5 mr-2" />
             <span>Não ({initialNotHelpful})</span>
           </button>
@@ -143,20 +143,20 @@ export default function ArticleFeedback({
   }
 
   return (
-    <div className="bg-[#1a1a24] border border-gray-800 rounded-xl p-6">
-      <h3 className="text-lg font-bold text-white mb-4">Este artigo foi útil?</h3>
+    <div className="bg-gray-100 dark:bg-[#1a1a24] border border-gray-200 dark:border-gray-800 rounded-xl p-6">
+      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Este artigo foi útil?</h3>
 
       {feedbackMessage && (
-        <div className="mb-4 p-3 bg-gray-800/50 rounded-lg text-center">
-          <p className="text-sm text-gray-300">{feedbackMessage}</p>
+        <div className="mb-4 p-3 bg-gray-200 dark:bg-gray-800/50 rounded-lg text-center">
+          <p className="text-sm text-gray-700 dark:text-gray-300">{feedbackMessage}</p>
         </div>
       )}
 
       <div className="flex items-center gap-4">
         <button
           className={`flex items-center ${
-            userVote === true ? "bg-green-600 hover:bg-green-700" : "bg-gray-800 hover:bg-gray-700"
-          } text-white px-4 py-2 rounded-lg transition-colors`}
+            userVote === true ? "bg-green-600 hover:bg-green-700" : "bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+          } text-gray-900 dark:text-white px-4 py-2 rounded-lg transition-colors`}
           onClick={() => submitFeedback(true)}
           disabled={isSubmitting}
         >
@@ -166,8 +166,8 @@ export default function ArticleFeedback({
 
         <button
           className={`flex items-center ${
-            userVote === false ? "bg-red-600 hover:bg-red-700" : "bg-gray-800 hover:bg-gray-700"
-          } text-white px-4 py-2 rounded-lg transition-colors`}
+            userVote === false ? "bg-red-600 hover:bg-red-700" : "bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+          } text-gray-900 dark:text-white px-4 py-2 rounded-lg transition-colors`}
           onClick={() => submitFeedback(false)}
           disabled={isSubmitting}
         >

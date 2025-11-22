@@ -51,18 +51,18 @@ export function GameCategories() {
       {categories.map((category) => (
         <div
           key={category.id}
-          className="group bg-slate-900/50 border border-slate-700/50 hover:border-slate-600/50 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-slate-800/50 cursor-pointer hover:scale-105 backdrop-blur-sm"
+          className="group bg-gray-50 dark:bg-slate-900/50 border border-gray-200 dark:border-slate-700/50 hover:border-purple-500/50 dark:hover:border-slate-600/50 rounded-2xl p-6 text-center transition-all duration-300 hover:bg-gray-100 dark:hover:bg-slate-800/50 cursor-pointer hover:scale-105 backdrop-blur-sm"
         >
           <div
-            className={`w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-gradient-to-br ${category.color} bg-opacity-10 text-white group-hover:scale-110 transition-transform duration-300`}
+            className={`w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-gradient-to-br ${category.color} bg-opacity-10 text-gray-900 dark:text-white group-hover:scale-110 transition-transform duration-300`}
           >
             {category.icon}
           </div>
-          <h3 className="text-white font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+          <h3 className="text-gray-900 dark:text-white font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
             {category.name}
           </h3>
-          <p className="text-slate-400 text-sm">
-            <span className="font-medium text-white">{category.count}</span> jogos
+          <p className="text-gray-600 dark:text-slate-400 text-sm">
+            <span className="font-medium text-gray-900 dark:text-white">{category.count}</span> jogos
           </p>
         </div>
       ))}

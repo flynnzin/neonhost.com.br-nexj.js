@@ -43,7 +43,7 @@ export const Footer = () => {
   const sections = [
     {
       title: "Servidores",
-      icon: <Server className="h-5 w-5 text-purple-600" />,
+      icon: <Server className="h-5 w-5 text-purple-600 dark:text-purple-400" />,
       links: [
         { name: "VPS Gamer", url: "/vps-gamer", badge: "Popular" },
         { name: "VPS Ryzen", url: "/vps-ryzen" },
@@ -53,7 +53,7 @@ export const Footer = () => {
     },
     {
       title: "Jogos",
-      icon: <Gamepad2 className="h-5 w-5 text-pink-600" />,
+      icon: <Gamepad2 className="h-5 w-5 text-pink-600 dark:text-pink-400" />,
       links: [
         { name: "Palworld", url: "/games/palworld", badge: "Novo" },
         { name: "Minecraft", url: "/games/minecraft" },
@@ -66,7 +66,7 @@ export const Footer = () => {
     },
     {
       title: "Suporte",
-      icon: <HeadphonesIcon className="h-5 w-5 text-blue-600" />,
+      icon: <HeadphonesIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />,
       links: [
         {
           name: "Central de Ajuda",
@@ -84,7 +84,7 @@ export const Footer = () => {
     },
     {
       title: "Empresa",
-      icon: <Building2 className="h-5 w-5 text-green-600" />,
+      icon: <Building2 className="h-5 w-5 text-green-600 dark:text-green-400" />,
       links: [
         { name: "Área do Cliente", url: "https://app.neonhost.com.br/login", external: true },
         { name: "Status Rede", url: "https://neonhost.instatus.com", external: true },
@@ -136,13 +136,13 @@ export const Footer = () => {
   ]
 
   return (
-    <footer className="relative w-full bg-white border-t border-gray-200 overflow-hidden">
+    <footer className="relative w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 overflow-hidden">
       {/* Background decorativo */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Gradientes */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-900/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/10 dark:bg-pink-900/10 rounded-full blur-3xl" />
         </div>
 
         {/* Grid sutil */}
@@ -182,7 +182,7 @@ export const Footer = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full opacity-80" />
-                <div className="absolute inset-1 bg-white rounded-full" />
+                <div className="absolute inset-1 bg-white dark:bg-gray-900 rounded-full" />
                 <div className="absolute inset-[3px] bg-gradient-to-br from-pink-500 to-purple-500 rounded-full" />
               </motion.div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
@@ -193,14 +193,14 @@ export const Footer = () => {
             {/* Sobre nós */}
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-4">
-                <Heart className="h-5 w-5 text-pink-600" />
-                <h2 className="font-medium text-gray-900 relative inline-flex items-center">
+                <Heart className="h-5 w-5 text-pink-600 dark:text-pink-400" />
+                <h2 className="font-medium text-gray-900 dark:text-white relative inline-flex items-center">
                   Sobre nós
                   <span className="absolute -bottom-1 left-0 w-12 h-[2px] bg-gradient-to-r from-pink-500 to-transparent" />
                 </h2>
               </div>
 
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Hospedagem de alta performance com suporte 24/7. Servidores otimizados para jogos, aplicações web e VPS
                 no Brasil.
               </p>
@@ -213,7 +213,7 @@ export const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-600 transition-all duration-300 hover:border-gray-300 hover:bg-gray-100 hover:text-gray-900"
+                    className="p-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
@@ -248,7 +248,7 @@ export const Footer = () => {
                   >
                     {section.icon}
                   </motion.div>
-                  <h2 className="font-medium text-gray-900 relative inline-flex items-center">
+                  <h2 className="font-medium text-gray-900 dark:text-white relative inline-flex items-center">
                     {section.title}
                     <motion.span
                       className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600"
@@ -270,7 +270,7 @@ export const Footer = () => {
                     >
                       <Link
                         href={link.url}
-                        className="group/link flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-all duration-300"
+                        className="group/link flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300"
                         target={"external" in link && link.external ? "_blank" : undefined}
                         rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
                       >
@@ -285,7 +285,7 @@ export const Footer = () => {
 
                         {"badge" in link && link.badge && (
                           <motion.span
-                            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600/15 to-pink-600/15 px-2 py-0.5 text-xs font-medium text-purple-700 border border-purple-600/20"
+                            className="inline-flex items-center rounded-full bg-gradient-to-r from-purple-600/15 to-pink-600/15 px-2 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-300 border border-purple-600/20 dark:border-purple-800"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.3, delay: 0.5 }}
@@ -304,7 +304,7 @@ export const Footer = () => {
 
         {/* Linha de separação */}
         <motion.div
-          className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent my-8"
+          className="h-[1px] w-full bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent my-8"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
@@ -322,10 +322,10 @@ export const Footer = () => {
           <div className="flex items-center">
             <div className="h-5 w-5 mr-2 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full opacity-80" />
-              <div className="absolute inset-1 bg-white rounded-full" />
+              <div className="absolute inset-1 bg-white dark:bg-gray-900 rounded-full" />
               <div className="absolute inset-[2px] bg-gradient-to-br from-pink-500 to-purple-500 rounded-full" />
             </div>
-            <p className="text-sm text-gray-600">© {currentYear} NeonHost. Todos os direitos reservados.</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">© {currentYear} NeonHost. Todos os direitos reservados.</p>
           </div>
 
           <div className="flex flex-wrap gap-6 items-center">
@@ -338,7 +338,7 @@ export const Footer = () => {
                 <Link
                   key={index}
                   href={item.url}
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors relative group"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-purple-600 transition-all duration-300 group-hover:w-full" />
@@ -346,7 +346,7 @@ export const Footer = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
 
               <span>
                 CNPJ:{" "}
@@ -354,7 +354,7 @@ export const Footer = () => {
                   href="https://www.neonhost.com.br"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-pink-600 hover:text-pink-700 transition-colors"
+                  className="text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-500 transition-colors"
                 >
                   59.630.804/0001-17
                 </a>

@@ -54,7 +54,7 @@ export default function VpsGamer() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 overflow-hidden relative">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden relative">
       {/* Background com grid sutil */}
       <div className="fixed inset-0 z-0">
         {/* Grid quadriculado sutil */}
@@ -82,17 +82,17 @@ export default function VpsGamer() {
         <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
           <div className="text-center mb-12">
             <div>
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 text-sm font-medium mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 dark:bg-indigo-900/50 border border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-300 text-sm font-medium mb-6">
                 <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                 Servidores Semi-Dedicados
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               <span className="text-indigo-600">Semi-Dedicado</span> para seus Projetos
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
               Recursos dedicados com a flexibilidade que você precisa. Hardware de ponta, segurança avançada e suporte
               especializado para projetos que exigem alta performance.
             </p>
@@ -102,7 +102,7 @@ export default function VpsGamer() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-indigo-600">{stat.value}</div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -115,13 +115,13 @@ export default function VpsGamer() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-gray-50 border border-gray-200 hover:border-indigo-300 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 group"
               >
-                <div className="p-3 rounded-xl bg-indigo-100 text-indigo-600 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -130,10 +130,10 @@ export default function VpsGamer() {
         {/* Planos Section - Cards Expansíveis */}
         <section className="py-20" id="plans">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Escolha seu <span className="text-indigo-600">Plano Ideal</span>
             </h2>
-            <p className="text-gray-600 mx-auto text-lg max-w-2xl">
+            <p className="text-gray-600 dark:text-gray-400 mx-auto text-lg max-w-2xl">
               Planos Semi-Dedicados com recursos garantidos e performance superior para seus projetos mais exigentes.
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function VpsGamer() {
             {plans.map((plan, index) => (
               <div
                 key={plan.name}
-                className="group relative bg-white border border-gray-200 hover:border-indigo-300 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group relative bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 {/* Header do Card */}
                 <div className="p-6">
@@ -152,16 +152,16 @@ export default function VpsGamer() {
                     <div className="flex items-center gap-4">
                       <button
                         onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                        className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center hover:scale-110 transition-transform duration-300"
                       >
                         {expandedCard === index ? (
-                          <ChevronUp className="h-4 w-4 text-indigo-600" />
+                          <ChevronUp className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                         ) : (
-                          <ChevronDown className="h-4 w-4 text-indigo-600" />
+                          <ChevronDown className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
                         )}
                       </button>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
                       </div>
                     </div>
 
@@ -169,24 +169,24 @@ export default function VpsGamer() {
                     <div className="hidden lg:grid grid-cols-3 gap-8">
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.ram}</span>
+                          <MemoryStick className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.ram}</span>
                         </div>
-                        <span className="text-xs text-gray-500">RAM Dedicada</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">RAM Dedicada</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.cores}</span>
+                          <Cpu className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.cores}</span>
                         </div>
-                        <span className="text-xs text-gray-500">CPU Cores</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">CPU Cores</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.ssd}</span>
+                          <HardDrive className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.ssd}</span>
                         </div>
-                        <span className="text-xs text-gray-500">SSD NVMe</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">SSD NVMe</span>
                       </div>
                     </div>
 
@@ -194,8 +194,8 @@ export default function VpsGamer() {
                     <div className="flex items-center gap-6">
                       <div className="text-right">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-2xl md:text-3xl font-bold text-gray-900">R${plan.price}</span>
-                          <span className="text-sm text-gray-500"></span>
+                          <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">R${plan.price}</span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400"></span>
                         </div>
                       </div>
 
@@ -214,28 +214,28 @@ export default function VpsGamer() {
                   </div>
 
                   {/* Mobile Specifications */}
-                  <div className="lg:hidden mt-4 pt-4 border-t border-gray-200">
+                  <div className="lg:hidden mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <MemoryStick className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.ram}</span>
+                          <MemoryStick className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.ram}</span>
                         </div>
-                        <span className="text-xs text-gray-500">RAM</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">RAM</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <Cpu className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.cores}</span>
+                          <Cpu className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.cores}</span>
                         </div>
-                        <span className="text-xs text-gray-500">CPU</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">CPU</span>
                       </div>
                       <div className="text-center">
                         <div className="flex items-center justify-center gap-2 mb-1">
-                          <HardDrive className="h-4 w-4 text-indigo-600" />
-                          <span className="font-semibold text-gray-900">{plan.description.ssd}</span>
+                          <HardDrive className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                          <span className="font-semibold text-gray-900 dark:text-white">{plan.description.ssd}</span>
                         </div>
-                        <span className="text-xs text-gray-500">SSD</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">SSD</span>
                       </div>
                     </div>
                   </div>
@@ -246,14 +246,14 @@ export default function VpsGamer() {
                   className={`overflow-hidden ${expandedCard === index ? "h-auto" : "h-0"}`}
                   style={{ transition: "height 0.3s" }}
                 >
-                  <div className="px-6 pb-6 border-t border-gray-200">
+                  <div className="px-6 pb-6 border-t border-gray-200 dark:border-gray-700">
                     <div className="pt-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Recursos inclusos:</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recursos inclusos:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {plan.description.attrs.map((attr, attrIndex) => (
                           <div key={attrIndex} className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700 text-sm">{attr}</span>
+                            <span className="text-gray-700 dark:text-gray-300 text-sm">{attr}</span>
                           </div>
                         ))}
                       </div>
@@ -267,11 +267,11 @@ export default function VpsGamer() {
 
         {/* CTA Section */}
         <section className="py-16">
-          <div className="rounded-2xl bg-indigo-50 border border-indigo-200 p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <div className="rounded-2xl bg-indigo-50 dark:bg-indigo-900/50 border border-indigo-200 dark:border-indigo-800 p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Precisa de uma configuração personalizada?
             </h2>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Nossa equipe de especialistas pode criar uma solução sob medida para suas necessidades específicas.
             </p>
             <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3">

@@ -29,8 +29,8 @@ export function FeatureCard({
   className = "",
 }: FeatureCardProps) {
   return (
-    <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 h-full ${className}`}>
-      <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-4">
+    <div className={`bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm border border-white/10 dark:border-gray-700 rounded-2xl p-6 h-full ${className}`}>
+      <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 dark:bg-purple-900/20 border border-purple-500/20 dark:border-purple-800/30 text-purple-400 dark:text-purple-300 text-sm font-medium mb-4">
         {icon && <div className="mr-2">{icon}</div>}
         {badge}
         {speedBadge && (
@@ -43,14 +43,14 @@ export function FeatureCard({
         )}
       </div>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-400 mb-6 text-sm md:text-base">{description}</p>
+      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm md:text-base">{description}</p>
 
       <div className="grid grid-cols-1 gap-3 mb-6">
         {benefits.map((benefit, index) => (
           <div key={index} className="flex items-start">
             <CheckCircle className="h-5 w-5 text-green-400 mr-2 flex-shrink-0 mt-0.5" />
-            <span className="text-gray-300 text-sm">{benefit}</span>
+            <span className="text-gray-700 dark:text-gray-300 text-sm">{benefit}</span>
           </div>
         ))}
       </div>

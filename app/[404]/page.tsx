@@ -3,7 +3,7 @@ import { AlertCircle } from "lucide-react"; // Importando um ícone do Lucide Re
 
 export default function NotFoundPage() {
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-[#0B0E13]">
+		<div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-[#0B0E13]">
 			<div className="text-center">
 				<div className="flex justify-center mb-4">
 					<img src="/svgs/404error.svg" className="h-96" alt="" />

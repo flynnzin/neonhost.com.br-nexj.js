@@ -25,8 +25,8 @@ export function FeaturedGame() {
             </h2>
             <h1 className="text-white text-5xl font-bold mb-6">{featuredGameConfig.name}</h1>
             <div className="mb-6">
-              <p className="text-zinc-300 mb-2">JÁ DISPONÍVEL</p>
-              <p className="text-zinc-300 mb-6">{featuredGameConfig.description}</p>
+              <p className="text-zinc-300 dark:text-gray-300 mb-2">JÁ DISPONÍVEL</p>
+              <p className="text-zinc-300 dark:text-gray-300 mb-6">{featuredGameConfig.description}</p>
               <div className="flex items-center gap-4">
                 <Link
                   href={featuredGameConfig.purchaseUrl}
@@ -35,7 +35,7 @@ export function FeaturedGame() {
                   Comprar agora
                 </Link>
                 <div className="flex items-center gap-2">
-                  <span className="text-zinc-500 line-through">
+                  <span className="text-zinc-500 dark:text-gray-400 line-through">
                     R$ {featuredGameConfig.originalPrice.toFixed(2).replace(".", ",")}
                   </span>
                   <span className="text-white font-bold">

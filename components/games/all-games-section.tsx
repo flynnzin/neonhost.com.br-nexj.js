@@ -203,8 +203,8 @@ export function AllGamesSection() {
   return (
     <section>
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-white mb-4">Todos os Jogos</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Todos os Jogos</h2>
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Escolha entre nossa seleção de servidores otimizados para os jogos mais populares
         </p>
         <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
@@ -212,13 +212,13 @@ export function AllGamesSection() {
 
       {/* Filter Tabs */}
       <div className="flex justify-center mb-12">
-        <div className="flex gap-2 bg-white/5 border border-white/10 rounded-xl p-1">
+        <div className="flex gap-2 bg-white/5 dark:bg-gray-800/50 border border-white/10 dark:border-gray-700 rounded-xl p-1">
           <button
             onClick={() => handleFilterChange("all")}
             className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
               activeFilter === "all"
                 ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
-                : "text-gray-400 hover:text-white"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             Todos ({allGames.length})
@@ -228,7 +228,7 @@ export function AllGamesSection() {
             className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
               activeFilter === "popular"
                 ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
-                : "text-gray-400 hover:text-white"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             Populares ({allGames.filter((g) => g.category === "popular").length})
@@ -238,7 +238,7 @@ export function AllGamesSection() {
             className={`px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
               activeFilter === "new"
                 ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
-                : "text-gray-400 hover:text-white"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             Novos ({allGames.filter((g) => g.category === "new").length})
@@ -248,10 +248,10 @@ export function AllGamesSection() {
 
       {/* Results Count */}
       <div className="text-center mb-8">
-        <p className="text-gray-400 text-sm">
+        <p className="text-gray-600 dark:text-gray-400 text-sm">
           Mostrando {displayedGames.length} de {filteredGames.length} jogos
           {activeFilter !== "all" && (
-            <span className="ml-2 text-purple-400">• Filtro: {activeFilter === "popular" ? "Populares" : "Novos"}</span>
+            <span className="ml-2 text-purple-600 dark:text-purple-400">• Filtro: {activeFilter === "popular" ? "Populares" : "Novos"}</span>
           )}
         </p>
       </div>
@@ -261,7 +261,7 @@ export function AllGamesSection() {
         {displayedGames.map((game, index) => (
           <Link href={`/games/${game.id}`} key={game.id} className="group">
             <div
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:bg-white/10 animate-in fade-in slide-in-from-bottom-4"
+              className="bg-white/5 dark:bg-gray-800/50 border border-white/10 dark:border-gray-700 rounded-xl overflow-hidden hover:border-purple-500/50 dark:hover:border-purple-600/50 transition-all duration-300 hover:bg-white/10 dark:hover:bg-gray-800 animate-in fade-in slide-in-from-bottom-4"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -284,7 +284,7 @@ export function AllGamesSection() {
                     </span>
                   </div>
                 )}
-                <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
+                <div className="absolute top-3 right-3 bg-black/60 dark:bg-black/80 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
                   <Users className="w-3 h-3 text-green-400" />
                   <span className="text-xs text-white">{game.players}</span>
                 </div>
@@ -292,23 +292,23 @@ export function AllGamesSection() {
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors line-clamp-1">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors line-clamp-1">
                     {game.name}
                   </h3>
                   <div className="flex items-center gap-1 ml-2">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm text-gray-300">{game.rating}</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300">{game.rating}</span>
                   </div>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2">{game.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">{game.description}</p>
 
                 <div className="flex items-center justify-between">
-                  <div className="text-white font-semibold">
+                  <div className="text-gray-900 dark:text-white font-semibold">
                     R$ {game.price.toFixed(2).replace(".", ",")}
-                    <span className="text-gray-400 text-sm font-normal">/mês</span>
+                    <span className="text-gray-600 dark:text-gray-400 text-sm font-normal">/mês</span>
                   </div>
-                  <button className="text-purple-400 hover:text-white text-sm font-medium transition-colors">
+                  <button className="text-purple-600 dark:text-purple-400 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-colors">
                     Ver planos →
                   </button>
                 </div>
@@ -321,10 +321,10 @@ export function AllGamesSection() {
       {/* Empty State */}
       {filteredGames.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-gray-400 mb-4">Nenhum jogo encontrado nesta categoria</div>
+          <div className="text-gray-600 dark:text-gray-400 mb-4">Nenhum jogo encontrado nesta categoria</div>
           <button
             onClick={() => handleFilterChange("all")}
-            className="text-purple-400 hover:text-white transition-colors"
+            className="text-purple-600 dark:text-purple-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             Ver todos os jogos
           </button>
@@ -336,7 +336,7 @@ export function AllGamesSection() {
         <div className="text-center mt-12">
           <button
             onClick={handleLoadMore}
-            className="bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500/50 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
+            className="bg-white/5 dark:bg-gray-800/50 hover:bg-white/10 dark:hover:bg-gray-700 border border-white/10 dark:border-gray-700 hover:border-purple-500/50 dark:hover:border-purple-600 text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
           >
             Carregar mais jogos ({filteredGames.length - displayCount} restantes)
           </button>
@@ -346,7 +346,7 @@ export function AllGamesSection() {
       {/* All Loaded Message */}
       {!hasMoreGames && filteredGames.length > 8 && (
         <div className="text-center mt-12">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-600 dark:text-gray-400 text-sm">
             Todos os jogos foram carregados • {filteredGames.length} jogos no total
           </p>
         </div>

@@ -25,7 +25,7 @@ const newGames = [
 export function NewGames() {
   return (
     <div className="mt-16">
-      <h2 className="text-2xl font-bold text-white mb-6">Jogos Novos</h2>
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Jogos Novos</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {newGames.map((game) => (
           <Link href={game.link} key={game.id} className="group">
@@ -44,7 +44,7 @@ export function NewGames() {
                 </div>
               </div>
             </div>
-            <h3 className="text-white font-medium mt-2">{game.name}</h3>
+            <h3 className="text-gray-900 dark:text-white font-medium mt-2">{game.name}</h3>
           </Link>
         ))}
       </div>

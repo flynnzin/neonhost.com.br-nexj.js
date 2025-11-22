@@ -61,7 +61,7 @@ export default function CookieConsent() {
   return (
     <AnimatePresence>
       {showConsent && (
-        <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:bottom-4 md:max-w-md z-50">
+        <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50">
           {/* Conteúdo principal fora da animação para melhorar o LCP */}
           <p className="sr-only">
             Usamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você interage com nossos serviços de hospedagem VPS e servidores de jogos.
@@ -72,31 +72,31 @@ export default function CookieConsent() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-[#121212] border border-purple-700/30 rounded-xl shadow-md overflow-hidden"
+            className="bg-white dark:bg-[#121212] border border-gray-200 dark:border-purple-700/30 rounded-xl shadow-md overflow-hidden"
           >
             <div className="p-4 md:p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
                   <Cookie className="h-6 w-6 text-purple-500 mr-2" />
-                  <h3 className="text-lg font-bold text-white">Cookies da Neon Host</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">Cookies da Neon Host</h3>
                 </div>
                 <button
                   onClick={() => setShowConsent(false)}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   aria-label="Fechar aviso de cookies"
                 >
                   <X className="h-5 w-5" />
                 </button>
               </div>
 
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Usamos cookies para melhorar sua experiência em nosso site.
               </p>
 
               <div className="mb-4">
                 <button
                   onClick={toggleExpanded}
-                  className="flex items-center justify-between w-full text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                  className="flex items-center justify-between w-full text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
                 >
                   <span>Personalizar preferências</span>
                   {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
@@ -118,7 +118,7 @@ export default function CookieConsent() {
                         preferences: "Preferências (salvam suas configurações)",
                       }).map(([key, label]) => (
                         <div key={key} className="flex items-center justify-between">
-                          <span className="text-sm text-gray-300">{label}</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-300">{label}</span>
                           <label className="relative inline-flex items-center cursor-pointer">
                             <input
                               type="checkbox"
@@ -129,10 +129,10 @@ export default function CookieConsent() {
                             />
                             <div
                               className={`w-11 h-6 rounded-full peer ${key === "necessary"
-                                  ? "bg-purple-700 opacity-50"
+                                  ? "bg-purple-300 dark:bg-purple-700 opacity-50"
                                   : cookiePreferences[key as keyof typeof cookiePreferences]
                                     ? "bg-purple-600"
-                                    : "bg-gray-700"
+                                    : "bg-gray-200 dark:bg-gray-700"
                                 } peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple-400 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all`}
                             ></div>
                           </label>
@@ -152,15 +152,15 @@ export default function CookieConsent() {
                 </button>
                 <button
                   onClick={acceptNecessary}
-                  className="flex-1 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium border border-gray-700 transition-colors"
+                  className="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-md font-medium border border-gray-300 dark:border-gray-700 transition-colors"
                 >
                   Aceitar necessários
                 </button>
               </div>
             </div>
 
-            <div className="px-4 py-2 bg-purple-900/20 border-t border-purple-700/30">
-              <p className="text-xs text-gray-400 text-center">
+            <div className="px-4 py-2 bg-gray-50 dark:bg-purple-900/20 border-t border-gray-200 dark:border-purple-700/30">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
                 Ao clicar em "Aceitar todos", você concorda com o uso de cookies para melhorar a navegação, analisar o uso do site e auxiliar em nossos esforços de marketing.
               </p>
             </div>

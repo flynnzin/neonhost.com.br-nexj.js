@@ -15,7 +15,7 @@ export function CardProduts(vpsItem: {
   }
 }) {
   return (
-    <div className="relative bg-gradient-to-b from-[#0B0E13] to-[#131720] border border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
+    <div className="relative bg-gradient-to-b from-gray-50 to-gray-100 dark:from-[#0B0E13] dark:to-[#131720] border border-gray-200 dark:border-gray-800/50 p-6 rounded-2xl shadow-xl hover:shadow-pink-500/10 transition-all duration-300 group">
       {/* Efeito de brilho no hover */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
@@ -30,10 +30,10 @@ export function CardProduts(vpsItem: {
         {/* Preço */}
         <div className="space-y-1">
           <h1 className="text-4xl font-bold">
-            <span className="text-white">{vpsItem.price}</span>
-            <span className="text-gray-400 text-sm font-normal ml-1">/mês</span>
+            <span className="text-gray-900 dark:text-white">{vpsItem.price}</span>
+            <span className="text-gray-500 dark:text-gray-400 text-sm font-normal ml-1">/mês</span>
           </h1>
-          <p className="text-sm text-gray-400 flex items-center gap-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
             {vpsItem.description.jogadores ? (
               <>
                 Recomendado para
@@ -50,28 +50,28 @@ export function CardProduts(vpsItem: {
         {/* Especificações Principais */}
         <div className="mt-6 space-y-4">
           <div className="grid grid-cols-3 gap-3">
-            <div className="bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-800/50 p-3 rounded-xl text-center">
+            <div className="bg-gray-100 dark:bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 p-3 rounded-xl text-center">
               <MemoryStick size={18} className="mx-auto mb-1 text-pink-400" />
-              <p className="font-medium text-sm text-white">{vpsItem.description.ram}</p>
-              <p className="text-xs text-gray-500 mt-0.5">RAM</p>
+              <p className="font-medium text-sm text-gray-900 dark:text-white">{vpsItem.description.ram}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">RAM</p>
             </div>
-            <div className="bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-800/50 p-3 rounded-xl text-center">
+            <div className="bg-gray-100 dark:bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 p-3 rounded-xl text-center">
               <Cpu size={18} className="mx-auto mb-1 text-pink-400" />
-              <p className="font-medium text-sm text-white">{vpsItem.description.cores}</p>
-              <p className="text-xs text-gray-500 mt-0.5">CPU</p>
+              <p className="font-medium text-sm text-gray-900 dark:text-white">{vpsItem.description.cores}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">CPU</p>
             </div>
-            <div className="bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-800/50 p-3 rounded-xl text-center">
+            <div className="bg-gray-100 dark:bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 p-3 rounded-xl text-center">
               <HardDrive size={18} className="mx-auto mb-1 text-pink-400" />
-              <p className="font-medium text-sm text-white">{vpsItem.description.ssd}</p>
-              <p className="text-xs text-gray-500 mt-0.5">SSD</p>
+              <p className="font-medium text-sm text-gray-900 dark:text-white">{vpsItem.description.ssd}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">SSD</p>
             </div>
           </div>
         </div>
 
         {/* Painel de Controle Badge */}
         <div className="mt-6 flex items-center justify-center">
-          <div className="px-4 py-2 bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-800/50 rounded-full">
-            <p className="text-xs flex items-center gap-2 text-gray-300">
+          <div className="px-4 py-2 bg-gray-100 dark:bg-[#0B0E13]/80 backdrop-blur-sm border border-gray-200 dark:border-gray-800/50 rounded-full">
+            <p className="text-xs flex items-center gap-2 text-gray-600 dark:text-gray-300">
               <MonitorCog size={14} className="text-green-400" />
               Painel de Controle Incluso
             </p>
@@ -83,7 +83,7 @@ export function CardProduts(vpsItem: {
           {vpsItem.description.attrs.map((item, index) => (
             <div key={index} className="flex items-start gap-2">
               <CircleCheckBig className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-gray-300">{item}</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">{item}</p>
             </div>
           ))}
         </div>
@@ -101,7 +101,7 @@ export function CardProduts(vpsItem: {
             </Link>
           ) : (
             <Button
-              className="w-full bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold py-6 rounded-xl opacity-75 cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-gray-200 to-gray-300 text-gray-500 dark:from-gray-700 dark:to-gray-600 dark:text-white font-semibold py-6 rounded-xl opacity-75 cursor-not-allowed"
               size="lg"
               disabled
             >

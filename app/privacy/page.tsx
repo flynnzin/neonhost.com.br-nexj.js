@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Background with grid pattern */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0">
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors mb-8"
+            className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-500 transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar
@@ -39,13 +39,13 @@ export default function PrivacyPage() {
               Privacidade
             </span>
           </h1>
-          <p className="text-xl text-gray-600">Última atualização: {new Date().toLocaleDateString("pt-BR")}</p>
+          <p className="text-xl text-gray-600 dark:text-gray-400">Última atualização: {new Date().toLocaleDateString("pt-BR")}</p>
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none space-y-8 text-gray-700">
+        <div className="prose prose-lg max-w-none space-y-8 text-gray-700 dark:text-gray-300">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introdução</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Introdução</h2>
             <p>
               A NeonHost ("Empresa", "nós", "nos", "nosso") se compromete em proteger sua privacidade. Esta Política de
               Privacidade explica como coletamos, usamos, divulgamos e salvaguardamos suas informações.
@@ -53,16 +53,16 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Informações que Coletamos</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. Informações que Coletamos</h2>
             <p>Coletamos informações de várias formas:</p>
-            <h3 className="text-lg font-semibold text-gray-900 mt-4">Informações Fornecidas Voluntariamente:</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-4">Informações Fornecidas Voluntariamente:</h3>
             <ul className="list-disc list-inside space-y-2 mt-2">
               <li>Dados de registro (nome, email, telefone, endereço)</li>
               <li>Informações de pagamento (dados do cartão, através de processadores seguros)</li>
               <li>Informações de perfil e preferências</li>
               <li>Comunicações e suporte ao cliente</li>
             </ul>
-            <h3 className="text-lg font-semibold text-gray-900 mt-4">Informações Coletadas Automaticamente:</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-4">Informações Coletadas Automaticamente:</h3>
             <ul className="list-disc list-inside space-y-2 mt-2">
               <li>Dados de acesso ao servidor (logs de IP, navegador, sistema operacional)</li>
               <li>Cookies e tecnologias de rastreamento similares</li>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Uso das Informações</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Uso das Informações</h2>
             <p>Usamos as informações coletadas para:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Fornecer, manter e melhorar nossos serviços</li>
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Divulgação de Informações</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">4. Divulgação de Informações</h2>
             <p>
               Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros para fins de marketing.
               Podemos compartilhar informações:
@@ -100,7 +100,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Segurança de Dados</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">5. Segurança de Dados</h2>
             <p>
               Implementamos medidas técnicas e organizacionais para proteger suas informações pessoais contra acesso não
               autorizado, alteração, divulgação ou destruição. No entanto, nenhum método de transmissão pela Internet é
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Retenção de Dados</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">6. Retenção de Dados</h2>
             <p>
               Mantemos suas informações pessoais pelo tempo necessário para fornecer serviços e cumprir obrigações
               legais. Você pode solicitar a exclusão de seus dados a qualquer momento, dentro dos limites legais.
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Cookies e Tecnologias de Rastreamento</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">7. Cookies e Tecnologias de Rastreamento</h2>
             <p>
               Usamos cookies e tecnologias similares para melhorar sua experiência. Você pode controlar cookies através
               das configurações do seu navegador. A recusa de cookies pode afetar a funcionalidade do site.
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Direitos do Usuário</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">8. Direitos do Usuário</h2>
             <p>De acordo com as leis de proteção de dados, você tem direito a:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Acessar suas informações pessoais</li>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Privacidade de Menores</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">9. Privacidade de Menores</h2>
             <p>
               Nossos serviços não são destinados a menores de 18 anos. Não coletamos intencionalmente informações de
               menores. Se descobrirmos que coletamos dados de um menor, deletaremos imediatamente.
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Links Externos</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">10. Links Externos</h2>
             <p>
               Nosso website pode conter links para sites de terceiros. Não somos responsáveis pelas práticas de
               privacidade de sites externos. Recomendamos que você revise as políticas de privacidade desses sites.
@@ -165,7 +165,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Conformidade com LGPD</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">11. Conformidade com LGPD</h2>
             <p>
               A NeonHost está em conformidade com a Lei Geral de Proteção de Dados (LGPD). Processamos dados pessoais
               apenas com base legal apropriada e respeitamos seus direitos de titulares de dados.
@@ -173,7 +173,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Modificações da Política</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">12. Modificações da Política</h2>
             <p>
               Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos mudanças significativas por
               email ou através do website. O uso continuado implica aceitação das mudanças.
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Contato</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">13. Contato</h2>
             <p>Para perguntas sobre esta Política de Privacidade ou para exercer seus direitos, entre em contato:</p>
             <ul className="list-disc list-inside space-y-2 mt-4">
               <li>Email: contato@neonhost.com.br</li>

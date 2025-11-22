@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 
 export default function ComparisonTable() {
 	return (
-		<div className="hidden md:block pt-[5%] text-white">
+		<div className="hidden md:block pt-[5%] text-gray-900 dark:text-white">
 			<div className="max-w-5xl mx-auto">
 				<h1 className="text-2xl font-bold text-center mb-6">NeonHost vs Outros</h1>
 
@@ -10,9 +10,9 @@ export default function ComparisonTable() {
 					{/* Headers */}
 					<div className="hidden md:block" />
 					<div className="bg-pink-700 rounded-t-lg p-4">
-						<h2 className="text-2xl font-bold text-center">NeonHost</h2>
+						<h2 className="text-2xl font-bold text-center text-white">NeonHost</h2>
 					</div>
-					<div className="p-4">
+					<div className="p-4 bg-gray-100 dark:bg-gray-800 rounded-t-lg">
 						<h2 className="text-2xl font-bold text-center">Outros</h2>
 					</div>
 
@@ -20,10 +20,10 @@ export default function ComparisonTable() {
 						<div key={spec.label} className="contents">
 							<div className="flex flex-col justify-end items-end">
 								<div className="py-2 pr-3">{spec.label}</div>
-								<div className="border-b-1 border-dashed border-gray-800 w-52" />
+								<div className="border-b-1 border-dashed border-gray-200 dark:border-gray-800 w-52" />
 							</div>
-							<div className="bg-pink-600 text-center py-2">{spec.gamer}</div>
-							<div className="text-center py-2">{spec.intel}</div>
+							<div className="bg-pink-600 text-center py-2 text-white">{spec.gamer}</div>
+							<div className="text-center py-2 bg-gray-100 dark:bg-gray-800">{spec.intel}</div>
 						</div>
 					))}
 
@@ -31,14 +31,14 @@ export default function ComparisonTable() {
 						<div key={feature} className="contents">
 							<div className="flex flex-col justify-end items-end">
 								<div className="text-right py-2 pr-3">{feature}</div>
-								<div className="border-b-1 border-dashed border-gray-800 w-52" />
+								<div className="border-b-1 border-dashed border-gray-200 dark:border-gray-800 w-52" />
 							</div>
 							<div
-								className={`bg-pink-600 flex justify-center items-center py-2 ${index === features.length - 1 ? "rounded-b-lg" : ""}`}
+								className={`bg-pink-600 flex justify-center items-center py-2 text-white ${index === features.length - 1 ? "rounded-b-lg" : ""}`}
 							>
 								<Check className="w-4 h-4" />
 							</div>
-							<div className="flex justify-center items-center py-2">
+							<div className={`flex justify-center items-center py-2 bg-gray-100 dark:bg-gray-800 ${index === features.length - 1 ? "rounded-b-lg" : ""}`}>
 								<Check className="w-4 h-4" />
 							</div>
 						</div>

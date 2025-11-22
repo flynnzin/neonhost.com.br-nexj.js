@@ -260,7 +260,7 @@ export default function Dedicados() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 overflow-hidden relative">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden relative">
       {/* Background com blurs */}
       <div className="fixed inset-0 z-0">
         {/* Grid quadriculado */}
@@ -288,7 +288,7 @@ export default function Dedicados() {
         <section className="pt-[25%] md:pt-[15%] lg:pt-[7%] mb-20">
           <div className="text-center mb-12">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 border border-purple-200 text-purple-600 text-sm font-medium mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/50 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-300 text-sm font-medium mb-6">
                 <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
                 Hardware Exclusivo no Brasil
               </span>
@@ -298,7 +298,7 @@ export default function Dedicados() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             >
               Servidores{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -310,7 +310,7 @@ export default function Dedicados() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto"
             >
               Hardware exclusivo com processadores AMD Ryzen e Intel Core de última geração. Recursos 100% dedicados
               para máxima performance e total controle sobre seu ambiente.
@@ -328,7 +328,7 @@ export default function Dedicados() {
                   <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -345,13 +345,13 @@ export default function Dedicados() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-2xl bg-gray-50 border border-gray-200 hover:border-purple-300 transition-all duration-300 group backdrop-blur-sm"
+                className="p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 group backdrop-blur-sm"
               >
-                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-purple-600 dark:text-purple-400 w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -360,25 +360,25 @@ export default function Dedicados() {
         {/* Planos Section */}
         <section className="py-20" id="plans">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Escolha seu{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Servidor Ideal
               </span>
             </h2>
-            <p className="text-gray-600 mx-auto text-lg max-w-2xl">
+            <p className="text-gray-600 dark:text-gray-400 mx-auto text-lg max-w-2xl">
               Servidores dedicados com hardware exclusivo para máxima performance e confiabilidade.
             </p>
           </div>
 
           <div className="flex justify-center mb-12">
-            <div className="bg-gray-50 p-1 rounded-xl border border-gray-200">
+            <div className="bg-gray-50 dark:bg-gray-800/50 p-1 rounded-xl border border-gray-200 dark:border-gray-700">
               <button
                 onClick={() => setSelectedProcessor("AMD")}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedProcessor === "AMD"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-                    : "text-gray-600 hover:text-white"
+                    : "text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white"
                 }`}
               >
                 AMD Ryzen
@@ -388,7 +388,7 @@ export default function Dedicados() {
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedProcessor === "Intel"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
-                    : "text-gray-600 hover:text-white"
+                    : "text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white"
                 }`}
               >
                 Intel Core
@@ -409,7 +409,7 @@ export default function Dedicados() {
                   className={`relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 group ${
                     plan.popular
                       ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-300/50"
-                      : "bg-gray-50 border-gray-200 hover:border-purple-300"
+                      : "bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600"
                   }`}
                 >
                   {plan.popular && (
@@ -422,45 +422,45 @@ export default function Dedicados() {
 
                   <div className="flex items-center justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                      <p className="text-gray-600">{plan.frequency}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">{plan.frequency}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-gray-900">R$ {plan.price.toFixed(2)}</div>
-                      <div className="text-gray-600 text-sm">/mês</div>
+                      <div className="text-3xl font-bold text-gray-900 dark:text-white">R$ {plan.price.toFixed(2)}</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">/mês</div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <Cpu className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">{plan.cores} Núcleos</div>
-                      <div className="text-gray-600 text-sm">{plan.threads} threads</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <Cpu className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">{plan.cores} Núcleos</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">{plan.threads} threads</div>
                     </div>
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <MemoryStick className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">RAM</div>
-                      <div className="text-gray-600 text-sm">{plan.ram}</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <MemoryStick className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">RAM</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">{plan.ram}</div>
                     </div>
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <HardDrive className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">Storage</div>
-                      <div className="text-gray-600 text-sm">{plan.storage}</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <HardDrive className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">Storage</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">{plan.storage}</div>
                     </div>
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <Network className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">Rede</div>
-                      <div className="text-gray-600 text-sm">{plan.network}</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <Network className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">Rede</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">{plan.network}</div>
                     </div>
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <ArrowUpFromDot className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">Tráfego</div>
-                      <div className="text-gray-600 text-sm">{plan.bandwidth} Incluso</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <ArrowUpFromDot className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">Tráfego</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">{plan.bandwidth} Incluso</div>
                     </div>
-                    <div className="text-center p-4 rounded-xl bg-gray-50">
-                      <Shield className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                      <div className="text-gray-900 font-bold">Anti-DDoS</div>
-                      <div className="text-gray-600 text-sm">449TB/s</div>
+                    <div className="text-center p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                      <Shield className="h-6 w-6 text-purple-600 dark:text-purple-400 mx-auto mb-2" />
+                      <div className="text-gray-900 dark:text-white font-bold">Anti-DDoS</div>
+                      <div className="text-gray-600 dark:text-gray-400 text-sm">449TB/s</div>
                     </div>
                   </div>
 
@@ -474,7 +474,7 @@ export default function Dedicados() {
                       className={`w-full font-bold py-3 transition-all duration-300 ${
                         plan.popular
                           ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700"
-                          : "bg-gray-50 text-gray-900 hover:bg-gray-100 border border-gray-200"
+                          : "bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
                       }`}
                     >
                       <Star className="mr-2 h-4 w-4" />
@@ -489,13 +489,13 @@ export default function Dedicados() {
         {/* CTA Section */}
         <section className="py-16">
           <div className="rounded-2xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-300/30 p-8 md:p-12 text-center backdrop-blur-sm">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Precisa de uma configuração diferente?
             </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
               Nossa equipe pode criar uma solução personalizada com as especificações exatas que você precisa.
             </p>
-            <Button className="bg-white text-purple-600 hover:bg-gray-50 font-bold px-8 py-3 border border-purple-200">
+            <Button className="bg-white dark:bg-gray-800 text-purple-600 dark:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-700 font-bold px-8 py-3 border border-purple-200 dark:border-purple-700">
               Solicitar Orçamento
             </Button>
           </div>
@@ -507,7 +507,7 @@ export default function Dedicados() {
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
               Suporte Especializado
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Nossa equipe está pronta para ajudar você 24 horas por dia, 7 dias por semana.
             </p>
           </div>
@@ -539,15 +539,15 @@ export default function Dedicados() {
             ].map((item, index) => (
               <Card
                 key={index}
-                className="p-6 border-none bg-gray-50 hover:bg-gray-100 transition-all duration-300 group backdrop-blur-sm"
+                className="p-6 border-none bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group backdrop-blur-sm"
               >
-                <div className="text-purple-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-purple-600 dark:text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 text-xl mb-3">{item.title}</h3>
-                <p className="text-gray-600 mb-6">{item.description}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-3">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{item.description}</p>
                 <Link href={item.link} target="_blank">
-                  <Button variant="ghost" className="w-full">
+                  <Button variant="ghost" className="w-full text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700">
                     {item.buttonText}
                   </Button>
                 </Link>

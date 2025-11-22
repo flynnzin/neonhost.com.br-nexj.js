@@ -196,15 +196,15 @@ export function AnimatedDdosProtection() {
   }, [])
 
   return (
-    <div className="relative w-full h-[200px] bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
+    <div className="relative w-full h-[200px] bg-gray-50 dark:bg-gray-800/50 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
       <div className="absolute top-3 left-3 z-10 flex items-center gap-2">
-        <Shield className="h-5 w-5 text-indigo-600" />
-        <span className="text-sm font-medium text-gray-900">Proteção DDoS em tempo real</span>
+        <Shield className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+        <span className="text-sm font-medium text-gray-900 dark:text-white">Proteção DDoS em tempo real</span>
       </div>
 
-      <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2 bg-white/80 px-3 py-1 rounded-full border border-gray-200">
+      <div className="absolute bottom-3 right-3 z-10 flex items-center gap-2 bg-white/80 dark:bg-gray-900/80 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700">
         <ZapOff className="h-4 w-4 text-red-500" />
-        <span className="text-xs font-medium text-gray-700">Ataques bloqueados</span>
+        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">Ataques bloqueados</span>
       </div>
 
       <canvas ref={canvasRef} className="w-full h-full" />

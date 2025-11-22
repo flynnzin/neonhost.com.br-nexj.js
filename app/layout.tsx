@@ -8,6 +8,7 @@ import "@/styles/globals.css"
 import clsx from "clsx"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: {
@@ -171,17 +172,19 @@ export default async function RootLayout({
         <meta name="distribution" content="global" />
         <link rel="canonical" href="https://neonhost.com.br/" />
       </head>
-      <body className={clsx("min-h-screen bg-white text-gray-900", inter.className)}>
-        <div className="relative flex flex-col">
-          <PromoBanner />
-          <div className="pt-[40px]">
-            <div className="border-b border-b-gray-700">
-              <NavbarComponent />
+      <body className={clsx("min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100", inter.className)}>
+        <ThemeProvider defaultTheme="dark" storageKey="neonhost-theme">
+          <div className="relative flex flex-col">
+            <PromoBanner />
+            <div className="pt-[40px]">
+              <div className="border-b border-gray-200 dark:border-b-gray-700">
+                <NavbarComponent />
+              </div>
+              <main className="bg-gray-50 dark:bg-[#0A0C10]">{children}</main>
+              <Footer />
             </div>
-            <main className="bg-[#0A0C10]">{children}</main>
-            <Footer />
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   )

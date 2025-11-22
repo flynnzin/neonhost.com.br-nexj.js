@@ -23,7 +23,7 @@ export function GameCard({ id, name, image, originalPrice, currentPrice, discoun
           />
         </div>
         <div className="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black to-transparent">
-          <h3 className="text-white font-medium">{name}</h3>
+          <h3 className="text-gray-900 dark:text-white font-medium">{name}</h3>
         </div>
       </div>
       <div className="mt-2 flex items-center gap-2">
@@ -33,9 +33,9 @@ export function GameCard({ id, name, image, originalPrice, currentPrice, discoun
           </span>
         )}
         {originalPrice !== currentPrice && (
-          <span className="text-zinc-500 line-through text-sm">R$ {originalPrice.toFixed(2).replace(".", ",")}</span>
+          <span className="text-gray-500 dark:text-zinc-500 line-through text-sm">R$ {originalPrice.toFixed(2).replace(".", ",")}</span>
         )}
-        <span className="text-white font-bold">R$ {currentPrice.toFixed(2).replace(".", ",")}</span>
+        <span className="text-gray-900 dark:text-white font-bold">R$ {currentPrice.toFixed(2).replace(".", ",")}</span>
       </div>
     </Link>
   )

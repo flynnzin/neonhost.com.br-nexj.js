@@ -25,10 +25,10 @@ export function HeroSection() {
       <div className="relative container mx-auto px-4 h-full flex items-center z-20">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="text-white">Universo de </span>
+            <span className="text-gray-900 dark:text-white">Universo de </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">Games</span>
           </h1>
-          <p className="text-xl text-zinc-300 mb-8 max-w-2xl">
+          <p className="text-gray-600 dark:text-zinc-300 mb-8 max-w-2xl">
             Explore nossa coleção de jogos e servidores de alta performance. Hospedagem otimizada para a melhor
             experiência de jogo.
           </p>
@@ -42,7 +42,7 @@ export function HeroSection() {
             </Link>
             <Link
               href={heroConfig.viewServersUrl}
-              className="bg-zinc-900 hover:bg-zinc-800 text-white border border-purple-500/30 px-8 py-4 rounded-md font-medium text-lg inline-block"
+              className="bg-white dark:bg-zinc-900 hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-900 dark:text-white border border-gray-200 dark:border-purple-500/30 px-8 py-4 rounded-md font-medium text-lg inline-block"
             >
               Ver Servidores
             </Link>
@@ -54,19 +54,19 @@ export function HeroSection() {
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">
                 50+
               </p>
-              <p className="text-zinc-400 text-sm">Jogos Disponíveis</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm">Jogos Disponíveis</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">
                 99.9%
               </p>
-              <p className="text-zinc-400 text-sm">Uptime Garantido</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm">Uptime Garantido</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-400">
                 24/7
               </p>
-              <p className="text-zinc-400 text-sm">Suporte Técnico</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm">Suporte Técnico</p>
             </div>
           </div>
         </div>
