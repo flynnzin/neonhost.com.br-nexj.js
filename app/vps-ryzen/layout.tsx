@@ -505,7 +505,7 @@ export const metadata: Metadata = {
     siteName: "NeonHost",
     images: [
       {
-        url: "/bannernh.png",
+        url: "https://neonhost.com.br/NeonHost.png",
         width: 3890,
         height: 1290,
         alt: "NeonHost - VPS Ryzen",
@@ -527,7 +527,7 @@ export const metadata: Metadata = {
     title: "VPS Ryzen | NeonHost",
     card: "summary_large_image",
     description: "VPS Ryzen com processadores de alta frequência e proteção anti-DDoS. Ideal para servidores de jogos.",
-    images: ["/bannernh.png"],
+    images: ["https://neonhost.com.br/NeonHost.png"],
   },
   alternates: {
     canonical: "https://neonhost.com.br/vps-ryzen",

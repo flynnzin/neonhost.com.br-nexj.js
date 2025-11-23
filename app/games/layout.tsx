@@ -503,7 +503,7 @@ export const metadata: Metadata = {
     siteName: "NeonHost",
     images: [
       {
-        url: "/favicon.ico",
+        url: "https://neonhost.com.br/NeonHost.png",
         // width: 1200,
         // height: 630,
         alt: "NeonHost - Servidores Dedicados",
@@ -517,7 +517,7 @@ export const metadata: Metadata = {
       "Desempenho superior e segurança com infraestrutura no Brasil. Hospede seus servidores de Minecraft, FiveM e outros jogos com proteção Anti DDoS.",
     images: [
       {
-        url: "/favicon.ico",
+        url: "https://neonhost.com.br/NeonHost.png",
         // width: 1200,
         // height: 630,
         alt: "NeonHost - Servidores Dedicados",

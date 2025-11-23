@@ -510,7 +510,7 @@ export const metadata: Metadata = {
     siteName: "NeonHost",
     images: [
       {
-        url: "/NeonHost.png",
+        url: "https://neonhost.com.br/NeonHost.png",
         width: 1280,
         height: 630,
         alt: "NeonHost - Hospedagem de Jogos no Brasil",
@@ -532,7 +532,7 @@ export const metadata: Metadata = {
     title: "Servidor GTA 6 | NeonHost",
     card: "summary_large_image",
     description: "Crie seu servidor de GTA 6 com hospedagem premium. Proteção DDoS, baixa latência em São Paulo, suporte 24/7 e compatibilidade com todas as versões.",
-    images: ["/bannernh.png"],
+    images: ["https://neonhost.com.br/NeonHost.png"],
   },
   alternates: {
     canonical: "https://neonhost.com.br/GTA 6",
