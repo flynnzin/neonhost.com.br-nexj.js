@@ -130,13 +130,13 @@ export const NavbarComponent = () => {
                         <Gamepad2 className="h-4 w-4 text-purple-600" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">VPS Ryzen</div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">AMD Ryzen 9 com memorias RAM DDR5.</div>
+                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">VPS Gamer</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Servidores localizados em São Paulo com máxima performance.</div>
                       </div>
                     </motion.div>
                   </Link>
 
-                  <Link href="/vps-gamer">
+                  <Link href="/vps-flex">
                     <motion.div
                       whileHover={{ x: 4 }}
                       className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200"
@@ -145,8 +145,8 @@ export const NavbarComponent = () => {
                         <Gamepad2 className="h-4 w-4 text-purple-600" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">VPS Gamer</div>
-                        <div className="text-xs text-gray-600 dark:text-gray-400">Servidores Premium para jogos.</div>
+                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">VPS Flex</div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400">Servidores localizados em São Paulo com custo beneficio</div>
                       </div>
                     </motion.div>
                   </Link>
@@ -479,9 +479,9 @@ export const NavbarComponent = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">Servidores localizados no Brasil</p>
                     </div>
                   </Link>
-                  <Link href="/vps" className="w-full">
+                  <Link href="/vps-flex" className="w-full">
                     <div className="p-2 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200">
-                      <p className="text-base font-semibold text-gray-900 dark:text-white">VPS Ryzen</p>
+                      <p className="text-base font-semibold text-gray-900 dark:text-white">VPS Flex</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">Servidores localizados no Brasil</p>
                     </div>
                   </Link>

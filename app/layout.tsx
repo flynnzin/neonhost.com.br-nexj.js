@@ -12,7 +12,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   title: {
-    default: "Host de Jogos no Brasil | NeonHost",
+    default: "Plataforma de servidores de jogos e VPS no Brasil | NeonHost",
     template: `%s - ${siteConfig.name}`,
   },
   description:
@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   authors: [{ name: "NeonHost" }],
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  themeColor: "#7c3aed",
-  colorScheme: "light",
-  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
@@ -587,64 +584,64 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <Script
-        id="gtm-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-						(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-						})(window,document,'script','dataLayer','GTM-NLK4RWTG');
-					`,
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "NeonHost",
-            url: "https://neonhost.com.br",
-            description:
-              "Hospedagem de jogos no Brasil com VPS Gamer, proteção Anti-DDoS e infraestrutura de alta performance",
-            address: {
-              "@type": "PostalAddress",
-              addressCountry: "BR",
-              addressRegion: "SP",
-              addressLocality: "São Paulo",
-            },
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+55-11-99999-9999",
-              contactType: "customer service",
-              availableLanguage: "Portuguese",
-            },
-            sameAs: ["https://twitter.com/neonhost", "https://facebook.com/neonhost", "https://instagram.com/neonhost"],
-            offers: [
-              {
-                "@type": "Offer",
-                name: "VPS Gamer",
-                description: "VPS de alta performance com proteção Anti-DDoS",
-                price: "72.90",
-                priceCurrency: "BRL",
-                availability: "https://schema.org/InStock",
-              },
-              {
-                "@type": "Offer",
-                name: "VPS Streaming",
-                description: "Servidores com tráfego ilimitado",
-                price: "249.90",
-                priceCurrency: "BRL",
-                availability: "https://schema.org/InStock",
-              },
-            ],
-          }),
-        }}
-      />
       <head>
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-NLK4RWTG');
+                    `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "NeonHost",
+              url: "https://neonhost.com.br",
+              description:
+                "Hospedagem de jogos no Brasil com VPS Gamer, proteção Anti-DDoS e infraestrutura de alta performance",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "BR",
+                addressRegion: "SP",
+                addressLocality: "São Paulo",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+55 24 99243-0751",
+                contactType: "customer service",
+                availableLanguage: "Portuguese",
+              },
+              sameAs: ["https://twitter.com/neonhost", "https://facebook.com/neonhost", "https://instagram.com/neonhost"],
+              offers: [
+                {
+                  "@type": "Offer",
+                  name: "VPS Gamer",
+                  description: "VPS de alta performance com proteção Anti-DDoS",
+                  price: "72.90",
+                  priceCurrency: "BRL",
+                  availability: "https://schema.org/InStock",
+                },
+                {
+                  "@type": "Offer",
+                  name: "VPS Streaming",
+                  description: "Servidores com tráfego ilimitado",
+                  price: "249.90",
+                  priceCurrency: "BRL",
+                  availability: "https://schema.org/InStock",
+                },
+              ],
+            }),
+          }}
+        />
         <meta name="google-site-verification" content="hsbqhlsa_EF36270POQ4hf418PvGn0QT3CcCRkw1fRE" />
         <meta name="author" content="NeonHost" />
         <meta name="geo.region" content="BR-SP" />
@@ -655,7 +652,19 @@ export default async function RootLayout({
         <link rel="canonical" href="https://neonhost.com.br/" />
       </head>
       <body className={clsx("min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100", inter.className)}>
-        <ThemeProvider defaultTheme="dark" storageKey="neonhost-theme">
+        <div id="snow-container">
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+          <div className="snowflake"></div>
+        </div>
+        <ThemeProvider defaultTheme="light" storageKey="neonhost-theme">
           <div className="relative flex flex-col">
             <PromoBanner />
             <div className="pt-[40px]">

@@ -21,3 +21,123 @@
 	border-radius: 4px;
 }
 
+#snow-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+.snowflake {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: white;
+	border-radius: 50%;
+	animation: fall 10s linear infinite;
+}
+.snowflake:nth-child(1) {
+	top: -10%;
+	left: 5%;
+	animation-delay: 0s;
+	animation-duration: 12s;
+	width: 5px;
+	height: 5px;
+}
+.snowflake:nth-child(2) {
+	top: -10%;
+	left: 15%;
+	animation-delay: 2s;
+	animation-duration: 8s;
+	width: 8px;
+	height: 8px;
+}
+.snowflake:nth-child(3) {
+	top: -10%;
+	left: 25%;
+	animation-delay: 4s;
+	animation-duration: 15s;
+	width: 3px;
+	height: 3px;
+}
+.snowflake:nth-child(4) {
+	top: -10%;
+	left: 35%;
+	animation-delay: 1s;
+	animation-duration: 10s;
+	width: 6px;
+	height: 6px;
+}
+.snowflake:nth-child(5) {
+	top: -10%;
+	left: 45%;
+	animation-delay: 3s;
+	animation-duration: 13s;
+	width: 7px;
+	height: 7px;
+}
+.snowflake:nth-child(6) {
+	top: -10%;
+	left: 55%;
+	animation-delay: 5s;
+	animation-duration: 9s;
+	width: 4px;
+	height: 4px;
+}
+.snowflake:nth-child(7) {
+	top: -10%;
+	left: 65%;
+	animation-delay: 0.5s;
+	animation-duration: 11s;
+	width: 5px;
+	height: 5px;
+}
+.snowflake:nth-child(8) {
+	top: -10%;
+	left: 75%;
+	animation-delay: 2.5s;
+	animation-duration: 7s;
+	width: 9px;
+	height: 9px;
+}
+.snowflake:nth-child(9) {
+	top: -10%;
+	left: 85%;
+	animation-delay: 1.5s;
+	animation-duration: 14s;
+	width: 6px;
+	height: 6px;
+}
+.snowflake:nth-child(10) {
+	top: -10%;
+	left: 95%;
+	animation-delay: 3.5s;
+	animation-duration: 10s;
+	width: 7px;
+	height: 7px;
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(-10vh) rotate(0deg);
+	}
+	100% {
+		transform: translateY(110vh) rotate(360deg);
+	}
+}
+
+.light .snowflake {
+	background: #89CFF0;
+}
+
+.dark .snowflake {
+	background: #F0F8FF;
+}
+
+
+
+
