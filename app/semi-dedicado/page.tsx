@@ -1,10 +1,8 @@
 "use client"
 
-import { Button, Card, Divider } from "@nextui-org/react"
+import { Button } from "@nextui-org/react"
 import { plans } from "./plans"
-import { AccordionItems } from "../_components/accordion"
 import {
-  Info,
   Zap,
   Shield,
   Globe,
@@ -17,7 +15,7 @@ import {
   CheckCircle,
 } from "lucide-react"
 import Link from "next/link"
-import ComparisonTable from "../_components/comparison-table"
+import Image from "next/image"
 import { useState } from "react"
 
 export default function VpsGamer() {
@@ -136,6 +134,19 @@ export default function VpsGamer() {
             <p className="text-gray-600 dark:text-gray-400 mx-auto text-lg max-w-2xl">
               Planos Semi-Dedicados com recursos garantidos e performance superior para seus projetos mais exigentes.
             </p>
+
+            <div className="flex flex-col items-center gap-3 mt-8">
+              <div className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8" />
+                </svg>
+                Localização do Servidor
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 dark:bg-gray-800 border border-gray-700">
+                <Image src="/br.png" alt="Minecraft Server" width={20} height={10} className="object-contain" />
+                <span className="text-white font-medium">São Paulo</span>
+              </div>
+            </div>
           </div>
 
           {/* Cards Expansíveis */}
@@ -194,7 +205,9 @@ export default function VpsGamer() {
                     <div className="flex items-center gap-6">
                       <div className="text-right">
                         <div className="flex items-baseline gap-1">
-                          <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">R${plan.price}</span>
+                          <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+                            R${plan.price}
+                          </span>
                           <span className="text-sm text-gray-500 dark:text-gray-400"></span>
                         </div>
                       </div>
@@ -279,7 +292,6 @@ export default function VpsGamer() {
             </Button>
           </div>
         </section>
-
       </section>
     </div>
   )

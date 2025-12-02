@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react"
 import { CircleCheckBig, Cpu, HardDrive, MemoryStick, MonitorIcon as MonitorCog } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function CardProduts(vpsItem: {
   name: string
@@ -20,6 +21,10 @@ export function CardProduts(vpsItem: {
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
       <div className="relative">
+        <div className="mb-4">
+          <Image src="/amd.webp" alt="AMD" width={80} height={30} className="object-contain" />
+        </div>
+
         {/* Badge do nome */}
         <div className="inline-block px-4 py-1 bg-pink-500/10 rounded-full mb-4">
           <h4 className="text-lg font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
