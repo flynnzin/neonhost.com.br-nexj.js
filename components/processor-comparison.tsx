@@ -417,7 +417,7 @@ export default function ProcessorComparison() {
                     <feature.icon className="text-[#ff3e9d]" size={20} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-1">{feature.title}</h3>
+                    <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
                     <p className="text-sm text-gray-400">{feature.desc}</p>
                   </div>
                 </div>

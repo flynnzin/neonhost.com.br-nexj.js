@@ -1,9 +1,9 @@
 "use client"
 
 import { Button, Card } from "@nextui-org/react"
+import { AccordionItems } from "../_components/accordion"
 import { Info, Shield, Cpu, HardDrive, MemoryStick, Network, ArrowUpFromDot, Star } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import { useState } from "react"
 
@@ -369,38 +369,27 @@ export default function Dedicados() {
             <p className="text-gray-600 dark:text-gray-400 mx-auto text-lg max-w-2xl">
               Servidores dedicados com hardware exclusivo para máxima performance e confiabilidade.
             </p>
-
-            <div className="flex flex-col items-center gap-3 mt-8">
-              <div className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8" />
-                </svg>
-                Localização do Servidor
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 dark:bg-gray-800 border border-gray-700">
-                <Image src="/br.png" alt="Minecraft Server" width={20} height={10} className="object-contain" />
-                <span className="text-white font-medium">São Paulo</span>
-              </div>
-            </div>
           </div>
 
           <div className="flex justify-center mb-12">
             <div className="bg-gray-50 dark:bg-gray-800/50 p-1 rounded-xl border border-gray-200 dark:border-gray-700">
               <button
                 onClick={() => setSelectedProcessor("AMD")}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${selectedProcessor === "AMD"
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  selectedProcessor === "AMD"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                     : "text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white"
-                  }`}
+                }`}
               >
                 AMD Ryzen
               </button>
               <button
                 onClick={() => setSelectedProcessor("Intel")}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${selectedProcessor === "Intel"
+                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  selectedProcessor === "Intel"
                     ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                     : "text-gray-600 dark:text-gray-300 hover:text-white dark:hover:text-white"
-                  }`}
+                }`}
               >
                 Intel Core
               </button>
@@ -417,10 +406,11 @@ export default function Dedicados() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 group ${plan.popular
+                  className={`relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 group ${
+                    plan.popular
                       ? "bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-300/50"
                       : "bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-600"
-                    }`}
+                  }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -481,10 +471,11 @@ export default function Dedicados() {
                     className="block w-full"
                   >
                     <Button
-                      className={`w-full font-bold py-3 transition-all duration-300 ${plan.popular
+                      className={`w-full font-bold py-3 transition-all duration-300 ${
+                        plan.popular
                           ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700"
                           : "bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700"
-                        }`}
+                      }`}
                     >
                       <Star className="mr-2 h-4 w-4" />
                       Contratar Agora
@@ -509,7 +500,7 @@ export default function Dedicados() {
             </Button>
           </div>
         </section>
-
+        
         {/* Support Section */}
         <section className="mt-16 mb-20">
           <div className="text-center mb-12">
@@ -556,10 +547,7 @@ export default function Dedicados() {
                 <h3 className="font-bold text-gray-900 dark:text-white text-xl mb-3">{item.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">{item.description}</p>
                 <Link href={item.link} target="_blank">
-                  <Button
-                    variant="ghost"
-                    className="w-full text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  >
+                  <Button variant="ghost" className="w-full text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700">
                     {item.buttonText}
                   </Button>
                 </Link>

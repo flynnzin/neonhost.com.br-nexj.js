@@ -1,6 +1,7 @@
 "use client"
 import { plans } from "./plans"
 import type React from "react"
+import { CyberPlanCard } from "@/components/cyber-plan-card"
 
 import {
   Server,
@@ -265,10 +266,7 @@ const SimpleFAQ = memo(() => {
   return (
     <div className="max-w-4xl mx-auto">
       {faqs.map((faq, index) => (
-        <div
-          key={index}
-          className="mb-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700"
-        >
+        <div key={index} className="mb-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
           <button
             className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-xl"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -360,40 +358,29 @@ export default function VpsGamer() {
         </section>
 
         {/* Plans */}
-        <section className="py-20" id="plans">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Escolha seu <span className="text-purple-600">Plano Ideal</span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mx-auto text-lg max-w-2xl">
-              Planos VPS Ryzen com recursos garantidos e performance superior para seus projetos.
+        <section className="pb-16" id="plans">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Nossos Planos VPS Ryzen</h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Servidores otimizados para jogos com proteção DDoS e suporte 24/7
             </p>
-
-            <div className="flex flex-col items-center gap-3 mt-8">
-              <div className="flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8" />
-                </svg>
-                Localização do Servidor
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 dark:bg-gray-800 border border-gray-700">
-                <span className="text-lg">🇧🇷</span>
-                <span className="text-white font-medium">São Paulo</span>
-              </div>
-            </div>
           </div>
 
-          {/* Cards Expansíveis */}
-          <div className="space-y-6 max-w-6xl mx-auto">
-            {memoizedPlans.map((plan, index) => (
-              <PlanCard
-                key={plan.name}
-                plan={plan}
-                isExpanded={expandedCard === index}
-                onToggle={() => handleCardToggle(index)}
-              />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {plans.map((plan, index) => (
+                        <CyberPlanCard
+                          key={plan.name}
+                          name={plan.name}
+                          ram={plan.description.ram}
+                          cores={plan.description.cores}
+                          ssd={plan.description.ssd}
+                          price={plan.price}
+                          link={plan.link || ""}
+                          additionalFeatures={plan.description.attrs}
+                          index={index}
+                        />
+                      ))}
+                    </div>
         </section>
 
         {/* FAQ */}
@@ -402,9 +389,7 @@ export default function VpsGamer() {
             <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Tire suas dúvidas sobre nossos serviços VPS Ryzen.
-            </p>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Tire suas dúvidas sobre nossos serviços VPS Ryzen.</p>
           </div>
           <SimpleFAQ />
         </section>
