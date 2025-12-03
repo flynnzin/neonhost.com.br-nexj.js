@@ -698,7 +698,7 @@ export default function HomePage() {
               </div>
 
               <Link
-                href="/redes"
+                href="/infraestrutura"
                 className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-medium hover:opacity-80 transition-opacity"
               >
                 Detalhes da rede

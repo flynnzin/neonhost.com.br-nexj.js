@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@nextui-org/react"
 import { MemoryStickIcon, Cpu, HardDrive, Wifi, Check, Info } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface CyberPlanCardProps {
   name: string
@@ -52,10 +53,15 @@ export function CyberPlanCard({
           </div>
         )}
 
-        {/* Header */}
-        <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{name}</h3>
-          <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">{popular ? "Plano mais escolhido" : "Disponível agora"}</p>
+        <div className="mb-4 flex items-center">
+                    <Image src="/amd.webp" alt="AMD" width={64} height={24} className="object-contain mr-4 dark:hidden" />
+          <Image src="/amd-light.webp" alt="AMD" width={64} height={24} className="object-contain mr-4 hidden dark:block" />
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{name}</h3>
+            <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">
+              {popular ? "Plano mais escolhido" : "Disponível agora"}
+            </p>
+          </div>
         </div>
 
         {/* Price */}
