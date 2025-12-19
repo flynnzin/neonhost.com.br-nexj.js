@@ -15,6 +15,11 @@ import {
   CreditCard,
   DollarSign,
   Trophy,
+  Server,
+  Gamepad2,
+  Wifi,
+  Users,
+  Bolt,
 } from "lucide-react"
 
 // Componente de Loading otimizado
@@ -31,7 +36,9 @@ const LoadingSpinner = () => (
 const PlanCard = ({ plan, index }: { plan: any; index: number }) => (
   <article
     className={`relative p-6 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-      plan.popular ? "bg-gradient-to-b from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-200 dark:border-purple-800" : "bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700"
+      plan.popular
+        ? "bg-gradient-to-b from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-200 dark:border-purple-800"
+        : "bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700"
     }`}
   >
     {plan.popular && (
@@ -357,7 +364,8 @@ export default function HomePage() {
         answer:
           "Aceitamos cartão de crédito, débito, PIX, boleto bancário e transferência bancária. Todos os pagamentos são processados de forma segura.",
         category: "Financeiro",
-        categoryColor: "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 border border-green-200 dark:border-green-800",
+        categoryColor:
+          "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 border border-green-200 dark:border-green-800",
         icon: <CreditCard className="h-4 w-4" />,
       },
       {
@@ -365,7 +373,8 @@ export default function HomePage() {
         answer:
           "Sim, oferecemos garantia de reembolso de 7 dias para novos clientes. Se não ficar satisfeito, devolvemos 100% do valor pago.",
         category: "Financeiro",
-        categoryColor: "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 border border-green-200 dark:border-green-800",
+        categoryColor:
+          "bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300 border border-green-200 dark:border-green-800",
         icon: <DollarSign className="h-4 w-4" />,
       },
       {
@@ -373,7 +382,8 @@ export default function HomePage() {
         answer:
           "A ativação é imediata após a confirmação do pagamento. Em casos de análise adicional, pode levar até 24 horas.",
         category: "Infraestrutura",
-        categoryColor: "bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
+        categoryColor:
+          "bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
         icon: <Clock className="h-4 w-4" />,
       },
       {
@@ -381,7 +391,8 @@ export default function HomePage() {
         answer:
           "Nossa proteção DDoS monitora o tráfego em tempo real, identificando e bloqueando ataques automaticamente, garantindo que seu servidor permaneça online.",
         category: "Segurança",
-        categoryColor: "bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-800",
+        categoryColor:
+          "bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-800",
         icon: <Shield className="h-4 w-4" />,
       },
       {
@@ -389,7 +400,8 @@ export default function HomePage() {
         answer:
           "A Proteção DDoS Pro oferece defesa avançada contra ataques de até 449Tbps, com filtragem inteligente e mitigação instantânea para máxima proteção.",
         category: "Segurança",
-        categoryColor: "bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-800",
+        categoryColor:
+          "bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300 border border-red-200 dark:border-red-800",
         icon: <Shield className="h-4 w-4" />,
       },
       {
@@ -397,7 +409,8 @@ export default function HomePage() {
         answer:
           "Nossos data centers estão localizados em São Paulo e Rio de Janeiro, garantindo baixa latência para todo o Brasil.",
         category: "Infraestrutura",
-        categoryColor: "bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
+        categoryColor:
+          "bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 border border-blue-200 dark:border-blue-800",
         icon: <Globe className="h-4 w-4" />,
       },
     ],
@@ -511,6 +524,32 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 z-10">
+        {/* Floating decorative icons on left side - forming left side of V */}
+        <div className="hidden lg:block absolute left-8 xl:left-16 top-[20%] space-y-20">
+          <div className="p-4 rounded-xl bg-purple-100/50 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700/30 backdrop-blur-sm animate-float">
+            <Server className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+          </div>
+          <div className="p-4 rounded-xl bg-pink-100/50 dark:bg-pink-900/20 border border-pink-300 dark:border-pink-700/30 backdrop-blur-sm animate-float-delay-1">
+            <Gamepad2 className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+          </div>
+          <div className="p-4 rounded-xl bg-purple-100/50 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700/30 backdrop-blur-sm animate-float-delay-2">
+            <Wifi className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+          </div>
+        </div>
+
+        {/* Floating decorative icons on right side - forming right side of V */}
+        <div className="hidden lg:block absolute right-8 xl:right-16 top-[20%] space-y-20">
+          <div className="p-4 rounded-xl bg-pink-100/50 dark:bg-pink-900/20 border border-pink-300 dark:border-pink-700/30 backdrop-blur-sm animate-float-delay-1">
+            <Shield className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+          </div>
+          <div className="p-4 rounded-xl bg-purple-100/50 dark:bg-purple-900/20 border border-purple-300 dark:border-purple-700/30 backdrop-blur-sm animate-float-delay-2">
+            <Bolt className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+          </div>
+          <div className="p-4 rounded-xl bg-pink-100/50 dark:bg-pink-900/20 border border-pink-300 dark:border-pink-700/30 backdrop-blur-sm animate-float">
+            <Users className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/50 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-300 text-sm font-medium mb-8">
@@ -544,7 +583,9 @@ export default function HomePage() {
             </div>
             <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700">
               <Cpu className="h-5 w-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
-              <span className="text-sm text-gray-700 dark:text-gray-300">Processadores AMD Ryzen e NVMe Enterprise</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">
+                Processadores AMD Ryzen e NVMe Enterprise
+              </span>
             </div>
             <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700">
               <Clock className="h-5 w-5 text-purple-600 dark:text-purple-400" aria-hidden="true" />
@@ -558,7 +599,9 @@ export default function HomePage() {
       <section className="relative py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Desempenho que Importa</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+              Desempenho que Importa
+            </h2>
           </div>
 
           {/* Performance Metrics */}
@@ -762,7 +805,9 @@ export default function HomePage() {
                 Frequentes
               </span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Tire suas dúvidas sobre nossos serviços de hospedagem</p>
+            <p className="text-xl text-gray-600 dark:text-gray-400">
+              Tire suas dúvidas sobre nossos serviços de hospedagem
+            </p>
           </div>
           <div className="space-y-4">
             {faqQuestions.map((faq, index) => (
